@@ -15,7 +15,7 @@ from joblib import Parallel, delayed, effective_n_jobs
 import json
 
 # Function that generates VVs and tts
-def genVVtt(totalNofSeqs, NofIntervalsRange, VVRange, VVLenRange, NofVVSteps = -1):
+def genVVtt(totalNofSeqs, NofIntervalsRange, VVRange, VVLenRange, VVFirst, NofVVSteps = -1):
     VVseeds = []
     VVseeds_len = []
 
@@ -27,9 +27,15 @@ def genVVtt(totalNofSeqs, NofIntervalsRange, VVRange, VVLenRange, NofVVSteps = -
         if NofVVSteps > 0:
             VVseed_len = torch.floor(NofVVSteps / torch.sum(VVseed_len) * VVseed_len).type(torch.int)
             VVseed_len[-1] = NofVVSteps - torch.sum(VVseed_len[:-1])
+        
+        if VVFirst != -1:
+            VVseed[0] = torch.log10(torch.tensor(VVFirst))
+
         VVseeds.append(VVseed)
         VVseeds_len.append(VVseed_len)
     
+    print("VVFirst = ", VVFirst)
+
     # DEBUG LINES
     shit = [torch.sum(x) for x in VVseeds_len]
     print("Maximum VV length: ", max(shit), flush=True)
@@ -239,7 +245,9 @@ def generateSamples(kwgs):
         json.dump(kwgs, outfile)
     
     # Generate data
-    VVs, tts = genVVtt(kwgs['totalNofSeqs'], kwgs['NofIntervalsRange'], kwgs['VVRange'], kwgs['VVLenRange'], kwgs["NofVVSteps"])
+    VVs, tts = genVVtt(kwgs['totalNofSeqs'], kwgs['NofIntervalsRange'], kwgs['VVRange'], kwgs['VVLenRange'], 
+                       -1, #1. / kwgs['beta'][2] / kwgs['theta0'], 
+                       kwgs["NofVVSteps"])
     ts, JumpIdxs, t_JumpIdxs, VtFuncs = calVtFuncs(VVs, tts)
     Vs, thetas, fs = cal_f_beta_parallel(kwgs["beta"], kwgs['theta0'], ts, t_JumpIdxs, tts, JumpIdxs, VtFuncs, std_noise = 0.001, directCompute = True, 
                         n_workers = 16, pool = Parallel(n_jobs=16, backend='threading'))
