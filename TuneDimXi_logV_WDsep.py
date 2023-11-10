@@ -63,14 +63,27 @@ from DataGeneration import generateSamples, genVVtt
 import os
 
 generating_flag = False
+# kwgs = {
+#     "beta" : [0.006, 0.012, 1. / 1.e10, 0.58], 
+#     "totalNofSeqs" : 100, # 1024 * 16, 
+#     "NofIntervalsRange" : [4, 6], #[5, 11], 
+#     "VVRange" : [-3, 1], 
+#     "VVLenRange" : [3, 4], 
+#     "theta0" : 0.1, 
+#     "prefix" : "Trial1108_bigDRS", 
+#     "NofVVSteps" : 10, 
+# }
+
 kwgs = {
-    "beta" : [0.006, 0.012, 1. / 1.e10, 0.58], 
+    "beta" : [0.006, 0.012, 1. / 1.e12, 0.58], 
     "totalNofSeqs" : 100, # 1024 * 16, 
-    "NofIntervalsRange" : [4, 6], #[5, 11], 
+    "NofIntervalsRange" : [3, 5], #[5, 11], 
     "VVRange" : [-3, 1], 
     "VVLenRange" : [3, 4], 
+    "Tmax" : 2.0, 
+    "nTSteps" : 100, 
     "theta0" : 0.1, 
-    "prefix" : "Trial1108_bigDRS", 
+    "prefix" : "Trial1108_bigDRS_Burigede", 
     "NofVVSteps" : 10, 
 }
 
@@ -87,11 +100,11 @@ thetas = shit["thetas"]
 fs = shit["fs"]
 ts = shit["ts"]
 
-# Stack data as
-Vs = torch.stack(Vs)
-thetas = torch.stack(thetas)
-fs = torch.stack(fs)
-ts = torch.stack(ts)
+# # Stack data as
+# Vs = torch.stack(Vs)
+# thetas = torch.stack(thetas)
+# fs = torch.stack(fs)
+# ts = torch.stack(ts)
 
 # Now Vs and ts have fixed length
 print("Vs.shape: ", Vs.shape)
@@ -269,12 +282,13 @@ class OptunaObj:
         self.device = kwgs['device']
         self.training_dataset = kwgs['training_dataset']
         self.test_dataset = kwgs['test_dataset']
+        self.modelSavePrefix = kwgs['modelSavePrefix']
         
         
     # Define the objective
     def objective(self, trial):
         # Dump for un-saved interuptions
-        joblib.dump(this_study, "./data/1108_bigDRS_WDsep_study_dim_xi_logV_DLeg_D_dagger_ELU1_" + str(self.dim_xi) + ".pkl")
+        joblib.dump(this_study, "./data/1108_bigDRS_Burigede_WDsep_study_dim_xi_logV_DLeg_D_dagger_ELU1_" + str(self.dim_xi) + ".pkl")
 
         # Fixed parameters
         dim_xi = self.dim_xi
@@ -384,6 +398,8 @@ class OptunaObj:
         
         # Return objective value for optuna
         res = train1Epoch(testDataLoader, Loss, myWD, self.test_p, update_weights=False)
+        if len([this_study.trials]) == 1 or res < this_study.best_value:
+            torch.save(myWD, './model/' + self.modelSavePrefix + '_model.pth')
         print("Time for this trial: ", time.time() - st)
         # Release GPU memory
         del myWD
@@ -397,7 +413,7 @@ class OptunaObj:
         return res
             
 # Do a parametric study over number of hidden parameters
-dim_xis = [0, 1, 2, 4, 8]
+dim_xis = [0]
 studys = []
 
 # Tune parameters for dim_xi = 4
@@ -410,9 +426,11 @@ OptKwgs = {
     'test_dataset' : testDataset, 
 }
 
+
 # Loop through all dim_xis
 for dim_xi in dim_xis:
     OptKwgs['dim_xi'] = dim_xi
+    OptKwgs['modelSavePrefix'] = kwgs['prefix'] + "_dim_xi_" + str(dim_xi)
     myOpt = OptunaObj(OptKwgs)
     this_study = optuna.create_study(direction='minimize')
     this_study.optimize(myOpt.objective, n_trials=50)
