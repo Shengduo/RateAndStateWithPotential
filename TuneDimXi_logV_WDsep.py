@@ -118,7 +118,7 @@ Xs[:, 1:] = torch.cumulative_trapezoid(Xs, ts)
 print("Xs.shape: ", Xs.shape)
 
 ## Calculate f
-# Different Potentials with D correction
+# Different Potentials with D correction and D dagger
 class PotentialsFricCorrection:
     # Initialization of W and D
     def __init__(self, kwgsPot):
@@ -193,6 +193,77 @@ class PotentialsFricCorrection:
             self.fs = torch.autograd.grad(outputs=W, inputs=X_W, create_graph=True)[0].reshape([x.shape[0], x.shape[1]]) \
                       + torch.autograd.grad(outputs=D_dagger, inputs=X_D_dagger, create_graph=True)[0].reshape([xDot.shape[0], xDot.shape[1]])
             del W, X_W, X_D_dagger, D_dagger 
+
+## Calculate f
+# Different Potentials with D correction without D dagger
+class PotentialsFricCorrectionNoDagger:
+    # Initialization of W and D
+    def __init__(self, kwgsPot):
+        self.dim_xi = kwgsPot["dim_xi"]
+        self.NNs_W = kwgsPot["NNs_W"]
+        self.NNs_D = kwgsPot["NNs_D"]
+
+        self.W = PP(self.NNs_W, input_dim = 1 + self.dim_xi, output_dim = 1)
+        self.D = PP(self.NNs_D, input_dim = self.dim_xi, output_dim = 1)
+
+        self.optim_W = optim.Adam(self.W.parameters(), lr=kwgsPot["learning_rate"])
+        self.optim_D = optim.Adam(self.D.parameters(), lr=kwgsPot["learning_rate_D"])
+
+        
+        # Device
+        self.device = kwgsPot["device"]
+        self.W.to(self.device)
+        self.D.to(self.device)
+
+        
+    # Calculate f 
+    def calf(self, x, xDot, t):
+        # Initialize Vs
+        batch_size = x.shape[0]
+        time_steps = x.shape[1]
+        # xis[:, :, :] = 1. 
+        
+        
+        # Loop through time steps
+        
+        if self.dim_xi > 0:
+            xi0 = torch.zeros([batch_size, self.dim_xi], requires_grad=True, device=self.device)
+            
+            # List of fs
+            list_fs = []
+            list_xis = [xi0]
+            
+            for idx in range(x.shape[1]):
+                # f = \partial W / \partial V
+                X_W = torch.concat([x[:, idx:idx + 1], list_xis[-1]], dim = 1).requires_grad_()
+                # X_W.to(self.device)
+                W = torch.sum(self.W(X_W))
+
+                this_piece = torch.autograd.grad(outputs=W, inputs=X_W, create_graph=True)[0]
+
+                # Solve for \dot{\xi} + \partial W / \partial \xi = 0
+                dWdXi = this_piece[:, 1:]
+
+                list_fs.append(this_piece[:, 0:1])
+
+                # XiDot = -dWdXi
+                if idx < x.shape[1] - 1:
+                    this_input = -dWdXi.clone().requires_grad_()
+                    D = torch.sum(self.D(this_input))
+                    xiNext = list_xis[-1] + torch.autograd.grad(outputs=D, inputs=this_input, create_graph=True)[0] * (t[:, idx + 1:idx + 2] - t[:, idx:idx + 1])
+                    list_xis.append(xiNext)
+                    
+                    del this_input, W, dWdXi, X_W, D, this_piece
+                    
+                self.fs = torch.concat(list_fs, dim=1)
+        else:
+            X_W = x.clone().reshape([x.shape[0], x.shape[1], 1]).requires_grad_()
+            # print(X_W)
+            W = torch.sum(self.W(X_W))
+
+
+            self.fs = torch.autograd.grad(outputs=W, inputs=X_W, create_graph=True)[0].reshape([x.shape[0], x.shape[1]])
+            del W, X_W
             
 ## Define loss function, training function, dataloaders
 # Define loss functions given fs_targ, fs. 
@@ -311,7 +382,8 @@ dataloader_kwargs = {'num_workers': 1, 'pin_memory': True} if torch.cuda.is_avai
 
 train_len = int(len(Vs) * 0.8)
 test_len = len(Vs) - train_len
-trainDataset, testDataset = torch.utils.data.random_split(AllData, [train_len, test_len])
+trainDataset, testDataset = AllData[0 : train_len], AllData[train_len : ]
+# torch.utils.data.random_split(AllData, [train_len, test_len])
 
 ## Define optuna function
 class OptunaObj:
@@ -324,6 +396,37 @@ class OptunaObj:
         self.training_dataset = kwgs['training_dataset']
         self.test_dataset = kwgs['test_dataset']
         self.modelSavePrefix = kwgs['modelSavePrefix']
+
+        if self.dim_xi > 0:
+            # Load the base model
+            self.zeroXi_model = torch.load('./model/' + self.modelSavePrefix  + "_dim_xi_" + str(0) + '_model.pth')
+
+            # Modify the training dataset accordingly
+            Xs = []
+            XDots = []
+            ts = []
+            fs = []
+            
+            for i in range(len(self.training_dataset)):
+                Xs.append(self.training_dataset[i][0])
+                XDots.append(self.training_dataset[i][1])
+                ts.append(self.training_dataset[i][2])
+                fs.append(self.training_dataset[i][3])
+            
+            Xs = torch.stack(Xs, dim=0)
+            XDots = torch.stack(XDots, dim=0)
+            ts = torch.stack(ts, dim=0)
+            fs = torch.stack(fs, dim=0)
+
+            # Remove zero model from fs
+            self.zeroXi_model.calf(Xs, XDots, ts)
+            fs = fs - self.zeroXi_model.fs
+
+            # Re-generate the training dataset
+            for i in range(len(self.training_dataset)):
+                self.training_dataset[i][3] = fs[i, :]
+            
+            del Xs, XDots, ts, fs
         
     # Define the objective with no hidden variable
     def objective_no_xi(self, trial):
@@ -434,7 +537,9 @@ class OptunaObj:
                 memory_stats()
         
         # Return objective value for optuna
-        res = train1Epoch(testDataLoader, Loss, myWD, self.test_p, update_weights=False)
+        # res = train1Epoch(testDataLoader, Loss, myWD, self.test_p, update_weights=False)
+        res = totalTestError(testDataLoader, Loss, [myWD], self.test_p)
+
         if len([this_study.trials]) == 1 or res < this_study.best_value:
             torch.save(myWD, './model/' + self.modelSavePrefix + "_dim_xi_" + str(0) + '_model.pth')
         print("Time for this trial: ", time.time() - st)
@@ -457,9 +562,6 @@ class OptunaObj:
 
         # Fixed parameters
         dim_xi = self.dim_xi
-
-        # Load the base model
-        self.zeroXi_model = torch.load('./model/' + self.modelSavePrefix  + "_dim_xi_" + str(0) + '_model.pth')
         
         # Define NN for W
         W_layers = trial.suggest_int('W_layers', 2, 8)
@@ -474,22 +576,12 @@ class OptunaObj:
         for i in range(D_layers):
             this_D = 2 ** trial.suggest_int('D_layer_units_exponent_{}'.format(i), 4, 10)
             NNs_D.append(this_D)
-        
-        # # Define NN for D_dagger
-        # D_dagger_layers = trial.suggest_int('D_dagger_layers', 2, 8)
-        # NNs_D_dagger = []
-        # for i in range(D_dagger_layers):
-        #     this_D_dagger = 2 ** trial.suggest_int('D_dagger_layer_units_exponent_{}'.format(i), 4, 10)
-        #     NNs_D_dagger.append(this_D_dagger)
 
         # Suggest learning rate
         learning_rate = 10 ** trial.suggest_float('log_learning_rate', -5., -1.)
         
         # Suggest learning rate for D
         learning_rate_D = 10 ** trial.suggest_float('log_learning_rate_D', -5., -1.)
-
-        # # Suggest learning rate for D
-        # learning_rate_D_dagger = 10 ** trial.suggest_float('log_learning_rate_D_dagger', -5., -1.)
 
         # Suggest batchsize
         training_batch_size = 2 ** trial.suggest_int('training_batch_size', 6, 12)
@@ -505,10 +597,8 @@ class OptunaObj:
             'dim_xi' : dim_xi, 
             'NNs_W' : NNs_W, 
             'NNs_D' : NNs_D, 
-            # 'NNs_D_dagger' : NNs_D_dagger, 
             'learning_rate' : learning_rate, 
             'learning_rate_D' : learning_rate_D, 
-            # 'learning_rate_D_dagger' : learning_rate_D_dagger,  
             'training_batch_size' : training_batch_size, 
             'training_p' : training_p, 
             'training_epochs' : training_epochs, 
@@ -547,7 +637,7 @@ class OptunaObj:
         print(trial.params, flush=True)
         
         # Training
-        myWD = PotentialsFricCorrection(params)
+        myWD = PotentialsFricCorrectionNoDagger(params)
         for i in range(params['training_epochs']):
             avg_training_loss = train1Epoch(trainDataLoader, Loss, myWD, params['training_p'])
             
@@ -557,14 +647,21 @@ class OptunaObj:
             if i % 10 == 0:
                 # avg_test_loss = train1Epoch(testDataLoader, Loss, myWD, self.test_p, update_weights=False)
                 print("\t", "epoch ", str(i), "training error: ", str(avg_training_loss), flush=True)
+                
+                # Return objective value for optuna
+                avg_test_loss = totalTestError(testDataLoader, Loss, [self.zeroXi_model, myWD], self.test_p)
+                print("\t", "epoch ", str(i), "test error: ", str(avg_test_loss), flush=True)
+                
                 ## Print memory status
                 print("Memory status after this epoch: ")
                 memory_stats()
         
         # Return objective value for optuna
-        res = train1Epoch(testDataLoader, Loss, myWD, self.test_p, update_weights=False)
+        res = totalTestError(testDataLoader, Loss, [self.zeroXi_model, myWD], self.test_p)
+
         if len([this_study.trials]) == 1 or res < this_study.best_value:
             torch.save(myWD, './model/' + self.modelSavePrefix  + "_dim_xi_" + str(dim_xi) + '_model.pth')
+        
         print("Time for this trial: ", time.time() - st)
         # Release GPU memory
         del myWD
@@ -579,132 +676,13 @@ class OptunaObj:
 
     # Define the objective
     def objective(self, trial):
-        # Dump for un-saved interuptions
-        joblib.dump(this_study, "./data/1108_bigDRS_Burigede_WDsep_study_dim_xi_logV_DLeg_D_dagger_ELU1_" + str(self.dim_xi) + ".pkl")
-
-        # Fixed parameters
-        dim_xi = self.dim_xi
-
-        if dim_xi == 0:
+        if self.dim_xi == 0:
             return self.objective_no_xi(trial)
-        # Define NN for W
-        W_layers = trial.suggest_int('W_layers', 2, 8)
-        NNs_W = []
-        for i in range(W_layers):
-            this_W = 2 ** trial.suggest_int('W_layer_units_exponent_{}'.format(i), 4, 10)
-            NNs_W.append(this_W)
-            
-        # Define NN for D
-        D_layers = trial.suggest_int('D_layers', 2, 8)
-        NNs_D = []
-        for i in range(D_layers):
-            this_D = 2 ** trial.suggest_int('D_layer_units_exponent_{}'.format(i), 4, 10)
-            NNs_D.append(this_D)
-        
-        # Define NN for D_dagger
-        D_dagger_layers = trial.suggest_int('D_dagger_layers', 2, 8)
-        NNs_D_dagger = []
-        for i in range(D_dagger_layers):
-            this_D_dagger = 2 ** trial.suggest_int('D_dagger_layer_units_exponent_{}'.format(i), 4, 10)
-            NNs_D_dagger.append(this_D_dagger)
-
-        # Suggest learning rate
-        learning_rate = 10 ** trial.suggest_float('log_learning_rate', -5., -1.)
-        
-        # Suggest learning rate for D
-        learning_rate_D = 10 ** trial.suggest_float('log_learning_rate_D', -5., -1.)
-
-        # Suggest learning rate for D
-        learning_rate_D_dagger = 10 ** trial.suggest_float('log_learning_rate_D_dagger', -5., -1.)
-
-        # Suggest batchsize
-        training_batch_size = 2 ** trial.suggest_int('training_batch_size', 6, 12)
-
-        # Suggest training p
-        training_p = trial.suggest_int('training_p', 2, 8)
-
-        # Suggest training epochs
-        # training_epochs = 2 ** trial.suggest_int('training_epoch_exponents', 5, 9)
-        training_epochs = 100
-
-        params = {
-            'dim_xi' : dim_xi, 
-            'NNs_W' : NNs_W, 
-            'NNs_D' : NNs_D, 
-            'NNs_D_dagger' : NNs_D_dagger, 
-            'learning_rate' : learning_rate, 
-            'learning_rate_D' : learning_rate_D, 
-            'learning_rate_D_dagger' : learning_rate_D_dagger,  
-            'training_batch_size' : training_batch_size, 
-            'training_p' : training_p, 
-            'training_epochs' : training_epochs, 
-            'device' : self.device,
-        }
-        
-        
-        # Set training dataloader
-        training_batch_size = params['training_batch_size'] #1024
-        trainDataLoader = DataLoader(
-            self.training_dataset,
-            batch_size = training_batch_size,
-            shuffle = True,
-        #    num_workers = 16,
-            collate_fn = None,
-            **dataloader_kwargs, 
-        )
-
-        # Set testing data loader
-        testing_batch_size = self.test_batch_size # 256
-        testDataLoader = DataLoader(
-            self.test_dataset,
-            batch_size = testing_batch_size,
-            shuffle = True,
-        #    num_workers = 16,
-            collate_fn = None,
-            **dataloader_kwargs, 
-        )
-        
-        # Print out info
-        print("-"*20, " Trial ", str(trial.number), " ", "-"*20, flush=True)
-        st = time.time()
-        print("Start timing: ")
-        
-        print("Parameters: ", flush=True)
-        print(trial.params, flush=True)
-        
-        # Training
-        myWD = PotentialsFricCorrection(params)
-        for i in range(params['training_epochs']):
-            avg_training_loss = train1Epoch(trainDataLoader, Loss, myWD, params['training_p'])
-            
-            if torch.isnan(avg_training_loss):
-                break
-            
-            if i % 10 == 0:
-                # avg_test_loss = train1Epoch(testDataLoader, Loss, myWD, self.test_p, update_weights=False)
-                print("\t", "epoch ", str(i), "training error: ", str(avg_training_loss), flush=True)
-                ## Print memory status
-                print("Memory status after this epoch: ")
-                memory_stats()
-        
-        # Return objective value for optuna
-        res = train1Epoch(testDataLoader, Loss, myWD, self.test_p, update_weights=False)
-        if len([this_study.trials]) == 1 or res < this_study.best_value:
-            torch.save(myWD, './model/' + self.modelSavePrefix + '_model.pth')
-        print("Time for this trial: ", time.time() - st)
-        # Release GPU memory
-        del myWD
-        gc.collect()
-        torch.cuda.empty_cache()
-        
-        ## Print memory status
-        print("Memory status after this trial: ")
-        memory_stats()
-        
-        return res
+        else:
+            return self.objective_with_xi(trial)
             
 # Do a parametric study over number of hidden parameters
-dim_xis = [0]
+dim_xis = [0, 2]
 studys = []
 
 # Tune parameters for dim_xi = 4
@@ -724,5 +702,5 @@ for dim_xi in dim_xis:
     OptKwgs['modelSavePrefix'] = kwgs['prefix']
     myOpt = OptunaObj(OptKwgs)
     this_study = optuna.create_study(direction='minimize')
-    this_study.optimize(myOpt.objective, n_trials=50)
+    this_study.optimize(myOpt.objective, n_trials=2)
     studys.append(this_study)
