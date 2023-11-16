@@ -1,0 +1,71 @@
+/home/shengduo/anaconda3/lib/python3.9/site-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.16.5 and <1.23.0 is required for this version of SciPy (detected version 1.24.1
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+[I 2023-11-10 10:52:55,974] A new study created in memory with name: no-name-2591ed74-19e3-4373-89b0-6cf8a58331ae
+Cuda is available:  True
+Device is:  cuda:0
+Memory allocated:  0.0
+Memory cached:  0.0
+Vs.shape:  torch.Size([100, 100])
+thetas.shape:  torch.Size([100, 100])
+fs.shape:  torch.Size([100, 100])
+ts.shape:  torch.Size([100, 100])
+Xs.shape:  torch.Size([100, 100])
+--------------------  Trial  0   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 2, 'W_layer_units_exponent_0': 7, 'W_layer_units_exponent_1': 9, 'D_layers': 8, 'D_layer_units_exponent_0': 8, 'D_layer_units_exponent_1': 4, 'D_layer_units_exponent_2': 8, 'D_layer_units_exponent_3': 9, 'D_layer_units_exponent_4': 8, 'D_layer_units_exponent_5': 8, 'D_layer_units_exponent_6': 8, 'D_layer_units_exponent_7': 4, 'log_learning_rate': -2.2772917414139897, 'log_learning_rate_D': -1.6756519800106031, 'training_batch_size': 10, 'training_p': 6}
+	 epoch  0 training error:  tensor(2.6332, device='cuda:0', grad_fn=<DivBackward0>)
+	 epoch  0 test error:  tensor(12.4712, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  246.67431640625
+Memory cached:  276.0
+	 epoch  10 training error:  tensor(0.9992, device='cuda:0', grad_fn=<DivBackward0>)
+	 epoch  10 test error:  tensor(0.1309, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  248.45556640625
+Memory cached:  496.0
+	 epoch  20 training error:  tensor(1.0000, device='cuda:0', grad_fn=<DivBackward0>)
+	 epoch  20 test error:  tensor(0.1308, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  246.58056640625
+Memory cached:  496.0
+[W 2023-11-10 10:53:36,456] Trial 0 failed with parameters: {'W_layers': 2, 'W_layer_units_exponent_0': 7, 'W_layer_units_exponent_1': 9, 'D_layers': 8, 'D_layer_units_exponent_0': 8, 'D_layer_units_exponent_1': 4, 'D_layer_units_exponent_2': 8, 'D_layer_units_exponent_3': 9, 'D_layer_units_exponent_4': 8, 'D_layer_units_exponent_5': 8, 'D_layer_units_exponent_6': 8, 'D_layer_units_exponent_7': 4, 'log_learning_rate': -2.2772917414139897, 'log_learning_rate_D': -1.6756519800106031, 'training_batch_size': 10, 'training_p': 6} because of the following error: KeyboardInterrupt().
+Traceback (most recent call last):
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "/home/shengduo/RateAndStateWithPotential/TuneDimXi_logV_WDsep.py", line 713, in objective
+    return self.objective_with_xi(trial)
+  File "/home/shengduo/RateAndStateWithPotential/TuneDimXi_logV_WDsep.py", line 673, in objective_with_xi
+    avg_training_loss = train1Epoch(trainDataLoader, Loss, myWD, params['training_p'])
+  File "/home/shengduo/RateAndStateWithPotential/TuneDimXi_logV_WDsep.py", line 303, in train1Epoch
+    myPot.calf(Xs, XDots, ts)
+  File "/home/shengduo/RateAndStateWithPotential/TuneDimXi_logV_WDsep.py", line 242, in calf
+    this_piece = torch.autograd.grad(outputs=W, inputs=X_W, create_graph=True)[0]
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/torch/autograd/__init__.py", line 276, in grad
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt
+[W 2023-11-10 10:53:36,464] Trial 0 failed with value None.
+Traceback (most recent call last):
+  File "/home/shengduo/RateAndStateWithPotential/TuneDimXi_logV_WDsep.py", line 736, in <module>
+    this_study.optimize(myOpt.objective, n_trials=1)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/study.py", line 442, in optimize
+    _optimize(
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/_optimize.py", line 66, in _optimize
+    _optimize_sequential(
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/_optimize.py", line 163, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/_optimize.py", line 251, in _run_trial
+    raise func_err
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "/home/shengduo/RateAndStateWithPotential/TuneDimXi_logV_WDsep.py", line 713, in objective
+    return self.objective_with_xi(trial)
+  File "/home/shengduo/RateAndStateWithPotential/TuneDimXi_logV_WDsep.py", line 673, in objective_with_xi
+    avg_training_loss = train1Epoch(trainDataLoader, Loss, myWD, params['training_p'])
+  File "/home/shengduo/RateAndStateWithPotential/TuneDimXi_logV_WDsep.py", line 303, in train1Epoch
+    myPot.calf(Xs, XDots, ts)
+  File "/home/shengduo/RateAndStateWithPotential/TuneDimXi_logV_WDsep.py", line 242, in calf
+    this_piece = torch.autograd.grad(outputs=W, inputs=X_W, create_graph=True)[0]
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/torch/autograd/__init__.py", line 276, in grad
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt

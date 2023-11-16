@@ -8,7 +8,6 @@ from xitorch.optimize import rootfinder
 import optuna
 from torch.utils.data import TensorDataset, DataLoader
 import joblib 
-import torch.optim as optim
 
 # Memory management on GPU
 import gc
@@ -27,11 +26,53 @@ def memory_stats():
     print("Memory cached: ", torch.cuda.memory_reserved()/1024**2)
 memory_stats()
 
+## Generating using Burigede's scheme
+from DataGeneration import generateSamples_Burigede
+import os
+generating_flag = False
+kwgs = {
+    "beta" : [0.006, 0.012, 1. / 1.e12, 0.58], 
+    "totalNofSeqs" : 100, # 1024 * 16, 
+    "NofIntervalsRange" : [3, 5], #[5, 11], 
+    "VVRange" : [-3, 1], 
+    "VVLenRange" : [3, 4], 
+    "Tmax" : 2.0, 
+    "nTSteps" : 100, 
+    "theta0" : 0.1, 
+    "prefix" : "Trial1108_bigDRS_Burigede", 
+    "NofVVSteps" : 10, 
+}
+
+
+
+# Generate / load data
+dataFile = "./data/" + kwgs["prefix"] + ".pt"
+
+if generating_flag or not(os.path.isfile(dataFile)):
+    print("Generating data")
+    generateSamples_Burigede(kwgs)
+
+shit = torch.load(dataFile)
+Vs = shit["Vs"]
+thetas = shit["thetas"]
+fs = shit["fs"]
+ts = shit["ts"]
+
+# Now Vs and ts have fixed length
+print("Vs.shape: ", Vs.shape)
+print("thetas.shape: ", thetas.shape)
+print("fs.shape: ", fs.shape)
+print("ts.shape: ", ts.shape)
+# Calculate Xs
+Xs = torch.zeros(Vs.shape)
+Xs[:, 1:] = torch.cumulative_trapezoid(Xs, ts)
+print("Xs.shape: ", Xs.shape)
+
 # Define MLP for potentials
 class ReLUSquare(nn.Module): 
     def __init__(self): 
         super(ReLUSquare, self).__init__() 
-        self.fc = nn.ELU()
+        self.fc = nn.ReLU()
   
     def forward(self, x): 
         return torch.pow(self.fc(x), 1)
@@ -58,11 +99,21 @@ class PP(nn.Module):
     def forward(self, x):
         return self.fc(x)
 
-## Data generation 
 from DataGeneration import generateSamples, genVVtt
 import os
 
 generating_flag = False
+kwgs = {
+    "beta" : [0.006, 0.012, 1. / 1.e12, 0.58], 
+    "totalNofSeqs" : 100, # 1024 * 16, 
+    "NofIntervalsRange" : [4, 5], #[5, 11], 
+    "VVRange" : [-3, 1], 
+    "VVLenRange" : [3, 4], 
+    "theta0" : 0.1, 
+    "prefix" : "Trial1108_bigDRS_Burigede", 
+    "NofVVSteps" : 10, 
+}
+
 # kwgs = {
 #     "beta" : [0.006, 0.012, 1. / 1.e10, 0.58], 
 #     "totalNofSeqs" : 100, # 1024 * 16, 
@@ -70,22 +121,9 @@ generating_flag = False
 #     "VVRange" : [-3, 1], 
 #     "VVLenRange" : [3, 4], 
 #     "theta0" : 0.1, 
-#     "prefix" : "Trial1108_bigDRS", 
+#     "prefix" : "Trial1104", 
 #     "NofVVSteps" : 10, 
 # }
-
-kwgs = {
-    "beta" : [0.006, 0.012, 1. / 1.e12, 0.58], 
-    "totalNofSeqs" : 100, # 1024 * 16, 
-    "NofIntervalsRange" : [3, 5], #[5, 11], 
-    "VVRange" : [-3, 1], 
-    "VVLenRange" : [3, 4], 
-    "Tmax" : 2.0, 
-    "nTSteps" : 100, 
-    "theta0" : 0.1, 
-    "prefix" : "Trial1108_bigDRS_Burigede", 
-    "NofVVSteps" : 10, 
-}
 
 # Generate / load data
 dataFile = "./data/" + kwgs["prefix"] + ".pt"
@@ -100,7 +138,7 @@ thetas = shit["thetas"]
 fs = shit["fs"]
 ts = shit["ts"]
 
-# # Stack data as
+# Stack data as
 # Vs = torch.stack(Vs)
 # thetas = torch.stack(thetas)
 # fs = torch.stack(fs)
@@ -111,14 +149,16 @@ print("Vs.shape: ", Vs.shape)
 print("thetas.shape: ", thetas.shape)
 print("fs.shape: ", fs.shape)
 print("ts.shape: ", ts.shape)
-
 # Calculate Xs
 Xs = torch.zeros(Vs.shape)
 Xs[:, 1:] = torch.cumulative_trapezoid(Xs, ts)
 print("Xs.shape: ", Xs.shape)
 
+
+# Different Potentials with D correction
+import torch.optim as optim
 ## Calculate f
-# Different Potentials with D correction and D dagger
+# Different Potentials with D correction
 class PotentialsFricCorrection:
     # Initialization of W and D
     def __init__(self, kwgsPot):
@@ -193,77 +233,6 @@ class PotentialsFricCorrection:
             self.fs = torch.autograd.grad(outputs=W, inputs=X_W, create_graph=True)[0].reshape([x.shape[0], x.shape[1]]) \
                       + torch.autograd.grad(outputs=D_dagger, inputs=X_D_dagger, create_graph=True)[0].reshape([xDot.shape[0], xDot.shape[1]])
             del W, X_W, X_D_dagger, D_dagger 
-
-## Calculate f
-# Different Potentials with D correction without D dagger
-class PotentialsFricCorrectionNoDagger:
-    # Initialization of W and D
-    def __init__(self, kwgsPot):
-        self.dim_xi = kwgsPot["dim_xi"]
-        self.NNs_W = kwgsPot["NNs_W"]
-        self.NNs_D = kwgsPot["NNs_D"]
-
-        self.W = PP(self.NNs_W, input_dim = 1 + self.dim_xi, output_dim = 1)
-        self.D = PP(self.NNs_D, input_dim = self.dim_xi, output_dim = 1)
-
-        self.optim_W = optim.Adam(self.W.parameters(), lr=kwgsPot["learning_rate"])
-        self.optim_D = optim.Adam(self.D.parameters(), lr=kwgsPot["learning_rate_D"])
-
-        
-        # Device
-        self.device = kwgsPot["device"]
-        self.W.to(self.device)
-        self.D.to(self.device)
-
-        
-    # Calculate f 
-    def calf(self, x, xDot, t):
-        # Initialize Vs
-        batch_size = x.shape[0]
-        time_steps = x.shape[1]
-        # xis[:, :, :] = 1. 
-        
-        
-        # Loop through time steps
-        
-        if self.dim_xi > 0:
-            xi0 = torch.zeros([batch_size, self.dim_xi], requires_grad=True, device=self.device)
-            
-            # List of fs
-            list_fs = []
-            list_xis = [xi0]
-            
-            for idx in range(x.shape[1]):
-                # f = \partial W / \partial V
-                X_W = torch.concat([x[:, idx:idx + 1], list_xis[-1]], dim = 1).requires_grad_()
-                # X_W.to(self.device)
-                W = torch.sum(self.W(X_W))
-
-                this_piece = torch.autograd.grad(outputs=W, inputs=X_W, create_graph=True)[0]
-
-                # Solve for \dot{\xi} + \partial W / \partial \xi = 0
-                dWdXi = this_piece[:, 1:]
-
-                list_fs.append(this_piece[:, 0:1])
-
-                # XiDot = -dWdXi
-                if idx < x.shape[1] - 1:
-                    this_input = -dWdXi.clone().requires_grad_()
-                    D = torch.sum(self.D(this_input))
-                    xiNext = list_xis[-1] + torch.autograd.grad(outputs=D, inputs=this_input, create_graph=True)[0] * (t[:, idx + 1:idx + 2] - t[:, idx:idx + 1])
-                    list_xis.append(xiNext)
-                    
-                    del this_input, W, dWdXi, X_W, D, this_piece
-                    
-                self.fs = torch.concat(list_fs, dim=1)
-        else:
-            X_W = x.clone().reshape([x.shape[0], x.shape[1], 1]).requires_grad_()
-            # print(X_W)
-            W = torch.sum(self.W(X_W))
-
-
-            self.fs = torch.autograd.grad(outputs=W, inputs=X_W, create_graph=True)[0].reshape([x.shape[0], x.shape[1]])
-            del W, X_W
             
 ## Define loss function, training function, dataloaders
 # Define loss functions given fs_targ, fs. 
@@ -328,47 +297,6 @@ def train1Epoch(data_loader, loss_fn, myPot, p, update_weights=True):
     # memory_stats()
     return res
 
-# Training for one epoch
-def totalTestError(data_loader, loss_fn, myPots, p):
-    # Record of losses for each batch
-    Losses = []
-    device=myPots[0].device
-    
-    # Enumerate over data_loader
-    for idx, (Xs, XDots, ts, fs_targ) in enumerate(data_loader):
-        # Send shits to GPU
-        Xs = Xs.to(device)
-        XDots = XDots.to(device)
-        ts = ts.to(device)
-        fs_targ = fs_targ.to(device)
-
-        ## DEBUG LINE CHECK DEVICES
-        # print("Xs.device: ", Xs.device)
-        # print("Xs[:, 0:1].device: ", Xs[:, 0:1].device)
-        
-        # Compute loss
-        fs = torch.zeros(fs_targ.shape, device=device)
-
-        for myPot in myPots:
-            myPot.calf(Xs, XDots, ts)
-            fs = fs + myPot.fs
-        
-        loss = loss_fn(fs_targ, fs, ts, p)
-        Losses.append(loss)
-
-        
-    res = sum(Losses) / len(data_loader.dataset)
-    # print("Memory before del in train1Epoch: ")
-    # memory_stats()
-
-    del Xs, XDots, ts, fs_targ, Losses, fs
-    torch.cuda.empty_cache()
-
-    # print("Memory after del in train1Epoch: ")
-    # memory_stats()
-
-    return res
-
 # Initialize dataloaders
 AllData = TensorDataset(
     Xs, 
@@ -382,10 +310,8 @@ dataloader_kwargs = {'num_workers': 1, 'pin_memory': True} if torch.cuda.is_avai
 
 train_len = int(len(Vs) * 0.8)
 test_len = len(Vs) - train_len
-trainDataset, testDataset = AllData[0 : train_len], AllData[train_len : ]
-# torch.utils.data.random_split(AllData, [train_len, test_len])
+trainDataset, testDataset = torch.utils.data.random_split(AllData, [train_len, test_len])
 
-## Define optuna function
 class OptunaObj:
     # Initialize
     def __init__(self, kwgs):
@@ -396,45 +322,18 @@ class OptunaObj:
         self.training_dataset = kwgs['training_dataset']
         self.test_dataset = kwgs['test_dataset']
         self.modelSavePrefix = kwgs['modelSavePrefix']
-
-        if self.dim_xi > 0:
-            # Load the base model
-            self.zeroXi_model = torch.load('./model/' + self.modelSavePrefix  + "_dim_xi_" + str(0) + '_model.pth')
-
-            # Modify the training dataset accordingly
-            Xs = []
-            XDots = []
-            ts = []
-            fs = []
-            
-            for i in range(len(self.training_dataset)):
-                Xs.append(self.training_dataset[i][0])
-                XDots.append(self.training_dataset[i][1])
-                ts.append(self.training_dataset[i][2])
-                fs.append(self.training_dataset[i][3])
-            
-            Xs = torch.stack(Xs, dim=0)
-            XDots = torch.stack(XDots, dim=0)
-            ts = torch.stack(ts, dim=0)
-            fs = torch.stack(fs, dim=0)
-
-            # Remove zero model from fs
-            self.zeroXi_model.calf(Xs, XDots, ts)
-            fs = fs - self.zeroXi_model.fs
-
-            # Re-generate the training dataset
-            for i in range(len(self.training_dataset)):
-                self.training_dataset[i][3] = fs[i, :]
-            
-            del Xs, XDots, ts, fs
         
-    # Define the objective with no hidden variable
-    def objective_no_xi(self, trial):
+        
+    # Define the objective
+    def objective(self, trial):
         # Dump for un-saved interuptions
-        joblib.dump(this_study, "./data/1108_bigDRS_Burigede_WDsep_study_dim_xi_logV_DLeg_D_dagger_ELU1_" + str(0) + ".pkl")
+        joblib.dump(this_study, "./data/1108_bigDRS_Burigede_WDsep_study_dim_xi_logV_DLeg_D_dagger_ELU1_" + str(self.dim_xi) + ".pkl")
 
         # Fixed parameters
-        dim_xi = 0
+        dim_xi = self.dim_xi
+        NNs_D = []
+        test_p = self.test_p
+        test_batch_size = self.test_batch_size
 
         # Define NN for W
         W_layers = trial.suggest_int('W_layers', 2, 8)
@@ -537,131 +436,9 @@ class OptunaObj:
                 memory_stats()
         
         # Return objective value for optuna
-        # res = train1Epoch(testDataLoader, Loss, myWD, self.test_p, update_weights=False)
-        res = totalTestError(testDataLoader, Loss, [myWD], self.test_p)
-
+        res = train1Epoch(testDataLoader, Loss, myWD, self.test_p, update_weights=False)
         if len([this_study.trials]) == 1 or res < this_study.best_value:
-            torch.save(myWD, './model/' + self.modelSavePrefix + "_dim_xi_" + str(0) + '_model.pth')
-        print("Time for this trial: ", time.time() - st)
-        # Release GPU memory
-        del myWD
-        gc.collect()
-        torch.cuda.empty_cache()
-        
-        ## Print memory status
-        print("Memory status after this trial: ")
-        memory_stats()
-        
-        return res
-    
-
-    # Define the with hidden variables
-    def objective_with_xi(self, trial):
-        # Dump for un-saved interuptions
-        joblib.dump(this_study, "./data/1108_bigDRS_Burigede_WDsep_study_dim_xi_logV_DLeg_D_dagger_ELU1_" + str(self.dim_xi) + ".pkl")
-
-        # Fixed parameters
-        dim_xi = self.dim_xi
-        
-        # Define NN for W
-        W_layers = trial.suggest_int('W_layers', 2, 8)
-        NNs_W = []
-        for i in range(W_layers):
-            this_W = 2 ** trial.suggest_int('W_layer_units_exponent_{}'.format(i), 4, 10)
-            NNs_W.append(this_W)
-            
-        # Define NN for D
-        D_layers = trial.suggest_int('D_layers', 2, 8)
-        NNs_D = []
-        for i in range(D_layers):
-            this_D = 2 ** trial.suggest_int('D_layer_units_exponent_{}'.format(i), 4, 10)
-            NNs_D.append(this_D)
-
-        # Suggest learning rate
-        learning_rate = 10 ** trial.suggest_float('log_learning_rate', -5., -1.)
-        
-        # Suggest learning rate for D
-        learning_rate_D = 10 ** trial.suggest_float('log_learning_rate_D', -5., -1.)
-
-        # Suggest batchsize
-        training_batch_size = 2 ** trial.suggest_int('training_batch_size', 6, 12)
-
-        # Suggest training p
-        training_p = trial.suggest_int('training_p', 2, 8)
-
-        # Suggest training epochs
-        # training_epochs = 2 ** trial.suggest_int('training_epoch_exponents', 5, 9)
-        training_epochs = 100
-
-        params = {
-            'dim_xi' : dim_xi, 
-            'NNs_W' : NNs_W, 
-            'NNs_D' : NNs_D, 
-            'learning_rate' : learning_rate, 
-            'learning_rate_D' : learning_rate_D, 
-            'training_batch_size' : training_batch_size, 
-            'training_p' : training_p, 
-            'training_epochs' : training_epochs, 
-            'device' : self.device,
-        }
-        
-        
-        # Set training dataloader
-        training_batch_size = params['training_batch_size'] #1024
-        trainDataLoader = DataLoader(
-            self.training_dataset,
-            batch_size = training_batch_size,
-            shuffle = True,
-        #    num_workers = 16,
-            collate_fn = None,
-            **dataloader_kwargs, 
-        )
-
-        # Set testing data loader
-        testing_batch_size = self.test_batch_size # 256
-        testDataLoader = DataLoader(
-            self.test_dataset,
-            batch_size = testing_batch_size,
-            shuffle = True,
-        #    num_workers = 16,
-            collate_fn = None,
-            **dataloader_kwargs, 
-        )
-        
-        # Print out info
-        print("-"*20, " Trial ", str(trial.number), " ", "-"*20, flush=True)
-        st = time.time()
-        print("Start timing: ")
-        
-        print("Parameters: ", flush=True)
-        print(trial.params, flush=True)
-        
-        # Training
-        myWD = PotentialsFricCorrectionNoDagger(params)
-        for i in range(params['training_epochs']):
-            avg_training_loss = train1Epoch(trainDataLoader, Loss, myWD, params['training_p'])
-            
-            if torch.isnan(avg_training_loss):
-                break
-            
-            if i % 10 == 0:
-                # avg_test_loss = train1Epoch(testDataLoader, Loss, myWD, self.test_p, update_weights=False)
-                print("\t", "epoch ", str(i), "training error: ", str(avg_training_loss), flush=True)
-                
-                # Return objective value for optuna
-                avg_test_loss = totalTestError(testDataLoader, Loss, [self.zeroXi_model, myWD], self.test_p)
-                print("\t", "epoch ", str(i), "test error: ", str(avg_test_loss), flush=True)
-                
-                ## Print memory status
-                print("Memory status after this epoch: ")
-                memory_stats()
-        
-        # Return objective value for optuna
-        res = totalTestError(testDataLoader, Loss, [self.zeroXi_model, myWD], self.test_p)
-
-        if len([this_study.trials]) == 1 or res < this_study.best_value:
-            torch.save(myWD, './model/' + self.modelSavePrefix  + "_dim_xi_" + str(dim_xi) + '_model.pth')
-        
+            torch.save(myWD, './model/' + self.modelSavePrefix + '_model.pth')
         print("Time for this trial: ", time.time() - st)
         # Release GPU memory
         del myWD
@@ -674,15 +451,8 @@ class OptunaObj:
         
         return res
 
-    # Define the objective
-    def objective(self, trial):
-        if self.dim_xi == 0:
-            return self.objective_no_xi(trial)
-        else:
-            return self.objective_with_xi(trial)
-            
 # Do a parametric study over number of hidden parameters
-dim_xis = [0, 2]
+dim_xis = [1, 2, 4]
 studys = []
 
 # Tune parameters for dim_xi = 4
@@ -695,12 +465,10 @@ OptKwgs = {
     'test_dataset' : testDataset, 
 }
 
-
 # Loop through all dim_xis
 for dim_xi in dim_xis:
     OptKwgs['dim_xi'] = dim_xi
-    OptKwgs['modelSavePrefix'] = kwgs['prefix']
     myOpt = OptunaObj(OptKwgs)
     this_study = optuna.create_study(direction='minimize')
-    this_study.optimize(myOpt.objective, n_trials=2)
+    this_study.optimize(myOpt.objective, n_trials=50)
     studys.append(this_study)
