@@ -246,17 +246,17 @@ def generateSamples(kwgs):
     
     # Generate data
     VVs, tts = genVVtt(kwgs['totalNofSeqs'], kwgs['NofIntervalsRange'], kwgs['VVRange'], kwgs['VVLenRange'], 
-                       -1, #1. / kwgs['beta'][2] / kwgs['theta0'], 
+                       1., #1. / kwgs['beta'][2] / kwgs['theta0'], 
                        kwgs["NofVVSteps"])
     ts, JumpIdxs, t_JumpIdxs, VtFuncs = calVtFuncs(VVs, tts)
-    Vs, thetas, fs = cal_f_beta_parallel(kwgs["beta"], kwgs['theta0'], ts, t_JumpIdxs, tts, JumpIdxs, VtFuncs, std_noise = 0.001, directCompute = True, 
+    Vs, thetas, fs = cal_f_beta_parallel(kwgs["beta"], kwgs['theta0'], ts, t_JumpIdxs, tts, JumpIdxs, VtFuncs, std_noise = 0.000, directCompute = True, 
                         n_workers = 16, pool = Parallel(n_jobs=16, backend='threading'))
     
     res = {
-        "Vs" : Vs, 
-        "thetas" : thetas, 
-        "fs" : fs, 
-        "ts" : ts, 
+        "Vs" : torch.stack(Vs, dim=0), 
+        "thetas" : torch.stack(thetas, dim=0), 
+        "fs" : torch.stack(fs, dim=0), 
+        "ts" : torch.stack(ts, dim=0), 
     }
     
     # Save the data file

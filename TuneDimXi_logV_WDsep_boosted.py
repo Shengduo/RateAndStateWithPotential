@@ -83,7 +83,9 @@ kwgs = {
     "Tmax" : 2.0, 
     "nTSteps" : 100, 
     "theta0" : 0.1, 
-    "prefix" : "Trial1108_bigDRS_Burigede", 
+    # "prefix" : "Trial1108_bigDRS_Burigede", 
+    # "prefix" : "Trial1116_smallDRS_largeA", 
+    "prefix" : "Trial1117_smallDRS_Burigede_largeA", 
     "NofVVSteps" : 10, 
 }
 
@@ -267,13 +269,13 @@ class PotentialsFricCorrectionNoDagger:
             
 ## Define loss function, training function, dataloaders
 # Define loss functions given fs_targ, fs. 
-def Loss(fs_targ, fs, ts, p = 2):
-    err = torch.trapz(torch.abs(fs_targ - fs) ** p, ts, dim = 1) / torch.trapz(torch.abs(fs_targ) ** p, ts, dim = 1)
+def Loss(fs_targ, fs, ts, offset, p = 2):
+    err = torch.trapz(torch.abs(fs_targ - fs) ** p, ts, dim = 1) / torch.trapz(torch.abs(fs_targ - offset) ** p, ts, dim = 1)
     err = torch.pow(err, 1. / p)
     return torch.sum(err)
 
 # Training for one epoch
-def train1Epoch(data_loader, loss_fn, myPot, p, update_weights=True):
+def train1Epoch(data_loader, loss_fn, offset, myPot, p, update_weights=True):
     # Record of losses for each batch
     Losses = []
     device=myPot.device
@@ -301,7 +303,7 @@ def train1Epoch(data_loader, loss_fn, myPot, p, update_weights=True):
         
         # Compute loss
         myPot.calf(Xs, XDots, ts)
-        loss = loss_fn(fs_targ, myPot.fs, ts, p)
+        loss = loss_fn(fs_targ, myPot.fs, ts, offset, p)
         Losses.append(loss)
         
         # Update the model parameters
@@ -329,7 +331,7 @@ def train1Epoch(data_loader, loss_fn, myPot, p, update_weights=True):
     return res
 
 # Training for one epoch
-def totalTestError(data_loader, loss_fn, myPots, p):
+def totalTestError(data_loader, loss_fn, offset, myPots, p):
     # Record of losses for each batch
     Losses = []
     device=myPots[0].device
@@ -353,7 +355,7 @@ def totalTestError(data_loader, loss_fn, myPots, p):
             myPot.calf(Xs, XDots, ts)
             fs = fs + myPot.fs
         
-        loss = loss_fn(fs_targ, fs, ts, p)
+        loss = loss_fn(fs_targ, fs, ts, offset, p)
         Losses.append(loss)
 
         
@@ -402,6 +404,8 @@ class OptunaObj:
         self.training_dataset = kwgs['training_dataset']
         self.test_dataset = kwgs['test_dataset']
         self.modelSavePrefix = kwgs['modelSavePrefix']
+        self.loss_offset = kwgs['loss_offset']
+        self.Loss = kwgs['Loss']
 
         if self.dim_xi > 0:
             # Load the base model
@@ -462,7 +466,7 @@ class OptunaObj:
     # Define the objective with no hidden variable
     def objective_no_xi(self, trial):
         # Dump for un-saved interuptions
-        joblib.dump(this_study, "./data/Stupid_1108_bigDRS_Burigede_WDsep_study_dim_xi_logV_DLeg_D_dagger_ELU1_" + str(0) + ".pkl")
+        # joblib.dump(this_study, "./data/Stupid_1116_bigDRS_Burigede_WDsep_study_dim_xi_logV_DLeg_D_dagger_ELU1_" + str(0) + ".pkl")
 
         # Fixed parameters
         dim_xi = 0
@@ -555,7 +559,7 @@ class OptunaObj:
         # Training
         myWD = PotentialsFricCorrection(params)
         for i in range(params['training_epochs']):
-            avg_training_loss = train1Epoch(trainDataLoader, Loss, myWD, params['training_p'])
+            avg_training_loss = train1Epoch(trainDataLoader, self.Loss, self.loss_offset, myWD, params['training_p'])
             
             if torch.isnan(avg_training_loss):
                 break
@@ -569,7 +573,7 @@ class OptunaObj:
         
         # Return objective value for optuna
         # res = train1Epoch(testDataLoader, Loss, myWD, self.test_p, update_weights=False)
-        res = totalTestError(testDataLoader, Loss, [myWD], self.test_p)
+        res = totalTestError(testDataLoader, self.Loss, self.loss_offset, [myWD], self.test_p)
 
         if len([this_study.trials]) == 1 or res < this_study.best_value:
             torch.save(myWD, './model/' + self.modelSavePrefix + "_dim_xi_" + str(0) + '_model.pth')
@@ -589,8 +593,8 @@ class OptunaObj:
     # Define the with hidden variables
     def objective_with_xi(self, trial):
         # Dump for un-saved interuptions
-        joblib.dump(this_study, "./data/Stupid_1108_bigDRS_Burigede_WDsep_study_dim_xi_logV_DLeg_D_dagger_ELU1_" + str(self.dim_xi) + ".pkl")
-
+        # joblib.dump(this_study, "./data/Stupid_1116_bigDRS_Burigede_WDsep_study_dim_xi_logV_DLeg_D_dagger_ELU1_" + str(self.dim_xi) + ".pkl")
+        # joblib.dump(this_study, "./data/Stupid_1116_smallDRS_largeA_WDsep_study_dim_xi_logV_DLeg_D_dagger_ELU1_" + str(self.dim_xi) + ".pkl")
         # Fixed parameters
         dim_xi = self.dim_xi
         
@@ -670,7 +674,7 @@ class OptunaObj:
         # Training
         myWD = PotentialsFricCorrectionNoDagger(params)
         for i in range(params['training_epochs']):
-            avg_training_loss = train1Epoch(trainDataLoader, Loss, myWD, params['training_p'])
+            avg_training_loss = train1Epoch(trainDataLoader, self.Loss, 0., myWD, params['training_p'])
             
             if torch.isnan(avg_training_loss):
                 break
@@ -680,7 +684,7 @@ class OptunaObj:
                 print("\t", "epoch ", str(i), "training error: ", str(avg_training_loss), flush=True)
                 
                 # Return objective value for optuna
-                avg_test_loss = totalTestError(testDataLoader, Loss, [self.zeroXi_model, myWD], self.test_p)
+                avg_test_loss = totalTestError(testDataLoader, self.Loss, self.loss_offset, [self.zeroXi_model, myWD], self.test_p)
                 print("\t", "epoch ", str(i), "test error: ", str(avg_test_loss), flush=True)
                 
                 ## Print memory status
@@ -688,7 +692,7 @@ class OptunaObj:
                 memory_stats()
         
         # Return objective value for optuna
-        res = totalTestError(testDataLoader, Loss, [self.zeroXi_model, myWD], self.test_p)
+        res = totalTestError(testDataLoader, self.Loss, self.loss_offset, [self.zeroXi_model, myWD], self.test_p)
 
         if len([this_study.trials]) == 1 or res < this_study.best_value:
             torch.save(myWD, './model/' + self.modelSavePrefix  + "_dim_xi_" + str(dim_xi) + '_model.pth')
@@ -713,7 +717,7 @@ class OptunaObj:
             return self.objective_with_xi(trial)
             
 # Do a parametric study over number of hidden parameters
-dim_xis = [0, 1, 2]
+dim_xis = [0, 1, 4, 16]
 studys = []
 
 # Tune parameters for dim_xi = 4
@@ -724,13 +728,17 @@ OptKwgs = {
     'device' : device, 
     'training_dataset' : trainDataset, 
     'test_dataset' : testDataset, 
+    'loss_offset' : 0., 
+    'Loss' : Loss, 
 }
 
 
 # Loop through all dim_xis
 for dim_xi in dim_xis:
     OptKwgs['dim_xi'] = dim_xi
-    OptKwgs['modelSavePrefix'] = kwgs['prefix']
+    # OptKwgs['modelSavePrefix'] = "Trial1116_bigDRS_Burigede"
+    # OptKwgs['modelSavePrefix'] = "Trial1116_smallDRS_largeA"
+    OptKwgs['modelSavePrefix'] = "Trial1117_smallDRS_Burigede_largeA"
     myOpt = OptunaObj(OptKwgs)
     this_study = optuna.create_study(direction='minimize')
     this_study.optimize(myOpt.objective, n_trials=50)
