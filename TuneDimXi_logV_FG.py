@@ -72,7 +72,7 @@ print("Xs.shape: ", Xs.shape)
 import torch.optim as optim
 ## Calculate f
 # Different Potentials with D correction
-from FrictionNNModels import PotentialsFricCorrection, Loss, train1Epoch, PP, ReLUSquare
+from FrictionNNModels import FricCorrection, Loss, train1Epoch, PP, ReLUSquare
 
 ## Define loss function, training function, dataloaders
 # Initialize dataloaders
@@ -107,7 +107,8 @@ class OptunaObj:
         self.training_dataset = kwgs['training_dataset']
         self.test_dataset = kwgs['test_dataset']
         self.modelSavePrefix = kwgs['modelSavePrefix']
-        self.bestValue = 10000000.
+        self.bestValue = 10000000.;
+        
         
     # Define the objective
     def objective(self, trial):
@@ -132,12 +133,12 @@ class OptunaObj:
             this_D = 2 ** trial.suggest_int('D_layer_units_exponent_{}'.format(i), 4, 10)
             NNs_D.append(this_D)
         
-        # Define NN for D_dagger
-        D_dagger_layers = trial.suggest_int('D_dagger_layers', 2, 8)
-        NNs_D_dagger = []
-        for i in range(D_dagger_layers):
-            this_D_dagger = 2 ** trial.suggest_int('D_dagger_layer_units_exponent_{}'.format(i), 4, 10)
-            NNs_D_dagger.append(this_D_dagger)
+        # # Define NN for D_dagger
+        # D_dagger_layers = trial.suggest_int('D_dagger_layers', 2, 8)
+        # NNs_D_dagger = []
+        # for i in range(D_dagger_layers):
+        #     this_D_dagger = 2 ** trial.suggest_int('D_dagger_layer_units_exponent_{}'.format(i), 4, 10)
+        #     NNs_D_dagger.append(this_D_dagger)
 
         # Suggest learning rate
         learning_rate = 10 ** trial.suggest_float('log_learning_rate', -5., -1.)
@@ -145,8 +146,8 @@ class OptunaObj:
         # Suggest learning rate for D
         learning_rate_D = 10 ** trial.suggest_float('log_learning_rate_D', -5., -1.)
 
-        # Suggest learning rate for D
-        learning_rate_D_dagger = 10 ** trial.suggest_float('log_learning_rate_D_dagger', -5., -1.)
+        # # Suggest learning rate for D
+        # learning_rate_D_dagger = 10 ** trial.suggest_float('log_learning_rate_D_dagger', -5., -1.)
 
         # Suggest batchsize
         training_batch_size = 2 ** trial.suggest_int('training_batch_size', 6, 12)
@@ -162,10 +163,10 @@ class OptunaObj:
             'dim_xi' : dim_xi, 
             'NNs_W' : NNs_W, 
             'NNs_D' : NNs_D, 
-            'NNs_D_dagger' : NNs_D_dagger, 
+            # 'NNs_D_dagger' : NNs_D_dagger, 
             'learning_rate' : learning_rate, 
             'learning_rate_D' : learning_rate_D, 
-            'learning_rate_D_dagger' : learning_rate_D_dagger,  
+            # 'learning_rate_D_dagger' : learning_rate_D_dagger,  
             'training_batch_size' : training_batch_size, 
             'training_p' : training_p, 
             'training_epochs' : training_epochs, 
@@ -204,7 +205,7 @@ class OptunaObj:
         print(trial.params, flush=True)
         
         # Training
-        myWD = PotentialsFricCorrection(params)
+        myWD = FricCorrection(params)
         for i in range(params['training_epochs']):
             avg_training_loss = train1Epoch(trainDataLoader, Loss, myWD, params['training_p'])
             
@@ -224,9 +225,8 @@ class OptunaObj:
             print("res: ", res)
             print("self.bestValue: ", self.bestValue)
             print("Save this model!")
-            torch.save(myWD, './model/' + self.modelSavePrefix + '_dimXi_{0}.pth'.format(self.dim_xi))
+            torch.save(myWD, './model/' + self.modelSavePrefix + '_dimXi_{0}_FG.pth'.format(self.dim_xi))
             self.bestValue = res
-
         print("Time for this trial: ", time.time() - st)
         
         # Release GPU memory

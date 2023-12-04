@@ -22,7 +22,7 @@ import torch.optim as optim
 class ReLUSquare(nn.Module): 
     def __init__(self): 
         super(ReLUSquare, self).__init__() 
-        self.fc = nn.ReLU()
+        self.fc = nn.ELU()
   
     def forward(self, x): 
         return torch.pow(self.fc(x), 1)
@@ -35,19 +35,19 @@ class PP(nn.Module):
         
         self.fc = nn.Sequential(
             nn.Linear(input_dim, NNs[0]), 
-            nn.BatchNorm1d(num_features=NNs[0]), 
+            # nn.BatchNorm1d(num_features=NNs[0]), 
             self.activation,
         )
         
         for i in range(len(NNs) - 1):
             self.fc.append(nn.Linear(NNs[i], NNs[i + 1]))
-            self.fc.append(nn.BatchNorm1d(num_features=NNs[i + 1]))
+            # self.fc.append(nn.BatchNorm1d(num_features=NNs[i + 1]))
             self.fc.append(self.activation)
 
         
         self.fc.append(nn.Linear(NNs[-1], output_dim))
         # self.fc.append(nn.BatchNorm1d(NNs[-1]))
-        self.fc.append(self.activation)
+        # self.fc.append(self.activation)
     
     # Forward function
     def forward(self, x):
@@ -131,6 +131,67 @@ class PotentialsFricCorrection:
                       + torch.autograd.grad(outputs=D_dagger, inputs=X_D_dagger, create_graph=True)[0].reshape([xDot.shape[0], xDot.shape[1]])
             del W, X_W, X_D_dagger, D_dagger 
 
+# f = f(x, \dot{x}, \xi), \dot{\xi} = g(x, \dot{x}, \xi)
+class FricCorrection:
+    # Initialization of W and D
+    def __init__(self, kwgsPot):
+        self.dim_xi = kwgsPot["dim_xi"]
+        self.NNs_F = kwgsPot["NNs_W"]
+        self.NNs_G = kwgsPot["NNs_D"]
+        # self.NNs_D_dagger = kwgsPot["NNs_D_dagger"]
+        self.F = PP(self.NNs_F, input_dim = 2 + self.dim_xi, output_dim = 1)
+        self.G = PP(self.NNs_G, input_dim = 2 + self.dim_xi, output_dim = self.dim_xi)
+        # self.D_dagger = PP(self.NNs_D_dagger, input_dim = 1 + self.dim_xi, output_dim = 1)
+        self.optim_F = optim.Adam(self.F.parameters(), lr=kwgsPot["learning_rate"])
+        self.optim_G = optim.Adam(self.G.parameters(), lr=kwgsPot["learning_rate_D"])
+        # self.optim_D_dagger = optim.Adam(self.D_dagger.parameters(), lr=kwgsPot["learning_rate_D_dagger"])
+        
+        # Device
+        self.device = kwgsPot["device"]
+        self.F.to(self.device)
+        self.G.to(self.device)
+        # self.D_dagger.to(self.device)
+        
+    # Calculate f 
+    def calf(self, x, xDot, t):
+        # Initialize Vs
+        batch_size = x.shape[0]
+        time_steps = x.shape[1]
+        # xis[:, :, :] = 1. 
+        
+        
+        # Loop through time steps
+        
+        if self.dim_xi > 0:
+            xi0 = torch.zeros([batch_size, self.dim_xi], device=self.device)
+            
+            # List of fs
+            list_fs = []
+            list_xis = [xi0]
+            
+            for idx in range(x.shape[1]):
+                # f = \partial W / \partial V
+                X = torch.concat([x[:, idx:idx + 1], xDot[:, idx:idx + 1], list_xis[-1]], dim = 1)
+                list_fs.append(self.F(X).reshape([-1, 1]))
+
+                # xiDot = self.G(X)
+                # list_xis.append(list_xis[-1] + xiDot * (t[:, idx + 1:idx + 2] - t[:, idx:idx + 1]))
+                
+                if idx < x.shape[1] - 1:
+                    xiDot = self.G(X)
+                    list_xis.append(list_xis[-1] + xiDot * (t[:, idx + 1:idx + 2] - t[:, idx:idx + 1]))
+                    # print("list_xis[-1], xiDot shapes: ", list_xis[-1].shape, xiDot.shape)
+                    
+            del X, xiDot
+            self.fs = torch.concat(list_fs, dim=1)
+
+        else:
+            X = torch.stack([x, xDot], dim=2)
+            # print(X_W)
+            self.fs = self.F(X).reshape([batch_size, time_steps])
+            # print("self.fs.shape: ", self.fs.shape)
+            del X
+
 
 # Define loss functions given fs_targ, fs. 
 def Loss(fs_targ, fs, ts, p = 2):
@@ -153,7 +214,8 @@ def train1Epoch(data_loader, loss_fn, myPot, p, update_weights=True):
         fs_targ = fs_targ.to(device)
         
         # Refresh the optimizers
-        myPot.optim_W.zero_grad()
+        if hasattr(myPot, 'optim_W'):
+            myPot.optim_W.zero_grad()
         
         if hasattr(myPot, 'optim_D'):
             myPot.optim_D.zero_grad()
@@ -161,6 +223,12 @@ def train1Epoch(data_loader, loss_fn, myPot, p, update_weights=True):
         if hasattr(myPot, 'optim_D_dagger'):
             myPot.optim_D_dagger.zero_grad()
         
+        if hasattr(myPot, 'optim_F'):
+            myPot.optim_F.zero_grad()
+
+        if hasattr(myPot, 'optim_G'):
+            myPot.optim_G.zero_grad()
+         
         ## DEBUG LINE CHECK DEVICES
         # print("Xs.device: ", Xs.device)
         # print("Xs[:, 0:1].device: ", Xs[:, 0:1].device)
@@ -173,7 +241,9 @@ def train1Epoch(data_loader, loss_fn, myPot, p, update_weights=True):
         # Update the model parameters
         if update_weights:
             loss.backward()
-            myPot.optim_W.step()
+            
+            if hasattr(myPot, 'optim_W'):
+                myPot.optim_W.step()
         
             if hasattr(myPot, 'optim_D'):
                 myPot.optim_D.step()
@@ -181,7 +251,12 @@ def train1Epoch(data_loader, loss_fn, myPot, p, update_weights=True):
             if hasattr(myPot, 'optim_D_dagger'):
                 myPot.optim_D_dagger.step()
 
-        
+            if hasattr(myPot, 'optim_F'):
+                myPot.optim_F.step()
+
+            if hasattr(myPot, 'optim_G'):
+                myPot.optim_G.step()
+         
         
     res = sum(Losses) / len(data_loader.dataset)
     # print("Memory before del in train1Epoch: ")

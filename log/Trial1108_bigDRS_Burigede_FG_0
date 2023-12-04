@@ -1,0 +1,2465 @@
+/home/shengduo/anaconda3/lib/python3.9/site-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.16.5 and <1.23.0 is required for this version of SciPy (detected version 1.24.1
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+[I 2023-12-01 11:35:55,539] A new study created in memory with name: no-name-ad0f89fb-4287-4ea2-ae66-bc6ef8d73999
+Cuda is available:  True
+Device is:  cuda:0
+Memory allocated:  0.0
+Memory cached:  0.0
+Data file:  ./data/Trial1108_bigDRS_Burigede.pt
+Vs.shape:  torch.Size([100, 100])
+thetas.shape:  torch.Size([100, 100])
+fs.shape:  torch.Size([100, 100])
+ts.shape:  torch.Size([100, 100])
+Xs.shape:  torch.Size([100, 100])
+--------------------  Trial  0   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 3, 'W_layer_units_exponent_0': 8, 'W_layer_units_exponent_1': 6, 'W_layer_units_exponent_2': 7, 'D_layers': 3, 'D_layer_units_exponent_0': 7, 'D_layer_units_exponent_1': 6, 'D_layer_units_exponent_2': 4, 'log_learning_rate': -1.1524004806686357, 'log_learning_rate_D': -4.982278423011348, 'training_batch_size': 11, 'training_p': 6}
+/home/shengduo/anaconda3/lib/python3.9/site-packages/torch/nn/init.py:405: UserWarning: Initializing zero-element tensors is a no-op
+  warnings.warn("Initializing zero-element tensors is a no-op")
+	 epoch  0 training error:  tensor(0.9005, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.46337890625
+Memory cached:  2.0
+	 epoch  10 training error:  tensor(0.2131, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.46337890625
+Memory cached:  2.0
+	 epoch  20 training error:  tensor(0.1421, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.46337890625
+Memory cached:  2.0
+	 epoch  30 training error:  tensor(0.1509, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.46337890625
+Memory cached:  2.0
+	 epoch  40 training error:  tensor(0.1460, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.46337890625
+Memory cached:  2.0
+	 epoch  50 training error:  tensor(0.1423, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.46337890625
+Memory cached:  2.0
+	 epoch  60 training error:  tensor(0.1432, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.46337890625
+Memory cached:  2.0
+	 epoch  70 training error:  tensor(0.1427, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.46337890625
+Memory cached:  2.0
+	 epoch  80 training error:  tensor(0.1422, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.46337890625
+Memory cached:  2.0
+	 epoch  90 training error:  tensor(0.1421, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.46337890625
+Memory cached:  2.0
+[I 2023-12-01 11:36:10,645] Trial 0 finished with value: 0.1297299712896347 and parameters: {'W_layers': 3, 'W_layer_units_exponent_0': 8, 'W_layer_units_exponent_1': 6, 'W_layer_units_exponent_2': 7, 'D_layers': 3, 'D_layer_units_exponent_0': 7, 'D_layer_units_exponent_1': 6, 'D_layer_units_exponent_2': 4, 'log_learning_rate': -1.1524004806686357, 'log_learning_rate_D': -4.982278423011348, 'training_batch_size': 11, 'training_p': 6}. Best is trial 0 with value: 0.1297299712896347.
+Time for this trial:  14.998889446258545
+Memory status after this trial: 
+Memory allocated:  7.07421875
+Memory cached:  26.0
+--------------------  Trial  1   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 7, 'W_layer_units_exponent_0': 4, 'W_layer_units_exponent_1': 7, 'W_layer_units_exponent_2': 6, 'W_layer_units_exponent_3': 9, 'W_layer_units_exponent_4': 7, 'W_layer_units_exponent_5': 8, 'W_layer_units_exponent_6': 9, 'D_layers': 7, 'D_layer_units_exponent_0': 6, 'D_layer_units_exponent_1': 8, 'D_layer_units_exponent_2': 9, 'D_layer_units_exponent_3': 6, 'D_layer_units_exponent_4': 10, 'D_layer_units_exponent_5': 10, 'D_layer_units_exponent_6': 6, 'log_learning_rate': -1.3932886451668893, 'log_learning_rate_D': -1.7357618517684532, 'training_batch_size': 7, 'training_p': 7}
+	 epoch  0 training error:  tensor(0.9022, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  9.4267578125
+Memory cached:  26.0
+	 epoch  10 training error:  tensor(0.1599, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  9.4267578125
+Memory cached:  26.0
+	 epoch  20 training error:  tensor(0.1587, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  9.4267578125
+Memory cached:  26.0
+	 epoch  30 training error:  tensor(0.1489, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  9.4267578125
+Memory cached:  26.0
+	 epoch  40 training error:  tensor(0.1500, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  9.4267578125
+Memory cached:  26.0
+	 epoch  50 training error:  tensor(0.1475, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  9.4267578125
+Memory cached:  26.0
+	 epoch  60 training error:  tensor(0.1465, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  9.4267578125
+Memory cached:  26.0
+	 epoch  70 training error:  tensor(0.1463, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  9.4267578125
+Memory cached:  26.0
+	 epoch  80 training error:  tensor(0.1463, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  9.4267578125
+Memory cached:  26.0
+	 epoch  90 training error:  tensor(0.1463, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  9.4267578125
+Memory cached:  26.0
+[I 2023-12-01 11:36:24,795] Trial 1 finished with value: 0.12958239018917084 and parameters: {'W_layers': 7, 'W_layer_units_exponent_0': 4, 'W_layer_units_exponent_1': 7, 'W_layer_units_exponent_2': 6, 'W_layer_units_exponent_3': 9, 'W_layer_units_exponent_4': 7, 'W_layer_units_exponent_5': 8, 'W_layer_units_exponent_6': 9, 'D_layers': 7, 'D_layer_units_exponent_0': 6, 'D_layer_units_exponent_1': 8, 'D_layer_units_exponent_2': 9, 'D_layer_units_exponent_3': 6, 'D_layer_units_exponent_4': 10, 'D_layer_units_exponent_5': 10, 'D_layer_units_exponent_6': 6, 'log_learning_rate': -1.3932886451668893, 'log_learning_rate_D': -1.7357618517684532, 'training_batch_size': 7, 'training_p': 7}. Best is trial 1 with value: 0.12958239018917084.
+Time for this trial:  14.05377984046936
+Memory status after this trial: 
+Memory allocated:  26.796875
+Memory cached:  54.0
+--------------------  Trial  2   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 3, 'W_layer_units_exponent_0': 8, 'W_layer_units_exponent_1': 4, 'W_layer_units_exponent_2': 10, 'D_layers': 5, 'D_layer_units_exponent_0': 6, 'D_layer_units_exponent_1': 7, 'D_layer_units_exponent_2': 10, 'D_layer_units_exponent_3': 9, 'D_layer_units_exponent_4': 9, 'log_learning_rate': -2.5926314345422887, 'log_learning_rate_D': -3.281964402837934, 'training_batch_size': 8, 'training_p': 5}
+	 epoch  0 training error:  tensor(0.7527, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.93115234375
+Memory cached:  24.0
+	 epoch  10 training error:  tensor(0.2901, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.93115234375
+Memory cached:  24.0
+	 epoch  20 training error:  tensor(0.2385, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.93115234375
+Memory cached:  24.0
+	 epoch  30 training error:  tensor(0.1820, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.93115234375
+Memory cached:  24.0
+	 epoch  40 training error:  tensor(0.1891, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.93115234375
+Memory cached:  24.0
+	 epoch  50 training error:  tensor(0.1182, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.93115234375
+Memory cached:  24.0
+	 epoch  60 training error:  tensor(0.0970, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.93115234375
+Memory cached:  24.0
+	 epoch  70 training error:  tensor(0.0931, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.93115234375
+Memory cached:  24.0
+	 epoch  80 training error:  tensor(0.0843, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.93115234375
+Memory cached:  24.0
+	 epoch  90 training error:  tensor(0.0957, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.93115234375
+Memory cached:  24.0
+[I 2023-12-01 11:36:38,020] Trial 2 finished with value: 0.0746242105960846 and parameters: {'W_layers': 3, 'W_layer_units_exponent_0': 8, 'W_layer_units_exponent_1': 4, 'W_layer_units_exponent_2': 10, 'D_layers': 5, 'D_layer_units_exponent_0': 6, 'D_layer_units_exponent_1': 7, 'D_layer_units_exponent_2': 10, 'D_layer_units_exponent_3': 9, 'D_layer_units_exponent_4': 9, 'log_learning_rate': -2.5926314345422887, 'log_learning_rate_D': -3.281964402837934, 'training_batch_size': 8, 'training_p': 5}. Best is trial 2 with value: 0.0746242105960846.
+Time for this trial:  13.11508584022522
+Memory status after this trial: 
+Memory allocated:  19.99609375
+Memory cached:  44.0
+--------------------  Trial  3   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 6, 'W_layer_units_exponent_0': 9, 'W_layer_units_exponent_1': 7, 'W_layer_units_exponent_2': 5, 'W_layer_units_exponent_3': 8, 'W_layer_units_exponent_4': 6, 'W_layer_units_exponent_5': 10, 'D_layers': 7, 'D_layer_units_exponent_0': 9, 'D_layer_units_exponent_1': 4, 'D_layer_units_exponent_2': 7, 'D_layer_units_exponent_3': 7, 'D_layer_units_exponent_4': 5, 'D_layer_units_exponent_5': 8, 'D_layer_units_exponent_6': 6, 'log_learning_rate': -2.706694827985631, 'log_learning_rate_D': -2.6444819274213165, 'training_batch_size': 9, 'training_p': 8}
+	 epoch  0 training error:  tensor(1.1449, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.75537109375
+Memory cached:  4.0
+	 epoch  10 training error:  tensor(0.1835, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.75537109375
+Memory cached:  6.0
+	 epoch  20 training error:  tensor(0.1408, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.75537109375
+Memory cached:  6.0
+	 epoch  30 training error:  tensor(0.1042, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.75537109375
+Memory cached:  6.0
+	 epoch  40 training error:  tensor(0.0939, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.75537109375
+Memory cached:  6.0
+	 epoch  50 training error:  tensor(0.1936, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.75537109375
+Memory cached:  6.0
+	 epoch  60 training error:  tensor(0.1026, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.75537109375
+Memory cached:  6.0
+	 epoch  70 training error:  tensor(0.0957, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.75537109375
+Memory cached:  6.0
+	 epoch  80 training error:  tensor(0.0960, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.75537109375
+Memory cached:  6.0
+	 epoch  90 training error:  tensor(0.0899, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.75537109375
+Memory cached:  6.0
+[I 2023-12-01 11:36:52,025] Trial 3 finished with value: 0.08106771856546402 and parameters: {'W_layers': 6, 'W_layer_units_exponent_0': 9, 'W_layer_units_exponent_1': 7, 'W_layer_units_exponent_2': 5, 'W_layer_units_exponent_3': 8, 'W_layer_units_exponent_4': 6, 'W_layer_units_exponent_5': 10, 'D_layers': 7, 'D_layer_units_exponent_0': 9, 'D_layer_units_exponent_1': 4, 'D_layer_units_exponent_2': 7, 'D_layer_units_exponent_3': 7, 'D_layer_units_exponent_4': 5, 'D_layer_units_exponent_5': 8, 'D_layer_units_exponent_6': 6, 'log_learning_rate': -2.706694827985631, 'log_learning_rate_D': -2.6444819274213165, 'training_batch_size': 9, 'training_p': 8}. Best is trial 2 with value: 0.0746242105960846.
+Time for this trial:  13.904751062393188
+Memory status after this trial: 
+Memory allocated:  32.0546875
+Memory cached:  68.0
+--------------------  Trial  4   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 2, 'W_layer_units_exponent_0': 5, 'W_layer_units_exponent_1': 9, 'D_layers': 4, 'D_layer_units_exponent_0': 9, 'D_layer_units_exponent_1': 4, 'D_layer_units_exponent_2': 10, 'D_layer_units_exponent_3': 10, 'log_learning_rate': -3.5886272129505086, 'log_learning_rate_D': -3.857551378699932, 'training_batch_size': 8, 'training_p': 8}
+	 epoch  0 training error:  tensor(2.0676, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.41064453125
+Memory cached:  24.0
+	 epoch  10 training error:  tensor(0.5695, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.41064453125
+Memory cached:  24.0
+	 epoch  20 training error:  tensor(0.4091, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.41064453125
+Memory cached:  24.0
+	 epoch  30 training error:  tensor(0.2925, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.41064453125
+Memory cached:  24.0
+	 epoch  40 training error:  tensor(0.1689, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.41064453125
+Memory cached:  24.0
+	 epoch  50 training error:  tensor(0.1252, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.41064453125
+Memory cached:  24.0
+	 epoch  60 training error:  tensor(0.1027, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.41064453125
+Memory cached:  24.0
+	 epoch  70 training error:  tensor(0.0951, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.41064453125
+Memory cached:  24.0
+	 epoch  80 training error:  tensor(0.0917, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.41064453125
+Memory cached:  24.0
+	 epoch  90 training error:  tensor(0.0909, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.41064453125
+Memory cached:  24.0
+[I 2023-12-01 11:37:04,897] Trial 4 finished with value: 0.071731798350811 and parameters: {'W_layers': 2, 'W_layer_units_exponent_0': 5, 'W_layer_units_exponent_1': 9, 'D_layers': 4, 'D_layer_units_exponent_0': 9, 'D_layer_units_exponent_1': 4, 'D_layer_units_exponent_2': 10, 'D_layer_units_exponent_3': 10, 'log_learning_rate': -3.5886272129505086, 'log_learning_rate_D': -3.857551378699932, 'training_batch_size': 8, 'training_p': 8}. Best is trial 4 with value: 0.071731798350811.
+Time for this trial:  12.777061223983765
+Memory status after this trial: 
+Memory allocated:  8.4775390625
+Memory cached:  24.0
+--------------------  Trial  5   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 3, 'W_layer_units_exponent_0': 7, 'W_layer_units_exponent_1': 7, 'W_layer_units_exponent_2': 7, 'D_layers': 8, 'D_layer_units_exponent_0': 8, 'D_layer_units_exponent_1': 8, 'D_layer_units_exponent_2': 9, 'D_layer_units_exponent_3': 10, 'D_layer_units_exponent_4': 7, 'D_layer_units_exponent_5': 4, 'D_layer_units_exponent_6': 10, 'D_layer_units_exponent_7': 4, 'log_learning_rate': -2.177869004751601, 'log_learning_rate_D': -3.9230806163261933, 'training_batch_size': 6, 'training_p': 2}
+	 epoch  0 training error:  tensor(0.6633, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.91845703125
+Memory cached:  24.0
+	 epoch  10 training error:  tensor(0.1223, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.91845703125
+Memory cached:  24.0
+	 epoch  20 training error:  tensor(0.0768, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.91845703125
+Memory cached:  24.0
+	 epoch  30 training error:  tensor(0.0681, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.91845703125
+Memory cached:  24.0
+	 epoch  40 training error:  tensor(0.0629, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.91845703125
+Memory cached:  24.0
+	 epoch  50 training error:  tensor(0.0606, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.91845703125
+Memory cached:  24.0
+	 epoch  60 training error:  tensor(0.0685, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.91845703125
+Memory cached:  24.0
+	 epoch  70 training error:  tensor(0.0613, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.91845703125
+Memory cached:  24.0
+	 epoch  80 training error:  tensor(0.0596, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.91845703125
+Memory cached:  24.0
+	 epoch  90 training error:  tensor(0.0675, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.91845703125
+Memory cached:  24.0
+[I 2023-12-01 11:37:18,715] Trial 5 finished with value: 0.06567634642124176 and parameters: {'W_layers': 3, 'W_layer_units_exponent_0': 7, 'W_layer_units_exponent_1': 7, 'W_layer_units_exponent_2': 7, 'D_layers': 8, 'D_layer_units_exponent_0': 8, 'D_layer_units_exponent_1': 8, 'D_layer_units_exponent_2': 9, 'D_layer_units_exponent_3': 10, 'D_layer_units_exponent_4': 7, 'D_layer_units_exponent_5': 4, 'D_layer_units_exponent_6': 10, 'D_layer_units_exponent_7': 4, 'log_learning_rate': -2.177869004751601, 'log_learning_rate_D': -3.9230806163261933, 'training_batch_size': 6, 'training_p': 2}. Best is trial 5 with value: 0.06567634642124176.
+Time for this trial:  13.72092318534851
+Memory status after this trial: 
+Memory allocated:  6.1572265625
+Memory cached:  8.0
+--------------------  Trial  6   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 4, 'W_layer_units_exponent_0': 9, 'W_layer_units_exponent_1': 4, 'W_layer_units_exponent_2': 6, 'W_layer_units_exponent_3': 7, 'D_layers': 7, 'D_layer_units_exponent_0': 5, 'D_layer_units_exponent_1': 8, 'D_layer_units_exponent_2': 9, 'D_layer_units_exponent_3': 8, 'D_layer_units_exponent_4': 5, 'D_layer_units_exponent_5': 9, 'D_layer_units_exponent_6': 10, 'log_learning_rate': -1.6121186040729034, 'log_learning_rate_D': -2.9790729775475078, 'training_batch_size': 11, 'training_p': 2}
+	 epoch  0 training error:  tensor(1.5565, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.46630859375
+Memory cached:  22.0
+	 epoch  10 training error:  tensor(0.1214, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.46630859375
+Memory cached:  22.0
+	 epoch  20 training error:  tensor(0.1370, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.46630859375
+Memory cached:  22.0
+	 epoch  30 training error:  tensor(0.6682, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.46630859375
+Memory cached:  22.0
+	 epoch  40 training error:  tensor(0.1231, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.46630859375
+Memory cached:  22.0
+	 epoch  50 training error:  tensor(0.1218, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.46630859375
+Memory cached:  22.0
+	 epoch  60 training error:  tensor(0.1165, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.46630859375
+Memory cached:  22.0
+	 epoch  70 training error:  tensor(0.1145, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.46630859375
+Memory cached:  22.0
+	 epoch  80 training error:  tensor(0.1137, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.46630859375
+Memory cached:  22.0
+	 epoch  90 training error:  tensor(0.1134, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.46630859375
+Memory cached:  22.0
+[I 2023-12-01 11:37:31,983] Trial 6 finished with value: 0.13043895363807678 and parameters: {'W_layers': 4, 'W_layer_units_exponent_0': 9, 'W_layer_units_exponent_1': 4, 'W_layer_units_exponent_2': 6, 'W_layer_units_exponent_3': 7, 'D_layers': 7, 'D_layer_units_exponent_0': 5, 'D_layer_units_exponent_1': 8, 'D_layer_units_exponent_2': 9, 'D_layer_units_exponent_3': 8, 'D_layer_units_exponent_4': 5, 'D_layer_units_exponent_5': 9, 'D_layer_units_exponent_6': 10, 'log_learning_rate': -1.6121186040729034, 'log_learning_rate_D': -2.9790729775475078, 'training_batch_size': 11, 'training_p': 2}. Best is trial 5 with value: 0.06567634642124176.
+Time for this trial:  13.180928707122803
+Memory status after this trial: 
+Memory allocated:  11.1767578125
+Memory cached:  28.0
+--------------------  Trial  7   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 2, 'W_layer_units_exponent_0': 4, 'W_layer_units_exponent_1': 9, 'D_layers': 8, 'D_layer_units_exponent_0': 6, 'D_layer_units_exponent_1': 5, 'D_layer_units_exponent_2': 8, 'D_layer_units_exponent_3': 7, 'D_layer_units_exponent_4': 6, 'D_layer_units_exponent_5': 4, 'D_layer_units_exponent_6': 10, 'D_layer_units_exponent_7': 7, 'log_learning_rate': -3.7256268658664236, 'log_learning_rate_D': -4.010896816760354, 'training_batch_size': 11, 'training_p': 2}
+	 epoch  0 training error:  tensor(1.7161, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.94775390625
+Memory cached:  2.0
+	 epoch  10 training error:  tensor(0.4194, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.94775390625
+Memory cached:  2.0
+	 epoch  20 training error:  tensor(0.3352, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.94775390625
+Memory cached:  2.0
+	 epoch  30 training error:  tensor(0.2013, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.94775390625
+Memory cached:  2.0
+	 epoch  40 training error:  tensor(0.1102, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.94775390625
+Memory cached:  2.0
+	 epoch  50 training error:  tensor(0.0940, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.94775390625
+Memory cached:  2.0
+	 epoch  60 training error:  tensor(0.0770, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.94775390625
+Memory cached:  2.0
+	 epoch  70 training error:  tensor(0.0688, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.94775390625
+Memory cached:  2.0
+	 epoch  80 training error:  tensor(0.0646, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.94775390625
+Memory cached:  2.0
+	 epoch  90 training error:  tensor(0.0631, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.94775390625
+Memory cached:  2.0
+[I 2023-12-01 11:37:44,884] Trial 7 finished with value: 0.07202114164829254 and parameters: {'W_layers': 2, 'W_layer_units_exponent_0': 4, 'W_layer_units_exponent_1': 9, 'D_layers': 8, 'D_layer_units_exponent_0': 6, 'D_layer_units_exponent_1': 5, 'D_layer_units_exponent_2': 8, 'D_layer_units_exponent_3': 7, 'D_layer_units_exponent_4': 6, 'D_layer_units_exponent_5': 4, 'D_layer_units_exponent_6': 10, 'D_layer_units_exponent_7': 7, 'log_learning_rate': -3.7256268658664236, 'log_learning_rate_D': -4.010896816760354, 'training_batch_size': 11, 'training_p': 2}. Best is trial 5 with value: 0.06567634642124176.
+Time for this trial:  12.813889265060425
+Memory status after this trial: 
+Memory allocated:  8.1708984375
+Memory cached:  22.0
+--------------------  Trial  8   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 2, 'W_layer_units_exponent_0': 10, 'W_layer_units_exponent_1': 4, 'D_layers': 2, 'D_layer_units_exponent_0': 8, 'D_layer_units_exponent_1': 10, 'log_learning_rate': -3.4198814772239343, 'log_learning_rate_D': -4.111627142597373, 'training_batch_size': 11, 'training_p': 3}
+	 epoch  0 training error:  tensor(1.3630, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.3408203125
+Memory cached:  2.0
+	 epoch  10 training error:  tensor(0.3914, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.3408203125
+Memory cached:  2.0
+	 epoch  20 training error:  tensor(0.1610, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.3408203125
+Memory cached:  2.0
+	 epoch  30 training error:  tensor(0.1406, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.3408203125
+Memory cached:  2.0
+	 epoch  40 training error:  tensor(0.1001, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.3408203125
+Memory cached:  2.0
+	 epoch  50 training error:  tensor(0.0904, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.3408203125
+Memory cached:  2.0
+	 epoch  60 training error:  tensor(0.0761, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.3408203125
+Memory cached:  2.0
+	 epoch  70 training error:  tensor(0.0715, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.3408203125
+Memory cached:  2.0
+	 epoch  80 training error:  tensor(0.0743, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.3408203125
+Memory cached:  2.0
+	 epoch  90 training error:  tensor(0.0736, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.3408203125
+Memory cached:  2.0
+[I 2023-12-01 11:37:57,950] Trial 8 finished with value: 0.07268211245536804 and parameters: {'W_layers': 2, 'W_layer_units_exponent_0': 10, 'W_layer_units_exponent_1': 4, 'D_layers': 2, 'D_layer_units_exponent_0': 8, 'D_layer_units_exponent_1': 10, 'log_learning_rate': -3.4198814772239343, 'log_learning_rate_D': -4.111627142597373, 'training_batch_size': 11, 'training_p': 3}. Best is trial 5 with value: 0.06567634642124176.
+Time for this trial:  12.95893406867981
+Memory status after this trial: 
+Memory allocated:  16.0615234375
+Memory cached:  42.0
+--------------------  Trial  9   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 3, 'W_layer_units_exponent_0': 5, 'W_layer_units_exponent_1': 8, 'W_layer_units_exponent_2': 10, 'D_layers': 8, 'D_layer_units_exponent_0': 8, 'D_layer_units_exponent_1': 6, 'D_layer_units_exponent_2': 10, 'D_layer_units_exponent_3': 7, 'D_layer_units_exponent_4': 10, 'D_layer_units_exponent_5': 5, 'D_layer_units_exponent_6': 8, 'D_layer_units_exponent_7': 7, 'log_learning_rate': -3.1669860447265763, 'log_learning_rate_D': -3.026827145024681, 'training_batch_size': 9, 'training_p': 3}
+	 epoch  0 training error:  tensor(1.1587, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.8046875
+Memory cached:  8.0
+	 epoch  10 training error:  tensor(0.5849, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.8046875
+Memory cached:  8.0
+	 epoch  20 training error:  tensor(0.2442, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.8046875
+Memory cached:  8.0
+	 epoch  30 training error:  tensor(0.1763, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.8046875
+Memory cached:  8.0
+	 epoch  40 training error:  tensor(0.1202, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.8046875
+Memory cached:  8.0
+	 epoch  50 training error:  tensor(0.0756, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.8046875
+Memory cached:  8.0
+	 epoch  60 training error:  tensor(0.0796, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.8046875
+Memory cached:  8.0
+	 epoch  70 training error:  tensor(0.0752, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.8046875
+Memory cached:  8.0
+	 epoch  80 training error:  tensor(0.0714, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.8046875
+Memory cached:  8.0
+	 epoch  90 training error:  tensor(0.0702, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.8046875
+Memory cached:  8.0
+[I 2023-12-01 11:38:11,384] Trial 9 finished with value: 0.06854322552680969 and parameters: {'W_layers': 3, 'W_layer_units_exponent_0': 5, 'W_layer_units_exponent_1': 8, 'W_layer_units_exponent_2': 10, 'D_layers': 8, 'D_layer_units_exponent_0': 8, 'D_layer_units_exponent_1': 6, 'D_layer_units_exponent_2': 10, 'D_layer_units_exponent_3': 7, 'D_layer_units_exponent_4': 10, 'D_layer_units_exponent_5': 5, 'D_layer_units_exponent_6': 8, 'D_layer_units_exponent_7': 7, 'log_learning_rate': -3.1669860447265763, 'log_learning_rate_D': -3.026827145024681, 'training_batch_size': 9, 'training_p': 3}. Best is trial 5 with value: 0.06567634642124176.
+Time for this trial:  13.327046632766724
+Memory status after this trial: 
+Memory allocated:  22.1435546875
+Memory cached:  46.0
+--------------------  Trial  10   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 5, 'W_layer_units_exponent_0': 6, 'W_layer_units_exponent_1': 10, 'W_layer_units_exponent_2': 8, 'W_layer_units_exponent_3': 4, 'W_layer_units_exponent_4': 10, 'D_layers': 6, 'D_layer_units_exponent_0': 10, 'D_layer_units_exponent_1': 10, 'D_layer_units_exponent_2': 6, 'D_layer_units_exponent_3': 4, 'D_layer_units_exponent_4': 8, 'D_layer_units_exponent_5': 6, 'log_learning_rate': -4.842493857190435, 'log_learning_rate_D': -1.422893607007238, 'training_batch_size': 6, 'training_p': 4}
+	 epoch  0 training error:  tensor(1.1107, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  9.72802734375
+Memory cached:  26.0
+	 epoch  10 training error:  tensor(0.8361, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  9.72802734375
+Memory cached:  26.0
+	 epoch  20 training error:  tensor(0.5866, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  9.72802734375
+Memory cached:  26.0
+	 epoch  30 training error:  tensor(0.3954, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  9.72802734375
+Memory cached:  26.0
+	 epoch  40 training error:  tensor(0.2229, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  9.72802734375
+Memory cached:  26.0
+	 epoch  50 training error:  tensor(0.1108, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  9.72802734375
+Memory cached:  26.0
+	 epoch  60 training error:  tensor(0.0986, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  9.72802734375
+Memory cached:  26.0
+	 epoch  70 training error:  tensor(0.0908, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  9.72802734375
+Memory cached:  26.0
+	 epoch  80 training error:  tensor(0.0875, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  9.72802734375
+Memory cached:  26.0
+	 epoch  90 training error:  tensor(0.0857, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  9.72802734375
+Memory cached:  26.0
+[I 2023-12-01 11:38:26,303] Trial 10 finished with value: 0.0823662281036377 and parameters: {'W_layers': 5, 'W_layer_units_exponent_0': 6, 'W_layer_units_exponent_1': 10, 'W_layer_units_exponent_2': 8, 'W_layer_units_exponent_3': 4, 'W_layer_units_exponent_4': 10, 'D_layers': 6, 'D_layer_units_exponent_0': 10, 'D_layer_units_exponent_1': 10, 'D_layer_units_exponent_2': 6, 'D_layer_units_exponent_3': 4, 'D_layer_units_exponent_4': 8, 'D_layer_units_exponent_5': 6, 'log_learning_rate': -4.842493857190435, 'log_learning_rate_D': -1.422893607007238, 'training_batch_size': 6, 'training_p': 4}. Best is trial 5 with value: 0.06567634642124176.
+Time for this trial:  14.756366491317749
+Memory status after this trial: 
+Memory allocated:  39.478515625
+Memory cached:  66.0
+--------------------  Trial  11   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 4, 'W_layer_units_exponent_0': 6, 'W_layer_units_exponent_1': 8, 'W_layer_units_exponent_2': 10, 'W_layer_units_exponent_3': 4, 'D_layers': 8, 'D_layer_units_exponent_0': 8, 'D_layer_units_exponent_1': 8, 'D_layer_units_exponent_2': 10, 'D_layer_units_exponent_3': 10, 'D_layer_units_exponent_4': 7, 'D_layer_units_exponent_5': 4, 'D_layer_units_exponent_6': 8, 'D_layer_units_exponent_7': 4, 'log_learning_rate': -2.1448870679619856, 'log_learning_rate_D': -2.2221296388180747, 'training_batch_size': 6, 'training_p': 3}
+	 epoch  0 training error:  tensor(0.7845, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  10.33935546875
+Memory cached:  28.0
+	 epoch  10 training error:  tensor(0.1260, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  10.33935546875
+Memory cached:  28.0
+	 epoch  20 training error:  tensor(0.1248, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  10.33935546875
+Memory cached:  28.0
+	 epoch  30 training error:  tensor(0.1233, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  10.33935546875
+Memory cached:  28.0
+	 epoch  40 training error:  tensor(0.1233, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  10.33935546875
+Memory cached:  28.0
+	 epoch  50 training error:  tensor(0.1233, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  10.33935546875
+Memory cached:  28.0
+	 epoch  60 training error:  tensor(0.1233, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  10.33935546875
+Memory cached:  28.0
+	 epoch  70 training error:  tensor(0.1233, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  10.33935546875
+Memory cached:  28.0
+	 epoch  80 training error:  tensor(0.1233, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  10.33935546875
+Memory cached:  28.0
+	 epoch  90 training error:  tensor(0.1234, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  10.33935546875
+Memory cached:  28.0
+[I 2023-12-01 11:38:41,184] Trial 11 finished with value: 0.13054993748664856 and parameters: {'W_layers': 4, 'W_layer_units_exponent_0': 6, 'W_layer_units_exponent_1': 8, 'W_layer_units_exponent_2': 10, 'W_layer_units_exponent_3': 4, 'D_layers': 8, 'D_layer_units_exponent_0': 8, 'D_layer_units_exponent_1': 8, 'D_layer_units_exponent_2': 10, 'D_layer_units_exponent_3': 10, 'D_layer_units_exponent_4': 7, 'D_layer_units_exponent_5': 4, 'D_layer_units_exponent_6': 8, 'D_layer_units_exponent_7': 4, 'log_learning_rate': -2.1448870679619856, 'log_learning_rate_D': -2.2221296388180747, 'training_batch_size': 6, 'training_p': 3}. Best is trial 5 with value: 0.06567634642124176.
+Time for this trial:  14.70934772491455
+Memory status after this trial: 
+Memory allocated:  23.0576171875
+Memory cached:  48.0
+--------------------  Trial  12   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 4, 'W_layer_units_exponent_0': 6, 'W_layer_units_exponent_1': 6, 'W_layer_units_exponent_2': 8, 'W_layer_units_exponent_3': 10, 'D_layers': 8, 'D_layer_units_exponent_0': 8, 'D_layer_units_exponent_1': 6, 'D_layer_units_exponent_2': 8, 'D_layer_units_exponent_3': 5, 'D_layer_units_exponent_4': 8, 'D_layer_units_exponent_5': 6, 'D_layer_units_exponent_6': 8, 'D_layer_units_exponent_7': 5, 'log_learning_rate': -1.7972141358719118, 'log_learning_rate_D': -3.4149860198709128, 'training_batch_size': 9, 'training_p': 4}
+	 epoch  0 training error:  tensor(0.9710, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.73828125
+Memory cached:  6.0
+	 epoch  10 training error:  tensor(0.3209, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.73828125
+Memory cached:  6.0
+	 epoch  20 training error:  tensor(0.3176, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.73828125
+Memory cached:  6.0
+	 epoch  30 training error:  tensor(0.1070, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.73828125
+Memory cached:  6.0
+	 epoch  40 training error:  tensor(0.1073, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.73828125
+Memory cached:  6.0
+	 epoch  50 training error:  tensor(0.0858, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.73828125
+Memory cached:  6.0
+	 epoch  60 training error:  tensor(0.0817, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.73828125
+Memory cached:  6.0
+	 epoch  70 training error:  tensor(0.0764, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.73828125
+Memory cached:  6.0
+	 epoch  80 training error:  tensor(0.0748, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.73828125
+Memory cached:  6.0
+	 epoch  90 training error:  tensor(0.0741, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.73828125
+Memory cached:  6.0
+[I 2023-12-01 11:38:54,932] Trial 12 finished with value: 0.06639645248651505 and parameters: {'W_layers': 4, 'W_layer_units_exponent_0': 6, 'W_layer_units_exponent_1': 6, 'W_layer_units_exponent_2': 8, 'W_layer_units_exponent_3': 10, 'D_layers': 8, 'D_layer_units_exponent_0': 8, 'D_layer_units_exponent_1': 6, 'D_layer_units_exponent_2': 8, 'D_layer_units_exponent_3': 5, 'D_layer_units_exponent_4': 8, 'D_layer_units_exponent_5': 6, 'D_layer_units_exponent_6': 8, 'D_layer_units_exponent_7': 5, 'log_learning_rate': -1.7972141358719118, 'log_learning_rate_D': -3.4149860198709128, 'training_batch_size': 9, 'training_p': 4}. Best is trial 5 with value: 0.06567634642124176.
+Time for this trial:  13.581171989440918
+Memory status after this trial: 
+Memory allocated:  23.703125
+Memory cached:  48.0
+--------------------  Trial  13   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 8, 'W_layer_units_exponent_0': 7, 'W_layer_units_exponent_1': 6, 'W_layer_units_exponent_2': 8, 'W_layer_units_exponent_3': 10, 'W_layer_units_exponent_4': 4, 'W_layer_units_exponent_5': 4, 'W_layer_units_exponent_6': 4, 'W_layer_units_exponent_7': 5, 'D_layers': 6, 'D_layer_units_exponent_0': 4, 'D_layer_units_exponent_1': 9, 'D_layer_units_exponent_2': 7, 'D_layer_units_exponent_3': 4, 'D_layer_units_exponent_4': 7, 'D_layer_units_exponent_5': 6, 'log_learning_rate': -1.9769123046504042, 'log_learning_rate_D': -3.455194034291886, 'training_batch_size': 12, 'training_p': 5}
+	 epoch  0 training error:  tensor(1.3628, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.0439453125
+Memory cached:  6.0
+	 epoch  10 training error:  tensor(0.2944, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.0439453125
+Memory cached:  8.0
+	 epoch  20 training error:  tensor(0.1592, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.0439453125
+Memory cached:  8.0
+	 epoch  30 training error:  tensor(0.1386, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.0439453125
+Memory cached:  8.0
+	 epoch  40 training error:  tensor(0.1381, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.0439453125
+Memory cached:  8.0
+	 epoch  50 training error:  tensor(0.1383, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.0439453125
+Memory cached:  8.0
+	 epoch  60 training error:  tensor(0.1373, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.0439453125
+Memory cached:  8.0
+	 epoch  70 training error:  tensor(0.1371, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.0439453125
+Memory cached:  8.0
+	 epoch  80 training error:  tensor(0.1371, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.0439453125
+Memory cached:  8.0
+	 epoch  90 training error:  tensor(0.1371, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.0439453125
+Memory cached:  8.0
+[I 2023-12-01 11:39:09,384] Trial 13 finished with value: 0.13022641837596893 and parameters: {'W_layers': 8, 'W_layer_units_exponent_0': 7, 'W_layer_units_exponent_1': 6, 'W_layer_units_exponent_2': 8, 'W_layer_units_exponent_3': 10, 'W_layer_units_exponent_4': 4, 'W_layer_units_exponent_5': 4, 'W_layer_units_exponent_6': 4, 'W_layer_units_exponent_7': 5, 'D_layers': 6, 'D_layer_units_exponent_0': 4, 'D_layer_units_exponent_1': 9, 'D_layer_units_exponent_2': 7, 'D_layer_units_exponent_3': 4, 'D_layer_units_exponent_4': 7, 'D_layer_units_exponent_5': 6, 'log_learning_rate': -1.9769123046504042, 'log_learning_rate_D': -3.455194034291886, 'training_batch_size': 12, 'training_p': 5}. Best is trial 5 with value: 0.06567634642124176.
+Time for this trial:  14.276881217956543
+Memory status after this trial: 
+Memory allocated:  26.0625
+Memory cached:  48.0
+--------------------  Trial  14   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 5, 'W_layer_units_exponent_0': 6, 'W_layer_units_exponent_1': 6, 'W_layer_units_exponent_2': 8, 'W_layer_units_exponent_3': 6, 'W_layer_units_exponent_4': 10, 'D_layers': 6, 'D_layer_units_exponent_0': 10, 'D_layer_units_exponent_1': 6, 'D_layer_units_exponent_2': 8, 'D_layer_units_exponent_3': 5, 'D_layer_units_exponent_4': 8, 'D_layer_units_exponent_5': 7, 'log_learning_rate': -1.001244581765166, 'log_learning_rate_D': -4.583729990778762, 'training_batch_size': 7, 'training_p': 4}
+	 epoch  0 training error:  tensor(1.1103, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.15380859375
+Memory cached:  4.0
+	 epoch  10 training error:  tensor(0.7069, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.15380859375
+Memory cached:  4.0
+	 epoch  20 training error:  tensor(0.2068, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.15380859375
+Memory cached:  4.0
+	 epoch  30 training error:  tensor(0.1570, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.15380859375
+Memory cached:  4.0
+	 epoch  40 training error:  tensor(0.1374, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.15380859375
+Memory cached:  4.0
+	 epoch  50 training error:  tensor(0.1325, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.15380859375
+Memory cached:  4.0
+	 epoch  60 training error:  tensor(0.1327, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.15380859375
+Memory cached:  4.0
+	 epoch  70 training error:  tensor(0.1312, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.15380859375
+Memory cached:  4.0
+	 epoch  80 training error:  tensor(0.1310, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.15380859375
+Memory cached:  4.0
+	 epoch  90 training error:  tensor(0.1310, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.15380859375
+Memory cached:  4.0
+[I 2023-12-01 11:39:23,239] Trial 14 finished with value: 0.13066816329956055 and parameters: {'W_layers': 5, 'W_layer_units_exponent_0': 6, 'W_layer_units_exponent_1': 6, 'W_layer_units_exponent_2': 8, 'W_layer_units_exponent_3': 6, 'W_layer_units_exponent_4': 10, 'D_layers': 6, 'D_layer_units_exponent_0': 10, 'D_layer_units_exponent_1': 6, 'D_layer_units_exponent_2': 8, 'D_layer_units_exponent_3': 5, 'D_layer_units_exponent_4': 8, 'D_layer_units_exponent_5': 7, 'log_learning_rate': -1.001244581765166, 'log_learning_rate_D': -4.583729990778762, 'training_batch_size': 7, 'training_p': 4}. Best is trial 5 with value: 0.06567634642124176.
+Time for this trial:  13.691200256347656
+Memory status after this trial: 
+Memory allocated:  23.3056640625
+Memory cached:  46.0
+--------------------  Trial  15   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 4, 'W_layer_units_exponent_0': 7, 'W_layer_units_exponent_1': 5, 'W_layer_units_exponent_2': 4, 'W_layer_units_exponent_3': 10, 'D_layers': 5, 'D_layer_units_exponent_0': 7, 'D_layer_units_exponent_1': 7, 'D_layer_units_exponent_2': 5, 'D_layer_units_exponent_3': 5, 'D_layer_units_exponent_4': 8, 'log_learning_rate': -1.9290922896896459, 'log_learning_rate_D': -3.575814000046156, 'training_batch_size': 10, 'training_p': 4}
+	 epoch  0 training error:  tensor(0.4394, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.51171875
+Memory cached:  4.0
+	 epoch  10 training error:  tensor(0.1584, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.51171875
+Memory cached:  4.0
+	 epoch  20 training error:  tensor(0.3198, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.51171875
+Memory cached:  4.0
+	 epoch  30 training error:  tensor(0.1248, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.51171875
+Memory cached:  4.0
+	 epoch  40 training error:  tensor(0.1424, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.51171875
+Memory cached:  4.0
+	 epoch  50 training error:  tensor(0.2008, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.51171875
+Memory cached:  4.0
+	 epoch  60 training error:  tensor(0.1740, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.51171875
+Memory cached:  4.0
+	 epoch  70 training error:  tensor(0.1017, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.51171875
+Memory cached:  4.0
+	 epoch  80 training error:  tensor(0.1148, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.51171875
+Memory cached:  4.0
+	 epoch  90 training error:  tensor(0.0796, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.51171875
+Memory cached:  4.0
+[I 2023-12-01 11:39:36,918] Trial 15 finished with value: 0.0877857506275177 and parameters: {'W_layers': 4, 'W_layer_units_exponent_0': 7, 'W_layer_units_exponent_1': 5, 'W_layer_units_exponent_2': 4, 'W_layer_units_exponent_3': 10, 'D_layers': 5, 'D_layer_units_exponent_0': 7, 'D_layer_units_exponent_1': 7, 'D_layer_units_exponent_2': 5, 'D_layer_units_exponent_3': 5, 'D_layer_units_exponent_4': 8, 'log_learning_rate': -1.9290922896896459, 'log_learning_rate_D': -3.575814000046156, 'training_batch_size': 10, 'training_p': 4}. Best is trial 5 with value: 0.06567634642124176.
+Time for this trial:  13.524654865264893
+Memory status after this trial: 
+Memory allocated:  18.533203125
+Memory cached:  44.0
+--------------------  Trial  16   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 6, 'W_layer_units_exponent_0': 8, 'W_layer_units_exponent_1': 5, 'W_layer_units_exponent_2': 7, 'W_layer_units_exponent_3': 6, 'W_layer_units_exponent_4': 4, 'W_layer_units_exponent_5': 5, 'D_layers': 8, 'D_layer_units_exponent_0': 9, 'D_layer_units_exponent_1': 9, 'D_layer_units_exponent_2': 8, 'D_layer_units_exponent_3': 9, 'D_layer_units_exponent_4': 4, 'D_layer_units_exponent_5': 5, 'D_layer_units_exponent_6': 4, 'D_layer_units_exponent_7': 4, 'log_learning_rate': -2.3688168016951727, 'log_learning_rate_D': -4.214032147265803, 'training_batch_size': 8, 'training_p': 2}
+	 epoch  0 training error:  tensor(1.3542, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.44140625
+Memory cached:  6.0
+	 epoch  10 training error:  tensor(0.1294, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.44140625
+Memory cached:  8.0
+	 epoch  20 training error:  tensor(0.0948, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.44140625
+Memory cached:  8.0
+	 epoch  30 training error:  tensor(0.0743, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.44140625
+Memory cached:  8.0
+	 epoch  40 training error:  tensor(0.0639, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.44140625
+Memory cached:  8.0
+	 epoch  50 training error:  tensor(0.0612, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.44140625
+Memory cached:  8.0
+	 epoch  60 training error:  tensor(0.0590, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.44140625
+Memory cached:  8.0
+	 epoch  70 training error:  tensor(0.0603, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.44140625
+Memory cached:  8.0
+	 epoch  80 training error:  tensor(0.0583, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.44140625
+Memory cached:  8.0
+	 epoch  90 training error:  tensor(0.0581, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.44140625
+Memory cached:  8.0
+[I 2023-12-01 11:39:50,345] Trial 16 finished with value: 0.06206030771136284 and parameters: {'W_layers': 6, 'W_layer_units_exponent_0': 8, 'W_layer_units_exponent_1': 5, 'W_layer_units_exponent_2': 7, 'W_layer_units_exponent_3': 6, 'W_layer_units_exponent_4': 4, 'W_layer_units_exponent_5': 5, 'D_layers': 8, 'D_layer_units_exponent_0': 9, 'D_layer_units_exponent_1': 9, 'D_layer_units_exponent_2': 8, 'D_layer_units_exponent_3': 9, 'D_layer_units_exponent_4': 4, 'D_layer_units_exponent_5': 5, 'D_layer_units_exponent_6': 4, 'D_layer_units_exponent_7': 4, 'log_learning_rate': -2.3688168016951727, 'log_learning_rate_D': -4.214032147265803, 'training_batch_size': 8, 'training_p': 2}. Best is trial 16 with value: 0.06206030771136284.
+Time for this trial:  13.258443593978882
+Memory status after this trial: 
+Memory allocated:  8.2783203125
+Memory cached:  30.0
+--------------------  Trial  17   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 6, 'W_layer_units_exponent_0': 8, 'W_layer_units_exponent_1': 5, 'W_layer_units_exponent_2': 7, 'W_layer_units_exponent_3': 6, 'W_layer_units_exponent_4': 4, 'W_layer_units_exponent_5': 4, 'D_layers': 7, 'D_layer_units_exponent_0': 9, 'D_layer_units_exponent_1': 9, 'D_layer_units_exponent_2': 9, 'D_layer_units_exponent_3': 9, 'D_layer_units_exponent_4': 4, 'D_layer_units_exponent_5': 4, 'D_layer_units_exponent_6': 4, 'log_learning_rate': -2.5371287920762375, 'log_learning_rate_D': -4.333184635714628, 'training_batch_size': 7, 'training_p': 2}
+	 epoch  0 training error:  tensor(1.2329, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.43505859375
+Memory cached:  6.0
+	 epoch  10 training error:  tensor(0.1578, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.43505859375
+Memory cached:  8.0
+	 epoch  20 training error:  tensor(0.1119, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.43505859375
+Memory cached:  8.0
+	 epoch  30 training error:  tensor(0.0857, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.43505859375
+Memory cached:  8.0
+	 epoch  40 training error:  tensor(0.0702, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.43505859375
+Memory cached:  8.0
+	 epoch  50 training error:  tensor(0.0634, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.43505859375
+Memory cached:  8.0
+	 epoch  60 training error:  tensor(0.0607, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.43505859375
+Memory cached:  8.0
+	 epoch  70 training error:  tensor(0.0594, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.43505859375
+Memory cached:  8.0
+	 epoch  80 training error:  tensor(0.0589, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.43505859375
+Memory cached:  8.0
+	 epoch  90 training error:  tensor(0.0585, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.43505859375
+Memory cached:  8.0
+[I 2023-12-01 11:40:03,837] Trial 17 finished with value: 0.06284292787313461 and parameters: {'W_layers': 6, 'W_layer_units_exponent_0': 8, 'W_layer_units_exponent_1': 5, 'W_layer_units_exponent_2': 7, 'W_layer_units_exponent_3': 6, 'W_layer_units_exponent_4': 4, 'W_layer_units_exponent_5': 4, 'D_layers': 7, 'D_layer_units_exponent_0': 9, 'D_layer_units_exponent_1': 9, 'D_layer_units_exponent_2': 9, 'D_layer_units_exponent_3': 9, 'D_layer_units_exponent_4': 4, 'D_layer_units_exponent_5': 4, 'D_layer_units_exponent_6': 4, 'log_learning_rate': -2.5371287920762375, 'log_learning_rate_D': -4.333184635714628, 'training_batch_size': 7, 'training_p': 2}. Best is trial 16 with value: 0.06206030771136284.
+Time for this trial:  13.31603217124939
+Memory status after this trial: 
+Memory allocated:  8.0322265625
+Memory cached:  26.0
+--------------------  Trial  18   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 6, 'W_layer_units_exponent_0': 8, 'W_layer_units_exponent_1': 5, 'W_layer_units_exponent_2': 6, 'W_layer_units_exponent_3': 6, 'W_layer_units_exponent_4': 4, 'W_layer_units_exponent_5': 4, 'D_layers': 7, 'D_layer_units_exponent_0': 9, 'D_layer_units_exponent_1': 9, 'D_layer_units_exponent_2': 6, 'D_layer_units_exponent_3': 9, 'D_layer_units_exponent_4': 4, 'D_layer_units_exponent_5': 5, 'D_layer_units_exponent_6': 4, 'log_learning_rate': -2.5749612110019333, 'log_learning_rate_D': -4.459857652423363, 'training_batch_size': 8, 'training_p': 2}
+	 epoch  0 training error:  tensor(0.9877, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.591796875
+Memory cached:  4.0
+	 epoch  10 training error:  tensor(0.0998, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.591796875
+Memory cached:  6.0
+	 epoch  20 training error:  tensor(0.0970, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.591796875
+Memory cached:  6.0
+	 epoch  30 training error:  tensor(0.0707, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.591796875
+Memory cached:  6.0
+	 epoch  40 training error:  tensor(0.0648, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.591796875
+Memory cached:  6.0
+	 epoch  50 training error:  tensor(0.0615, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.591796875
+Memory cached:  6.0
+	 epoch  60 training error:  tensor(0.0603, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.591796875
+Memory cached:  6.0
+	 epoch  70 training error:  tensor(0.0593, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.591796875
+Memory cached:  6.0
+	 epoch  80 training error:  tensor(0.0587, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.591796875
+Memory cached:  6.0
+	 epoch  90 training error:  tensor(0.0583, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.591796875
+Memory cached:  6.0
+[I 2023-12-01 11:40:17,399] Trial 18 finished with value: 0.06254550069570541 and parameters: {'W_layers': 6, 'W_layer_units_exponent_0': 8, 'W_layer_units_exponent_1': 5, 'W_layer_units_exponent_2': 6, 'W_layer_units_exponent_3': 6, 'W_layer_units_exponent_4': 4, 'W_layer_units_exponent_5': 4, 'D_layers': 7, 'D_layer_units_exponent_0': 9, 'D_layer_units_exponent_1': 9, 'D_layer_units_exponent_2': 6, 'D_layer_units_exponent_3': 9, 'D_layer_units_exponent_4': 4, 'D_layer_units_exponent_5': 5, 'D_layer_units_exponent_6': 4, 'log_learning_rate': -2.5749612110019333, 'log_learning_rate_D': -4.459857652423363, 'training_batch_size': 8, 'training_p': 2}. Best is trial 16 with value: 0.06206030771136284.
+Time for this trial:  13.372743368148804
+Memory status after this trial: 
+Memory allocated:  7.0087890625
+Memory cached:  26.0
+--------------------  Trial  19   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 7, 'W_layer_units_exponent_0': 10, 'W_layer_units_exponent_1': 5, 'W_layer_units_exponent_2': 5, 'W_layer_units_exponent_3': 6, 'W_layer_units_exponent_4': 5, 'W_layer_units_exponent_5': 5, 'W_layer_units_exponent_6': 5, 'D_layers': 6, 'D_layer_units_exponent_0': 10, 'D_layer_units_exponent_1': 9, 'D_layer_units_exponent_2': 6, 'D_layer_units_exponent_3': 8, 'D_layer_units_exponent_4': 4, 'D_layer_units_exponent_5': 5, 'log_learning_rate': -3.0247464727395026, 'log_learning_rate_D': -4.957906762176173, 'training_batch_size': 8, 'training_p': 3}
+	 epoch  0 training error:  tensor(1.3283, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.92431640625
+Memory cached:  26.0
+	 epoch  10 training error:  tensor(0.5438, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.92431640625
+Memory cached:  28.0
+	 epoch  20 training error:  tensor(0.1191, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.92431640625
+Memory cached:  28.0
+	 epoch  30 training error:  tensor(0.1087, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.92431640625
+Memory cached:  28.0
+	 epoch  40 training error:  tensor(0.0917, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.92431640625
+Memory cached:  28.0
+	 epoch  50 training error:  tensor(0.0827, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.92431640625
+Memory cached:  28.0
+	 epoch  60 training error:  tensor(0.0754, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.92431640625
+Memory cached:  28.0
+	 epoch  70 training error:  tensor(0.0729, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.92431640625
+Memory cached:  28.0
+	 epoch  80 training error:  tensor(0.0712, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.92431640625
+Memory cached:  28.0
+	 epoch  90 training error:  tensor(0.0698, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.92431640625
+Memory cached:  28.0
+[I 2023-12-01 11:40:31,449] Trial 19 finished with value: 0.06805234402418137 and parameters: {'W_layers': 7, 'W_layer_units_exponent_0': 10, 'W_layer_units_exponent_1': 5, 'W_layer_units_exponent_2': 5, 'W_layer_units_exponent_3': 6, 'W_layer_units_exponent_4': 5, 'W_layer_units_exponent_5': 5, 'W_layer_units_exponent_6': 5, 'D_layers': 6, 'D_layer_units_exponent_0': 10, 'D_layer_units_exponent_1': 9, 'D_layer_units_exponent_2': 6, 'D_layer_units_exponent_3': 8, 'D_layer_units_exponent_4': 4, 'D_layer_units_exponent_5': 5, 'log_learning_rate': -3.0247464727395026, 'log_learning_rate_D': -4.957906762176173, 'training_batch_size': 8, 'training_p': 3}. Best is trial 16 with value: 0.06206030771136284.
+Time for this trial:  13.879645109176636
+Memory status after this trial: 
+Memory allocated:  19.419921875
+Memory cached:  46.0
+--------------------  Trial  20   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 6, 'W_layer_units_exponent_0': 9, 'W_layer_units_exponent_1': 5, 'W_layer_units_exponent_2': 6, 'W_layer_units_exponent_3': 5, 'W_layer_units_exponent_4': 4, 'W_layer_units_exponent_5': 6, 'D_layers': 5, 'D_layer_units_exponent_0': 9, 'D_layer_units_exponent_1': 10, 'D_layer_units_exponent_2': 6, 'D_layer_units_exponent_3': 9, 'D_layer_units_exponent_4': 5, 'log_learning_rate': -2.3801996569976938, 'log_learning_rate_D': -4.490627172927853, 'training_batch_size': 8, 'training_p': 5}
+	 epoch  0 training error:  tensor(1.1144, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.8544921875
+Memory cached:  26.0
+	 epoch  10 training error:  tensor(0.1123, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.8544921875
+Memory cached:  26.0
+	 epoch  20 training error:  tensor(0.0945, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.8544921875
+Memory cached:  26.0
+	 epoch  30 training error:  tensor(0.0974, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.8544921875
+Memory cached:  26.0
+	 epoch  40 training error:  tensor(0.0837, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.8544921875
+Memory cached:  26.0
+	 epoch  50 training error:  tensor(0.0807, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.8544921875
+Memory cached:  26.0
+	 epoch  60 training error:  tensor(0.0785, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.8544921875
+Memory cached:  26.0
+	 epoch  70 training error:  tensor(0.0783, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.8544921875
+Memory cached:  26.0
+	 epoch  80 training error:  tensor(0.0782, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.8544921875
+Memory cached:  26.0
+	 epoch  90 training error:  tensor(0.0831, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.8544921875
+Memory cached:  26.0
+[I 2023-12-01 11:40:45,214] Trial 20 finished with value: 0.06708518415689468 and parameters: {'W_layers': 6, 'W_layer_units_exponent_0': 9, 'W_layer_units_exponent_1': 5, 'W_layer_units_exponent_2': 6, 'W_layer_units_exponent_3': 5, 'W_layer_units_exponent_4': 4, 'W_layer_units_exponent_5': 6, 'D_layers': 5, 'D_layer_units_exponent_0': 9, 'D_layer_units_exponent_1': 10, 'D_layer_units_exponent_2': 6, 'D_layer_units_exponent_3': 9, 'D_layer_units_exponent_4': 5, 'log_learning_rate': -2.3801996569976938, 'log_learning_rate_D': -4.490627172927853, 'training_batch_size': 8, 'training_p': 5}. Best is trial 16 with value: 0.06206030771136284.
+Time for this trial:  13.593186855316162
+Memory status after this trial: 
+Memory allocated:  11.2138671875
+Memory cached:  26.0
+--------------------  Trial  21   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 6, 'W_layer_units_exponent_0': 8, 'W_layer_units_exponent_1': 5, 'W_layer_units_exponent_2': 7, 'W_layer_units_exponent_3': 6, 'W_layer_units_exponent_4': 4, 'W_layer_units_exponent_5': 4, 'D_layers': 7, 'D_layer_units_exponent_0': 9, 'D_layer_units_exponent_1': 9, 'D_layer_units_exponent_2': 7, 'D_layer_units_exponent_3': 9, 'D_layer_units_exponent_4': 4, 'D_layer_units_exponent_5': 5, 'D_layer_units_exponent_6': 4, 'log_learning_rate': -2.644153794862791, 'log_learning_rate_D': -4.400041104761538, 'training_batch_size': 7, 'training_p': 2}
+	 epoch  0 training error:  tensor(1.2124, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.935546875
+Memory cached:  4.0
+	 epoch  10 training error:  tensor(0.4037, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.935546875
+Memory cached:  6.0
+	 epoch  20 training error:  tensor(0.1111, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.935546875
+Memory cached:  6.0
+	 epoch  30 training error:  tensor(0.0746, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.935546875
+Memory cached:  6.0
+	 epoch  40 training error:  tensor(0.0660, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.935546875
+Memory cached:  6.0
+	 epoch  50 training error:  tensor(0.0616, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.935546875
+Memory cached:  6.0
+	 epoch  60 training error:  tensor(0.0604, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.935546875
+Memory cached:  6.0
+	 epoch  70 training error:  tensor(0.0595, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.935546875
+Memory cached:  6.0
+	 epoch  80 training error:  tensor(0.0591, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.935546875
+Memory cached:  6.0
+	 epoch  90 training error:  tensor(0.0587, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.935546875
+Memory cached:  6.0
+[I 2023-12-01 11:40:58,703] Trial 21 finished with value: 0.06338616460561752 and parameters: {'W_layers': 6, 'W_layer_units_exponent_0': 8, 'W_layer_units_exponent_1': 5, 'W_layer_units_exponent_2': 7, 'W_layer_units_exponent_3': 6, 'W_layer_units_exponent_4': 4, 'W_layer_units_exponent_5': 4, 'D_layers': 7, 'D_layer_units_exponent_0': 9, 'D_layer_units_exponent_1': 9, 'D_layer_units_exponent_2': 7, 'D_layer_units_exponent_3': 9, 'D_layer_units_exponent_4': 4, 'D_layer_units_exponent_5': 5, 'D_layer_units_exponent_6': 4, 'log_learning_rate': -2.644153794862791, 'log_learning_rate_D': -4.400041104761538, 'training_batch_size': 7, 'training_p': 2}. Best is trial 16 with value: 0.06206030771136284.
+Time for this trial:  13.28943681716919
+Memory status after this trial: 
+Memory allocated:  8.0322265625
+Memory cached:  28.0
+--------------------  Trial  22   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 7, 'W_layer_units_exponent_0': 8, 'W_layer_units_exponent_1': 5, 'W_layer_units_exponent_2': 7, 'W_layer_units_exponent_3': 7, 'W_layer_units_exponent_4': 5, 'W_layer_units_exponent_5': 4, 'W_layer_units_exponent_6': 10, 'D_layers': 7, 'D_layer_units_exponent_0': 9, 'D_layer_units_exponent_1': 9, 'D_layer_units_exponent_2': 8, 'D_layer_units_exponent_3': 8, 'D_layer_units_exponent_4': 4, 'D_layer_units_exponent_5': 5, 'D_layer_units_exponent_6': 4, 'log_learning_rate': -2.568528145811047, 'log_learning_rate_D': -4.344091387094175, 'training_batch_size': 7, 'training_p': 2}
+	 epoch  0 training error:  tensor(0.1205, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.62451171875
+Memory cached:  6.0
+	 epoch  10 training error:  tensor(0.3803, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.62451171875
+Memory cached:  8.0
+	 epoch  20 training error:  tensor(0.1702, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.62451171875
+Memory cached:  8.0
+	 epoch  30 training error:  tensor(0.1009, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.62451171875
+Memory cached:  8.0
+	 epoch  40 training error:  tensor(0.1116, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.62451171875
+Memory cached:  8.0
+	 epoch  50 training error:  tensor(0.1008, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.62451171875
+Memory cached:  8.0
+	 epoch  60 training error:  tensor(0.0779, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.62451171875
+Memory cached:  8.0
+	 epoch  70 training error:  tensor(0.1084, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.62451171875
+Memory cached:  8.0
+	 epoch  80 training error:  tensor(0.0872, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.62451171875
+Memory cached:  8.0
+	 epoch  90 training error:  tensor(0.0866, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.62451171875
+Memory cached:  8.0
+[I 2023-12-01 11:41:12,756] Trial 22 finished with value: 0.10500548034906387 and parameters: {'W_layers': 7, 'W_layer_units_exponent_0': 8, 'W_layer_units_exponent_1': 5, 'W_layer_units_exponent_2': 7, 'W_layer_units_exponent_3': 7, 'W_layer_units_exponent_4': 5, 'W_layer_units_exponent_5': 4, 'W_layer_units_exponent_6': 10, 'D_layers': 7, 'D_layer_units_exponent_0': 9, 'D_layer_units_exponent_1': 9, 'D_layer_units_exponent_2': 8, 'D_layer_units_exponent_3': 8, 'D_layer_units_exponent_4': 4, 'D_layer_units_exponent_5': 5, 'D_layer_units_exponent_6': 4, 'log_learning_rate': -2.568528145811047, 'log_learning_rate_D': -4.344091387094175, 'training_batch_size': 7, 'training_p': 2}. Best is trial 16 with value: 0.06206030771136284.
+Time for this trial:  13.879926919937134
+Memory status after this trial: 
+Memory allocated:  25.10546875
+Memory cached:  50.0
+--------------------  Trial  23   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 6, 'W_layer_units_exponent_0': 9, 'W_layer_units_exponent_1': 4, 'W_layer_units_exponent_2': 9, 'W_layer_units_exponent_3': 5, 'W_layer_units_exponent_4': 5, 'W_layer_units_exponent_5': 6, 'D_layers': 7, 'D_layer_units_exponent_0': 10, 'D_layer_units_exponent_1': 9, 'D_layer_units_exponent_2': 5, 'D_layer_units_exponent_3': 9, 'D_layer_units_exponent_4': 4, 'D_layer_units_exponent_5': 4, 'D_layer_units_exponent_6': 5, 'log_learning_rate': -2.2565287553317894, 'log_learning_rate_D': -4.706502898164463, 'training_batch_size': 9, 'training_p': 3}
+	 epoch  0 training error:  tensor(1.7878, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.7978515625
+Memory cached:  24.0
+	 epoch  10 training error:  tensor(0.0872, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.7978515625
+Memory cached:  24.0
+	 epoch  20 training error:  tensor(0.0962, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.7978515625
+Memory cached:  24.0
+	 epoch  30 training error:  tensor(0.0813, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.7978515625
+Memory cached:  24.0
+	 epoch  40 training error:  tensor(0.0770, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.7978515625
+Memory cached:  24.0
+	 epoch  50 training error:  tensor(0.0711, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.7978515625
+Memory cached:  24.0
+	 epoch  60 training error:  tensor(0.0678, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.7978515625
+Memory cached:  24.0
+	 epoch  70 training error:  tensor(0.0672, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.7978515625
+Memory cached:  24.0
+	 epoch  80 training error:  tensor(0.0668, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.7978515625
+Memory cached:  24.0
+	 epoch  90 training error:  tensor(0.0701, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.7978515625
+Memory cached:  24.0
+[I 2023-12-01 11:41:26,674] Trial 23 finished with value: 0.06350144743919373 and parameters: {'W_layers': 6, 'W_layer_units_exponent_0': 9, 'W_layer_units_exponent_1': 4, 'W_layer_units_exponent_2': 9, 'W_layer_units_exponent_3': 5, 'W_layer_units_exponent_4': 5, 'W_layer_units_exponent_5': 6, 'D_layers': 7, 'D_layer_units_exponent_0': 10, 'D_layer_units_exponent_1': 9, 'D_layer_units_exponent_2': 5, 'D_layer_units_exponent_3': 9, 'D_layer_units_exponent_4': 4, 'D_layer_units_exponent_5': 4, 'D_layer_units_exponent_6': 5, 'log_learning_rate': -2.2565287553317894, 'log_learning_rate_D': -4.706502898164463, 'training_batch_size': 9, 'training_p': 3}. Best is trial 16 with value: 0.06206030771136284.
+Time for this trial:  13.74348783493042
+Memory status after this trial: 
+Memory allocated:  18.158203125
+Memory cached:  46.0
+--------------------  Trial  24   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 8, 'W_layer_units_exponent_0': 7, 'W_layer_units_exponent_1': 6, 'W_layer_units_exponent_2': 5, 'W_layer_units_exponent_3': 5, 'W_layer_units_exponent_4': 4, 'W_layer_units_exponent_5': 5, 'W_layer_units_exponent_6': 7, 'W_layer_units_exponent_7': 10, 'D_layers': 8, 'D_layer_units_exponent_0': 9, 'D_layer_units_exponent_1': 10, 'D_layer_units_exponent_2': 9, 'D_layer_units_exponent_3': 8, 'D_layer_units_exponent_4': 5, 'D_layer_units_exponent_5': 7, 'D_layer_units_exponent_6': 4, 'D_layer_units_exponent_7': 10, 'log_learning_rate': -2.9169360950707146, 'log_learning_rate_D': -4.226308897274011, 'training_batch_size': 8, 'training_p': 2}
+	 epoch  0 training error:  tensor(0.5754, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  6.96728515625
+Memory cached:  26.0
+	 epoch  10 training error:  tensor(0.1299, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  6.96728515625
+Memory cached:  28.0
+	 epoch  20 training error:  tensor(0.0838, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  6.96728515625
+Memory cached:  28.0
+	 epoch  30 training error:  tensor(0.0757, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  6.96728515625
+Memory cached:  28.0
+	 epoch  40 training error:  tensor(0.0659, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  6.96728515625
+Memory cached:  28.0
+	 epoch  50 training error:  tensor(0.0602, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  6.96728515625
+Memory cached:  28.0
+	 epoch  60 training error:  tensor(0.0591, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  6.96728515625
+Memory cached:  28.0
+	 epoch  70 training error:  tensor(0.0588, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  6.96728515625
+Memory cached:  28.0
+	 epoch  80 training error:  tensor(0.0610, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  6.96728515625
+Memory cached:  28.0
+	 epoch  90 training error:  tensor(0.0589, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  6.96728515625
+Memory cached:  28.0
+[I 2023-12-01 11:41:40,845] Trial 24 finished with value: 0.06279245764017105 and parameters: {'W_layers': 8, 'W_layer_units_exponent_0': 7, 'W_layer_units_exponent_1': 6, 'W_layer_units_exponent_2': 5, 'W_layer_units_exponent_3': 5, 'W_layer_units_exponent_4': 4, 'W_layer_units_exponent_5': 5, 'W_layer_units_exponent_6': 7, 'W_layer_units_exponent_7': 10, 'D_layers': 8, 'D_layer_units_exponent_0': 9, 'D_layer_units_exponent_1': 10, 'D_layer_units_exponent_2': 9, 'D_layer_units_exponent_3': 8, 'D_layer_units_exponent_4': 5, 'D_layer_units_exponent_5': 7, 'D_layer_units_exponent_6': 4, 'D_layer_units_exponent_7': 10, 'log_learning_rate': -2.9169360950707146, 'log_learning_rate_D': -4.226308897274011, 'training_batch_size': 8, 'training_p': 2}. Best is trial 16 with value: 0.06206030771136284.
+Time for this trial:  13.977753639221191
+Memory status after this trial: 
+Memory allocated:  23.783203125
+Memory cached:  52.0
+--------------------  Trial  25   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 8, 'W_layer_units_exponent_0': 7, 'W_layer_units_exponent_1': 6, 'W_layer_units_exponent_2': 5, 'W_layer_units_exponent_3': 5, 'W_layer_units_exponent_4': 6, 'W_layer_units_exponent_5': 6, 'W_layer_units_exponent_6': 7, 'W_layer_units_exponent_7': 10, 'D_layers': 8, 'D_layer_units_exponent_0': 10, 'D_layer_units_exponent_1': 10, 'D_layer_units_exponent_2': 7, 'D_layer_units_exponent_3': 8, 'D_layer_units_exponent_4': 6, 'D_layer_units_exponent_5': 7, 'D_layer_units_exponent_6': 5, 'D_layer_units_exponent_7': 10, 'log_learning_rate': -3.0210953144524817, 'log_learning_rate_D': -3.7898084515780965, 'training_batch_size': 10, 'training_p': 3}
+	 epoch  0 training error:  tensor(0.7794, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  7.3544921875
+Memory cached:  28.0
+	 epoch  10 training error:  tensor(0.1254, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  7.3544921875
+Memory cached:  28.0
+	 epoch  20 training error:  tensor(0.1137, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  7.3544921875
+Memory cached:  28.0
+	 epoch  30 training error:  tensor(0.0986, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  7.3544921875
+Memory cached:  28.0
+	 epoch  40 training error:  tensor(0.0741, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  7.3544921875
+Memory cached:  28.0
+	 epoch  50 training error:  tensor(0.0716, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  7.3544921875
+Memory cached:  28.0
+	 epoch  60 training error:  tensor(0.0686, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  7.3544921875
+Memory cached:  28.0
+	 epoch  70 training error:  tensor(0.0678, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  7.3544921875
+Memory cached:  28.0
+	 epoch  80 training error:  tensor(0.0671, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  7.3544921875
+Memory cached:  28.0
+	 epoch  90 training error:  tensor(0.0667, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  7.3544921875
+Memory cached:  28.0
+[I 2023-12-01 11:41:55,176] Trial 25 finished with value: 0.06604132056236267 and parameters: {'W_layers': 8, 'W_layer_units_exponent_0': 7, 'W_layer_units_exponent_1': 6, 'W_layer_units_exponent_2': 5, 'W_layer_units_exponent_3': 5, 'W_layer_units_exponent_4': 6, 'W_layer_units_exponent_5': 6, 'W_layer_units_exponent_6': 7, 'W_layer_units_exponent_7': 10, 'D_layers': 8, 'D_layer_units_exponent_0': 10, 'D_layer_units_exponent_1': 10, 'D_layer_units_exponent_2': 7, 'D_layer_units_exponent_3': 8, 'D_layer_units_exponent_4': 6, 'D_layer_units_exponent_5': 7, 'D_layer_units_exponent_6': 5, 'D_layer_units_exponent_7': 10, 'log_learning_rate': -3.0210953144524817, 'log_learning_rate_D': -3.7898084515780965, 'training_batch_size': 10, 'training_p': 3}. Best is trial 16 with value: 0.06206030771136284.
+Time for this trial:  14.130646467208862
+Memory status after this trial: 
+Memory allocated:  25.07421875
+Memory cached:  54.0
+--------------------  Trial  26   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 8, 'W_layer_units_exponent_0': 7, 'W_layer_units_exponent_1': 6, 'W_layer_units_exponent_2': 4, 'W_layer_units_exponent_3': 5, 'W_layer_units_exponent_4': 8, 'W_layer_units_exponent_5': 5, 'W_layer_units_exponent_6': 7, 'W_layer_units_exponent_7': 10, 'D_layers': 8, 'D_layer_units_exponent_0': 7, 'D_layer_units_exponent_1': 10, 'D_layer_units_exponent_2': 5, 'D_layer_units_exponent_3': 8, 'D_layer_units_exponent_4': 5, 'D_layer_units_exponent_5': 6, 'D_layer_units_exponent_6': 5, 'D_layer_units_exponent_7': 10, 'log_learning_rate': -1.4987161645630604, 'log_learning_rate_D': -4.1834811685696005, 'training_batch_size': 8, 'training_p': 2}
+	 epoch  0 training error:  tensor(0.8731, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.38525390625
+Memory cached:  6.0
+	 epoch  10 training error:  tensor(0.1230, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.38525390625
+Memory cached:  6.0
+	 epoch  20 training error:  tensor(0.1174, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.38525390625
+Memory cached:  6.0
+	 epoch  30 training error:  tensor(0.1148, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.38525390625
+Memory cached:  6.0
+	 epoch  40 training error:  tensor(0.1138, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.38525390625
+Memory cached:  6.0
+	 epoch  50 training error:  tensor(0.1137, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.38525390625
+Memory cached:  6.0
+	 epoch  60 training error:  tensor(0.1134, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.38525390625
+Memory cached:  6.0
+	 epoch  70 training error:  tensor(0.1134, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.38525390625
+Memory cached:  6.0
+	 epoch  80 training error:  tensor(0.1134, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.38525390625
+Memory cached:  6.0
+	 epoch  90 training error:  tensor(0.1134, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.38525390625
+Memory cached:  6.0
+[I 2023-12-01 11:42:09,469] Trial 26 finished with value: 0.13037841022014618 and parameters: {'W_layers': 8, 'W_layer_units_exponent_0': 7, 'W_layer_units_exponent_1': 6, 'W_layer_units_exponent_2': 4, 'W_layer_units_exponent_3': 5, 'W_layer_units_exponent_4': 8, 'W_layer_units_exponent_5': 5, 'W_layer_units_exponent_6': 7, 'W_layer_units_exponent_7': 10, 'D_layers': 8, 'D_layer_units_exponent_0': 7, 'D_layer_units_exponent_1': 10, 'D_layer_units_exponent_2': 5, 'D_layer_units_exponent_3': 8, 'D_layer_units_exponent_4': 5, 'D_layer_units_exponent_5': 6, 'D_layer_units_exponent_6': 5, 'D_layer_units_exponent_7': 10, 'log_learning_rate': -1.4987161645630604, 'log_learning_rate_D': -4.1834811685696005, 'training_batch_size': 8, 'training_p': 2}. Best is trial 16 with value: 0.06206030771136284.
+Time for this trial:  14.092944145202637
+Memory status after this trial: 
+Memory allocated:  26.9326171875
+Memory cached:  52.0
+--------------------  Trial  27   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 7, 'W_layer_units_exponent_0': 8, 'W_layer_units_exponent_1': 5, 'W_layer_units_exponent_2': 6, 'W_layer_units_exponent_3': 8, 'W_layer_units_exponent_4': 5, 'W_layer_units_exponent_5': 5, 'W_layer_units_exponent_6': 6, 'D_layers': 6, 'D_layer_units_exponent_0': 8, 'D_layer_units_exponent_1': 8, 'D_layer_units_exponent_2': 8, 'D_layer_units_exponent_3': 10, 'D_layer_units_exponent_4': 6, 'D_layer_units_exponent_5': 7, 'log_learning_rate': -2.8448605827342215, 'log_learning_rate_D': -4.61925603325038, 'training_batch_size': 10, 'training_p': 3}
+	 epoch  0 training error:  tensor(0.1277, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.4296875
+Memory cached:  8.0
+	 epoch  10 training error:  tensor(0.0784, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.4296875
+Memory cached:  8.0
+	 epoch  20 training error:  tensor(0.0711, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.4296875
+Memory cached:  8.0
+	 epoch  30 training error:  tensor(0.0679, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.4296875
+Memory cached:  8.0
+	 epoch  40 training error:  tensor(0.0668, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.4296875
+Memory cached:  8.0
+	 epoch  50 training error:  tensor(0.0664, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.4296875
+Memory cached:  8.0
+	 epoch  60 training error:  tensor(0.0681, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.4296875
+Memory cached:  8.0
+	 epoch  70 training error:  tensor(0.0668, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.4296875
+Memory cached:  8.0
+	 epoch  80 training error:  tensor(0.0666, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.4296875
+Memory cached:  8.0
+	 epoch  90 training error:  tensor(0.0675, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.4296875
+Memory cached:  8.0
+[I 2023-12-01 11:42:23,163] Trial 27 finished with value: 0.06449852138757706 and parameters: {'W_layers': 7, 'W_layer_units_exponent_0': 8, 'W_layer_units_exponent_1': 5, 'W_layer_units_exponent_2': 6, 'W_layer_units_exponent_3': 8, 'W_layer_units_exponent_4': 5, 'W_layer_units_exponent_5': 5, 'W_layer_units_exponent_6': 6, 'D_layers': 6, 'D_layer_units_exponent_0': 8, 'D_layer_units_exponent_1': 8, 'D_layer_units_exponent_2': 8, 'D_layer_units_exponent_3': 10, 'D_layer_units_exponent_4': 6, 'D_layer_units_exponent_5': 7, 'log_learning_rate': -2.8448605827342215, 'log_learning_rate_D': -4.61925603325038, 'training_batch_size': 10, 'training_p': 3}. Best is trial 16 with value: 0.06206030771136284.
+Time for this trial:  13.520598649978638
+Memory status after this trial: 
+Memory allocated:  11.5751953125
+Memory cached:  30.0
+--------------------  Trial  28   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 5, 'W_layer_units_exponent_0': 9, 'W_layer_units_exponent_1': 4, 'W_layer_units_exponent_2': 5, 'W_layer_units_exponent_3': 7, 'W_layer_units_exponent_4': 6, 'D_layers': 8, 'D_layer_units_exponent_0': 9, 'D_layer_units_exponent_1': 10, 'D_layer_units_exponent_2': 6, 'D_layer_units_exponent_3': 7, 'D_layer_units_exponent_4': 5, 'D_layer_units_exponent_5': 8, 'D_layer_units_exponent_6': 4, 'D_layer_units_exponent_7': 8, 'log_learning_rate': -2.34182963621635, 'log_learning_rate_D': -3.7642356369119643, 'training_batch_size': 9, 'training_p': 6}
+	 epoch  0 training error:  tensor(1.8058, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.759765625
+Memory cached:  24.0
+	 epoch  10 training error:  tensor(0.2000, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.759765625
+Memory cached:  24.0
+	 epoch  20 training error:  tensor(0.1352, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.759765625
+Memory cached:  24.0
+	 epoch  30 training error:  tensor(0.0968, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.759765625
+Memory cached:  24.0
+	 epoch  40 training error:  tensor(0.0841, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.759765625
+Memory cached:  24.0
+	 epoch  50 training error:  tensor(0.0844, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.759765625
+Memory cached:  24.0
+	 epoch  60 training error:  tensor(0.0821, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.759765625
+Memory cached:  24.0
+	 epoch  70 training error:  tensor(0.0860, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.759765625
+Memory cached:  24.0
+	 epoch  80 training error:  tensor(0.0884, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.759765625
+Memory cached:  24.0
+	 epoch  90 training error:  tensor(0.0829, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.759765625
+Memory cached:  24.0
+[I 2023-12-01 11:42:36,587] Trial 28 finished with value: 0.06831897050142288 and parameters: {'W_layers': 5, 'W_layer_units_exponent_0': 9, 'W_layer_units_exponent_1': 4, 'W_layer_units_exponent_2': 5, 'W_layer_units_exponent_3': 7, 'W_layer_units_exponent_4': 6, 'D_layers': 8, 'D_layer_units_exponent_0': 9, 'D_layer_units_exponent_1': 10, 'D_layer_units_exponent_2': 6, 'D_layer_units_exponent_3': 7, 'D_layer_units_exponent_4': 5, 'D_layer_units_exponent_5': 8, 'D_layer_units_exponent_6': 4, 'D_layer_units_exponent_7': 8, 'log_learning_rate': -2.34182963621635, 'log_learning_rate_D': -3.7642356369119643, 'training_batch_size': 9, 'training_p': 6}. Best is trial 16 with value: 0.06206030771136284.
+Time for this trial:  13.252322673797607
+Memory status after this trial: 
+Memory allocated:  11.693359375
+Memory cached:  26.0
+--------------------  Trial  29   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 7, 'W_layer_units_exponent_0': 7, 'W_layer_units_exponent_1': 7, 'W_layer_units_exponent_2': 4, 'W_layer_units_exponent_3': 4, 'W_layer_units_exponent_4': 4, 'W_layer_units_exponent_5': 8, 'W_layer_units_exponent_6': 9, 'D_layers': 2, 'D_layer_units_exponent_0': 7, 'D_layer_units_exponent_1': 9, 'log_learning_rate': -3.155655733545978, 'log_learning_rate_D': -4.957926111247892, 'training_batch_size': 8, 'training_p': 6}
+	 epoch  0 training error:  tensor(0.7184, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.67138671875
+Memory cached:  4.0
+	 epoch  10 training error:  tensor(0.1873, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.67138671875
+Memory cached:  6.0
+	 epoch  20 training error:  tensor(0.1392, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.67138671875
+Memory cached:  4.0
+	 epoch  30 training error:  tensor(0.1170, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.67138671875
+Memory cached:  4.0
+	 epoch  40 training error:  tensor(0.1011, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.67138671875
+Memory cached:  6.0
+	 epoch  50 training error:  tensor(0.0925, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.67138671875
+Memory cached:  4.0
+	 epoch  60 training error:  tensor(0.0901, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.67138671875
+Memory cached:  4.0
+	 epoch  70 training error:  tensor(0.0874, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.67138671875
+Memory cached:  6.0
+	 epoch  80 training error:  tensor(0.0858, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.67138671875
+Memory cached:  4.0
+	 epoch  90 training error:  tensor(0.0842, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.67138671875
+Memory cached:  4.0
+[I 2023-12-01 11:42:50,791] Trial 29 finished with value: 0.0703980028629303 and parameters: {'W_layers': 7, 'W_layer_units_exponent_0': 7, 'W_layer_units_exponent_1': 7, 'W_layer_units_exponent_2': 4, 'W_layer_units_exponent_3': 4, 'W_layer_units_exponent_4': 4, 'W_layer_units_exponent_5': 8, 'W_layer_units_exponent_6': 9, 'D_layers': 2, 'D_layer_units_exponent_0': 7, 'D_layer_units_exponent_1': 9, 'log_learning_rate': -3.155655733545978, 'log_learning_rate_D': -4.957926111247892, 'training_batch_size': 8, 'training_p': 6}. Best is trial 16 with value: 0.06206030771136284.
+Time for this trial:  14.047184944152832
+Memory status after this trial: 
+Memory allocated:  17.591796875
+Memory cached:  28.0
+--------------------  Trial  30   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 5, 'W_layer_units_exponent_0': 10, 'W_layer_units_exponent_1': 8, 'W_layer_units_exponent_2': 6, 'W_layer_units_exponent_3': 6, 'W_layer_units_exponent_4': 5, 'D_layers': 3, 'D_layer_units_exponent_0': 10, 'D_layer_units_exponent_1': 10, 'D_layer_units_exponent_2': 9, 'log_learning_rate': -1.3317937398185866, 'log_learning_rate_D': -4.092569265668039, 'training_batch_size': 10, 'training_p': 2}
+	 epoch  0 training error:  tensor(0.3472, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  10.453125
+Memory cached:  26.0
+	 epoch  10 training error:  tensor(0.4006, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  10.453125
+Memory cached:  28.0
+	 epoch  20 training error:  tensor(0.1403, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  10.453125
+Memory cached:  28.0
+	 epoch  30 training error:  tensor(0.0930, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  10.453125
+Memory cached:  28.0
+	 epoch  40 training error:  tensor(0.0710, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  10.453125
+Memory cached:  28.0
+	 epoch  50 training error:  tensor(0.0626, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  10.453125
+Memory cached:  28.0
+	 epoch  60 training error:  tensor(0.0614, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  10.453125
+Memory cached:  28.0
+	 epoch  70 training error:  tensor(0.0661, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  10.453125
+Memory cached:  28.0
+	 epoch  80 training error:  tensor(0.0633, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  10.453125
+Memory cached:  28.0
+	 epoch  90 training error:  tensor(0.0598, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  10.453125
+Memory cached:  28.0
+[I 2023-12-01 11:43:04,532] Trial 30 finished with value: 0.06389103829860687 and parameters: {'W_layers': 5, 'W_layer_units_exponent_0': 10, 'W_layer_units_exponent_1': 8, 'W_layer_units_exponent_2': 6, 'W_layer_units_exponent_3': 6, 'W_layer_units_exponent_4': 5, 'D_layers': 3, 'D_layer_units_exponent_0': 10, 'D_layer_units_exponent_1': 10, 'D_layer_units_exponent_2': 9, 'log_learning_rate': -1.3317937398185866, 'log_learning_rate_D': -4.092569265668039, 'training_batch_size': 10, 'training_p': 2}. Best is trial 16 with value: 0.06206030771136284.
+Time for this trial:  13.572246074676514
+Memory status after this trial: 
+Memory allocated:  24.6845703125
+Memory cached:  46.0
+--------------------  Trial  31   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 6, 'W_layer_units_exponent_0': 8, 'W_layer_units_exponent_1': 5, 'W_layer_units_exponent_2': 6, 'W_layer_units_exponent_3': 6, 'W_layer_units_exponent_4': 4, 'W_layer_units_exponent_5': 4, 'D_layers': 7, 'D_layer_units_exponent_0': 9, 'D_layer_units_exponent_1': 7, 'D_layer_units_exponent_2': 9, 'D_layer_units_exponent_3': 9, 'D_layer_units_exponent_4': 4, 'D_layer_units_exponent_5': 5, 'D_layer_units_exponent_6': 4, 'log_learning_rate': -2.5021898261732183, 'log_learning_rate_D': -4.341801541985252, 'training_batch_size': 7, 'training_p': 2}
+	 epoch  0 training error:  tensor(0.1171, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.841796875
+Memory cached:  4.0
+	 epoch  10 training error:  tensor(0.0691, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.841796875
+Memory cached:  6.0
+	 epoch  20 training error:  tensor(0.0610, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.841796875
+Memory cached:  6.0
+	 epoch  30 training error:  tensor(0.0596, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.841796875
+Memory cached:  6.0
+	 epoch  40 training error:  tensor(0.0596, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.841796875
+Memory cached:  6.0
+	 epoch  50 training error:  tensor(0.0579, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.841796875
+Memory cached:  6.0
+	 epoch  60 training error:  tensor(0.0581, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.841796875
+Memory cached:  6.0
+	 epoch  70 training error:  tensor(0.0653, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.841796875
+Memory cached:  6.0
+	 epoch  80 training error:  tensor(0.0602, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.841796875
+Memory cached:  6.0
+	 epoch  90 training error:  tensor(0.0587, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.841796875
+Memory cached:  6.0
+[I 2023-12-01 11:43:18,204] Trial 31 finished with value: 0.06297636032104492 and parameters: {'W_layers': 6, 'W_layer_units_exponent_0': 8, 'W_layer_units_exponent_1': 5, 'W_layer_units_exponent_2': 6, 'W_layer_units_exponent_3': 6, 'W_layer_units_exponent_4': 4, 'W_layer_units_exponent_5': 4, 'D_layers': 7, 'D_layer_units_exponent_0': 9, 'D_layer_units_exponent_1': 7, 'D_layer_units_exponent_2': 9, 'D_layer_units_exponent_3': 9, 'D_layer_units_exponent_4': 4, 'D_layer_units_exponent_5': 5, 'D_layer_units_exponent_6': 4, 'log_learning_rate': -2.5021898261732183, 'log_learning_rate_D': -4.341801541985252, 'training_batch_size': 7, 'training_p': 2}. Best is trial 16 with value: 0.06206030771136284.
+Time for this trial:  13.489022731781006
+Memory status after this trial: 
+Memory allocated:  7.0087890625
+Memory cached:  26.0
+--------------------  Trial  32   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 6, 'W_layer_units_exponent_0': 8, 'W_layer_units_exponent_1': 6, 'W_layer_units_exponent_2': 7, 'W_layer_units_exponent_3': 5, 'W_layer_units_exponent_4': 4, 'W_layer_units_exponent_5': 5, 'D_layers': 7, 'D_layer_units_exponent_0': 9, 'D_layer_units_exponent_1': 9, 'D_layer_units_exponent_2': 9, 'D_layer_units_exponent_3': 9, 'D_layer_units_exponent_4': 4, 'D_layer_units_exponent_5': 4, 'D_layer_units_exponent_6': 5, 'log_learning_rate': -2.8331924581974275, 'log_learning_rate_D': -4.79579350377522, 'training_batch_size': 7, 'training_p': 2}
+	 epoch  0 training error:  tensor(0.9536, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.55712890625
+Memory cached:  6.0
+	 epoch  10 training error:  tensor(0.1200, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.55712890625
+Memory cached:  8.0
+	 epoch  20 training error:  tensor(0.1013, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.55712890625
+Memory cached:  8.0
+	 epoch  30 training error:  tensor(0.0788, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.55712890625
+Memory cached:  8.0
+	 epoch  40 training error:  tensor(0.0689, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.55712890625
+Memory cached:  8.0
+	 epoch  50 training error:  tensor(0.0653, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.55712890625
+Memory cached:  8.0
+	 epoch  60 training error:  tensor(0.0632, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.55712890625
+Memory cached:  8.0
+	 epoch  70 training error:  tensor(0.0620, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.55712890625
+Memory cached:  8.0
+	 epoch  80 training error:  tensor(0.0611, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.55712890625
+Memory cached:  8.0
+	 epoch  90 training error:  tensor(0.0627, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3.55712890625
+Memory cached:  8.0
+[I 2023-12-01 11:43:31,927] Trial 32 finished with value: 0.06493619829416275 and parameters: {'W_layers': 6, 'W_layer_units_exponent_0': 8, 'W_layer_units_exponent_1': 6, 'W_layer_units_exponent_2': 7, 'W_layer_units_exponent_3': 5, 'W_layer_units_exponent_4': 4, 'W_layer_units_exponent_5': 5, 'D_layers': 7, 'D_layer_units_exponent_0': 9, 'D_layer_units_exponent_1': 9, 'D_layer_units_exponent_2': 9, 'D_layer_units_exponent_3': 9, 'D_layer_units_exponent_4': 4, 'D_layer_units_exponent_5': 4, 'D_layer_units_exponent_6': 5, 'log_learning_rate': -2.8331924581974275, 'log_learning_rate_D': -4.79579350377522, 'training_batch_size': 7, 'training_p': 2}. Best is trial 16 with value: 0.06206030771136284.
+Time for this trial:  13.532484769821167
+Memory status after this trial: 
+Memory allocated:  8.3369140625
+Memory cached:  28.0
+--------------------  Trial  33   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 8, 'W_layer_units_exponent_0': 8, 'W_layer_units_exponent_1': 5, 'W_layer_units_exponent_2': 7, 'W_layer_units_exponent_3': 7, 'W_layer_units_exponent_4': 4, 'W_layer_units_exponent_5': 4, 'W_layer_units_exponent_6': 8, 'W_layer_units_exponent_7': 7, 'D_layers': 7, 'D_layer_units_exponent_0': 8, 'D_layer_units_exponent_1': 8, 'D_layer_units_exponent_2': 8, 'D_layer_units_exponent_3': 9, 'D_layer_units_exponent_4': 5, 'D_layer_units_exponent_5': 5, 'D_layer_units_exponent_6': 4, 'log_learning_rate': -2.4782063077844128, 'log_learning_rate_D': -4.2301843951612295, 'training_batch_size': 8, 'training_p': 3}
+	 epoch  0 training error:  tensor(1.4603, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.17431640625
+Memory cached:  6.0
+	 epoch  10 training error:  tensor(0.1438, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.17431640625
+Memory cached:  6.0
+	 epoch  20 training error:  tensor(0.1267, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.17431640625
+Memory cached:  6.0
+	 epoch  30 training error:  tensor(0.0859, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.17431640625
+Memory cached:  6.0
+	 epoch  40 training error:  tensor(0.0732, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.17431640625
+Memory cached:  6.0
+	 epoch  50 training error:  tensor(0.0693, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.17431640625
+Memory cached:  6.0
+	 epoch  60 training error:  tensor(0.0734, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.17431640625
+Memory cached:  6.0
+	 epoch  70 training error:  tensor(0.0671, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.17431640625
+Memory cached:  6.0
+	 epoch  80 training error:  tensor(0.0668, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.17431640625
+Memory cached:  6.0
+	 epoch  90 training error:  tensor(0.0669, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.17431640625
+Memory cached:  6.0
+[I 2023-12-01 11:43:45,621] Trial 33 finished with value: 0.06302862614393234 and parameters: {'W_layers': 8, 'W_layer_units_exponent_0': 8, 'W_layer_units_exponent_1': 5, 'W_layer_units_exponent_2': 7, 'W_layer_units_exponent_3': 7, 'W_layer_units_exponent_4': 4, 'W_layer_units_exponent_5': 4, 'W_layer_units_exponent_6': 8, 'W_layer_units_exponent_7': 7, 'D_layers': 7, 'D_layer_units_exponent_0': 8, 'D_layer_units_exponent_1': 8, 'D_layer_units_exponent_2': 8, 'D_layer_units_exponent_3': 9, 'D_layer_units_exponent_4': 5, 'D_layer_units_exponent_5': 5, 'D_layer_units_exponent_6': 4, 'log_learning_rate': -2.4782063077844128, 'log_learning_rate_D': -4.2301843951612295, 'training_batch_size': 8, 'training_p': 3}. Best is trial 16 with value: 0.06206030771136284.
+Time for this trial:  13.503241539001465
+Memory status after this trial: 
+Memory allocated:  15.22265625
+Memory cached:  32.0
+--------------------  Trial  34   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 7, 'W_layer_units_exponent_0': 9, 'W_layer_units_exponent_1': 6, 'W_layer_units_exponent_2': 5, 'W_layer_units_exponent_3': 6, 'W_layer_units_exponent_4': 5, 'W_layer_units_exponent_5': 5, 'W_layer_units_exponent_6': 6, 'D_layers': 8, 'D_layer_units_exponent_0': 9, 'D_layer_units_exponent_1': 9, 'D_layer_units_exponent_2': 4, 'D_layer_units_exponent_3': 8, 'D_layer_units_exponent_4': 4, 'D_layer_units_exponent_5': 8, 'D_layer_units_exponent_6': 6, 'D_layer_units_exponent_7': 8, 'log_learning_rate': -2.117246529989804, 'log_learning_rate_D': -4.525038293753716, 'training_batch_size': 7, 'training_p': 2}
+	 epoch  0 training error:  tensor(2.1198, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.92626953125
+Memory cached:  4.0
+	 epoch  10 training error:  tensor(0.1691, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.92626953125
+Memory cached:  6.0
+	 epoch  20 training error:  tensor(0.0870, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.92626953125
+Memory cached:  6.0
+	 epoch  30 training error:  tensor(0.0648, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.92626953125
+Memory cached:  6.0
+	 epoch  40 training error:  tensor(0.0622, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.92626953125
+Memory cached:  6.0
+	 epoch  50 training error:  tensor(0.0588, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.92626953125
+Memory cached:  6.0
+	 epoch  60 training error:  tensor(0.0584, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.92626953125
+Memory cached:  6.0
+	 epoch  70 training error:  tensor(0.0596, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.92626953125
+Memory cached:  6.0
+	 epoch  80 training error:  tensor(0.0601, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.92626953125
+Memory cached:  6.0
+	 epoch  90 training error:  tensor(0.0586, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.92626953125
+Memory cached:  6.0
+[I 2023-12-01 11:43:59,355] Trial 34 finished with value: 0.061442144215106964 and parameters: {'W_layers': 7, 'W_layer_units_exponent_0': 9, 'W_layer_units_exponent_1': 6, 'W_layer_units_exponent_2': 5, 'W_layer_units_exponent_3': 6, 'W_layer_units_exponent_4': 5, 'W_layer_units_exponent_5': 5, 'W_layer_units_exponent_6': 6, 'D_layers': 8, 'D_layer_units_exponent_0': 9, 'D_layer_units_exponent_1': 9, 'D_layer_units_exponent_2': 4, 'D_layer_units_exponent_3': 8, 'D_layer_units_exponent_4': 4, 'D_layer_units_exponent_5': 8, 'D_layer_units_exponent_6': 6, 'D_layer_units_exponent_7': 8, 'log_learning_rate': -2.117246529989804, 'log_learning_rate_D': -4.525038293753716, 'training_batch_size': 7, 'training_p': 2}. Best is trial 34 with value: 0.061442144215106964.
+Time for this trial:  13.5430269241333
+Memory status after this trial: 
+Memory allocated:  12.587890625
+Memory cached:  28.0
+--------------------  Trial  35   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 7, 'W_layer_units_exponent_0': 9, 'W_layer_units_exponent_1': 6, 'W_layer_units_exponent_2': 5, 'W_layer_units_exponent_3': 5, 'W_layer_units_exponent_4': 5, 'W_layer_units_exponent_5': 6, 'W_layer_units_exponent_6': 6, 'D_layers': 8, 'D_layer_units_exponent_0': 10, 'D_layer_units_exponent_1': 7, 'D_layer_units_exponent_2': 4, 'D_layer_units_exponent_3': 8, 'D_layer_units_exponent_4': 4, 'D_layer_units_exponent_5': 8, 'D_layer_units_exponent_6': 6, 'D_layer_units_exponent_7': 9, 'log_learning_rate': -1.7454733205078923, 'log_learning_rate_D': -4.7407899507124505, 'training_batch_size': 8, 'training_p': 7}
+	 epoch  0 training error:  tensor(1.6422, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.486328125
+Memory cached:  6.0
+	 epoch  10 training error:  tensor(0.2890, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.486328125
+Memory cached:  6.0
+	 epoch  20 training error:  tensor(0.1148, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.486328125
+Memory cached:  6.0
+	 epoch  30 training error:  tensor(0.0942, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.486328125
+Memory cached:  6.0
+	 epoch  40 training error:  tensor(0.1306, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.486328125
+Memory cached:  6.0
+	 epoch  50 training error:  tensor(0.0910, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.486328125
+Memory cached:  6.0
+	 epoch  60 training error:  tensor(0.1002, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.486328125
+Memory cached:  6.0
+	 epoch  70 training error:  tensor(0.0869, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.486328125
+Memory cached:  6.0
+	 epoch  80 training error:  tensor(0.1755, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.486328125
+Memory cached:  6.0
+	 epoch  90 training error:  tensor(0.0934, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.486328125
+Memory cached:  6.0
+[I 2023-12-01 11:44:13,258] Trial 35 finished with value: 0.09583494067192078 and parameters: {'W_layers': 7, 'W_layer_units_exponent_0': 9, 'W_layer_units_exponent_1': 6, 'W_layer_units_exponent_2': 5, 'W_layer_units_exponent_3': 5, 'W_layer_units_exponent_4': 5, 'W_layer_units_exponent_5': 6, 'W_layer_units_exponent_6': 6, 'D_layers': 8, 'D_layer_units_exponent_0': 10, 'D_layer_units_exponent_1': 7, 'D_layer_units_exponent_2': 4, 'D_layer_units_exponent_3': 8, 'D_layer_units_exponent_4': 4, 'D_layer_units_exponent_5': 8, 'D_layer_units_exponent_6': 6, 'D_layer_units_exponent_7': 9, 'log_learning_rate': -1.7454733205078923, 'log_learning_rate_D': -4.7407899507124505, 'training_batch_size': 8, 'training_p': 7}. Best is trial 34 with value: 0.061442144215106964.
+Time for this trial:  13.707079887390137
+Memory status after this trial: 
+Memory allocated:  12.595703125
+Memory cached:  28.0
+--------------------  Trial  36   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 7, 'W_layer_units_exponent_0': 9, 'W_layer_units_exponent_1': 7, 'W_layer_units_exponent_2': 5, 'W_layer_units_exponent_3': 7, 'W_layer_units_exponent_4': 8, 'W_layer_units_exponent_5': 5, 'W_layer_units_exponent_6': 6, 'D_layers': 8, 'D_layer_units_exponent_0': 6, 'D_layer_units_exponent_1': 8, 'D_layer_units_exponent_2': 5, 'D_layer_units_exponent_3': 6, 'D_layer_units_exponent_4': 6, 'D_layer_units_exponent_5': 9, 'D_layer_units_exponent_6': 7, 'D_layer_units_exponent_7': 6, 'log_learning_rate': -1.95290459657428, 'log_learning_rate_D': -4.532645289702311, 'training_batch_size': 7, 'training_p': 4}
+	 epoch  0 training error:  tensor(1.1674, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.38330078125
+Memory cached:  4.0
+	 epoch  10 training error:  tensor(0.1524, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.38330078125
+Memory cached:  6.0
+	 epoch  20 training error:  tensor(0.0975, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.38330078125
+Memory cached:  6.0
+	 epoch  30 training error:  tensor(0.0857, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.38330078125
+Memory cached:  6.0
+	 epoch  40 training error:  tensor(0.0813, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.38330078125
+Memory cached:  6.0
+	 epoch  50 training error:  tensor(0.0740, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.38330078125
+Memory cached:  6.0
+	 epoch  60 training error:  tensor(0.0737, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.38330078125
+Memory cached:  6.0
+	 epoch  70 training error:  tensor(0.0751, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.38330078125
+Memory cached:  6.0
+	 epoch  80 training error:  tensor(0.0727, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.38330078125
+Memory cached:  6.0
+	 epoch  90 training error:  tensor(0.0766, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.38330078125
+Memory cached:  6.0
+[I 2023-12-01 11:44:27,165] Trial 36 finished with value: 0.06641898304224014 and parameters: {'W_layers': 7, 'W_layer_units_exponent_0': 9, 'W_layer_units_exponent_1': 7, 'W_layer_units_exponent_2': 5, 'W_layer_units_exponent_3': 7, 'W_layer_units_exponent_4': 8, 'W_layer_units_exponent_5': 5, 'W_layer_units_exponent_6': 6, 'D_layers': 8, 'D_layer_units_exponent_0': 6, 'D_layer_units_exponent_1': 8, 'D_layer_units_exponent_2': 5, 'D_layer_units_exponent_3': 6, 'D_layer_units_exponent_4': 6, 'D_layer_units_exponent_5': 9, 'D_layer_units_exponent_6': 7, 'D_layer_units_exponent_7': 6, 'log_learning_rate': -1.95290459657428, 'log_learning_rate_D': -4.532645289702311, 'training_batch_size': 7, 'training_p': 4}. Best is trial 34 with value: 0.061442144215106964.
+Time for this trial:  13.712763547897339
+Memory status after this trial: 
+Memory allocated:  18.5302734375
+Memory cached:  30.0
+--------------------  Trial  37   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 8, 'W_layer_units_exponent_0': 7, 'W_layer_units_exponent_1': 7, 'W_layer_units_exponent_2': 6, 'W_layer_units_exponent_3': 8, 'W_layer_units_exponent_4': 5, 'W_layer_units_exponent_5': 7, 'W_layer_units_exponent_6': 5, 'W_layer_units_exponent_7': 8, 'D_layers': 8, 'D_layer_units_exponent_0': 9, 'D_layer_units_exponent_1': 9, 'D_layer_units_exponent_2': 4, 'D_layer_units_exponent_3': 7, 'D_layer_units_exponent_4': 5, 'D_layer_units_exponent_5': 9, 'D_layer_units_exponent_6': 5, 'D_layer_units_exponent_7': 8, 'log_learning_rate': -2.170783031697361, 'log_learning_rate_D': -3.9405302902264996, 'training_batch_size': 8, 'training_p': 2}
+	 epoch  0 training error:  tensor(0.8439, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.2841796875
+Memory cached:  6.0
+	 epoch  10 training error:  tensor(0.1114, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.2841796875
+Memory cached:  8.0
+	 epoch  20 training error:  tensor(0.0811, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.2841796875
+Memory cached:  6.0
+	 epoch  30 training error:  tensor(0.0629, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.2841796875
+Memory cached:  6.0
+	 epoch  40 training error:  tensor(0.0726, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.2841796875
+Memory cached:  8.0
+	 epoch  50 training error:  tensor(0.0666, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.2841796875
+Memory cached:  6.0
+	 epoch  60 training error:  tensor(0.0590, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.2841796875
+Memory cached:  6.0
+	 epoch  70 training error:  tensor(0.0626, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.2841796875
+Memory cached:  8.0
+	 epoch  80 training error:  tensor(0.0576, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.2841796875
+Memory cached:  6.0
+	 epoch  90 training error:  tensor(0.0660, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.2841796875
+Memory cached:  6.0
+[I 2023-12-01 11:44:41,004] Trial 37 finished with value: 0.06518993526697159 and parameters: {'W_layers': 8, 'W_layer_units_exponent_0': 7, 'W_layer_units_exponent_1': 7, 'W_layer_units_exponent_2': 6, 'W_layer_units_exponent_3': 8, 'W_layer_units_exponent_4': 5, 'W_layer_units_exponent_5': 7, 'W_layer_units_exponent_6': 5, 'W_layer_units_exponent_7': 8, 'D_layers': 8, 'D_layer_units_exponent_0': 9, 'D_layer_units_exponent_1': 9, 'D_layer_units_exponent_2': 4, 'D_layer_units_exponent_3': 7, 'D_layer_units_exponent_4': 5, 'D_layer_units_exponent_5': 9, 'D_layer_units_exponent_6': 5, 'D_layer_units_exponent_7': 8, 'log_learning_rate': -2.170783031697361, 'log_learning_rate_D': -3.9405302902264996, 'training_batch_size': 8, 'training_p': 2}. Best is trial 34 with value: 0.061442144215106964.
+Time for this trial:  13.646679639816284
+Memory status after this trial: 
+Memory allocated:  16.1806640625
+Memory cached:  32.0
+--------------------  Trial  38   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 7, 'W_layer_units_exponent_0': 8, 'W_layer_units_exponent_1': 6, 'W_layer_units_exponent_2': 4, 'W_layer_units_exponent_3': 6, 'W_layer_units_exponent_4': 6, 'W_layer_units_exponent_5': 5, 'W_layer_units_exponent_6': 8, 'D_layers': 4, 'D_layer_units_exponent_0': 8, 'D_layer_units_exponent_1': 10, 'D_layer_units_exponent_2': 4, 'D_layer_units_exponent_3': 8, 'log_learning_rate': -2.7833535665558724, 'log_learning_rate_D': -3.701636942052801, 'training_batch_size': 6, 'training_p': 3}
+	 epoch  0 training error:  tensor(0.5346, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.62451171875
+Memory cached:  4.0
+	 epoch  10 training error:  tensor(0.1136, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.62451171875
+Memory cached:  6.0
+	 epoch  20 training error:  tensor(0.0788, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.62451171875
+Memory cached:  6.0
+	 epoch  30 training error:  tensor(0.0762, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.62451171875
+Memory cached:  6.0
+	 epoch  40 training error:  tensor(0.0699, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.62451171875
+Memory cached:  6.0
+	 epoch  50 training error:  tensor(0.0750, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.62451171875
+Memory cached:  6.0
+	 epoch  60 training error:  tensor(0.0682, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.62451171875
+Memory cached:  6.0
+	 epoch  70 training error:  tensor(0.0676, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.62451171875
+Memory cached:  6.0
+	 epoch  80 training error:  tensor(0.0701, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.62451171875
+Memory cached:  6.0
+	 epoch  90 training error:  tensor(0.0728, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.62451171875
+Memory cached:  6.0
+[I 2023-12-01 11:44:55,807] Trial 38 finished with value: 0.0654352530837059 and parameters: {'W_layers': 7, 'W_layer_units_exponent_0': 8, 'W_layer_units_exponent_1': 6, 'W_layer_units_exponent_2': 4, 'W_layer_units_exponent_3': 6, 'W_layer_units_exponent_4': 6, 'W_layer_units_exponent_5': 5, 'W_layer_units_exponent_6': 8, 'D_layers': 4, 'D_layer_units_exponent_0': 8, 'D_layer_units_exponent_1': 10, 'D_layer_units_exponent_2': 4, 'D_layer_units_exponent_3': 8, 'log_learning_rate': -2.7833535665558724, 'log_learning_rate_D': -3.701636942052801, 'training_batch_size': 6, 'training_p': 3}. Best is trial 34 with value: 0.061442144215106964.
+Time for this trial:  14.622855424880981
+Memory status after this trial: 
+Memory allocated:  11.78125
+Memory cached:  28.0
+--------------------  Trial  39   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 8, 'W_layer_units_exponent_0': 9, 'W_layer_units_exponent_1': 4, 'W_layer_units_exponent_2': 5, 'W_layer_units_exponent_3': 5, 'W_layer_units_exponent_4': 4, 'W_layer_units_exponent_5': 7, 'W_layer_units_exponent_6': 4, 'W_layer_units_exponent_7': 8, 'D_layers': 8, 'D_layer_units_exponent_0': 9, 'D_layer_units_exponent_1': 8, 'D_layer_units_exponent_2': 7, 'D_layer_units_exponent_3': 10, 'D_layer_units_exponent_4': 4, 'D_layer_units_exponent_5': 7, 'D_layer_units_exponent_6': 7, 'D_layer_units_exponent_7': 9, 'log_learning_rate': -2.0673423639897934, 'log_learning_rate_D': -4.118778229912931, 'training_batch_size': 9, 'training_p': 7}
+	 epoch  0 training error:  tensor(1.1030, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.8798828125
+Memory cached:  6.0
+	 epoch  10 training error:  tensor(0.1389, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.8798828125
+Memory cached:  8.0
+	 epoch  20 training error:  tensor(0.1799, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.8798828125
+Memory cached:  8.0
+	 epoch  30 training error:  tensor(0.1354, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.8798828125
+Memory cached:  8.0
+	 epoch  40 training error:  tensor(0.1026, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.8798828125
+Memory cached:  8.0
+	 epoch  50 training error:  tensor(0.1760, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.8798828125
+Memory cached:  8.0
+	 epoch  60 training error:  tensor(0.1011, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.8798828125
+Memory cached:  8.0
+	 epoch  70 training error:  tensor(0.0965, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.8798828125
+Memory cached:  8.0
+	 epoch  80 training error:  tensor(0.0951, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.8798828125
+Memory cached:  8.0
+	 epoch  90 training error:  tensor(0.1120, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.8798828125
+Memory cached:  8.0
+[I 2023-12-01 11:45:10,284] Trial 39 finished with value: 0.08830384910106659 and parameters: {'W_layers': 8, 'W_layer_units_exponent_0': 9, 'W_layer_units_exponent_1': 4, 'W_layer_units_exponent_2': 5, 'W_layer_units_exponent_3': 5, 'W_layer_units_exponent_4': 4, 'W_layer_units_exponent_5': 7, 'W_layer_units_exponent_6': 4, 'W_layer_units_exponent_7': 8, 'D_layers': 8, 'D_layer_units_exponent_0': 9, 'D_layer_units_exponent_1': 8, 'D_layer_units_exponent_2': 7, 'D_layer_units_exponent_3': 10, 'D_layer_units_exponent_4': 4, 'D_layer_units_exponent_5': 7, 'D_layer_units_exponent_6': 7, 'D_layer_units_exponent_7': 9, 'log_learning_rate': -2.0673423639897934, 'log_learning_rate_D': -4.118778229912931, 'training_batch_size': 9, 'training_p': 7}. Best is trial 34 with value: 0.061442144215106964.
+Time for this trial:  14.244861364364624
+Memory status after this trial: 
+Memory allocated:  15.5849609375
+Memory cached:  28.0
+--------------------  Trial  40   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 7, 'W_layer_units_exponent_0': 10, 'W_layer_units_exponent_1': 7, 'W_layer_units_exponent_2': 6, 'W_layer_units_exponent_3': 7, 'W_layer_units_exponent_4': 5, 'W_layer_units_exponent_5': 5, 'W_layer_units_exponent_6': 8, 'D_layers': 7, 'D_layer_units_exponent_0': 5, 'D_layer_units_exponent_1': 5, 'D_layer_units_exponent_2': 4, 'D_layer_units_exponent_3': 6, 'D_layer_units_exponent_4': 5, 'D_layer_units_exponent_5': 10, 'D_layer_units_exponent_6': 5, 'log_learning_rate': -2.2758488250904585, 'log_learning_rate_D': -4.7885690314550535, 'training_batch_size': 8, 'training_p': 2}
+	 epoch  0 training error:  tensor(1.1098, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.82568359375
+Memory cached:  6.0
+	 epoch  10 training error:  tensor(0.1018, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.82568359375
+Memory cached:  8.0
+	 epoch  20 training error:  tensor(0.0659, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.82568359375
+Memory cached:  8.0
+	 epoch  30 training error:  tensor(0.0604, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.82568359375
+Memory cached:  8.0
+	 epoch  40 training error:  tensor(0.0637, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.82568359375
+Memory cached:  8.0
+	 epoch  50 training error:  tensor(0.0618, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.82568359375
+Memory cached:  8.0
+	 epoch  60 training error:  tensor(0.0581, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.82568359375
+Memory cached:  8.0
+	 epoch  70 training error:  tensor(0.0597, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.82568359375
+Memory cached:  8.0
+	 epoch  80 training error:  tensor(0.0582, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.82568359375
+Memory cached:  8.0
+	 epoch  90 training error:  tensor(0.0626, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.82568359375
+Memory cached:  8.0
+[I 2023-12-01 11:45:24,524] Trial 40 finished with value: 0.06119978427886963 and parameters: {'W_layers': 7, 'W_layer_units_exponent_0': 10, 'W_layer_units_exponent_1': 7, 'W_layer_units_exponent_2': 6, 'W_layer_units_exponent_3': 7, 'W_layer_units_exponent_4': 5, 'W_layer_units_exponent_5': 5, 'W_layer_units_exponent_6': 8, 'D_layers': 7, 'D_layer_units_exponent_0': 5, 'D_layer_units_exponent_1': 5, 'D_layer_units_exponent_2': 4, 'D_layer_units_exponent_3': 6, 'D_layer_units_exponent_4': 5, 'D_layer_units_exponent_5': 10, 'D_layer_units_exponent_6': 5, 'log_learning_rate': -2.2758488250904585, 'log_learning_rate_D': -4.7885690314550535, 'training_batch_size': 8, 'training_p': 2}. Best is trial 40 with value: 0.06119978427886963.
+Time for this trial:  14.04669713973999
+Memory status after this trial: 
+Memory allocated:  27.16015625
+Memory cached:  50.0
+--------------------  Trial  41   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 7, 'W_layer_units_exponent_0': 10, 'W_layer_units_exponent_1': 7, 'W_layer_units_exponent_2': 6, 'W_layer_units_exponent_3': 7, 'W_layer_units_exponent_4': 5, 'W_layer_units_exponent_5': 5, 'W_layer_units_exponent_6': 8, 'D_layers': 7, 'D_layer_units_exponent_0': 5, 'D_layer_units_exponent_1': 5, 'D_layer_units_exponent_2': 4, 'D_layer_units_exponent_3': 6, 'D_layer_units_exponent_4': 5, 'D_layer_units_exponent_5': 10, 'D_layer_units_exponent_6': 5, 'log_learning_rate': -2.2239129345654507, 'log_learning_rate_D': -4.8221642081564005, 'training_batch_size': 8, 'training_p': 2}
+	 epoch  0 training error:  tensor(1.7733, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.82568359375
+Memory cached:  6.0
+	 epoch  10 training error:  tensor(0.0924, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.82568359375
+Memory cached:  8.0
+	 epoch  20 training error:  tensor(0.0745, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.82568359375
+Memory cached:  8.0
+	 epoch  30 training error:  tensor(0.0595, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.82568359375
+Memory cached:  8.0
+	 epoch  40 training error:  tensor(0.0678, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.82568359375
+Memory cached:  8.0
+	 epoch  50 training error:  tensor(0.0589, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.82568359375
+Memory cached:  8.0
+	 epoch  60 training error:  tensor(0.0594, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.82568359375
+Memory cached:  8.0
+	 epoch  70 training error:  tensor(0.0708, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.82568359375
+Memory cached:  8.0
+	 epoch  80 training error:  tensor(0.0656, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.82568359375
+Memory cached:  8.0
+	 epoch  90 training error:  tensor(0.0601, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2.82568359375
+Memory cached:  8.0
+[I 2023-12-01 11:45:38,641] Trial 41 finished with value: 0.062178708612918854 and parameters: {'W_layers': 7, 'W_layer_units_exponent_0': 10, 'W_layer_units_exponent_1': 7, 'W_layer_units_exponent_2': 6, 'W_layer_units_exponent_3': 7, 'W_layer_units_exponent_4': 5, 'W_layer_units_exponent_5': 5, 'W_layer_units_exponent_6': 8, 'D_layers': 7, 'D_layer_units_exponent_0': 5, 'D_layer_units_exponent_1': 5, 'D_layer_units_exponent_2': 4, 'D_layer_units_exponent_3': 6, 'D_layer_units_exponent_4': 5, 'D_layer_units_exponent_5': 10, 'D_layer_units_exponent_6': 5, 'log_learning_rate': -2.2239129345654507, 'log_learning_rate_D': -4.8221642081564005, 'training_batch_size': 8, 'training_p': 2}. Best is trial 40 with value: 0.06119978427886963.
+Time for this trial:  13.882750034332275
+Memory status after this trial: 
+Memory allocated:  27.16015625
+Memory cached:  50.0
+--------------------  Trial  42   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 6, 'W_layer_units_exponent_0': 10, 'W_layer_units_exponent_1': 8, 'W_layer_units_exponent_2': 6, 'W_layer_units_exponent_3': 7, 'W_layer_units_exponent_4': 7, 'W_layer_units_exponent_5': 6, 'D_layers': 7, 'D_layer_units_exponent_0': 5, 'D_layer_units_exponent_1': 5, 'D_layer_units_exponent_2': 4, 'D_layer_units_exponent_3': 6, 'D_layer_units_exponent_4': 5, 'D_layer_units_exponent_5': 10, 'D_layer_units_exponent_6': 6, 'log_learning_rate': -2.293344661846506, 'log_learning_rate_D': -4.997986296535474, 'training_batch_size': 8, 'training_p': 2}
+	 epoch  0 training error:  tensor(1.1630, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.24365234375
+Memory cached:  6.0
+	 epoch  10 training error:  tensor(0.1371, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.24365234375
+Memory cached:  6.0
+	 epoch  20 training error:  tensor(0.0666, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.24365234375
+Memory cached:  6.0
+	 epoch  30 training error:  tensor(0.0640, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.24365234375
+Memory cached:  6.0
+	 epoch  40 training error:  tensor(0.0623, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.24365234375
+Memory cached:  6.0
+	 epoch  50 training error:  tensor(0.0582, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.24365234375
+Memory cached:  6.0
+	 epoch  60 training error:  tensor(0.0578, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.24365234375
+Memory cached:  6.0
+	 epoch  70 training error:  tensor(0.0587, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.24365234375
+Memory cached:  6.0
+	 epoch  80 training error:  tensor(0.0579, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.24365234375
+Memory cached:  6.0
+	 epoch  90 training error:  tensor(0.0576, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.24365234375
+Memory cached:  6.0
+[I 2023-12-01 11:45:52,488] Trial 42 finished with value: 0.0616002157330513 and parameters: {'W_layers': 6, 'W_layer_units_exponent_0': 10, 'W_layer_units_exponent_1': 8, 'W_layer_units_exponent_2': 6, 'W_layer_units_exponent_3': 7, 'W_layer_units_exponent_4': 7, 'W_layer_units_exponent_5': 6, 'D_layers': 7, 'D_layer_units_exponent_0': 5, 'D_layer_units_exponent_1': 5, 'D_layer_units_exponent_2': 4, 'D_layer_units_exponent_3': 6, 'D_layer_units_exponent_4': 5, 'D_layer_units_exponent_5': 10, 'D_layer_units_exponent_6': 6, 'log_learning_rate': -2.293344661846506, 'log_learning_rate_D': -4.997986296535474, 'training_batch_size': 8, 'training_p': 2}. Best is trial 40 with value: 0.06119978427886963.
+Time for this trial:  13.651376008987427
+Memory status after this trial: 
+Memory allocated:  28.306640625
+Memory cached:  50.0
+--------------------  Trial  43   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 7, 'W_layer_units_exponent_0': 10, 'W_layer_units_exponent_1': 8, 'W_layer_units_exponent_2': 6, 'W_layer_units_exponent_3': 8, 'W_layer_units_exponent_4': 7, 'W_layer_units_exponent_5': 6, 'W_layer_units_exponent_6': 8, 'D_layers': 6, 'D_layer_units_exponent_0': 5, 'D_layer_units_exponent_1': 5, 'D_layer_units_exponent_2': 4, 'D_layer_units_exponent_3': 6, 'D_layer_units_exponent_4': 6, 'D_layer_units_exponent_5': 10, 'log_learning_rate': -2.2314639363568136, 'log_learning_rate_D': -4.979688118663953, 'training_batch_size': 9, 'training_p': 2}
+	 epoch  0 training error:  tensor(1.1697, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.7587890625
+Memory cached:  6.0
+	 epoch  10 training error:  tensor(0.1739, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.7587890625
+Memory cached:  8.0
+	 epoch  20 training error:  tensor(0.0846, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.7587890625
+Memory cached:  8.0
+	 epoch  30 training error:  tensor(0.0620, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.7587890625
+Memory cached:  8.0
+	 epoch  40 training error:  tensor(0.0612, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.7587890625
+Memory cached:  8.0
+	 epoch  50 training error:  tensor(0.0626, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.7587890625
+Memory cached:  8.0
+	 epoch  60 training error:  tensor(0.0591, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.7587890625
+Memory cached:  8.0
+	 epoch  70 training error:  tensor(0.0619, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.7587890625
+Memory cached:  8.0
+	 epoch  80 training error:  tensor(0.0613, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.7587890625
+Memory cached:  8.0
+	 epoch  90 training error:  tensor(0.0600, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.7587890625
+Memory cached:  8.0
+[I 2023-12-01 11:46:06,679] Trial 43 finished with value: 0.06090131029486656 and parameters: {'W_layers': 7, 'W_layer_units_exponent_0': 10, 'W_layer_units_exponent_1': 8, 'W_layer_units_exponent_2': 6, 'W_layer_units_exponent_3': 8, 'W_layer_units_exponent_4': 7, 'W_layer_units_exponent_5': 6, 'W_layer_units_exponent_6': 8, 'D_layers': 6, 'D_layer_units_exponent_0': 5, 'D_layer_units_exponent_1': 5, 'D_layer_units_exponent_2': 4, 'D_layer_units_exponent_3': 6, 'D_layer_units_exponent_4': 6, 'D_layer_units_exponent_5': 10, 'log_learning_rate': -2.2314639363568136, 'log_learning_rate_D': -4.979688118663953, 'training_batch_size': 9, 'training_p': 2}. Best is trial 43 with value: 0.06090131029486656.
+Time for this trial:  14.007317781448364
+Memory status after this trial: 
+Memory allocated:  34.482421875
+Memory cached:  50.0
+--------------------  Trial  44   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 6, 'W_layer_units_exponent_0': 10, 'W_layer_units_exponent_1': 9, 'W_layer_units_exponent_2': 6, 'W_layer_units_exponent_3': 9, 'W_layer_units_exponent_4': 7, 'W_layer_units_exponent_5': 6, 'D_layers': 6, 'D_layer_units_exponent_0': 5, 'D_layer_units_exponent_1': 5, 'D_layer_units_exponent_2': 4, 'D_layer_units_exponent_3': 6, 'D_layer_units_exponent_4': 6, 'D_layer_units_exponent_5': 10, 'log_learning_rate': -1.691309591973841, 'log_learning_rate_D': -4.970303225524574, 'training_batch_size': 9, 'training_p': 3}
+	 epoch  0 training error:  tensor(1.0838, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  10.5107421875
+Memory cached:  40.0
+	 epoch  10 training error:  tensor(0.3910, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  10.5107421875
+Memory cached:  40.0
+	 epoch  20 training error:  tensor(0.0881, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  10.5107421875
+Memory cached:  40.0
+	 epoch  30 training error:  tensor(0.1066, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  10.5107421875
+Memory cached:  40.0
+	 epoch  40 training error:  tensor(0.0807, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  10.5107421875
+Memory cached:  40.0
+	 epoch  50 training error:  tensor(0.0702, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  10.5107421875
+Memory cached:  40.0
+	 epoch  60 training error:  tensor(0.0721, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  10.5107421875
+Memory cached:  40.0
+	 epoch  70 training error:  tensor(0.0680, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  10.5107421875
+Memory cached:  40.0
+	 epoch  80 training error:  tensor(0.0677, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  10.5107421875
+Memory cached:  40.0
+	 epoch  90 training error:  tensor(0.0700, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  10.5107421875
+Memory cached:  40.0
+[I 2023-12-01 11:46:21,012] Trial 44 finished with value: 0.06768748164176941 and parameters: {'W_layers': 6, 'W_layer_units_exponent_0': 10, 'W_layer_units_exponent_1': 9, 'W_layer_units_exponent_2': 6, 'W_layer_units_exponent_3': 9, 'W_layer_units_exponent_4': 7, 'W_layer_units_exponent_5': 6, 'D_layers': 6, 'D_layer_units_exponent_0': 5, 'D_layer_units_exponent_1': 5, 'D_layer_units_exponent_2': 4, 'D_layer_units_exponent_3': 6, 'D_layer_units_exponent_4': 6, 'D_layer_units_exponent_5': 10, 'log_learning_rate': -1.691309591973841, 'log_learning_rate_D': -4.970303225524574, 'training_batch_size': 9, 'training_p': 3}. Best is trial 43 with value: 0.06090131029486656.
+Time for this trial:  14.149938583374023
+Memory status after this trial: 
+Memory allocated:  40.2958984375
+Memory cached:  64.0
+--------------------  Trial  45   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 7, 'W_layer_units_exponent_0': 10, 'W_layer_units_exponent_1': 8, 'W_layer_units_exponent_2': 7, 'W_layer_units_exponent_3': 8, 'W_layer_units_exponent_4': 7, 'W_layer_units_exponent_5': 7, 'W_layer_units_exponent_6': 9, 'D_layers': 6, 'D_layer_units_exponent_0': 4, 'D_layer_units_exponent_1': 4, 'D_layer_units_exponent_2': 4, 'D_layer_units_exponent_3': 6, 'D_layer_units_exponent_4': 6, 'D_layer_units_exponent_5': 10, 'log_learning_rate': -2.343640932601552, 'log_learning_rate_D': -4.696771225069362, 'training_batch_size': 9, 'training_p': 2}
+	 epoch  0 training error:  tensor(1.3398, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  7.1376953125
+Memory cached:  8.0
+	 epoch  10 training error:  tensor(0.0911, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  7.1376953125
+Memory cached:  8.0
+	 epoch  20 training error:  tensor(0.0682, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  7.1376953125
+Memory cached:  8.0
+	 epoch  30 training error:  tensor(0.0618, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  7.1376953125
+Memory cached:  8.0
+	 epoch  40 training error:  tensor(0.0632, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  7.1376953125
+Memory cached:  8.0
+	 epoch  50 training error:  tensor(0.0610, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  7.1376953125
+Memory cached:  8.0
+	 epoch  60 training error:  tensor(0.0619, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  7.1376953125
+Memory cached:  8.0
+	 epoch  70 training error:  tensor(0.0629, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  7.1376953125
+Memory cached:  8.0
+	 epoch  80 training error:  tensor(0.0668, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  7.1376953125
+Memory cached:  8.0
+	 epoch  90 training error:  tensor(0.0587, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  7.1376953125
+Memory cached:  8.0
+[I 2023-12-01 11:46:35,447] Trial 45 finished with value: 0.06303869932889938 and parameters: {'W_layers': 7, 'W_layer_units_exponent_0': 10, 'W_layer_units_exponent_1': 8, 'W_layer_units_exponent_2': 7, 'W_layer_units_exponent_3': 8, 'W_layer_units_exponent_4': 7, 'W_layer_units_exponent_5': 7, 'W_layer_units_exponent_6': 9, 'D_layers': 6, 'D_layer_units_exponent_0': 4, 'D_layer_units_exponent_1': 4, 'D_layer_units_exponent_2': 4, 'D_layer_units_exponent_3': 6, 'D_layer_units_exponent_4': 6, 'D_layer_units_exponent_5': 10, 'log_learning_rate': -2.343640932601552, 'log_learning_rate_D': -4.696771225069362, 'training_batch_size': 9, 'training_p': 2}. Best is trial 43 with value: 0.06090131029486656.
+Time for this trial:  14.240424394607544
+Memory status after this trial: 
+Memory allocated:  41.501953125
+Memory cached:  52.0
+--------------------  Trial  46   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 5, 'W_layer_units_exponent_0': 10, 'W_layer_units_exponent_1': 8, 'W_layer_units_exponent_2': 6, 'W_layer_units_exponent_3': 9, 'W_layer_units_exponent_4': 8, 'D_layers': 7, 'D_layer_units_exponent_0': 5, 'D_layer_units_exponent_1': 4, 'D_layer_units_exponent_2': 5, 'D_layer_units_exponent_3': 5, 'D_layer_units_exponent_4': 5, 'D_layer_units_exponent_5': 10, 'D_layer_units_exponent_6': 6, 'log_learning_rate': -1.861203718797662, 'log_learning_rate_D': -4.997586168699888, 'training_batch_size': 7, 'training_p': 3}
+	 epoch  0 training error:  tensor(0.8087, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  7.24560546875
+Memory cached:  8.0
+	 epoch  10 training error:  tensor(0.6965, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  7.24560546875
+Memory cached:  8.0
+	 epoch  20 training error:  tensor(0.1355, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  7.24560546875
+Memory cached:  8.0
+	 epoch  30 training error:  tensor(0.1294, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  7.24560546875
+Memory cached:  8.0
+	 epoch  40 training error:  tensor(0.1233, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  7.24560546875
+Memory cached:  8.0
+	 epoch  50 training error:  tensor(0.1237, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  7.24560546875
+Memory cached:  8.0
+	 epoch  60 training error:  tensor(0.1249, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  7.24560546875
+Memory cached:  8.0
+	 epoch  70 training error:  tensor(0.1239, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  7.24560546875
+Memory cached:  8.0
+	 epoch  80 training error:  tensor(0.1235, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  7.24560546875
+Memory cached:  8.0
+	 epoch  90 training error:  tensor(0.1235, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  7.24560546875
+Memory cached:  8.0
+[I 2023-12-01 11:46:49,617] Trial 46 finished with value: 0.1303435117006302 and parameters: {'W_layers': 5, 'W_layer_units_exponent_0': 10, 'W_layer_units_exponent_1': 8, 'W_layer_units_exponent_2': 6, 'W_layer_units_exponent_3': 9, 'W_layer_units_exponent_4': 8, 'D_layers': 7, 'D_layer_units_exponent_0': 5, 'D_layer_units_exponent_1': 4, 'D_layer_units_exponent_2': 5, 'D_layer_units_exponent_3': 5, 'D_layer_units_exponent_4': 5, 'D_layer_units_exponent_5': 10, 'D_layer_units_exponent_6': 6, 'log_learning_rate': -1.861203718797662, 'log_learning_rate_D': -4.997586168699888, 'training_batch_size': 7, 'training_p': 3}. Best is trial 43 with value: 0.06090131029486656.
+Time for this trial:  13.979973316192627
+Memory status after this trial: 
+Memory allocated:  36.615234375
+Memory cached:  48.0
+--------------------  Trial  47   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 7, 'W_layer_units_exponent_0': 10, 'W_layer_units_exponent_1': 10, 'W_layer_units_exponent_2': 6, 'W_layer_units_exponent_3': 8, 'W_layer_units_exponent_4': 9, 'W_layer_units_exponent_5': 6, 'W_layer_units_exponent_6': 8, 'D_layers': 5, 'D_layer_units_exponent_0': 6, 'D_layer_units_exponent_1': 5, 'D_layer_units_exponent_2': 4, 'D_layer_units_exponent_3': 7, 'D_layer_units_exponent_4': 6, 'log_learning_rate': -2.0806812064197, 'log_learning_rate_D': -4.806557450214191, 'training_batch_size': 9, 'training_p': 8}
+	 epoch  0 training error:  tensor(0.8050, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  20.1708984375
+Memory cached:  26.0
+	 epoch  10 training error:  tensor(0.1602, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  20.1708984375
+Memory cached:  26.0
+	 epoch  20 training error:  tensor(0.1020, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  20.1708984375
+Memory cached:  26.0
+	 epoch  30 training error:  tensor(0.1150, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  20.1708984375
+Memory cached:  26.0
+	 epoch  40 training error:  tensor(0.0924, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  20.1708984375
+Memory cached:  26.0
+	 epoch  50 training error:  tensor(0.1235, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  20.1708984375
+Memory cached:  26.0
+	 epoch  60 training error:  tensor(0.1119, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  20.1708984375
+Memory cached:  26.0
+	 epoch  70 training error:  tensor(0.0910, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  20.1708984375
+Memory cached:  26.0
+	 epoch  80 training error:  tensor(0.0958, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  20.1708984375
+Memory cached:  26.0
+	 epoch  90 training error:  tensor(0.0933, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  20.1708984375
+Memory cached:  26.0
+[I 2023-12-01 11:47:03,956] Trial 47 finished with value: 0.06781300157308578 and parameters: {'W_layers': 7, 'W_layer_units_exponent_0': 10, 'W_layer_units_exponent_1': 10, 'W_layer_units_exponent_2': 6, 'W_layer_units_exponent_3': 8, 'W_layer_units_exponent_4': 9, 'W_layer_units_exponent_5': 6, 'W_layer_units_exponent_6': 8, 'D_layers': 5, 'D_layer_units_exponent_0': 6, 'D_layer_units_exponent_1': 5, 'D_layer_units_exponent_2': 4, 'D_layer_units_exponent_3': 7, 'D_layer_units_exponent_4': 6, 'log_learning_rate': -2.0806812064197, 'log_learning_rate_D': -4.806557450214191, 'training_batch_size': 9, 'training_p': 8}. Best is trial 43 with value: 0.06090131029486656.
+Time for this trial:  14.166176557540894
+Memory status after this trial: 
+Memory allocated:  59.4755859375
+Memory cached:  88.0
+--------------------  Trial  48   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 6, 'W_layer_units_exponent_0': 9, 'W_layer_units_exponent_1': 9, 'W_layer_units_exponent_2': 8, 'W_layer_units_exponent_3': 7, 'W_layer_units_exponent_4': 6, 'W_layer_units_exponent_5': 7, 'D_layers': 6, 'D_layer_units_exponent_0': 5, 'D_layer_units_exponent_1': 5, 'D_layer_units_exponent_2': 5, 'D_layer_units_exponent_3': 6, 'D_layer_units_exponent_4': 5, 'D_layer_units_exponent_5': 9, 'log_learning_rate': -1.7861096629080129, 'log_learning_rate_D': -4.554417097526626, 'training_batch_size': 6, 'training_p': 2}
+	 epoch  0 training error:  tensor(33.5757, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  6.892578125
+Memory cached:  8.0
+	 epoch  10 training error:  tensor(0.1111, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  6.892578125
+Memory cached:  8.0
+	 epoch  20 training error:  tensor(0.0787, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  6.892578125
+Memory cached:  8.0
+	 epoch  30 training error:  tensor(0.0703, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  6.892578125
+Memory cached:  8.0
+	 epoch  40 training error:  tensor(0.0699, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  6.892578125
+Memory cached:  8.0
+	 epoch  50 training error:  tensor(0.0694, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  6.892578125
+Memory cached:  8.0
+	 epoch  60 training error:  tensor(0.0855, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  6.892578125
+Memory cached:  8.0
+	 epoch  70 training error:  tensor(0.0864, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  6.892578125
+Memory cached:  8.0
+	 epoch  80 training error:  tensor(0.0649, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  6.892578125
+Memory cached:  8.0
+	 epoch  90 training error:  tensor(0.0700, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  6.892578125
+Memory cached:  8.0
+[I 2023-12-01 11:47:19,061] Trial 48 finished with value: 0.08056246489286423 and parameters: {'W_layers': 6, 'W_layer_units_exponent_0': 9, 'W_layer_units_exponent_1': 9, 'W_layer_units_exponent_2': 8, 'W_layer_units_exponent_3': 7, 'W_layer_units_exponent_4': 6, 'W_layer_units_exponent_5': 7, 'D_layers': 6, 'D_layer_units_exponent_0': 5, 'D_layer_units_exponent_1': 5, 'D_layer_units_exponent_2': 5, 'D_layer_units_exponent_3': 6, 'D_layer_units_exponent_4': 5, 'D_layer_units_exponent_5': 9, 'log_learning_rate': -1.7861096629080129, 'log_learning_rate_D': -4.554417097526626, 'training_batch_size': 6, 'training_p': 2}. Best is trial 43 with value: 0.06090131029486656.
+Time for this trial:  14.917774438858032
+Memory status after this trial: 
+Memory allocated:  28.3212890625
+Memory cached:  50.0
+--------------------  Trial  49   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 5, 'W_layer_units_exponent_0': 10, 'W_layer_units_exponent_1': 7, 'W_layer_units_exponent_2': 7, 'W_layer_units_exponent_3': 8, 'W_layer_units_exponent_4': 7, 'D_layers': 6, 'D_layer_units_exponent_0': 4, 'D_layer_units_exponent_1': 6, 'D_layer_units_exponent_2': 4, 'D_layer_units_exponent_3': 5, 'D_layer_units_exponent_4': 10, 'D_layer_units_exponent_5': 9, 'log_learning_rate': -1.5574164043892704, 'log_learning_rate_D': -4.604803025859143, 'training_batch_size': 7, 'training_p': 3}
+	 epoch  0 training error:  tensor(0.6721, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.48486328125
+Memory cached:  24.0
+	 epoch  10 training error:  tensor(0.3235, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.48486328125
+Memory cached:  24.0
+	 epoch  20 training error:  tensor(0.1462, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.48486328125
+Memory cached:  24.0
+	 epoch  30 training error:  tensor(0.1234, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.48486328125
+Memory cached:  24.0
+	 epoch  40 training error:  tensor(0.1265, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.48486328125
+Memory cached:  24.0
+	 epoch  50 training error:  tensor(0.1239, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.48486328125
+Memory cached:  24.0
+	 epoch  60 training error:  tensor(0.1238, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.48486328125
+Memory cached:  24.0
+	 epoch  70 training error:  tensor(0.1233, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.48486328125
+Memory cached:  24.0
+	 epoch  80 training error:  tensor(0.1233, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.48486328125
+Memory cached:  24.0
+	 epoch  90 training error:  tensor(0.1233, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.48486328125
+Memory cached:  24.0
+[I 2023-12-01 11:47:32,696] Trial 49 finished with value: 0.13028022646903992 and parameters: {'W_layers': 5, 'W_layer_units_exponent_0': 10, 'W_layer_units_exponent_1': 7, 'W_layer_units_exponent_2': 7, 'W_layer_units_exponent_3': 8, 'W_layer_units_exponent_4': 7, 'D_layers': 6, 'D_layer_units_exponent_0': 4, 'D_layer_units_exponent_1': 6, 'D_layer_units_exponent_2': 4, 'D_layer_units_exponent_3': 5, 'D_layer_units_exponent_4': 10, 'D_layer_units_exponent_5': 9, 'log_learning_rate': -1.5574164043892704, 'log_learning_rate_D': -4.604803025859143, 'training_batch_size': 7, 'training_p': 3}. Best is trial 43 with value: 0.06090131029486656.
+Time for this trial:  13.449717283248901
+Memory status after this trial: 
+Memory allocated:  27.0869140625
+Memory cached:  52.0
