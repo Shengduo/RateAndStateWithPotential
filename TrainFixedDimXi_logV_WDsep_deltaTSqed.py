@@ -72,7 +72,7 @@ print("Xs.shape: ", Xs.shape)
 import torch.optim as optim
 ## Calculate f
 # Different Potentials with D correction
-from FrictionNNModels import FricCorrection, Loss, train1Epoch, PP, ReLUSquare
+from FrictionNNModels import PotentialsFricCorrection, Loss, train1Epoch, PP, ReLUSquare
 
 ## Define loss function, training function, dataloaders
 # Initialize dataloaders
@@ -126,7 +126,7 @@ def train(params, dim_xi):
     print("Start timing: ")
 
     # Training
-    myWD = FricCorrection(params)
+    myWD = PotentialsFricCorrection(params)
     for i in range(params['training_epochs']):
         avg_training_loss = train1Epoch(trainDataLoader, Loss, myWD, params['training_p'])
         
@@ -144,7 +144,7 @@ def train(params, dim_xi):
     res = train1Epoch(testDataLoader, Loss, myWD, params['test_p'], update_weights=False).to("cpu")
     print("res: ", res)
     print("Save this model!")
-    torch.save(myWD, './model/' + params['modelSavePrefix'] + '_dimXi_{0}_FG_fixed.pth'.format(params['dim_xi']))
+    torch.save(myWD, './model/' + params['modelSavePrefix'] + '_dimXi_{0}_fixed.pth'.format(params['dim_xi']))
     print("Time for this training process: ", time.time() - st)
     
     real_res = res.item()
@@ -163,12 +163,12 @@ def train(params, dim_xi):
 # NN structures for training
 params = {
         'dim_xi' : 0, 
-        'NNs_W' : [256, 256, 256, 256, 256, 256, 256, 256], 
+        'NNs_W' : [256, 256, 256], 
         'NNs_D' : [256, 256, 256, 256, 256, 256, 256, 256], 
-        # 'NNs_D_dagger' : NNs_D_dagger, 
+        'NNs_D_dagger' : [256, 256, 256, 256, 256, 256, 256, 256], 
         'learning_rate' : 1.e-3, 
         'learning_rate_D' : 1.e-3, 
-        # 'learning_rate_D_dagger' : learning_rate_D_dagger,  
+        'learning_rate_D_dagger' : 1.e-3,  
         'training_batch_size' : 16, 
         'training_p' : 6, 
         'training_epochs' : 200, 

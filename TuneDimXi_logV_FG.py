@@ -40,7 +40,10 @@ kwgs = {
     "nTSteps" : 100, 
     "theta0" : 0.1, 
     # "prefix" : "Trial1108_bigDRS_Burigede", 
-    "prefix" : "Trial1116_smallDRS_largeA", 
+    # "prefix" : "Trial1116_smallDRS_largeA", 
+    # "prefix" : "Trial1204_smallDRS_smallA", 
+    "prefix" : "Trial1204_smallDRS_Burigede", 
+    # "prefix" : "Trial1205_smallDRS_smallA", 
     "NofVVSteps" : 10, 
 }
 
@@ -76,39 +79,46 @@ from FrictionNNModels import FricCorrection, Loss, train1Epoch, PP, ReLUSquare
 
 ## Define loss function, training function, dataloaders
 # Initialize dataloaders
-AllData = TensorDataset(
-    Xs, 
-    Vs, 
-    ts, 
-    fs
-)
-
-dataloader_kwargs = {'num_workers': 1, 'pin_memory': True} if torch.cuda.is_available() else {}
-# train_loader = torch.utils.data.DataLoader(train_data, batch_size=batch_size, shuffle=True, **kwargs)
-
-train_len = int(len(Vs) * 0.8)
-test_len = len(Vs) - train_len
-# trainDataset, testDataset = AllData[0 : train_len], AllData[train_len : ]
-# trainDataset, testDataset = torch.utils.data.random_split(AllData, [train_len, test_len])
-
-# Created using indices from 0 to train_size.
-trainDataset = torch.utils.data.Subset(AllData, range(train_len))
-
-# Created using indices from train_size to train_size + test_size.
-testDataset = torch.utils.data.Subset(AllData, range(train_len, train_len + test_len))
+AllData = {
+    "Xs" : Xs, 
+    "Vs" : Vs, 
+    "ts" : ts, 
+    "fs" : fs,
+}
 
 class OptunaObj:
     # Initialize
     def __init__(self, kwgs):
         self.dim_xi = kwgs['dim_xi']
         self.test_p = kwgs['test_p']
-        self.test_batch_size = kwgs['test_batch_size']
+        # self.test_batch_size = kwgs['test_batch_size']
         self.device = kwgs['device']
-        self.training_dataset = kwgs['training_dataset']
-        self.test_dataset = kwgs['test_dataset']
+        # self.training_dataset = kwgs['training_dataset']
+        # self.test_dataset = kwgs['test_dataset']
         self.modelSavePrefix = kwgs['modelSavePrefix']
-        self.bestValue = 10000000.;
-        
+        self.bestValue = 10000000.
+        self.fOffSet = kwgs['fOffSet']
+        self.scaling_factor = kwgs['scaling_factor']
+
+        # Transform the input data
+        AllData = TensorDataset(
+            kwgs["AllData"]["Xs"], 
+            kwgs["AllData"]["Vs"], 
+            kwgs["AllData"]["ts"], 
+            (kwgs["AllData"]["fs"] - self.fOffSet) * self.scaling_factor + self.fOffSet, 
+        )
+
+        self.dataloader_kwargs = {'num_workers': 1, 'pin_memory': True} if torch.cuda.is_available() else {}
+        # train_loader = torch.utils.data.DataLoader(train_data, batch_size=batch_size, shuffle=True, **kwargs)
+
+        train_len = int(len(Vs) * 0.8)
+        test_len = len(Vs) - train_len
+
+        # Created using indices from 0 to train_size.
+        self.training_dataset = torch.utils.data.Subset(AllData, range(train_len))
+
+        # Created using indices from train_size to train_size + test_size.
+        self.test_dataset = torch.utils.data.Subset(AllData, range(train_len, train_len + test_len))
         
     # Define the objective
     def objective(self, trial):
@@ -173,7 +183,6 @@ class OptunaObj:
             'device' : self.device,
         }
         
-        
         # Set training dataloader
         training_batch_size = params['training_batch_size'] #1024
         trainDataLoader = DataLoader(
@@ -182,18 +191,18 @@ class OptunaObj:
             shuffle = True,
         #    num_workers = 16,
             collate_fn = None,
-            **dataloader_kwargs, 
+            **self.dataloader_kwargs, 
         )
 
         # Set testing data loader
-        testing_batch_size = self.test_batch_size # 256
+        testing_batch_size = len(self.test_dataset) # 256
         testDataLoader = DataLoader(
             self.test_dataset,
             batch_size = testing_batch_size,
             shuffle = True,
         #    num_workers = 16,
             collate_fn = None,
-            **dataloader_kwargs, 
+            **self.dataloader_kwargs, 
         )
         
         # Print out info
@@ -207,7 +216,7 @@ class OptunaObj:
         # Training
         myWD = FricCorrection(params)
         for i in range(params['training_epochs']):
-            avg_training_loss = train1Epoch(trainDataLoader, Loss, myWD, params['training_p'])
+            avg_training_loss = train1Epoch(trainDataLoader, Loss, myWD, params['training_p'], 0., update_weights=True)
             
             if torch.isnan(avg_training_loss):
                 break
@@ -220,7 +229,7 @@ class OptunaObj:
                 memory_stats()
         
         # Return objective value for optuna
-        res = train1Epoch(testDataLoader, Loss, myWD, self.test_p, update_weights=False)
+        res = train1Epoch(testDataLoader, Loss, myWD, self.test_p, 0., update_weights=False)
         if res < self.bestValue:
             print("res: ", res)
             print("self.bestValue: ", self.bestValue)
@@ -241,18 +250,21 @@ class OptunaObj:
         return res
 
 # Do a parametric study over number of hidden parameters
-dim_xis = [0, 1, 2, 4, 8]
+dim_xis = [1, 0]
 studys = []
 
 # Tune parameters for dim_xi = 4
 OptKwgs = {
     'dim_xi' : 4, 
     'test_p' : 2, 
-    'test_batch_size' : len(testDataset), 
+    # 'test_batch_size' : len(testDataset), 
     'device' : device, 
-    'training_dataset' : trainDataset, 
-    'test_dataset' : testDataset, 
+    # 'training_dataset' : trainDataset, 
+    # 'test_dataset' : testDataset, 
+    'AllData' : AllData, 
     'modelSavePrefix' : kwgs['prefix'], 
+    "fOffSet" : 0.5109, 
+    "scaling_factor" : 50, 
 }
 
 # Loop through all dim_xis
@@ -260,5 +272,5 @@ for dim_xi in dim_xis:
     OptKwgs['dim_xi'] = dim_xi
     myOpt = OptunaObj(OptKwgs)
     this_study = optuna.create_study(direction='minimize')
-    this_study.optimize(myOpt.objective, n_trials=50)
+    this_study.optimize(myOpt.objective, n_trials=100)
     studys.append(this_study)

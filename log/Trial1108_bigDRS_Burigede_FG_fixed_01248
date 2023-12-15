@@ -1,0 +1,556 @@
+/home/shengduo/anaconda3/lib/python3.9/site-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.16.5 and <1.23.0 is required for this version of SciPy (detected version 1.24.1
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+/home/shengduo/anaconda3/lib/python3.9/site-packages/torch/nn/init.py:405: UserWarning: Initializing zero-element tensors is a no-op
+  warnings.warn("Initializing zero-element tensors is a no-op")
+Cuda is available:  True
+Device is:  cuda:0
+Memory allocated:  0.0
+Memory cached:  0.0
+Data file:  ./data/Trial1108_bigDRS_Burigede.pt
+Vs.shape:  torch.Size([100, 100])
+thetas.shape:  torch.Size([100, 100])
+fs.shape:  torch.Size([100, 100])
+ts.shape:  torch.Size([100, 100])
+Xs.shape:  torch.Size([100, 100])
+Start timing: 
+	 epoch  0 training error:  tensor(0.6258, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  8.8115234375
+Memory cached:  10.0
+	 epoch  10 training error:  tensor(0.0997, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  8.8115234375
+Memory cached:  10.0
+	 epoch  20 training error:  tensor(0.1003, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  8.8115234375
+Memory cached:  10.0
+	 epoch  30 training error:  tensor(0.0999, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  8.8115234375
+Memory cached:  10.0
+	 epoch  40 training error:  tensor(0.1300, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  8.8115234375
+Memory cached:  10.0
+	 epoch  50 training error:  tensor(0.0947, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  8.8115234375
+Memory cached:  10.0
+	 epoch  60 training error:  tensor(0.0870, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  8.8115234375
+Memory cached:  10.0
+	 epoch  70 training error:  tensor(0.0860, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  8.8115234375
+Memory cached:  10.0
+	 epoch  80 training error:  tensor(0.0842, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  8.8115234375
+Memory cached:  10.0
+	 epoch  90 training error:  tensor(0.0873, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  8.8115234375
+Memory cached:  10.0
+	 epoch  100 training error:  tensor(0.0837, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  8.8115234375
+Memory cached:  10.0
+	 epoch  110 training error:  tensor(0.0873, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  8.8115234375
+Memory cached:  10.0
+	 epoch  120 training error:  tensor(0.0846, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  8.8115234375
+Memory cached:  10.0
+	 epoch  130 training error:  tensor(0.0870, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  8.8115234375
+Memory cached:  10.0
+	 epoch  140 training error:  tensor(0.0844, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  8.8115234375
+Memory cached:  10.0
+	 epoch  150 training error:  tensor(0.0893, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  8.8115234375
+Memory cached:  10.0
+	 epoch  160 training error:  tensor(0.0870, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  8.8115234375
+Memory cached:  10.0
+	 epoch  170 training error:  tensor(0.0835, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  8.8115234375
+Memory cached:  10.0
+	 epoch  180 training error:  tensor(0.0863, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  8.8115234375
+Memory cached:  10.0
+	 epoch  190 training error:  tensor(0.0828, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  8.8115234375
+Memory cached:  10.0
+res:  tensor(0.0632, grad_fn=<ToCopyBackward0>)
+Save this model!
+Time for this training process:  41.71887135505676
+Memory status after this trial: 
+Memory allocated:  3.52294921875
+Memory cached:  6.0
+Start timing: 
+	 epoch  0 training error:  tensor(0.5215, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1044921875
+Memory cached:  18.0
+	 epoch  10 training error:  tensor(0.0519, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1044921875
+Memory cached:  18.0
+	 epoch  20 training error:  tensor(0.0551, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1044921875
+Memory cached:  20.0
+	 epoch  30 training error:  tensor(0.0521, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1044921875
+Memory cached:  20.0
+	 epoch  40 training error:  tensor(0.0684, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1044921875
+Memory cached:  18.0
+	 epoch  50 training error:  tensor(0.0422, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1044921875
+Memory cached:  20.0
+	 epoch  60 training error:  tensor(0.0487, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1044921875
+Memory cached:  20.0
+	 epoch  70 training error:  tensor(0.0341, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1044921875
+Memory cached:  18.0
+	 epoch  80 training error:  tensor(0.0310, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1044921875
+Memory cached:  20.0
+	 epoch  90 training error:  tensor(0.0402, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1044921875
+Memory cached:  20.0
+	 epoch  100 training error:  tensor(0.0274, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1044921875
+Memory cached:  18.0
+	 epoch  110 training error:  tensor(0.0361, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1044921875
+Memory cached:  20.0
+	 epoch  120 training error:  tensor(0.0312, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1044921875
+Memory cached:  20.0
+	 epoch  130 training error:  tensor(0.0365, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1044921875
+Memory cached:  18.0
+	 epoch  140 training error:  tensor(0.0352, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1044921875
+Memory cached:  20.0
+	 epoch  150 training error:  tensor(0.0228, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1044921875
+Memory cached:  20.0
+	 epoch  160 training error:  tensor(0.0313, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1044921875
+Memory cached:  18.0
+	 epoch  170 training error:  tensor(0.0267, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1044921875
+Memory cached:  20.0
+	 epoch  180 training error:  tensor(0.0187, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1044921875
+Memory cached:  20.0
+	 epoch  190 training error:  tensor(0.0367, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1044921875
+Memory cached:  18.0
+res:  tensor(0.0239, grad_fn=<ToCopyBackward0>)
+Save this model!
+Time for this training process:  458.9895398616791
+Memory status after this trial: 
+Memory allocated:  7.04931640625
+Memory cached:  12.0
+Start timing: 
+	 epoch  0 training error:  tensor(0.4409, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1162109375
+Memory cached:  20.0
+	 epoch  10 training error:  tensor(0.0833, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1162109375
+Memory cached:  20.0
+	 epoch  20 training error:  tensor(0.0417, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1162109375
+Memory cached:  20.0
+	 epoch  30 training error:  tensor(0.0416, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1162109375
+Memory cached:  20.0
+	 epoch  40 training error:  tensor(0.0390, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1162109375
+Memory cached:  20.0
+	 epoch  50 training error:  tensor(0.0598, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1162109375
+Memory cached:  20.0
+	 epoch  60 training error:  tensor(0.0423, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1162109375
+Memory cached:  20.0
+	 epoch  70 training error:  tensor(0.0311, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1162109375
+Memory cached:  20.0
+	 epoch  80 training error:  tensor(0.0260, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1162109375
+Memory cached:  20.0
+	 epoch  90 training error:  tensor(0.0301, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1162109375
+Memory cached:  20.0
+	 epoch  100 training error:  tensor(0.0243, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1162109375
+Memory cached:  20.0
+	 epoch  110 training error:  tensor(0.0216, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1162109375
+Memory cached:  20.0
+	 epoch  120 training error:  tensor(0.0279, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1162109375
+Memory cached:  20.0
+	 epoch  130 training error:  tensor(0.0607, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1162109375
+Memory cached:  20.0
+	 epoch  140 training error:  tensor(0.1044, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1162109375
+Memory cached:  20.0
+	 epoch  150 training error:  tensor(0.0638, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1162109375
+Memory cached:  20.0
+	 epoch  160 training error:  tensor(0.0522, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1162109375
+Memory cached:  20.0
+	 epoch  170 training error:  tensor(0.0644, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1162109375
+Memory cached:  20.0
+	 epoch  180 training error:  tensor(0.0482, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1162109375
+Memory cached:  20.0
+	 epoch  190 training error:  tensor(0.0573, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1162109375
+Memory cached:  20.0
+res:  tensor(0.0406, grad_fn=<ToCopyBackward0>)
+Save this model!
+Time for this training process:  453.3850588798523
+Memory status after this trial: 
+Memory allocated:  7.05517578125
+Memory cached:  12.0
+Start timing: 
+	 epoch  0 training error:  tensor(0.4142, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  18.0
+	 epoch  10 training error:  tensor(0.0669, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  18.0
+	 epoch  20 training error:  tensor(0.0423, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  18.0
+	 epoch  30 training error:  tensor(0.0418, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  18.0
+	 epoch  40 training error:  tensor(0.0429, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  18.0
+	 epoch  50 training error:  tensor(0.0348, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  18.0
+	 epoch  60 training error:  tensor(0.0308, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  18.0
+	 epoch  70 training error:  tensor(0.0230, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  18.0
+	 epoch  80 training error:  tensor(0.0304, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  18.0
+	 epoch  90 training error:  tensor(0.0260, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  18.0
+	 epoch  100 training error:  tensor(0.0295, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  18.0
+	 epoch  110 training error:  tensor(0.0298, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  18.0
+	 epoch  120 training error:  tensor(0.0262, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  18.0
+	 epoch  130 training error:  tensor(0.0233, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  18.0
+	 epoch  140 training error:  tensor(0.0363, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  18.0
+	 epoch  150 training error:  tensor(0.0194, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  18.0
+	 epoch  160 training error:  tensor(0.0247, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  18.0
+Training failed due to nan
+Start timing: 
+	 epoch  0 training error:  tensor(0.7768, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  18.0
+	 epoch  10 training error:  tensor(0.0780, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  20.0
+	 epoch  20 training error:  tensor(0.0565, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  20.0
+	 epoch  30 training error:  tensor(0.0394, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  20.0
+	 epoch  40 training error:  tensor(0.0404, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  20.0
+	 epoch  50 training error:  tensor(0.0421, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  20.0
+	 epoch  60 training error:  tensor(0.0354, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  20.0
+	 epoch  70 training error:  tensor(0.0904, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  20.0
+Training failed due to nan
+Start timing: 
+	 epoch  0 training error:  tensor(0.4717, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  20.0
+	 epoch  10 training error:  tensor(0.0753, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  18.0
+	 epoch  20 training error:  tensor(0.0712, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  18.0
+	 epoch  30 training error:  tensor(0.0398, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  18.0
+	 epoch  40 training error:  tensor(0.0370, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  18.0
+	 epoch  50 training error:  tensor(0.0278, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  18.0
+	 epoch  60 training error:  tensor(0.0403, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  18.0
+	 epoch  70 training error:  tensor(0.0238, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  18.0
+	 epoch  80 training error:  tensor(0.0256, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  18.0
+	 epoch  90 training error:  tensor(0.0225, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  18.0
+	 epoch  100 training error:  tensor(0.0282, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  18.0
+	 epoch  110 training error:  tensor(0.0213, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  18.0
+	 epoch  120 training error:  tensor(0.0197, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  18.0
+	 epoch  130 training error:  tensor(0.0316, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  18.0
+	 epoch  140 training error:  tensor(0.0272, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  18.0
+	 epoch  150 training error:  tensor(0.0298, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  18.0
+	 epoch  160 training error:  tensor(0.0483, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  18.0
+	 epoch  170 training error:  tensor(0.0414, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  18.0
+	 epoch  180 training error:  tensor(0.0245, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  18.0
+	 epoch  190 training error:  tensor(0.0239, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1396484375
+Memory cached:  18.0
+res:  tensor(0.0242, grad_fn=<ToCopyBackward0>)
+Save this model!
+Time for this training process:  455.25686407089233
+Memory status after this trial: 
+Memory allocated:  7.06689453125
+Memory cached:  14.0
+Start timing: 
+	 epoch  0 training error:  tensor(0.4288, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1865234375
+Memory cached:  20.0
+	 epoch  10 training error:  tensor(0.0576, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1865234375
+Memory cached:  20.0
+	 epoch  20 training error:  tensor(0.0675, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1865234375
+Memory cached:  20.0
+	 epoch  30 training error:  tensor(0.0571, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1865234375
+Memory cached:  20.0
+	 epoch  40 training error:  tensor(0.0364, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1865234375
+Memory cached:  20.0
+	 epoch  50 training error:  tensor(0.0317, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1865234375
+Memory cached:  20.0
+	 epoch  60 training error:  tensor(0.0330, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1865234375
+Memory cached:  20.0
+	 epoch  70 training error:  tensor(0.0243, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1865234375
+Memory cached:  20.0
+	 epoch  80 training error:  tensor(0.0270, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1865234375
+Memory cached:  20.0
+	 epoch  90 training error:  tensor(0.0410, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1865234375
+Memory cached:  20.0
+	 epoch  100 training error:  tensor(0.0347, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1865234375
+Memory cached:  20.0
+	 epoch  110 training error:  tensor(0.0318, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1865234375
+Memory cached:  20.0
+	 epoch  120 training error:  tensor(0.0234, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1865234375
+Memory cached:  20.0
+	 epoch  130 training error:  tensor(0.0275, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1865234375
+Memory cached:  20.0
+	 epoch  140 training error:  tensor(0.0241, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1865234375
+Memory cached:  20.0
+	 epoch  150 training error:  tensor(0.0347, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1865234375
+Memory cached:  20.0
+	 epoch  160 training error:  tensor(0.0423, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1865234375
+Memory cached:  20.0
+	 epoch  170 training error:  tensor(0.0262, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1865234375
+Memory cached:  20.0
+	 epoch  180 training error:  tensor(0.0274, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1865234375
+Memory cached:  20.0
+	 epoch  190 training error:  tensor(0.0249, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  14.1865234375
+Memory cached:  20.0
+res:  tensor(0.0192, grad_fn=<ToCopyBackward0>)
+Save this model!
+Time for this training process:  459.0770616531372
+Memory status after this trial: 
+Memory allocated:  7.09033203125
+Memory cached:  14.0
+~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-  Results Summary  -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~
+dim_xis:  [0, 1, 2, 4, 8]
+res_test_loss : [0.0631856843829155, 0.02385684661567211, 0.04059963673353195, 0.02423560991883278, 0.019189879298210144]

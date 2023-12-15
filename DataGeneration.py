@@ -22,7 +22,9 @@ def genVVtt(totalNofSeqs, NofIntervalsRange, VVRange, VVLenRange, VVFirst, NofVV
     # Generate the seeds of VVs and tts
     for i in range(totalNofSeqs):
         NofSds = torch.randint(NofIntervalsRange[0], NofIntervalsRange[1], [1])
-        VVseed = torch.randint(VVRange[0], VVRange[1], [NofSds])
+
+        # To make the log levels uniform distribution within the range
+        VVseed = torch.rand([NofSds]) * (VVRange[1] - VVRange[0]) + VVRange[0]
         VVseed_len = 10 * torch.randint(VVLenRange[0], VVLenRange[1], [NofSds])
         if NofVVSteps > 0:
             VVseed_len = torch.floor(NofVVSteps / torch.sum(VVseed_len) * VVseed_len).type(torch.int)
@@ -290,7 +292,9 @@ def generateVsAndts_Burigede(kwgs):
         else:
             sign = -1
         
-        v = ((Vrange[1] - Vrange[0]) * torch.rand(1) + Vrange[0]) * torch.ones(nTSteps)
+        # v = ((Vrange[1] - Vrange[0]) * torch.rand(1) + Vrange[0]) * torch.ones(nTSteps)
+        v = torch.zeros(nTSteps)
+
         slope = (kRange[1] - kRange[0]) * torch.rand(nTSteps)
         sn = torch.ones(nTSteps)
         for tChangePoint in tChangePoints:

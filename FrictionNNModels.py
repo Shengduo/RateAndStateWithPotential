@@ -194,13 +194,13 @@ class FricCorrection:
 
 
 # Define loss functions given fs_targ, fs. 
-def Loss(fs_targ, fs, ts, p = 2):
-    err = torch.trapz(torch.abs(fs_targ - fs) ** p, ts, dim = 1) / torch.trapz(torch.abs(fs_targ) ** p, ts, dim = 1)
+def Loss(fs_targ, fs, ts, fOffSet, p = 2):
+    err = torch.trapz(torch.abs(fs_targ - fs) ** p, ts, dim = 1) / torch.trapz(torch.abs(fs_targ - fOffSet) ** p, ts, dim = 1)
     err = torch.pow(err, 1. / p)
     return torch.sum(err)
 
 # Training for one epoch
-def train1Epoch(data_loader, loss_fn, myPot, p, update_weights=True):
+def train1Epoch(data_loader, loss_fn, myPot, p, fOffSet, update_weights=True):
     # Record of losses for each batch
     Losses = []
     device=myPot.device
@@ -235,7 +235,7 @@ def train1Epoch(data_loader, loss_fn, myPot, p, update_weights=True):
         
         # Compute loss
         myPot.calf(Xs, XDots, ts)
-        loss = loss_fn(fs_targ, myPot.fs, ts, p)
+        loss = loss_fn(fs_targ, myPot.fs, ts, fOffSet, p)
         Losses.append(loss)
         
         # Update the model parameters
