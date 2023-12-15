@@ -15,9 +15,11 @@ from joblib import Parallel, delayed, effective_n_jobs
 import json
 
 # Function that generates VVs and tts
-def genVVtt(totalNofSeqs, NofIntervalsRange, VVRange, VVLenRange, VVFirst, NofVVSteps = -1):
+def genVVtt(totalNofSeqs, NofIntervalsRange, VVRange, VVLenRange, VVFirst, NofVVSteps = -1, DRS = 0.01):
     VVseeds = []
     VVseeds_len = []
+
+    timesDRS = [2, 6]
 
     # Generate the seeds of VVs and tts
     for i in range(totalNofSeqs):
@@ -25,10 +27,25 @@ def genVVtt(totalNofSeqs, NofIntervalsRange, VVRange, VVLenRange, VVFirst, NofVV
 
         # To make the log levels uniform distribution within the range
         VVseed = torch.rand([NofSds]) * (VVRange[1] - VVRange[0]) + VVRange[0]
-        VVseed_len = 10 * torch.randint(VVLenRange[0], VVLenRange[1], [NofSds])
-        if NofVVSteps > 0:
-            VVseed_len = torch.floor(NofVVSteps / torch.sum(VVseed_len) * VVseed_len).type(torch.int)
-            VVseed_len[-1] = NofVVSteps - torch.sum(VVseed_len[:-1])
+        for j in range(1, len(VVseed)):
+            if torch.abs(VVseed[j] - VVseed[j - 1]) <= 0.5:
+                # print("shit!")
+                VVseed[j] = VVseed[j - 1] + 0.5 * torch.sign(VVseed[j] - VVseed[j - 1])
+        VVseed = torch.clip(VVseed, VVRange[0], VVRange[1])
+        VVseed_len = (torch.rand([NofSds]) * (timesDRS[1] - timesDRS[0]) + timesDRS[0]) * DRS / torch.pow(10., VVseed) / 0.2
+        VVseed_len = torch.ceil(VVseed_len).type(torch.int)
+        # VVseed_len = 10 * torch.randint(VVLenRange[0], VVLenRange[1], [NofSds])
+        while torch.sum(VVseed_len) < NofVVSteps:
+            VVseed_len = torch.concat([VVseed_len, VVseed_len])
+            VVseed = torch.concat([VVseed, VVseed])
+        
+        VVseed = VVseed[0:NofVVSteps]
+        VVseed_len = VVseed_len[0:NofVVSteps]
+        VVseed_len[-1] = NofVVSteps - torch.sum(VVseed_len[:-1])
+
+        # if NofVVSteps > 0:
+        #     VVseed_len = torch.floor(NofVVSteps / torch.sum(VVseed_len) * VVseed_len).type(torch.int)
+        #     VVseed_len[-1] = NofVVSteps - torch.sum(VVseed_len[:-1])
         
         if VVFirst != -1:
             VVseed[0] = torch.log10(torch.tensor(VVFirst))
@@ -74,7 +91,8 @@ def calVtFuncs(VVs, tts):
         for i in range(1, len(VV)):
             if VV[i] != VV[i - 1]:
                 JumpIdx.append(i)
-        JumpIdx.append(len(VV) - 1)
+        if JumpIdx[-1] != len(VV) - 1:
+            JumpIdx.append(len(VV) - 1)
         JumpIdxs.append(JumpIdx)
 
     # Get VtFuncs, ts, t_JumpIdxs
@@ -89,6 +107,8 @@ def calVtFuncs(VVs, tts):
         t = torch.linspace(tt[0], tt[-1], t_tt_time * len(tt))
         t_JumpIdx = [0]
 
+        # DEBUG
+        print("JumpIdx: ", JumpIdx)
         for i in range(len(JumpIdx) - 1):
             this_tt = tt[JumpIdx[i] : JumpIdx[i + 1] + 1].clone()
             this_VV = VV[JumpIdx[i] : JumpIdx[i + 1] + 1].clone()
@@ -249,7 +269,9 @@ def generateSamples(kwgs):
     # Generate data
     VVs, tts = genVVtt(kwgs['totalNofSeqs'], kwgs['NofIntervalsRange'], kwgs['VVRange'], kwgs['VVLenRange'], 
                        1., #1. / kwgs['beta'][2] / kwgs['theta0'], 
-                       kwgs["NofVVSteps"])
+                       kwgs["NofVVSteps"], 
+                       DRS = 1. / kwgs['beta'][2])
+    
     ts, JumpIdxs, t_JumpIdxs, VtFuncs = calVtFuncs(VVs, tts)
     Vs, thetas, fs = cal_f_beta_parallel(kwgs["beta"], kwgs['theta0'], ts, t_JumpIdxs, tts, JumpIdxs, VtFuncs, std_noise = 0.000, directCompute = True, 
                         n_workers = 16, pool = Parallel(n_jobs=16, backend='threading'))
