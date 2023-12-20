@@ -123,7 +123,7 @@ class OptunaObj:
     # Define the objective
     def objective(self, trial):
         # Dump for un-saved interuptions
-        joblib.dump(this_study, "./jobs/" + self.modelSavePrefix + str(self.dim_xi) + ".pkl")
+        # joblib.dump(this_study, "./jobs/" + self.modelSavePrefix + str(self.dim_xi) + ".pkl")
 
         # Fixed parameters
         dim_xi = self.dim_xi
@@ -167,7 +167,7 @@ class OptunaObj:
 
         # Suggest training epochs
         # training_epochs = 2 ** trial.suggest_int('training_epoch_exponents', 5, 9)
-        training_epochs = 100
+        training_epochs = 10
 
         params = {
             'dim_xi' : dim_xi, 
@@ -273,6 +273,10 @@ OptKwgs = {
 for dim_xi in dim_xis:
     OptKwgs['dim_xi'] = dim_xi
     myOpt = OptunaObj(OptKwgs)
-    this_study = optuna.create_study(direction='minimize')
-    this_study.optimize(myOpt.objective, n_trials=200)
+    this_study = optuna.create_study(direction='minimize', 
+                                     storage="./jobs/{0}_{1}".format(kwgs['prefix'], dim_xi) + ".db", 
+                                     study_name="my_study", 
+                                     load_if_exists=True)
+    
+    this_study.optimize(myOpt.objective, n_trials=2)
     studys.append(this_study)
