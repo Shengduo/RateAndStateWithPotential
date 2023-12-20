@@ -41,8 +41,8 @@ kwgs = {
     "theta0" : 0.1, 
     # "prefix" : "Trial1108_bigDRS_Burigede", 
     # "prefix" : "Trial1116_smallDRS_largeA", 
-    "prefix" : "Trial1204_smallDRS_smallA", 
-    # "prefix" : "Trial1204_smallDRS_Burigede", 
+    "prefix" : "Trial1215_smallDRS_smallA", 
+    # "prefix" : "Trial1215_smallDRS_Burigede", 
     "NofVVSteps" : 10, 
 }
 
@@ -123,7 +123,7 @@ class OptunaObj:
     # Define the objective
     def objective(self, trial):
         # Dump for un-saved interuptions
-        # joblib.dump(this_study, "./data/1108_bigDRS_Burigede_WDsep_study_dim_xi_logV_DLeg_D_dagger_ELU1_" + str(self.dim_xi) + ".pkl")
+        joblib.dump(this_study, "./jobs/" + self.modelSavePrefix + str(self.dim_xi) + ".pkl")
 
         # Fixed parameters
         dim_xi = self.dim_xi
@@ -274,5 +274,5 @@ for dim_xi in dim_xis:
     OptKwgs['dim_xi'] = dim_xi
     myOpt = OptunaObj(OptKwgs)
     this_study = optuna.create_study(direction='minimize')
-    this_study.optimize(myOpt.objective, n_trials=100)
+    this_study.optimize(myOpt.objective, n_trials=200)
     studys.append(this_study)
