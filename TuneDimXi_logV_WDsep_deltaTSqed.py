@@ -273,8 +273,9 @@ OptKwgs = {
 for dim_xi in dim_xis:
     OptKwgs['dim_xi'] = dim_xi
     myOpt = OptunaObj(OptKwgs)
+    # sqlite:///example.db
     this_study = optuna.create_study(direction='minimize', 
-                                     storage="./jobs/{0}_{1}".format(kwgs['prefix'], dim_xi) + ".db", 
+                                     storage="sqlite:///{0}_{1}".format(kwgs['prefix'], dim_xi) + ".db", 
                                      study_name="my_study", 
                                      load_if_exists=True)
     
