@@ -9451,3 +9451,141 @@ Memory cached:  482.0
 Memory status after this epoch: 
 Memory allocated:  339.40966796875
 Memory cached:  482.0
+	 epoch  80 training error:  tensor(0.3334, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  339.40966796875
+Memory cached:  484.0
+	 epoch  90 training error:  tensor(0.2614, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  339.40966796875
+Memory cached:  482.0
+[I 2023-12-19 23:54:49,802] Trial 191 finished with value: 0.2580180764198303 and parameters: {'W_layers': 2, 'W_layer_units_exponent_0': 10, 'W_layer_units_exponent_1': 8, 'D_layers': 2, 'D_layer_units_exponent_0': 10, 'D_layer_units_exponent_1': 4, 'D_dagger_layers': 3, 'D_dagger_layer_units_exponent_0': 10, 'D_dagger_layer_units_exponent_1': 7, 'D_dagger_layer_units_exponent_2': 4, 'log_learning_rate': -4.605642823239076, 'log_learning_rate_D': -3.5520784912689605, 'log_learning_rate_D_dagger': -3.1296989392313526, 'training_batch_size': 6, 'training_p': 6}. Best is trial 157 with value: 0.10292010754346848.
+Time for this trial:  237.0533742904663
+Memory status after this trial: 
+Memory allocated:  520.341796875
+Memory cached:  540.0
+--------------------  Trial  192   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 2, 'W_layer_units_exponent_0': 10, 'W_layer_units_exponent_1': 8, 'D_layers': 2, 'D_layer_units_exponent_0': 10, 'D_layer_units_exponent_1': 4, 'D_dagger_layers': 3, 'D_dagger_layer_units_exponent_0': 10, 'D_dagger_layer_units_exponent_1': 7, 'D_dagger_layer_units_exponent_2': 4, 'log_learning_rate': -4.767315795364092, 'log_learning_rate_D': -3.446027250766184, 'log_learning_rate_D_dagger': -2.897969217864649, 'training_batch_size': 6, 'training_p': 6}
+	 epoch  0 training error:  tensor(1.1704, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  339.40966796875
+Memory cached:  480.0
+	 epoch  10 training error:  tensor(0.5387, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  339.40966796875
+Memory cached:  484.0
+	 epoch  20 training error:  tensor(0.5281, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  339.40966796875
+Memory cached:  480.0
+	 epoch  30 training error:  tensor(0.5295, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  339.40966796875
+Memory cached:  484.0
+	 epoch  40 training error:  tensor(0.5046, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  339.40966796875
+Memory cached:  480.0
+	 epoch  50 training error:  tensor(0.5007, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  339.40966796875
+Memory cached:  484.0
+	 epoch  60 training error:  tensor(0.2909, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  339.40966796875
+Memory cached:  482.0
+	 epoch  70 training error:  tensor(0.2602, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  339.40966796875
+Memory cached:  482.0
+	 epoch  80 training error:  tensor(0.2564, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  339.40966796875
+Memory cached:  484.0
+	 epoch  90 training error:  tensor(0.2208, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  339.40966796875
+Memory cached:  482.0
+[I 2023-12-19 23:58:48,091] Trial 192 finished with value: 0.25350937247276306 and parameters: {'W_layers': 2, 'W_layer_units_exponent_0': 10, 'W_layer_units_exponent_1': 8, 'D_layers': 2, 'D_layer_units_exponent_0': 10, 'D_layer_units_exponent_1': 4, 'D_dagger_layers': 3, 'D_dagger_layer_units_exponent_0': 10, 'D_dagger_layer_units_exponent_1': 7, 'D_dagger_layer_units_exponent_2': 4, 'log_learning_rate': -4.767315795364092, 'log_learning_rate_D': -3.446027250766184, 'log_learning_rate_D_dagger': -2.897969217864649, 'training_batch_size': 6, 'training_p': 6}. Best is trial 157 with value: 0.10292010754346848.
+Time for this trial:  237.91485619544983
+Memory status after this trial: 
+Memory allocated:  520.341796875
+Memory cached:  540.0
+--------------------  Trial  193   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 2, 'W_layer_units_exponent_0': 10, 'W_layer_units_exponent_1': 8, 'D_layers': 2, 'D_layer_units_exponent_0': 10, 'D_layer_units_exponent_1': 4, 'D_dagger_layers': 3, 'D_dagger_layer_units_exponent_0': 10, 'D_dagger_layer_units_exponent_1': 7, 'D_dagger_layer_units_exponent_2': 4, 'log_learning_rate': -4.492223486507779, 'log_learning_rate_D': -3.328389018658048, 'log_learning_rate_D_dagger': -3.417920131187861, 'training_batch_size': 6, 'training_p': 6}
+	 epoch  0 training error:  tensor(1.1010, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  339.40966796875
+Memory cached:  480.0
+	 epoch  10 training error:  tensor(0.5192, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  339.40966796875
+Memory cached:  484.0
+	 epoch  20 training error:  tensor(0.5106, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  339.40966796875
+Memory cached:  480.0
+	 epoch  30 training error:  tensor(0.5366, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  339.40966796875
+Memory cached:  484.0
+	 epoch  40 training error:  tensor(0.5099, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  339.40966796875
+Memory cached:  480.0
+	 epoch  50 training error:  tensor(0.5006, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  339.40966796875
+Memory cached:  484.0
+	 epoch  60 training error:  tensor(0.4976, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  339.40966796875
+Memory cached:  482.0
+	 epoch  70 training error:  tensor(0.4971, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  339.40966796875
+Memory cached:  482.0
+	 epoch  80 training error:  tensor(0.3946, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  339.40966796875
+Memory cached:  484.0
+[W 2023-12-20 00:02:01,132] Trial 193 failed with parameters: {'W_layers': 2, 'W_layer_units_exponent_0': 10, 'W_layer_units_exponent_1': 8, 'D_layers': 2, 'D_layer_units_exponent_0': 10, 'D_layer_units_exponent_1': 4, 'D_dagger_layers': 3, 'D_dagger_layer_units_exponent_0': 10, 'D_dagger_layer_units_exponent_1': 7, 'D_dagger_layer_units_exponent_2': 4, 'log_learning_rate': -4.492223486507779, 'log_learning_rate_D': -3.328389018658048, 'log_learning_rate_D_dagger': -3.417920131187861, 'training_batch_size': 6, 'training_p': 6} because of the following error: KeyboardInterrupt().
+Traceback (most recent call last):
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "/home/shengduo/RateAndStateWithPotential/TuneDimXi_logV_WDsep_deltaTSqed.py", line 220, in objective
+    avg_training_loss = train1Epoch(trainDataLoader, Loss, myWD, params['training_p'], 0.)
+  File "/home/shengduo/RateAndStateWithPotential/FrictionNNModels.py", line 243, in train1Epoch
+    loss.backward()
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/torch/_tensor.py", line 396, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph, inputs=inputs)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/torch/autograd/__init__.py", line 173, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt
+[W 2023-12-20 00:02:01,135] Trial 193 failed with value None.
+Traceback (most recent call last):
+  File "/home/shengduo/RateAndStateWithPotential/TuneDimXi_logV_WDsep_deltaTSqed.py", line 277, in <module>
+    this_study.optimize(myOpt.objective, n_trials=200)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/study.py", line 442, in optimize
+    _optimize(
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/_optimize.py", line 66, in _optimize
+    _optimize_sequential(
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/_optimize.py", line 163, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/_optimize.py", line 251, in _run_trial
+    raise func_err
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "/home/shengduo/RateAndStateWithPotential/TuneDimXi_logV_WDsep_deltaTSqed.py", line 220, in objective
+    avg_training_loss = train1Epoch(trainDataLoader, Loss, myWD, params['training_p'], 0.)
+  File "/home/shengduo/RateAndStateWithPotential/FrictionNNModels.py", line 243, in train1Epoch
+    loss.backward()
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/torch/_tensor.py", line 396, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph, inputs=inputs)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/torch/autograd/__init__.py", line 173, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt
