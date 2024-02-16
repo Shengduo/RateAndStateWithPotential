@@ -41,8 +41,9 @@ kwgs = {
     "theta0" : 0.1, 
     # "prefix" : "Trial1108_bigDRS_Burigede", 
     # "prefix" : "Trial1116_smallDRS_largeA", 
-    "prefix" : "Trial0112_smallDRS_smallA", 
-    # "prefix" : "Trial0112_smallDRS_Burigede", 
+    # "prefix" : "Trial1215_smallDRS_smallA", 
+    # "prefix" : "Trial1215_smallDRS_Burigede", 
+    "prefix" : "Trial0112_combined_resampled", 
     "NofVVSteps" : 10, 
 }
 

@@ -131,6 +131,86 @@ class PotentialsFricCorrection:
                       + torch.autograd.grad(outputs=D_dagger, inputs=X_D_dagger, create_graph=True)[0].reshape([xDot.shape[0], xDot.shape[1]])
             del W, X_W, X_D_dagger, D_dagger 
 
+class PotsCalXiXiDot:
+    # Initialization of W and D
+    def __init__(self, myWD):
+        self.dim_xi = myWD.dim_xi
+        self.W = myWD.W
+        self.D = myWD.D
+        self.D_dagger = myWD.D_dagger
+        
+        # Device
+        self.device = "cpu"
+        self.W.to(self.device)
+        self.D.to(self.device)
+        self.D_dagger.to(self.device)
+        self.fs = []
+        self.xis = []
+        self.xiDots = []
+        self.Dins = []
+
+    # Calculate f 
+    def calf(self, x, xDot, t):
+        # Initialize Vs
+        batch_size = x.shape[0]
+        
+        # Loop through time steps
+        if self.dim_xi > 0:
+            xi0 = torch.zeros([batch_size, self.dim_xi], requires_grad=True, device=self.device)
+            
+            # List of fs
+            list_fs = []
+            list_xis = [xi0]
+            list_xiDots = []
+            list_Dins = []
+
+            for idx in range(x.shape[1]):
+                # f = \partial W / \partial V
+                X_D_dagger = torch.concat([xDot[:, idx:idx + 1], list_xis[-1]], dim = 1).requires_grad_()
+                # X_W.to(self.device)
+                D_dagger = torch.sum(self.D_dagger(X_D_dagger))
+
+                this_piece = torch.autograd.grad(outputs=D_dagger, inputs=X_D_dagger, create_graph=True)[0]
+
+                # Solve for \dot{\xi} + \partial W / \partial \xi = 0
+                dD_daggerdXi = this_piece[:, 1:]
+                dD_daggerdXDot = this_piece[:, 0:1]
+
+                X_W = x[:, idx:idx+1].requires_grad_()
+                W = torch.sum(self.W(X_W))
+                dWdX = torch.autograd.grad(outputs=W, inputs=X_W, create_graph=True)[0]
+
+                list_fs.append(dD_daggerdXDot + dWdX.reshape([-1, 1]))
+
+                # XiDot = dD^*/d\dot{d} (-dD^\dagger / dXi)
+                if idx < x.shape[1] - 1:
+                    this_input = -dD_daggerdXi.clone().requires_grad_()
+                    D = torch.sum(self.D(this_input))
+                    xiDot = torch.autograd.grad(outputs=D, inputs=this_input, create_graph=True)[0]
+                    xiNext = list_xis[-1] + xiDot * (t[:, idx + 1:idx + 2] - t[:, idx:idx + 1])
+                    list_xis.append(xiNext)
+                    list_xiDots.append(xiDot)
+                    list_Dins.append(this_input)
+                    
+                    del this_input, dD_daggerdXi, dD_daggerdXDot, W, X_W, dWdX, D, this_piece, X_D_dagger, D_dagger 
+                    
+                self.fs = torch.concat(list_fs, dim=1)
+                if self.dim_xi == 1:
+                    self.xis = torch.concat(list_xis, dim=1)
+                    self.xiDots = torch.concat(list_xiDots, dim=1)
+                    self.Dins = torch.concat(list_Dins, dim=1)
+        else:
+            X_W = x.clone().reshape([x.shape[0], x.shape[1], 1]).requires_grad_()
+            # print(X_W)
+            W = torch.sum(self.W(X_W))
+
+            X_D_dagger = xDot.clone().reshape([xDot.shape[0], xDot.shape[1], 1]).requires_grad_()
+            D_dagger = torch.sum(self.D_dagger(X_D_dagger))
+            self.fs = torch.autograd.grad(outputs=W, inputs=X_W, create_graph=True)[0].reshape([x.shape[0], x.shape[1]]) \
+                      + torch.autograd.grad(outputs=D_dagger, inputs=X_D_dagger, create_graph=True)[0].reshape([xDot.shape[0], xDot.shape[1]])
+            del W, X_W, X_D_dagger, D_dagger 
+
+
 # f = f(x, \dot{x}, \xi), \dot{\xi} = g(x, \dot{x}, \xi)
 class FricCorrection:
     # Initialization of W and D

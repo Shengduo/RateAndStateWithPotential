@@ -1,0 +1,141 @@
+/home/shengduo/anaconda3/lib/python3.9/site-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.16.5 and <1.23.0 is required for this version of SciPy (detected version 1.24.1
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+[I 2024-01-22 14:36:24,224] Using an existing study with name 'my_study' instead of creating a new one.
+[W 2024-01-22 14:36:24,277] Trial 3 failed with parameters: {} because of the following error: KeyboardInterrupt().
+Traceback (most recent call last):
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "/home/shengduo/RateAndStateWithPotential/TuneDimXi_logV_WDsep_deltaTSqed_combinedSet.py", line 134, in objective
+    W_layers = trial.suggest_int('W_layers', 2, 8)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/trial/_trial.py", line 321, in suggest_int
+    suggested_value = int(self._suggest(name, distribution))
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/trial/_trial.py", line 630, in _suggest
+    param_value = self.study.sampler.sample_independent(
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/samplers/_tpe/sampler.py", line 378, in sample_independent
+    trials = study._get_trials(deepcopy=False, states=states, use_cache=True)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/study.py", line 277, in _get_trials
+    self._thread_local.cached_all_trials = self._storage.get_all_trials(
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/storages/_cached_storage.py", line 221, in get_all_trials
+    self._read_trials_from_remote_storage(study_id)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/storages/_cached_storage.py", line 242, in _read_trials_from_remote_storage
+    trials = self._backend._get_trials(
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/storages/_rdb/storage.py", line 816, in _get_trials
+    session.query(models.TrialModel)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2759, in all
+    return self._iter().all()
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1362, in all
+    return self._allrows()
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 401, in _allrows
+    rows = self._fetchall_impl()
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1275, in _fetchall_impl
+    return self._real_result._fetchall_impl()
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1687, in _fetchall_impl
+    return list(self.iterator)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/loading.py", line 158, in chunks
+    post_load.invoke(context, path)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/loading.py", line 1335, in invoke
+    loader(context, path, states, self.load_keys, *arg, **kw)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/strategies.py", line 2915, in _load_for_path
+    q = q.filter(in_expr.in_(sql.bindparam("primary_keys")))
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/operators.py", line 604, in in_
+    return self.operate(in_op, other)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/elements.py", line 861, in operate
+    return op(self.comparator, *other, **kwargs)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/operators.py", line 1386, in in_op
+    return a.in_(b)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/operators.py", line 604, in in_
+    return self.operate(in_op, other)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/type_api.py", line 76, in operate
+    return o[0](self.expr, op, *(other + o[1:]), **kwargs)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/default_comparator.py", line 159, in _in_impl
+    seq_or_selectable = coercions.expect(
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/coercions.py", line 204, in expect
+    resolved = impl._post_coercion(
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/coercions.py", line 599, in _post_coercion
+    element = element._clone(maintain_key=True)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/elements.py", line 1633, in _clone
+    c = ClauseElement._clone(self, **kw)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/elements.py", line 244, in _clone
+    c.__dict__ = {k: v for k, v in self.__dict__.items() if k not in skip}
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/elements.py", line 244, in <dictcomp>
+    c.__dict__ = {k: v for k, v in self.__dict__.items() if k not in skip}
+KeyboardInterrupt
+[W 2024-01-22 14:36:24,283] Trial 3 failed with value None.
+Cuda is available:  True
+Device is:  cuda:0
+Memory allocated:  0.0
+Memory cached:  0.0
+Data file:  ./data/Trial0112_combined_resampled.pt
+Vs.shape:  torch.Size([200, 100])
+thetas.shape:  torch.Size([200, 100])
+fs.shape:  torch.Size([200, 100])
+ts.shape:  torch.Size([200, 100])
+Xs.shape:  torch.Size([200, 100])
+Traceback (most recent call last):
+  File "/home/shengduo/RateAndStateWithPotential/TuneDimXi_logV_WDsep_deltaTSqed_combinedSet.py", line 283, in <module>
+    this_study.optimize(myOpt.objective, n_trials=200)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/study.py", line 442, in optimize
+    _optimize(
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/_optimize.py", line 66, in _optimize
+    _optimize_sequential(
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/_optimize.py", line 163, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/_optimize.py", line 251, in _run_trial
+    raise func_err
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "/home/shengduo/RateAndStateWithPotential/TuneDimXi_logV_WDsep_deltaTSqed_combinedSet.py", line 134, in objective
+    W_layers = trial.suggest_int('W_layers', 2, 8)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/trial/_trial.py", line 321, in suggest_int
+    suggested_value = int(self._suggest(name, distribution))
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/trial/_trial.py", line 630, in _suggest
+    param_value = self.study.sampler.sample_independent(
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/samplers/_tpe/sampler.py", line 378, in sample_independent
+    trials = study._get_trials(deepcopy=False, states=states, use_cache=True)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/study.py", line 277, in _get_trials
+    self._thread_local.cached_all_trials = self._storage.get_all_trials(
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/storages/_cached_storage.py", line 221, in get_all_trials
+    self._read_trials_from_remote_storage(study_id)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/storages/_cached_storage.py", line 242, in _read_trials_from_remote_storage
+    trials = self._backend._get_trials(
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/storages/_rdb/storage.py", line 816, in _get_trials
+    session.query(models.TrialModel)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2759, in all
+    return self._iter().all()
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1362, in all
+    return self._allrows()
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 401, in _allrows
+    rows = self._fetchall_impl()
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1275, in _fetchall_impl
+    return self._real_result._fetchall_impl()
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/sqlalchemy/engine/result.py", line 1687, in _fetchall_impl
+    return list(self.iterator)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/loading.py", line 158, in chunks
+    post_load.invoke(context, path)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/loading.py", line 1335, in invoke
+    loader(context, path, states, self.load_keys, *arg, **kw)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/strategies.py", line 2915, in _load_for_path
+    q = q.filter(in_expr.in_(sql.bindparam("primary_keys")))
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/operators.py", line 604, in in_
+    return self.operate(in_op, other)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/elements.py", line 861, in operate
+    return op(self.comparator, *other, **kwargs)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/operators.py", line 1386, in in_op
+    return a.in_(b)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/operators.py", line 604, in in_
+    return self.operate(in_op, other)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/type_api.py", line 76, in operate
+    return o[0](self.expr, op, *(other + o[1:]), **kwargs)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/default_comparator.py", line 159, in _in_impl
+    seq_or_selectable = coercions.expect(
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/coercions.py", line 204, in expect
+    resolved = impl._post_coercion(
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/coercions.py", line 599, in _post_coercion
+    element = element._clone(maintain_key=True)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/elements.py", line 1633, in _clone
+    c = ClauseElement._clone(self, **kw)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/elements.py", line 244, in _clone
+    c.__dict__ = {k: v for k, v in self.__dict__.items() if k not in skip}
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/elements.py", line 244, in <dictcomp>
+    c.__dict__ = {k: v for k, v in self.__dict__.items() if k not in skip}
+KeyboardInterrupt

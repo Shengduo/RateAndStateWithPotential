@@ -1,0 +1,106 @@
+/home/shengduo/anaconda3/lib/python3.9/site-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.16.5 and <1.23.0 is required for this version of SciPy (detected version 1.24.1
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+Cuda is available:  True
+Device is:  cuda:0
+Memory allocated:  0.0
+Memory cached:  0.0
+======================== Online dataset 0 ========================
+Data file:  ./data/Trial0112_smallDRS_smallA.pt
+Vs.shape:  torch.Size([200, 100])
+thetas.shape:  torch.Size([200, 100])
+fs.shape:  torch.Size([200, 100])
+ts.shape:  torch.Size([200, 100])
+Xs.shape:  torch.Size([200, 100])
+	 epoch  0 training error:  tensor(0.2551, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  33.025390625
+Memory cached:  246.0
+	 epoch  10 training error:  tensor(0.2448, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  33.025390625
+Memory cached:  276.0
+	 epoch  20 training error:  tensor(0.2384, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  33.025390625
+Memory cached:  264.0
+	 epoch  30 training error:  tensor(0.2357, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  33.025390625
+Memory cached:  250.0
+	 epoch  40 training error:  tensor(0.2340, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  33.025390625
+Memory cached:  236.0
+	 epoch  50 training error:  tensor(0.2307, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  33.025390625
+Memory cached:  248.0
+	 epoch  60 training error:  tensor(0.2309, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  33.025390625
+Memory cached:  240.0
+	 epoch  70 training error:  tensor(0.2283, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  33.025390625
+Memory cached:  242.0
+	 epoch  80 training error:  tensor(0.2274, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  33.025390625
+Memory cached:  236.0
+	 epoch  90 training error:  tensor(0.2263, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  33.025390625
+Memory cached:  234.0
+Memory status after this trial: 
+Memory allocated:  762.888671875
+Memory cached:  788.0
+======================== Online dataset 1 ========================
+Data file:  ./data/Trial0112_smallDRS_Burigede.pt
+Vs.shape:  torch.Size([200, 100])
+thetas.shape:  torch.Size([200, 100])
+fs.shape:  torch.Size([200, 100])
+ts.shape:  torch.Size([200, 100])
+Xs.shape:  torch.Size([200, 100])
+	 epoch  0 training error:  tensor(0.1349, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  33.025390625
+Memory cached:  240.0
+	 epoch  10 training error:  tensor(0.0814, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  33.025390625
+Memory cached:  248.0
+	 epoch  20 training error:  tensor(0.0742, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  33.025390625
+Memory cached:  248.0
+	 epoch  30 training error:  tensor(0.0722, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  33.025390625
+Memory cached:  234.0
+	 epoch  40 training error:  tensor(0.0754, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  33.025390625
+Memory cached:  248.0
+	 epoch  50 training error:  tensor(0.0720, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  33.025390625
+Memory cached:  234.0
+	 epoch  60 training error:  tensor(0.0739, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  33.025390625
+Memory cached:  232.0
+	 epoch  70 training error:  tensor(0.0715, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  33.025390625
+Memory cached:  244.0
+	 epoch  80 training error:  tensor(0.0727, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  33.025390625
+Memory cached:  246.0
+	 epoch  90 training error:  tensor(0.0763, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  33.025390625
+Memory cached:  244.0
+Memory status after this trial: 
+Memory allocated:  762.888671875
+Memory cached:  788.0
