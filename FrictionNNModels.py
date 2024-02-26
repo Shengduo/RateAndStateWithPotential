@@ -183,16 +183,19 @@ class PotsCalXiXiDot:
                 list_fs.append(dD_daggerdXDot + dWdX.reshape([-1, 1]))
 
                 # XiDot = dD^*/d\dot{d} (-dD^\dagger / dXi)
+                
+                this_input = -dD_daggerdXi.clone().requires_grad_()
+                D = torch.sum(self.D(this_input))
+                xiDot = torch.autograd.grad(outputs=D, inputs=this_input, create_graph=True)[0]
+                list_xiDots.append(xiDot)
+                list_Dins.append(this_input)
+
                 if idx < x.shape[1] - 1:
-                    this_input = -dD_daggerdXi.clone().requires_grad_()
-                    D = torch.sum(self.D(this_input))
-                    xiDot = torch.autograd.grad(outputs=D, inputs=this_input, create_graph=True)[0]
                     xiNext = list_xis[-1] + xiDot * (t[:, idx + 1:idx + 2] - t[:, idx:idx + 1])
                     list_xis.append(xiNext)
-                    list_xiDots.append(xiDot)
-                    list_Dins.append(this_input)
+                    del xiNext 
                     
-                    del this_input, dD_daggerdXi, dD_daggerdXDot, W, X_W, dWdX, D, this_piece, X_D_dagger, D_dagger 
+                del this_input, dD_daggerdXi, dD_daggerdXDot, W, X_W, dWdX, D, this_piece, X_D_dagger, D_dagger 
                     
                 self.fs = torch.concat(list_fs, dim=1)
                 if self.dim_xi == 1:

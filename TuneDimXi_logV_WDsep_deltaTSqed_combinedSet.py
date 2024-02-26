@@ -17,8 +17,8 @@ import time
 
 # Testify whether GPU is available
 print("Cuda is available: ", torch.cuda.is_available())
-device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-# device = "cpu"
+# device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+device = "cpu"
 print("Device is: ", device)
 
 def memory_stats():
@@ -43,7 +43,7 @@ kwgs = {
     # "prefix" : "Trial1116_smallDRS_largeA", 
     # "prefix" : "Trial1215_smallDRS_smallA", 
     # "prefix" : "Trial1215_smallDRS_Burigede", 
-    "prefix" : "Trial0112_combined_resampled", 
+    "prefix" : "Trial0216_combined_800", 
     "NofVVSteps" : 10, 
 }
 
