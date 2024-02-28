@@ -21,4 +21,4 @@
 #SBATCH --mail-type=FAIL
 
 # Run the mpi job
-python TuneDimXi_logV_WDsep_deltaTSqed_combinedSet.py >& log/Trial_0216_combined_800_01
+python TuneDimXi_logV_WDsep_deltaTSqed_combinedSet.py >& log/Trial0216_combined_800_01_hpc
