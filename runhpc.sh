@@ -11,7 +11,7 @@
 #SBATCH --gres=gpu:2
 
 # Wall time : maximum allowed run time
-#SBATCH --time=00:05:00  
+#SBATCH --time=00:15:00  
 #SBATCH --qos=debug
 
 # Send email to user
