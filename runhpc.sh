@@ -20,20 +20,5 @@
 #SBATCH --mail-type=END
 #SBATCH --mail-type=FAIL
 
-# Tell me which nodes it is run on
-echo " "
-echo This jobs runs on the following processors:
-echo $SLURM_JOB_NODELIST
-echo " "
-echo Number of CPUS allocated
-echo $SLURM_NPROCS 
-# Print out output directory
-echo Output directory is $ODIR
-
 # Run the mpi job
-python TuneDimXi_logV_WDsep_deltaTSqed_combinedSet.py > log/Trial_0216_combined_800_01 <<EOF
-#output directory
-$ODIR
-#backup directory
-$BUDIR
-EOF
+python TuneDimXi_logV_WDsep_deltaTSqed_combinedSet.py > log/Trial_0216_combined_800_01
