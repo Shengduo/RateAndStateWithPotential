@@ -4,15 +4,15 @@
 #SBATCH --job-name="Trial_0216_combined"
 
 # Number of processor cores / tasks
-#SBATCH --mem-per-cpu=64G   # memory per CPU core
+#SBATCH --mem-per-cpu=8G   # memory per CPU core
 #SBATCH --nodes=1
 
 # Number of GPUs
 #SBATCH --gres=gpu:2
 
 # Wall time : maximum allowed run time
-#SBATCH --time=00:05:00  
-#SBATCH --qos=debug
+#SBATCH --time=48:00:00  
+#SBATCH --qos=normal
 
 # Send email to user
 #SBATCH --mail-user=sliu5@caltech.edu

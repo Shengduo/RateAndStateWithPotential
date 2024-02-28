@@ -170,7 +170,7 @@ class OptunaObj:
 
         # Suggest training epochs
         # training_epochs = 2 ** trial.suggest_int('training_epoch_exponents', 5, 9)
-        training_epochs = 2
+        training_epochs = 100
 
         params = {
             'dim_xi' : dim_xi, 
@@ -240,7 +240,7 @@ class OptunaObj:
             print("self.bestValue: ", self.bestValue)
             print("Save this model!")
 
-            saveDir = './model/' + self.modelSavePrefix + '_dimXi_{0}'.format(self.dim_xi)
+            saveDir = './model/' + self.modelSavePrefix + '_dimXi_{0}_dict'.format(self.dim_xi)
             myWD.save(saveDir)
 
         # Path(saveDir).makedir(parents=True, exist_ok=True)
@@ -288,7 +288,7 @@ for dim_xi in dim_xis:
     this_study = optuna.create_study(direction='minimize', 
                                      storage="sqlite:///./jobs/{0}_{1}".format(kwgs['prefix'], dim_xi) + ".db", 
                                      study_name="my_study1", 
-                                     load_if_exists=False)
+                                     load_if_exists=True)
     
-    this_study.optimize(myOpt.objective, n_trials=5)
+    this_study.optimize(myOpt.objective, n_trials=200)
     studys.append(this_study)
