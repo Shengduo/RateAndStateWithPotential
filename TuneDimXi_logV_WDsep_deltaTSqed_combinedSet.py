@@ -234,17 +234,19 @@ class OptunaObj:
         
         # Return objective value for optuna
         res = train1Epoch(testDataLoader, Loss, myWD, self.test_p, 0., update_weights=False)
+        
+        # if res < self.bestValue:
+        print("res: ", res)
+        print("self.bestValue: ", self.bestValue)
+        print("Save this model!")
+
+        saveDir = './model/' + self.modelSavePrefix + '_dimXi_{0}_dict_{1}'.format(self.dim_xi, trial.number)
+        myWD.save(saveDir)
+
+        # Path(saveDir).makedir(parents=True, exist_ok=True)
+        
+        # torch.save(myWD.module.state_dict(), './model/' + self.modelSavePrefix + '_dimXi_{0}_dict.pth'.format(self.dim_xi))
         if res < self.bestValue:
-            print("res: ", res)
-            print("self.bestValue: ", self.bestValue)
-            print("Save this model!")
-
-            saveDir = './model/' + self.modelSavePrefix + '_dimXi_{0}_dict_{1}'.format(self.dim_xi, trial.number)
-            myWD.save(saveDir)
-
-            # Path(saveDir).makedir(parents=True, exist_ok=True)
-            
-            # torch.save(myWD.module.state_dict(), './model/' + self.modelSavePrefix + '_dimXi_{0}_dict.pth'.format(self.dim_xi))
             self.bestValue = res
 
         print("Time for this trial: ", time.time() - st)
@@ -261,7 +263,7 @@ class OptunaObj:
         return res
 
 # Do a parametric study over number of hidden parameters
-dim_xis = [1, 0]
+dim_xis = [1]
 studys = []
 
 # Tune parameters for dim_xi = 4
@@ -288,5 +290,5 @@ for dim_xi in dim_xis:
                                      study_name="my_study1", 
                                      load_if_exists=False)
     
-    this_study.optimize(myOpt.objective, n_trials=2)
+    this_study.optimize(myOpt.objective, n_trials=10)
     studys.append(this_study)
