@@ -1,8 +1,8 @@
 /home/shengduo/anaconda3/lib/python3.9/site-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.16.5 and <1.23.0 is required for this version of SciPy (detected version 1.24.1
   warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
-[I 2024-02-26 10:52:02,356] Using an existing study with name 'my_study' instead of creating a new one.
+[I 2024-02-26 16:53:58,900] Using an existing study with name 'my_study' instead of creating a new one.
 Cuda is available:  True
-Device is:  cpu
+Device is:  cuda:0
 Memory allocated:  0.0
 Memory cached:  0.0
 Data file:  ./data/Trial0216_combined_800.pt
@@ -11,34 +11,155 @@ thetas.shape:  torch.Size([800, 100])
 fs.shape:  torch.Size([800, 100])
 ts.shape:  torch.Size([800, 100])
 Xs.shape:  torch.Size([800, 100])
---------------------  Trial  37   --------------------
+--------------------  Trial  39   --------------------
 Start timing: 
 Parameters: 
-{'W_layers': 3, 'W_layer_units_exponent_0': 9, 'W_layer_units_exponent_1': 8, 'W_layer_units_exponent_2': 5, 'D_layers': 6, 'D_layer_units_exponent_0': 10, 'D_layer_units_exponent_1': 10, 'D_layer_units_exponent_2': 9, 'D_layer_units_exponent_3': 8, 'D_layer_units_exponent_4': 10, 'D_layer_units_exponent_5': 8, 'D_dagger_layers': 7, 'D_dagger_layer_units_exponent_0': 8, 'D_dagger_layer_units_exponent_1': 9, 'D_dagger_layer_units_exponent_2': 6, 'D_dagger_layer_units_exponent_3': 6, 'D_dagger_layer_units_exponent_4': 5, 'D_dagger_layer_units_exponent_5': 8, 'D_dagger_layer_units_exponent_6': 10, 'log_learning_rate': -2.926200232290906, 'log_learning_rate_D': -3.5217229334688174, 'log_learning_rate_D_dagger': -3.7496807367792675, 'training_batch_size': 12, 'training_p': 3}
-	 epoch  0 training error:  tensor(1.0394, grad_fn=<DivBackward0>)
+{'W_layers': 3, 'W_layer_units_exponent_0': 9, 'W_layer_units_exponent_1': 8, 'W_layer_units_exponent_2': 5, 'D_layers': 6, 'D_layer_units_exponent_0': 10, 'D_layer_units_exponent_1': 10, 'D_layer_units_exponent_2': 9, 'D_layer_units_exponent_3': 8, 'D_layer_units_exponent_4': 10, 'D_layer_units_exponent_5': 8, 'D_dagger_layers': 7, 'D_dagger_layer_units_exponent_0': 8, 'D_dagger_layer_units_exponent_1': 9, 'D_dagger_layer_units_exponent_2': 7, 'D_dagger_layer_units_exponent_3': 6, 'D_dagger_layer_units_exponent_4': 5, 'D_dagger_layer_units_exponent_5': 8, 'D_dagger_layer_units_exponent_6': 10, 'log_learning_rate': -2.8429792279690775, 'log_learning_rate_D': -3.534704924484469, 'log_learning_rate_D_dagger': -3.7252571273255732, 'training_batch_size': 12, 'training_p': 3}
+	 epoch  0 training error:  tensor(1.0905, device='cuda:0', grad_fn=<DivBackward0>)
 Memory status after this epoch: 
-Memory allocated:  0.0
-Memory cached:  0.0
-	 epoch  10 training error:  tensor(0.6201, grad_fn=<DivBackward0>)
+Memory allocated:  45.3115234375
+Memory cached:  140.0
+	 epoch  10 training error:  tensor(0.6394, device='cuda:0', grad_fn=<DivBackward0>)
 Memory status after this epoch: 
-Memory allocated:  0.0
-Memory cached:  0.0
-[W 2024-02-26 10:57:59,923] Trial 37 failed with parameters: {'W_layers': 3, 'W_layer_units_exponent_0': 9, 'W_layer_units_exponent_1': 8, 'W_layer_units_exponent_2': 5, 'D_layers': 6, 'D_layer_units_exponent_0': 10, 'D_layer_units_exponent_1': 10, 'D_layer_units_exponent_2': 9, 'D_layer_units_exponent_3': 8, 'D_layer_units_exponent_4': 10, 'D_layer_units_exponent_5': 8, 'D_dagger_layers': 7, 'D_dagger_layer_units_exponent_0': 8, 'D_dagger_layer_units_exponent_1': 9, 'D_dagger_layer_units_exponent_2': 6, 'D_dagger_layer_units_exponent_3': 6, 'D_dagger_layer_units_exponent_4': 5, 'D_dagger_layer_units_exponent_5': 8, 'D_dagger_layer_units_exponent_6': 10, 'log_learning_rate': -2.926200232290906, 'log_learning_rate_D': -3.5217229334688174, 'log_learning_rate_D_dagger': -3.7496807367792675, 'training_batch_size': 12, 'training_p': 3} because of the following error: KeyboardInterrupt().
+Memory allocated:  45.3115234375
+Memory cached:  206.0
+	 epoch  20 training error:  tensor(0.3314, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  45.3115234375
+Memory cached:  210.0
+	 epoch  30 training error:  tensor(0.2726, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  45.3115234375
+Memory cached:  204.0
+	 epoch  40 training error:  tensor(0.2552, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  45.3115234375
+Memory cached:  198.0
+	 epoch  50 training error:  tensor(0.2452, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  45.3115234375
+Memory cached:  196.0
+	 epoch  60 training error:  tensor(0.2402, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  45.3115234375
+Memory cached:  190.0
+	 epoch  70 training error:  tensor(0.2384, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  45.3115234375
+Memory cached:  204.0
+	 epoch  80 training error:  tensor(0.2387, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  45.3115234375
+Memory cached:  194.0
+	 epoch  90 training error:  tensor(0.2356, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  45.3115234375
+Memory cached:  212.0
+[I 2024-02-26 16:59:31,847] Trial 39 finished with value: 0.1878381073474884 and parameters: {'W_layers': 3, 'W_layer_units_exponent_0': 9, 'W_layer_units_exponent_1': 8, 'W_layer_units_exponent_2': 5, 'D_layers': 6, 'D_layer_units_exponent_0': 10, 'D_layer_units_exponent_1': 10, 'D_layer_units_exponent_2': 9, 'D_layer_units_exponent_3': 8, 'D_layer_units_exponent_4': 10, 'D_layer_units_exponent_5': 8, 'D_dagger_layers': 7, 'D_dagger_layer_units_exponent_0': 8, 'D_dagger_layer_units_exponent_1': 9, 'D_dagger_layer_units_exponent_2': 7, 'D_dagger_layer_units_exponent_3': 6, 'D_dagger_layer_units_exponent_4': 5, 'D_dagger_layer_units_exponent_5': 8, 'D_dagger_layer_units_exponent_6': 10, 'log_learning_rate': -2.8429792279690775, 'log_learning_rate_D': -3.534704924484469, 'log_learning_rate_D_dagger': -3.7252571273255732, 'training_batch_size': 12, 'training_p': 3}. Best is trial 11 with value: 0.0255799051374197.
+res:  tensor(0.1878, device='cuda:0', grad_fn=<DivBackward0>)
+self.bestValue:  10000000.0
+Save this model!
+Time for this trial:  332.4489531517029
+Memory status after this trial: 
+Memory allocated:  2988.5908203125
+Memory cached:  3132.0
+--------------------  Trial  40   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 5, 'W_layer_units_exponent_0': 9, 'W_layer_units_exponent_1': 10, 'W_layer_units_exponent_2': 8, 'W_layer_units_exponent_3': 9, 'W_layer_units_exponent_4': 4, 'D_layers': 2, 'D_layer_units_exponent_0': 5, 'D_layer_units_exponent_1': 9, 'D_dagger_layers': 8, 'D_dagger_layer_units_exponent_0': 9, 'D_dagger_layer_units_exponent_1': 10, 'D_dagger_layer_units_exponent_2': 6, 'D_dagger_layer_units_exponent_3': 10, 'D_dagger_layer_units_exponent_4': 4, 'D_dagger_layer_units_exponent_5': 5, 'D_dagger_layer_units_exponent_6': 4, 'D_dagger_layer_units_exponent_7': 7, 'log_learning_rate': -2.9986059489562393, 'log_learning_rate_D': -4.707956734844351, 'log_learning_rate_D_dagger': -4.991651314276063, 'training_batch_size': 11, 'training_p': 4}
+	 epoch  0 training error:  tensor(1.0075, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3015.64111328125
+Memory cached:  3184.0
+	 epoch  10 training error:  tensor(0.6862, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3015.64111328125
+Memory cached:  3238.0
+	 epoch  20 training error:  tensor(0.6313, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3015.64111328125
+Memory cached:  3236.0
+	 epoch  30 training error:  tensor(0.6300, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3015.64111328125
+Memory cached:  3238.0
+	 epoch  40 training error:  tensor(0.6216, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3015.64111328125
+Memory cached:  3248.0
+	 epoch  50 training error:  tensor(0.6148, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3015.64111328125
+Memory cached:  3252.0
+	 epoch  60 training error:  tensor(0.6083, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3015.64111328125
+Memory cached:  3236.0
+	 epoch  70 training error:  tensor(0.5931, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3015.64111328125
+Memory cached:  3254.0
+	 epoch  80 training error:  tensor(0.5784, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3015.64111328125
+Memory cached:  3248.0
+	 epoch  90 training error:  tensor(0.5604, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3015.64111328125
+Memory cached:  3242.0
+[I 2024-02-26 17:04:02,717] Trial 40 finished with value: 0.4956851899623871 and parameters: {'W_layers': 5, 'W_layer_units_exponent_0': 9, 'W_layer_units_exponent_1': 10, 'W_layer_units_exponent_2': 8, 'W_layer_units_exponent_3': 9, 'W_layer_units_exponent_4': 4, 'D_layers': 2, 'D_layer_units_exponent_0': 5, 'D_layer_units_exponent_1': 9, 'D_dagger_layers': 8, 'D_dagger_layer_units_exponent_0': 9, 'D_dagger_layer_units_exponent_1': 10, 'D_dagger_layer_units_exponent_2': 6, 'D_dagger_layer_units_exponent_3': 10, 'D_dagger_layer_units_exponent_4': 4, 'D_dagger_layer_units_exponent_5': 5, 'D_dagger_layer_units_exponent_6': 4, 'D_dagger_layer_units_exponent_7': 7, 'log_learning_rate': -2.9986059489562393, 'log_learning_rate_D': -4.707956734844351, 'log_learning_rate_D_dagger': -4.991651314276063, 'training_batch_size': 11, 'training_p': 4}. Best is trial 11 with value: 0.0255799051374197.
+Time for this trial:  270.49714732170105
+Memory status after this trial: 
+Memory allocated:  5387.93310546875
+Memory cached:  5564.0
+--------------------  Trial  41   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 4, 'W_layer_units_exponent_0': 10, 'W_layer_units_exponent_1': 9, 'W_layer_units_exponent_2': 9, 'W_layer_units_exponent_3': 7, 'D_layers': 4, 'D_layer_units_exponent_0': 6, 'D_layer_units_exponent_1': 8, 'D_layer_units_exponent_2': 10, 'D_layer_units_exponent_3': 10, 'D_dagger_layers': 6, 'D_dagger_layer_units_exponent_0': 6, 'D_dagger_layer_units_exponent_1': 6, 'D_dagger_layer_units_exponent_2': 9, 'D_dagger_layer_units_exponent_3': 7, 'D_dagger_layer_units_exponent_4': 5, 'D_dagger_layer_units_exponent_5': 8, 'log_learning_rate': -2.4459581613796013, 'log_learning_rate_D': -4.133473087014123, 'log_learning_rate_D_dagger': -4.715098630597801, 'training_batch_size': 7, 'training_p': 3}
+	 epoch  0 training error:  tensor(9.4139, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3024.27197265625
+Memory cached:  3264.0
+	 epoch  10 training error:  tensor(0.6072, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3024.27197265625
+Memory cached:  3158.0
+	 epoch  20 training error:  tensor(0.5251, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3024.27197265625
+Memory cached:  3158.0
+	 epoch  30 training error:  tensor(0.3326, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3024.27197265625
+Memory cached:  3160.0
+	 epoch  40 training error:  tensor(0.2820, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3024.27197265625
+Memory cached:  3160.0
+	 epoch  50 training error:  tensor(0.2741, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3024.27197265625
+Memory cached:  3160.0
+	 epoch  60 training error:  tensor(0.2683, device='cuda:0', grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  3024.27197265625
+Memory cached:  3160.0
+[W 2024-02-26 17:14:25,902] Trial 41 failed with parameters: {'W_layers': 4, 'W_layer_units_exponent_0': 10, 'W_layer_units_exponent_1': 9, 'W_layer_units_exponent_2': 9, 'W_layer_units_exponent_3': 7, 'D_layers': 4, 'D_layer_units_exponent_0': 6, 'D_layer_units_exponent_1': 8, 'D_layer_units_exponent_2': 10, 'D_layer_units_exponent_3': 10, 'D_dagger_layers': 6, 'D_dagger_layer_units_exponent_0': 6, 'D_dagger_layer_units_exponent_1': 6, 'D_dagger_layer_units_exponent_2': 9, 'D_dagger_layer_units_exponent_3': 7, 'D_dagger_layer_units_exponent_4': 5, 'D_dagger_layer_units_exponent_5': 8, 'log_learning_rate': -2.4459581613796013, 'log_learning_rate_D': -4.133473087014123, 'log_learning_rate_D_dagger': -4.715098630597801, 'training_batch_size': 7, 'training_p': 3} because of the following error: KeyboardInterrupt().
 Traceback (most recent call last):
   File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
     value_or_values = func(trial)
-  File "/home/shengduo/RateAndStateWithPotential/TuneDimXi_logV_WDsep_deltaTSqed_combinedSet.py", line 221, in objective
+  File "/home/shengduo/RateAndStateWithPotential/TuneDimXi_logV_WDsep_deltaTSqed_combinedSet.py", line 222, in objective
     avg_training_loss = train1Epoch(trainDataLoader, Loss, myWD, params['training_p'], 0.)
-  File "/home/shengduo/RateAndStateWithPotential/FrictionNNModels.py", line 320, in train1Epoch
-    myPot.calf(Xs, XDots, ts)
-  File "/home/shengduo/RateAndStateWithPotential/FrictionNNModels.py", line 101, in calf
-    this_piece = torch.autograd.grad(outputs=D_dagger, inputs=X_D_dagger, create_graph=True)[0]
-  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/torch/autograd/__init__.py", line 276, in grad
-    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/home/shengduo/RateAndStateWithPotential/FrictionNNModels.py", line 326, in train1Epoch
+    loss.backward()
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/torch/_tensor.py", line 396, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph, inputs=inputs)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/torch/autograd/__init__.py", line 173, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
 KeyboardInterrupt
-[W 2024-02-26 10:57:59,924] Trial 37 failed with value None.
+[W 2024-02-26 17:14:25,903] Trial 41 failed with value None.
 Traceback (most recent call last):
-  File "/home/shengduo/RateAndStateWithPotential/TuneDimXi_logV_WDsep_deltaTSqed_combinedSet.py", line 283, in <module>
+  File "/home/shengduo/RateAndStateWithPotential/TuneDimXi_logV_WDsep_deltaTSqed_combinedSet.py", line 284, in <module>
     this_study.optimize(myOpt.objective, n_trials=200)
   File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/study.py", line 442, in optimize
     _optimize(
@@ -50,12 +171,12 @@ Traceback (most recent call last):
     raise func_err
   File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
     value_or_values = func(trial)
-  File "/home/shengduo/RateAndStateWithPotential/TuneDimXi_logV_WDsep_deltaTSqed_combinedSet.py", line 221, in objective
+  File "/home/shengduo/RateAndStateWithPotential/TuneDimXi_logV_WDsep_deltaTSqed_combinedSet.py", line 222, in objective
     avg_training_loss = train1Epoch(trainDataLoader, Loss, myWD, params['training_p'], 0.)
-  File "/home/shengduo/RateAndStateWithPotential/FrictionNNModels.py", line 320, in train1Epoch
-    myPot.calf(Xs, XDots, ts)
-  File "/home/shengduo/RateAndStateWithPotential/FrictionNNModels.py", line 101, in calf
-    this_piece = torch.autograd.grad(outputs=D_dagger, inputs=X_D_dagger, create_graph=True)[0]
-  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/torch/autograd/__init__.py", line 276, in grad
-    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/home/shengduo/RateAndStateWithPotential/FrictionNNModels.py", line 326, in train1Epoch
+    loss.backward()
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/torch/_tensor.py", line 396, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph, inputs=inputs)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/torch/autograd/__init__.py", line 173, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
 KeyboardInterrupt

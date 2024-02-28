@@ -8,6 +8,7 @@ from xitorch.optimize import rootfinder
 import optuna
 from torch.utils.data import TensorDataset, DataLoader
 import joblib 
+from pathlib import Path
 
 # Memory management on GPU
 import gc
@@ -18,7 +19,8 @@ import time
 # Testify whether GPU is available
 print("Cuda is available: ", torch.cuda.is_available())
 # device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-device = "cpu"
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+# device = "cpu"
 print("Device is: ", device)
 
 def memory_stats():
@@ -168,7 +170,7 @@ class OptunaObj:
 
         # Suggest training epochs
         # training_epochs = 2 ** trial.suggest_int('training_epoch_exponents', 5, 9)
-        training_epochs = 100
+        training_epochs = 2
 
         params = {
             'dim_xi' : dim_xi, 
@@ -236,7 +238,13 @@ class OptunaObj:
             print("res: ", res)
             print("self.bestValue: ", self.bestValue)
             print("Save this model!")
-            torch.save(myWD, './model/' + self.modelSavePrefix + '_dimXi_{0}.pth'.format(self.dim_xi))
+
+            saveDir = './model/' + self.modelSavePrefix + '_dimXi_{0}_dict'.format(self.dim_xi)
+            myWD.save(saveDir)
+
+            # Path(saveDir).makedir(parents=True, exist_ok=True)
+            
+            # torch.save(myWD.module.state_dict(), './model/' + self.modelSavePrefix + '_dimXi_{0}_dict.pth'.format(self.dim_xi))
             self.bestValue = res
 
         print("Time for this trial: ", time.time() - st)
@@ -280,5 +288,5 @@ for dim_xi in dim_xis:
                                      study_name="my_study", 
                                      load_if_exists=True)
     
-    this_study.optimize(myOpt.objective, n_trials=200)
+    this_study.optimize(myOpt.objective, n_trials=1)
     studys.append(this_study)

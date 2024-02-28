@@ -8,6 +8,7 @@ from xitorch.optimize import rootfinder
 import optuna
 from torch.utils.data import TensorDataset, DataLoader
 import joblib 
+from pathlib import Path
 
 # Memory management on GPU
 import gc
@@ -71,6 +72,12 @@ class PotentialsFricCorrection:
         
         # Device
         self.device = kwgsPot["device"]
+        
+        # Multi-GPU data parallel
+        self.W = nn.DataParallel(self.W)
+        self.D = nn.DataParallel(self.D)
+        self.D_dagger = nn.DataParallel(self.D_dagger)
+        
         self.W.to(self.device)
         self.D.to(self.device)
         self.D_dagger.to(self.device)
@@ -86,15 +93,19 @@ class PotentialsFricCorrection:
         # Loop through time steps
         
         if self.dim_xi > 0:
-            xi0 = torch.zeros([batch_size, self.dim_xi], requires_grad=True, device=self.device)
+            xiNext = torch.zeros([batch_size, self.dim_xi], requires_grad=True, device=self.device)
+            # xi0 = torch.zeros([batch_size, self.dim_xi], requires_grad=True, device=self.device)
             
             # List of fs
             list_fs = []
-            list_xis = [xi0]
+            # list_xis = [xi0]
             
             for idx in range(x.shape[1]):
+                # Load xi_curr
+                xiCurr = xiNext
+
                 # f = \partial W / \partial V
-                X_D_dagger = torch.concat([xDot[:, idx:idx + 1], list_xis[-1]], dim = 1).requires_grad_()
+                X_D_dagger = torch.concat([xDot[:, idx:idx + 1], xiCurr], dim = 1).requires_grad_()
                 # X_W.to(self.device)
                 D_dagger = torch.sum(self.D_dagger(X_D_dagger))
 
@@ -114,12 +125,16 @@ class PotentialsFricCorrection:
                 if idx < x.shape[1] - 1:
                     this_input = -dD_daggerdXi.clone().requires_grad_()
                     D = torch.sum(self.D(this_input))
-                    xiNext = list_xis[-1] + torch.autograd.grad(outputs=D, inputs=this_input, create_graph=True)[0] * (t[:, idx + 1:idx + 2] - t[:, idx:idx + 1])
-                    list_xis.append(xiNext)
+                    xiNext = xiCurr + torch.autograd.grad(outputs=D, inputs=this_input, create_graph=True)[0] * (t[:, idx + 1:idx + 2] - t[:, idx:idx + 1])
+                    # list_xis.append(xiNext)
                     
                     del this_input, dD_daggerdXi, dD_daggerdXDot, W, X_W, dWdX, D, this_piece, X_D_dagger, D_dagger 
+                else:
+                    del dD_daggerdXi, dD_daggerdXDot, W, X_W, dWdX, this_piece, X_D_dagger, D_dagger
                     
-                self.fs = torch.concat(list_fs, dim=1)
+            self.fs = torch.concat(list_fs, dim=1)
+            del xiNext, xiCurr
+            
         else:
             X_W = x.clone().reshape([x.shape[0], x.shape[1], 1]).requires_grad_()
             # print(X_W)
@@ -130,6 +145,29 @@ class PotentialsFricCorrection:
             self.fs = torch.autograd.grad(outputs=W, inputs=X_W, create_graph=True)[0].reshape([x.shape[0], x.shape[1]]) \
                       + torch.autograd.grad(outputs=D_dagger, inputs=X_D_dagger, create_graph=True)[0].reshape([xDot.shape[0], xDot.shape[1]])
             del W, X_W, X_D_dagger, D_dagger 
+
+    # Save the model
+    def save(self, PATH):
+        # mkdir
+        Path(PATH).mkdir(parents=True, exist_ok=True)
+
+        # Save all three neural networks
+        torch.save(self, PATH + "/model.pth")
+        torch.save(self.W.module.state_dict(), PATH + "/W.pth")
+        torch.save(self.D.module.state_dict(), PATH + "/D.pth")
+        torch.save(self.D_dagger.module.state_dict(), PATH + "/D_dagger.pth")
+
+    # Load the nns
+    def load_nns(self, PATH, mapDevice):
+        self.W.module.load_state_dict(torch.load(PATH + "/W.pth", map_location=mapDevice))
+        self.D.module.load_state_dict(torch.load(PATH + "/D.pth", map_location=mapDevice))
+        self.D_dagger.module.load_state_dict(torch.load(PATH + "/D_dagger.pth", map_location=mapDevice))
+
+        # Send to devices
+        self.W.to(mapDevice)
+        self.D.to(mapDevice)
+        self.D_dagger.to(mapDevice)
+
 
 class PotsCalXiXiDot:
     # Initialization of W and D
@@ -342,6 +380,8 @@ def train1Epoch(data_loader, loss_fn, myPot, p, fOffSet, update_weights=True):
          
         
     res = sum(Losses) / len(data_loader.dataset)
+    res = res.to("cpu")
+
     # print("Memory before del in train1Epoch: ")
     # memory_stats()
 
