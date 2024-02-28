@@ -239,7 +239,7 @@ class OptunaObj:
             print("self.bestValue: ", self.bestValue)
             print("Save this model!")
 
-            saveDir = './model/' + self.modelSavePrefix + '_dimXi_{0}_dict'.format(self.dim_xi)
+            saveDir = './model/' + self.modelSavePrefix + '_dimXi_{0}_dict_{1}'.format(self.dim_xi, trial.number)
             myWD.save(saveDir)
 
             # Path(saveDir).makedir(parents=True, exist_ok=True)
@@ -285,8 +285,8 @@ for dim_xi in dim_xis:
     # sqlite:///example.db
     this_study = optuna.create_study(direction='minimize', 
                                      storage="sqlite:///./jobs/{0}_{1}".format(kwgs['prefix'], dim_xi) + ".db", 
-                                     study_name="my_study", 
-                                     load_if_exists=True)
+                                     study_name="my_study1", 
+                                     load_if_exists=False)
     
-    this_study.optimize(myOpt.objective, n_trials=1)
+    this_study.optimize(myOpt.objective, n_trials=2)
     studys.append(this_study)
