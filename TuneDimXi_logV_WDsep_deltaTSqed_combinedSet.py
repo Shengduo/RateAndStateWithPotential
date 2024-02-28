@@ -240,7 +240,7 @@ class OptunaObj:
             print("self.bestValue: ", self.bestValue)
             print("Save this model!")
 
-            saveDir = './model/' + self.modelSavePrefix + '_dimXi_{0}_dict_{1}'.format(self.dim_xi, trial.number)
+            saveDir = './model/' + self.modelSavePrefix + '_dimXi_{0}'.format(self.dim_xi)
             myWD.save(saveDir)
 
         # Path(saveDir).makedir(parents=True, exist_ok=True)
