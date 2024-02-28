@@ -5,10 +5,10 @@
 
 # Number of processor cores / tasks
 #SBATCH --mem-per-cpu=64G   # memory per CPU core
-#SBATCH -nodes=1
+#SBATCH --nodes=1
 
 # Number of GPUs
-#SBATCH -gres=gpu:2
+#SBATCH --gres=gpu:2
 
 # Wall time : maximum allowed run time
 #SBATCH --time=00:05:00  
@@ -21,4 +21,4 @@
 #SBATCH --mail-type=FAIL
 
 # Run the mpi job
-python TuneDimXi_logV_WDsep_deltaTSqed_combinedSet.py > log/Trial_0216_combined_800_01
+python TuneDimXi_logV_WDsep_deltaTSqed_combinedSet.py >& log/Trial_0216_combined_800_01

@@ -1,0 +1,10 @@
+Cuda is available:  True
+Device is:  cuda
+Memory allocated:  0.0
+Memory cached:  0.0
+Traceback (most recent call last):
+  File "/central/home/sliu5/RateAndStateWithPotential/TuneDimXi_logV_WDsep_deltaTSqed_combinedSet.py", line 32, in <module>
+    from DataGeneration import generateSamples_Burigede
+  File "/central/home/sliu5/RateAndStateWithPotential/DataGeneration.py", line 2, in <module>
+    import torchdiffeq
+ModuleNotFoundError: No module named 'torchdiffeq'
