@@ -305,5 +305,5 @@ for dim_xi in dim_xis:
 
     myOpt = OptunaObj(OptKwgs)
 
-    this_study.optimize(myOpt.objective, n_trials=128)
+    this_study.optimize(myOpt.objective, n_trials=129)
     studys.append(this_study)

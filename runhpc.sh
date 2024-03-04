@@ -11,8 +11,8 @@
 #SBATCH --gres=gpu:2
 
 # Wall time : maximum allowed run time
-#SBATCH --time=00:05:00  
-#SBATCH --qos=debug
+#SBATCH --time=72:00:00  
+#SBATCH --qos=normal
 
 # Send email to user
 #SBATCH --mail-user=sliu5@caltech.edu
@@ -21,4 +21,4 @@
 #SBATCH --mail-type=FAIL
 
 # Run the mpi job
-python TuneDimXi_logV_WDsep_deltaTSqed_combinedSet.py >> log/Trial0216_combined_800_01_hpc_debug 2&>1
+python TuneDimXi_logV_WDsep_deltaTSqed_combinedSet.py >> log/Trial0216_combined_800_01_hpc
