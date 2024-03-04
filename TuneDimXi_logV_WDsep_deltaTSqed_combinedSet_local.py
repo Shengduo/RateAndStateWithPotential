@@ -102,7 +102,7 @@ class OptunaObj:
 
         if 'bestValue' in kwgs.keys():
             self.bestValue = kwgs['bestValue']
-        
+
         self.fOffSet = kwgs['fOffSet']
         self.scaling_factor = kwgs['scaling_factor']
 
@@ -288,8 +288,8 @@ OptKwgs = {
 for dim_xi in dim_xis:
     # sqlite:///example.db
     this_study = optuna.create_study(direction='minimize', 
-                                     storage="sqlite:///./jobs/{0}_{1}".format(kwgs['prefix'], dim_xi) + ".db", 
-                                     study_name="my_study1", 
+                                     storage="sqlite:///./jobs/{0}_{1}_local".format(kwgs['prefix'], dim_xi) + ".db", 
+                                     study_name="my_study", 
                                      load_if_exists=True)
 
     OptKwgs['dim_xi'] = dim_xi
@@ -305,5 +305,5 @@ for dim_xi in dim_xis:
 
     myOpt = OptunaObj(OptKwgs)
 
-    this_study.optimize(myOpt.objective, n_trials=128)
+    this_study.optimize(myOpt.objective, n_trials=10)
     studys.append(this_study)
