@@ -391,3 +391,49 @@ def train1Epoch(data_loader, loss_fn, myPot, p, fOffSet, update_weights=True):
     # print("Memory after del in train1Epoch: ")
     # memory_stats()
     return res
+
+## Spring slider
+# Function to plot a sequence compared between R & S and NN models
+def plotGenVXFric(VV, tt, t, Vs, xs, Frics):
+    # Plot Sequence of V(t) and N(t) given sample-index
+    f, axs = plt.subplots(2, 2, figsize = (15, 15))
+
+    ## data
+    legends = ["R \& S", "NN"]
+    lws = [4.0, 2.0]
+
+    # Plot genVVtt
+    axs[0][0].tick_params(axis='both', which='major', labelsize=20)
+    axs[0][0].tick_params(axis='both', which='major', labelsize=20)
+    axs[0][0].plot(tt, VV, linewidth=4.0, label="Pulling V")
+    axs[0][0].set_xlabel('Time [s]', fontsize=20)
+    axs[0][0].set_ylabel('Pulling $V(t)\  \mathrm{[m/s]}$', fontsize=20)
+    axs[0][0].grid()
+
+    # Plot v_1(t)
+    axs[0][1].tick_params(axis='both', which='major', labelsize=20)
+    for i in range(len(Vs)):
+        axs[0][1].semilogy(t, Vs[i], linewidth=lws[i], label=legends[i])
+    axs[0][1].set_xlabel('Time [s]', fontsize=20)
+    axs[0][1].set_ylabel('Slip rate $V(t)\ \mathrm{[m/s]}$', fontsize=20)
+    axs[0][1].grid()
+
+    # Plot x(t)
+    axs[1][0].tick_params(axis='both', which='major', labelsize=20)
+    axs[1][0].tick_params(axis='both', which='major', labelsize=20)
+    for i in range(len(xs)):
+        axs[1][0].plot(t, xs[i], linewidth=lws[i], label=legends[i])
+    axs[1][0].set_xlabel('Time [s]', fontsize=20)
+    axs[1][0].set_ylabel('Slip $x(t)\  \mathrm{[m]}$', fontsize=20)
+    axs[1][0].grid()
+
+    # Plot friction coefficient(t)
+    axs[1][1].tick_params(axis='both', which='major', labelsize=20)
+    for i in range(len(Frics)):
+        axs[1][1].plot(t, Frics[i], linewidth=lws[i], label=legends[i])
+    axs[1][1].set_xlabel('Time [s]', fontsize=20)
+    axs[1][1].set_ylabel('Fric Coeff.', fontsize=20)
+    axs[1][1].legend(fontsize=20, loc='best')
+    axs[1][1].grid()
+
+    return f, axs
