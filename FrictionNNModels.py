@@ -164,9 +164,9 @@ class PotentialsFricCorrection:
         self.D_dagger.module.load_state_dict(torch.load(PATH + "/D_dagger.pth", map_location=mapDevice))
 
         # Send to devices
-        self.W.to(mapDevice)
-        self.D.to(mapDevice)
-        self.D_dagger.to(mapDevice)
+        self.W.module.to(mapDevice)
+        self.D.module.to(mapDevice)
+        self.D_dagger.module.to(mapDevice)
 
 
 class PotsCalXiXiDot:
@@ -178,10 +178,10 @@ class PotsCalXiXiDot:
         self.D_dagger = myWD.D_dagger
         
         # Device
-        self.device = "cpu"
-        self.W.to(self.device)
-        self.D.to(self.device)
-        self.D_dagger.to(self.device)
+        # self.device = "cpu"
+        self.W.to('cpu')
+        self.D.to('cpu')
+        self.D_dagger.to('cpu')
         self.fs = []
         self.xis = []
         self.xiDots = []
@@ -191,10 +191,13 @@ class PotsCalXiXiDot:
     def calf(self, x, xDot, t):
         # Initialize Vs
         batch_size = x.shape[0]
-        
+        x = x.to("cpu")
+        xDot = xDot.to("cpu")
+        t = t.to("cpu")
+
         # Loop through time steps
         if self.dim_xi > 0:
-            xi0 = torch.zeros([batch_size, self.dim_xi], requires_grad=True, device=self.device)
+            xi0 = torch.zeros([batch_size, self.dim_xi], requires_grad=True, device='cpu')
             
             # List of fs
             list_fs = []
@@ -437,3 +440,33 @@ def plotGenVXFric(VV, tt, t, Vs, xs, Frics):
     axs[1][1].grid()
 
     return f, axs
+
+def load_model(modelPrefix, mapDevice=torch.device("cpu"), dim_xi=1, dict_flag=False):
+    if dict_flag:
+        
+        PATH = "./model/" + modelPrefix + "_dimXi_" + str(dim_xi) + "_dict"
+        myModel = torch.load(PATH + "/model.pth")
+
+        del myModel.W, myModel.D, myModel.D_dagger
+        
+        myModel.W = PP(myModel.NNs_W, input_dim = 1, output_dim = 1)
+        myModel.D = PP(myModel.NNs_D, input_dim = myModel.dim_xi, output_dim = 1)
+        myModel.D_dagger = PP(myModel.NNs_D_dagger, input_dim = 1 + myModel.dim_xi, output_dim = 1)
+
+        # Multi-GPU data parallel
+        myModel.W = nn.DataParallel(myModel.W)
+        myModel.D = nn.DataParallel(myModel.D)
+        myModel.D_dagger = nn.DataParallel(myModel.D_dagger)
+
+        myModel.W.module.load_state_dict(torch.load(PATH + "/W.pth", map_location=mapDevice))
+        myModel.D.module.load_state_dict(torch.load(PATH + "/D.pth", map_location=mapDevice))
+        myModel.D_dagger.module.load_state_dict(torch.load(PATH + "/D_dagger.pth", map_location=mapDevice))
+
+        # Send to devices
+        myModel.W = myModel.W.module.to(mapDevice)
+        myModel.D = myModel.D.module.to(mapDevice)
+        myModel.D_dagger = myModel.D_dagger.module.to(mapDevice)
+    else:
+        myModel = torch.load("./model/" + modelPrefix + "_dimXi_" + str(dim_xi) + ".pth")
+
+    return myModel
