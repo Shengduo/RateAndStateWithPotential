@@ -176,14 +176,14 @@ class PN(nn.Module):
         self.coefs = nn.Parameter(torch.rand(self.ProdOrder))
     
     def getPolyVal(self, x, coeffs):
-        curVal = torch.zeros(x.shape)
-        for curValIndex in range(len(coeffs)-1):
+        curVal = torch.zeros(x.shape, device=x.device)
+        for curValIndex in range(0, len(coeffs)-1):
             curVal = (curVal + coeffs[curValIndex]) * x
         return (curVal + coeffs[-1])
     
     def forward(self, x):
-        res = torch.ones(x.shape)
-        for idx in len(self.coefs):
+        res = torch.ones(x.shape, device=x.device)
+        for idx in range(len(self.coefs)):
             res *= self.getPolyVal(x, self.coefs[idx, :])
         return res
 
@@ -193,9 +193,9 @@ class PotentialsPolyCorrection:
         # self.dim_xi = kwgsPot["dim_xi"]
         self.dim_xi = 1 # Now only support 1 hidden variable
         self.p_order = kwgsPolyPot['p_order']
-        self.coefs_W = PN([1, self.p_order])
-        self.coefs_D = PN([self.dim_xi, self.p_order])
-        self.coefs_D_dagger = PN([1 + self.dim_xi, self.p_order])
+        self.W = PN([1, self.p_order])
+        self.D = PN([self.dim_xi, self.p_order])
+        self.D_dagger = PN([1 + self.dim_xi, self.p_order])
 
         self.optim_W = optim.Adam(self.W.parameters(), lr=kwgsPolyPot["learning_rate"])
         self.optim_D = optim.Adam(self.D.parameters(), lr=kwgsPolyPot["learning_rate_D"])

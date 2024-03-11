@@ -1,0 +1,82 @@
+/home/shengduo/anaconda3/lib/python3.9/site-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.16.5 and <1.23.0 is required for this version of SciPy (detected version 1.24.1
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+[I 2024-03-11 15:40:41,162] Using an existing study with name 'my_study1' instead of creating a new one.
+Cuda is available:  True
+Device is:  cuda
+Memory allocated:  0.0
+Memory cached:  0.0
+Data file:  ./data/Trial0216_smallDRS_smallA_400.pt
+Vs.shape:  torch.Size([400, 100])
+thetas.shape:  torch.Size([400, 100])
+fs.shape:  torch.Size([400, 100])
+ts.shape:  torch.Size([400, 100])
+Xs.shape:  torch.Size([400, 100])
+No pruned database has been founded.
+--------------------  Trial  5   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -3.993615262389122, 'log_learning_rate_D': -3.0178538113971602, 'log_learning_rate_D_dagger': -1.424912001071907, 'training_batch_size': 11, 'training_p': 8}
+	 epoch  0 training error:  tensor(417.1308, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.3994140625
+Memory cached:  6.0
+	 epoch  10 training error:  tensor(110.4253, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.3994140625
+Memory cached:  6.0
+	 epoch  20 training error:  tensor(4.3152, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.3994140625
+Memory cached:  4.0
+	 epoch  30 training error:  tensor(1.2639, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.3994140625
+Memory cached:  6.0
+	 epoch  40 training error:  tensor(2.9496, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.3994140625
+Memory cached:  6.0
+	 epoch  50 training error:  tensor(1.4664, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.3994140625
+Memory cached:  6.0
+	 epoch  60 training error:  tensor(1.4236, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.3994140625
+Memory cached:  6.0
+	 epoch  70 training error:  tensor(0.9912, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.3994140625
+Memory cached:  6.0
+	 epoch  80 training error:  tensor(0.8619, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.3994140625
+Memory cached:  4.0
+	 epoch  90 training error:  tensor(0.7348, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.3994140625
+Memory cached:  6.0
+[I 2024-03-11 15:42:21,170] Trial 5 finished with value: 0.7055261731147766 and parameters: {'log_learning_rate': -3.993615262389122, 'log_learning_rate_D': -3.0178538113971602, 'log_learning_rate_D_dagger': -1.424912001071907, 'training_batch_size': 11, 'training_p': 8}. Best is trial 5 with value: 0.7055261731147766.
+res:  tensor(0.7055, grad_fn=<ToCopyBackward0>)
+self.bestValue:  10000000.0
+Save this model!
+Time for this trial:  99.76649904251099
+Memory status after this trial: 
+Memory allocated:  1.81201171875
+Memory cached:  4.0
+--------------------  Trial  6   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -3.6032084277497662, 'log_learning_rate_D': -2.9725587977350663, 'log_learning_rate_D_dagger': -3.1423020397583046, 'training_batch_size': 12, 'training_p': 5}
+	 epoch  0 training error:  tensor(61.6345, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.93994140625
+Memory cached:  6.0
+	 epoch  10 training error:  tensor(56.6756, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.93994140625
+Memory cached:  8.0
+	 epoch  20 training error:  tensor(51.7989, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  1.93994140625
+Memory cached:  8.0

@@ -45,7 +45,8 @@ kwgs = {
     # "prefix" : "Trial1116_smallDRS_largeA", 
     # "prefix" : "Trial1215_smallDRS_smallA", 
     # "prefix" : "Trial1215_smallDRS_Burigede", 
-    "prefix" : "Trial0216_combined_800", 
+    # "prefix" : "Trial0216_combined_800", 
+    "prefix" : "Trial0216_smallDRS_smallA_400",
     "NofVVSteps" : 10, 
 }
 
