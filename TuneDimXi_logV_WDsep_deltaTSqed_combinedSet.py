@@ -267,7 +267,7 @@ class OptunaObj:
         return res
 
 # Do a parametric study over number of hidden parameters
-dim_xis = [1]
+dim_xis = [2]
 studys = []
 
 # Tune parameters for dim_xi = 4
@@ -305,5 +305,5 @@ for dim_xi in dim_xis:
 
     myOpt = OptunaObj(OptKwgs)
 
-    this_study.optimize(myOpt.objective, n_trials=129)
+    this_study.optimize(myOpt.objective, n_trials=200)
     studys.append(this_study)
