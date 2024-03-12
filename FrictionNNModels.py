@@ -192,10 +192,22 @@ class PotentialsPolyCorrection:
     def __init__(self, kwgsPolyPot):
         # self.dim_xi = kwgsPot["dim_xi"]
         self.dim_xi = 1 # Now only support 1 hidden variable
-        self.p_order = kwgsPolyPot['p_order']
-        self.W = PN([1, self.p_order])
-        self.D = PN([self.dim_xi, self.p_order])
-        self.D_dagger = PN([1 + self.dim_xi, self.p_order])
+
+        # Set up polynomial learning functions
+        if hasattr(kwgsPolyPot, "p_order_W"):
+            self.p_order_W = kwgsPolyPot['p_order_W']
+            self.W = PN([1, self.p_order_W])
+            
+            self.p_order_D = kwgsPolyPot['p_order_D']
+            self.D = PN([self.dim_xi, self.p_order_W])
+
+            self.p_order_D_dagger = kwgsPolyPot['p_order_D_dagger']
+            self.D_dagger = PN([1 + self.dim_xi, self.p_order_D_dagger])
+        else:
+            self.p_order = kwgsPolyPot['p_order']
+            self.W = PN([1, self.p_order])
+            self.D = PN([self.dim_xi, self.p_order])
+            self.D_dagger = PN([1 + self.dim_xi, self.p_order])
 
         self.optim_W = optim.Adam(self.W.parameters(), lr=kwgsPolyPot["learning_rate"])
         self.optim_D = optim.Adam(self.D.parameters(), lr=kwgsPolyPot["learning_rate_D"])
@@ -572,17 +584,28 @@ def plotGenVXFric(VV, tt, t, Vs, xs, Frics):
 
     return f, axs
 
-def load_model(modelPrefix, mapDevice=torch.device("cpu"), dim_xi=1, dict_flag=False):
+def load_model(modelPrefix, mapDevice=torch.device("cpu"), dim_xi=1, dict_flag=False, NN_Flag = True):
     if dict_flag:
         
         PATH = "./model/" + modelPrefix + "_dimXi_" + str(dim_xi) + "_dict"
         myModel = torch.load(PATH + "/model.pth", map_location = mapDevice)
+        myModel.device = mapDevice
 
         del myModel.W, myModel.D, myModel.D_dagger
         
-        myModel.W = PP(myModel.NNs_W, input_dim = 1, output_dim = 1)
-        myModel.D = PP(myModel.NNs_D, input_dim = myModel.dim_xi, output_dim = 1)
-        myModel.D_dagger = PP(myModel.NNs_D_dagger, input_dim = 1 + myModel.dim_xi, output_dim = 1)
+        if hasattr(myModel, "NNs_W"):
+            myModel.W = PP(myModel.NNs_W, input_dim = 1, output_dim = 1)
+            myModel.D = PP(myModel.NNs_D, input_dim = myModel.dim_xi, output_dim = 1)
+            myModel.D_dagger = PP(myModel.NNs_D_dagger, input_dim = 1 + myModel.dim_xi, output_dim = 1)
+        else:
+            if hasattr(myModel, "p_order_W"):
+                myModel.W = PN([1, myModel.p_order_W])
+                myModel.D = PN([myModel.dim_xi, myModel.p_order_D])
+                myModel.D_dagger = PN([1 + myModel.dim_xi, myModel.p_order_D_dagger])
+            else:
+                myModel.W = PN([1, myModel.p_order])
+                myModel.D = PN([myModel.dim_xi, myModel.p_order])
+                myModel.D_dagger = PN([1 + myModel.dim_xi, myModel.p_order])
 
         # Multi-GPU data parallel
         myModel.W = nn.DataParallel(myModel.W)

@@ -155,12 +155,16 @@ class OptunaObj:
         # training_epochs = 2 ** trial.suggest_int('training_epoch_exponents', 5, 9)
         training_epochs = 100
 
-        # Fixing order of polynomial (p_order - 1)
-        p_order = 3
+        # let p_order be learnable
+        p_order_W = trial.suggest_int('p_order_W', 2, 5)
+        p_order_D = trial.suggest_int('p_order_D', 2, 5)
+        p_order_D_dagger = trial.suggest_int('p_order_D_dagger', 2, 5)
 
         params = {
             'dim_xi' : dim_xi, 
-            'p_order' : p_order, 
+            'p_order_W' : p_order_W, 
+            'p_order_D' : p_order_D, 
+            'p_order_D_dagger' : p_order_D_dagger, 
             'learning_rate' : learning_rate, 
             'learning_rate_D' : learning_rate_D, 
             'learning_rate_D_dagger' : learning_rate_D_dagger,  
@@ -253,7 +257,7 @@ OptKwgs = {
     'device' : device, 
     # 'training_dataset' : trainDataset, 
     # 'test_dataset' : testDataset, 
-    'modelSavePrefix' : kwgs['prefix'] + "_PN",
+    'modelSavePrefix' : kwgs['prefix'] + "_PN_separate_p",
     'fOffSet' : 0.5109, 
     'scaling_factor' : 50., 
     'AllData' : AllData, 
@@ -263,7 +267,7 @@ OptKwgs = {
 for dim_xi in dim_xis:
     # sqlite:///example.db
     this_study = optuna.create_study(direction='minimize', 
-                                     storage="sqlite:///./jobs/{0}_{1}_PN".format(kwgs['prefix'], dim_xi) + ".db", 
+                                     storage="sqlite:///./jobs/{0}_{1}_PN_separate_p".format(kwgs['prefix'], dim_xi) + ".db", 
                                      study_name="my_study1", 
                                      load_if_exists=True)
 
