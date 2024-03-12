@@ -193,8 +193,9 @@ class PotentialsPolyCorrection:
         # self.dim_xi = kwgsPot["dim_xi"]
         self.dim_xi = 1 # Now only support 1 hidden variable
 
+        print()
         # Set up polynomial learning functions
-        if hasattr(kwgsPolyPot, "p_order_W"):
+        if "p_order_W" in kwgsPolyPot:
             self.p_order_W = kwgsPolyPot['p_order_W']
             self.W = PN([1, self.p_order_W])
             

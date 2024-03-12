@@ -1,0 +1,81 @@
+[I 2024-03-12 11:27:09,875] Using an existing study with name 'my_study1' instead of creating a new one.
+Cuda is available:  False
+Device is:  cpu
+Memory allocated:  0.0
+Memory cached:  0.0
+Data file:  ./data/Trial0216_smallDRS_smallA_400.pt
+Vs.shape:  torch.Size([400, 100])
+thetas.shape:  torch.Size([400, 100])
+fs.shape:  torch.Size([400, 100])
+ts.shape:  torch.Size([400, 100])
+Xs.shape:  torch.Size([400, 100])
+No pruned database has been founded.
+--------------------  Trial  1   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -1.0504627384108498, 'log_learning_rate_D': -3.1399315853551086, 'log_learning_rate_D_dagger': -1.460427273089838, 'training_batch_size': 8, 'training_p': 5, 'p_order_W': 4, 'p_order_D': 2, 'p_order_D_dagger': 2}
+
+	 epoch  0 training error:  tensor(3.3703, grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.0
+Memory cached:  0.0
+	 epoch  10 training error:  tensor(0.7285, grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.0
+Memory cached:  0.0
+	 epoch  20 training error:  tensor(0.4978, grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.0
+Memory cached:  0.0
+	 epoch  30 training error:  tensor(0.4856, grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.0
+Memory cached:  0.0
+	 epoch  40 training error:  tensor(0.4847, grad_fn=<DivBackward0>)
+[W 2024-03-12 11:27:22,542] Trial 1 failed with parameters: {'log_learning_rate': -1.0504627384108498, 'log_learning_rate_D': -3.1399315853551086, 'log_learning_rate_D_dagger': -1.460427273089838, 'training_batch_size': 8, 'training_p': 5, 'p_order_W': 4, 'p_order_D': 2, 'p_order_D_dagger': 2} because of the following error: KeyboardInterrupt().
+Traceback (most recent call last):
+  File "/usr/local/anaconda3/lib/python3.8/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "TuneDimXi_logV_WDsep_deltaTSqed_combinedSet_PN.py", line 211, in objective
+    avg_training_loss = train1Epoch(trainDataLoader, Loss, myWD, params['training_p'], 0.)
+  File "/Users/shengduoliu/RateAndStateWithPotential/FrictionNNModels.py", line 505, in train1Epoch
+    myPot.calf(Xs, XDots, ts)
+  File "/Users/shengduoliu/RateAndStateWithPotential/FrictionNNModels.py", line 263, in calf
+    W = torch.sum(self.W(X_W))
+  File "/usr/local/anaconda3/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/usr/local/anaconda3/lib/python3.8/site-packages/torch/nn/parallel/data_parallel.py", line 150, in forward
+    return self.module(*inputs, **kwargs)
+  File "/usr/local/anaconda3/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1195, in __getattr__
+    if '_parameters' in self.__dict__:
+KeyboardInterrupt
+[W 2024-03-12 11:27:22,545] Trial 1 failed with value None.
+Memory status after this epoch: 
+Memory allocated:  0.0
+Memory cached:  0.0
+Traceback (most recent call last):
+  File "TuneDimXi_logV_WDsep_deltaTSqed_combinedSet_PN.py", line 287, in <module>
+    this_study.optimize(myOpt.objective, n_trials=200)
+  File "/usr/local/anaconda3/lib/python3.8/site-packages/optuna/study/study.py", line 451, in optimize
+    _optimize(
+  File "/usr/local/anaconda3/lib/python3.8/site-packages/optuna/study/_optimize.py", line 66, in _optimize
+    _optimize_sequential(
+  File "/usr/local/anaconda3/lib/python3.8/site-packages/optuna/study/_optimize.py", line 163, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+  File "/usr/local/anaconda3/lib/python3.8/site-packages/optuna/study/_optimize.py", line 251, in _run_trial
+    raise func_err
+  File "/usr/local/anaconda3/lib/python3.8/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "TuneDimXi_logV_WDsep_deltaTSqed_combinedSet_PN.py", line 211, in objective
+    avg_training_loss = train1Epoch(trainDataLoader, Loss, myWD, params['training_p'], 0.)
+  File "/Users/shengduoliu/RateAndStateWithPotential/FrictionNNModels.py", line 505, in train1Epoch
+    myPot.calf(Xs, XDots, ts)
+  File "/Users/shengduoliu/RateAndStateWithPotential/FrictionNNModels.py", line 263, in calf
+    W = torch.sum(self.W(X_W))
+  File "/usr/local/anaconda3/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/usr/local/anaconda3/lib/python3.8/site-packages/torch/nn/parallel/data_parallel.py", line 150, in forward
+    return self.module(*inputs, **kwargs)
+  File "/usr/local/anaconda3/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1195, in __getattr__
+    if '_parameters' in self.__dict__:
+KeyboardInterrupt
