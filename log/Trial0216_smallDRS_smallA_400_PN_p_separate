@@ -1,4 +1,4 @@
-[I 2024-03-12 11:27:09,875] Using an existing study with name 'my_study1' instead of creating a new one.
+[I 2024-03-13 08:30:15,867] Using an existing study with name 'my_study1' instead of creating a new one.
 Cuda is available:  False
 Device is:  cpu
 Memory allocated:  0.0
@@ -10,46 +10,238 @@ fs.shape:  torch.Size([400, 100])
 ts.shape:  torch.Size([400, 100])
 Xs.shape:  torch.Size([400, 100])
 No pruned database has been founded.
---------------------  Trial  1   --------------------
+--------------------  Trial  2   --------------------
 Start timing: 
 Parameters: 
-{'log_learning_rate': -1.0504627384108498, 'log_learning_rate_D': -3.1399315853551086, 'log_learning_rate_D_dagger': -1.460427273089838, 'training_batch_size': 8, 'training_p': 5, 'p_order_W': 4, 'p_order_D': 2, 'p_order_D_dagger': 2}
+{'log_learning_rate': -3.918603530455247, 'log_learning_rate_D': -1.2901182607969703, 'log_learning_rate_D_dagger': -1.8241902021155938, 'training_batch_size': 8, 'training_p': 3, 'p_order_W': 3, 'p_order_D': 3, 'p_order_D_dagger': 3}
 
-	 epoch  0 training error:  tensor(3.3703, grad_fn=<DivBackward0>)
+	 epoch  0 training error:  tensor(2.0025, grad_fn=<DivBackward0>)
 Memory status after this epoch: 
 Memory allocated:  0.0
 Memory cached:  0.0
-	 epoch  10 training error:  tensor(0.7285, grad_fn=<DivBackward0>)
+	 epoch  10 training error:  tensor(0.8581, grad_fn=<DivBackward0>)
 Memory status after this epoch: 
 Memory allocated:  0.0
 Memory cached:  0.0
-	 epoch  20 training error:  tensor(0.4978, grad_fn=<DivBackward0>)
+	 epoch  20 training error:  tensor(0.8321, grad_fn=<DivBackward0>)
 Memory status after this epoch: 
 Memory allocated:  0.0
 Memory cached:  0.0
-	 epoch  30 training error:  tensor(0.4856, grad_fn=<DivBackward0>)
+	 epoch  30 training error:  tensor(0.7187, grad_fn=<DivBackward0>)
 Memory status after this epoch: 
 Memory allocated:  0.0
 Memory cached:  0.0
-	 epoch  40 training error:  tensor(0.4847, grad_fn=<DivBackward0>)
-[W 2024-03-12 11:27:22,542] Trial 1 failed with parameters: {'log_learning_rate': -1.0504627384108498, 'log_learning_rate_D': -3.1399315853551086, 'log_learning_rate_D_dagger': -1.460427273089838, 'training_batch_size': 8, 'training_p': 5, 'p_order_W': 4, 'p_order_D': 2, 'p_order_D_dagger': 2} because of the following error: KeyboardInterrupt().
+	 epoch  40 training error:  tensor(0.5669, grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.0
+Memory cached:  0.0
+	 epoch  50 training error:  tensor(0.3930, grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.0
+Memory cached:  0.0
+	 epoch  60 training error:  tensor(0.3020, grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.0
+Memory cached:  0.0
+	 epoch  70 training error:  tensor(0.2905, grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.0
+Memory cached:  0.0
+	 epoch  80 training error:  tensor(0.2859, grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.0
+Memory cached:  0.0
+	 epoch  90 training error:  tensor(0.2819, grad_fn=<DivBackward0>)
+[I 2024-03-13 08:30:42,441] Trial 2 finished with value: 0.2364204227924347 and parameters: {'log_learning_rate': -3.918603530455247, 'log_learning_rate_D': -1.2901182607969703, 'log_learning_rate_D_dagger': -1.8241902021155938, 'training_batch_size': 8, 'training_p': 3, 'p_order_W': 3, 'p_order_D': 3, 'p_order_D_dagger': 3}. Best is trial 2 with value: 0.2364204227924347.
+Memory status after this epoch: 
+Memory allocated:  0.0
+Memory cached:  0.0
+res:  tensor(0.2364, grad_fn=<DivBackward0>)
+self.bestValue:  10000000.0
+Save this model!
+Time for this trial:  26.428575038909912
+Memory status after this trial: 
+Memory allocated:  0.0
+Memory cached:  0.0
+--------------------  Trial  3   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -1.2434200447460144, 'log_learning_rate_D': -3.0833070375614353, 'log_learning_rate_D_dagger': -3.993515749541577, 'training_batch_size': 11, 'training_p': 2, 'p_order_W': 3, 'p_order_D': 4, 'p_order_D_dagger': 4}
+
+	 epoch  0 training error:  tensor(inf, grad_fn=<DivBackward0>)
+[W 2024-03-13 08:30:42,877] Trial 3 failed with parameters: {'log_learning_rate': -1.2434200447460144, 'log_learning_rate_D': -3.0833070375614353, 'log_learning_rate_D_dagger': -3.993515749541577, 'training_batch_size': 11, 'training_p': 2, 'p_order_W': 3, 'p_order_D': 4, 'p_order_D_dagger': 4} because of the following error: The value nan is not acceptable.
+[W 2024-03-13 08:30:42,878] Trial 3 failed with value tensor(nan, grad_fn=<DivBackward0>).
+Memory status after this epoch: 
+Memory allocated:  0.0
+Memory cached:  0.0
+Time for this trial:  0.3404510021209717
+Memory status after this trial: 
+Memory allocated:  0.0
+Memory cached:  0.0
+--------------------  Trial  4   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.612703271826128, 'log_learning_rate_D': -2.850102077402949, 'log_learning_rate_D_dagger': -3.652489353780155, 'training_batch_size': 9, 'training_p': 8, 'p_order_W': 2, 'p_order_D': 5, 'p_order_D_dagger': 3}
+
+	 epoch  0 training error:  tensor(4.2806, grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.0
+Memory cached:  0.0
+	 epoch  10 training error:  tensor(4.2407, grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.0
+Memory cached:  0.0
+	 epoch  20 training error:  tensor(4.2022, grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.0
+Memory cached:  0.0
+	 epoch  30 training error:  tensor(4.1651, grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.0
+Memory cached:  0.0
+	 epoch  40 training error:  tensor(4.1293, grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.0
+Memory cached:  0.0
+	 epoch  50 training error:  tensor(4.0948, grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.0
+Memory cached:  0.0
+	 epoch  60 training error:  tensor(4.0616, grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.0
+Memory cached:  0.0
+	 epoch  70 training error:  tensor(4.0296, grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.0
+Memory cached:  0.0
+	 epoch  80 training error:  tensor(3.9985, grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.0
+Memory cached:  0.0
+	 epoch  90 training error:  tensor(3.9684, grad_fn=<DivBackward0>)
+[I 2024-03-13 08:30:53,474] Trial 4 finished with value: 2.8438823223114014 and parameters: {'log_learning_rate': -4.612703271826128, 'log_learning_rate_D': -2.850102077402949, 'log_learning_rate_D_dagger': -3.652489353780155, 'training_batch_size': 9, 'training_p': 8, 'p_order_W': 2, 'p_order_D': 5, 'p_order_D_dagger': 3}. Best is trial 2 with value: 0.2364204227924347.
+Memory status after this epoch: 
+Memory allocated:  0.0
+Memory cached:  0.0
+Time for this trial:  10.482307195663452
+Memory status after this trial: 
+Memory allocated:  0.0
+Memory cached:  0.0
+--------------------  Trial  5   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -3.5495870894236328, 'log_learning_rate_D': -2.6816987112991657, 'log_learning_rate_D_dagger': -1.5382449653056551, 'training_batch_size': 6, 'training_p': 8, 'p_order_W': 4, 'p_order_D': 2, 'p_order_D_dagger': 4}
+[W 2024-03-13 08:30:54,393] Trial 5 failed with parameters: {'log_learning_rate': -3.5495870894236328, 'log_learning_rate_D': -2.6816987112991657, 'log_learning_rate_D_dagger': -1.5382449653056551, 'training_batch_size': 6, 'training_p': 8, 'p_order_W': 4, 'p_order_D': 2, 'p_order_D_dagger': 4} because of the following error: The value nan is not acceptable.
+[W 2024-03-13 08:30:54,393] Trial 5 failed with value tensor(nan, grad_fn=<DivBackward0>).
+
+Time for this trial:  0.7847707271575928
+Memory status after this trial: 
+Memory allocated:  0.0
+Memory cached:  0.0
+--------------------  Trial  6   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.011080310735339, 'log_learning_rate_D': -3.9818837701485377, 'log_learning_rate_D_dagger': -2.7146156896163878, 'training_batch_size': 8, 'training_p': 5, 'p_order_W': 2, 'p_order_D': 5, 'p_order_D_dagger': 4}
+
+	 epoch  0 training error:  tensor(6.2402, grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.0
+Memory cached:  0.0
+	 epoch  10 training error:  tensor(4.1180, grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.0
+Memory cached:  0.0
+	 epoch  20 training error:  tensor(2.4873, grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.0
+Memory cached:  0.0
+	 epoch  30 training error:  tensor(2.1873, grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.0
+Memory cached:  0.0
+	 epoch  40 training error:  tensor(2.0723, grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.0
+Memory cached:  0.0
+	 epoch  50 training error:  tensor(1.9741, grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.0
+Memory cached:  0.0
+	 epoch  60 training error:  tensor(1.8773, grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.0
+Memory cached:  0.0
+	 epoch  70 training error:  tensor(1.7834, grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.0
+Memory cached:  0.0
+	 epoch  80 training error:  tensor(1.6933, grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.0
+Memory cached:  0.0
+	 epoch  90 training error:  tensor(1.6076, grad_fn=<DivBackward0>)
+[I 2024-03-13 08:31:19,051] Trial 6 finished with value: 1.3962476253509521 and parameters: {'log_learning_rate': -4.011080310735339, 'log_learning_rate_D': -3.9818837701485377, 'log_learning_rate_D_dagger': -2.7146156896163878, 'training_batch_size': 8, 'training_p': 5, 'p_order_W': 2, 'p_order_D': 5, 'p_order_D_dagger': 4}. Best is trial 2 with value: 0.2364204227924347.
+Memory status after this epoch: 
+Memory allocated:  0.0
+Memory cached:  0.0
+Time for this trial:  24.533875942230225
+Memory status after this trial: 
+Memory allocated:  0.0
+Memory cached:  0.0
+--------------------  Trial  7   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.747308351945513, 'log_learning_rate_D': -2.6034452426374775, 'log_learning_rate_D_dagger': -2.0188294936986555, 'training_batch_size': 11, 'training_p': 2, 'p_order_W': 4, 'p_order_D': 3, 'p_order_D_dagger': 4}
+
+	 epoch  0 training error:  tensor(inf, grad_fn=<DivBackward0>)
+[W 2024-03-13 08:31:19,587] Trial 7 failed with parameters: {'log_learning_rate': -4.747308351945513, 'log_learning_rate_D': -2.6034452426374775, 'log_learning_rate_D_dagger': -2.0188294936986555, 'training_batch_size': 11, 'training_p': 2, 'p_order_W': 4, 'p_order_D': 3, 'p_order_D_dagger': 4} because of the following error: The value nan is not acceptable.
+[W 2024-03-13 08:31:19,588] Trial 7 failed with value tensor(nan, grad_fn=<DivBackward0>).
+Memory status after this epoch: 
+Memory allocated:  0.0
+Memory cached:  0.0
+Time for this trial:  0.4246680736541748
+Memory status after this trial: 
+Memory allocated:  0.0
+Memory cached:  0.0
+--------------------  Trial  8   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -3.200649930830669, 'log_learning_rate_D': -2.215411248946828, 'log_learning_rate_D_dagger': -3.5306028643228746, 'training_batch_size': 6, 'training_p': 5, 'p_order_W': 2, 'p_order_D': 3, 'p_order_D_dagger': 4}
+
+	 epoch  0 training error:  tensor(102.8105, grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.0
+Memory cached:  0.0
+	 epoch  10 training error:  tensor(46.7930, grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.0
+Memory cached:  0.0
+	 epoch  20 training error:  tensor(24.9395, grad_fn=<DivBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.0
+Memory cached:  0.0
+	 epoch  30 training error:  tensor(14.7185, grad_fn=<DivBackward0>)
+[W 2024-03-13 08:31:41,825] Trial 8 failed with parameters: {'log_learning_rate': -3.200649930830669, 'log_learning_rate_D': -2.215411248946828, 'log_learning_rate_D_dagger': -3.5306028643228746, 'training_batch_size': 6, 'training_p': 5, 'p_order_W': 2, 'p_order_D': 3, 'p_order_D_dagger': 4} because of the following error: KeyboardInterrupt().
 Traceback (most recent call last):
   File "/usr/local/anaconda3/lib/python3.8/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
     value_or_values = func(trial)
   File "TuneDimXi_logV_WDsep_deltaTSqed_combinedSet_PN.py", line 211, in objective
     avg_training_loss = train1Epoch(trainDataLoader, Loss, myWD, params['training_p'], 0.)
-  File "/Users/shengduoliu/RateAndStateWithPotential/FrictionNNModels.py", line 505, in train1Epoch
+  File "/Users/shengduoliu/RateAndStateWithPotential/FrictionNNModels.py", line 506, in train1Epoch
     myPot.calf(Xs, XDots, ts)
-  File "/Users/shengduoliu/RateAndStateWithPotential/FrictionNNModels.py", line 263, in calf
-    W = torch.sum(self.W(X_W))
+  File "/Users/shengduoliu/RateAndStateWithPotential/FrictionNNModels.py", line 272, in calf
+    D = torch.sum(self.D(this_input))
   File "/usr/local/anaconda3/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
     return forward_call(*input, **kwargs)
   File "/usr/local/anaconda3/lib/python3.8/site-packages/torch/nn/parallel/data_parallel.py", line 150, in forward
     return self.module(*inputs, **kwargs)
-  File "/usr/local/anaconda3/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1195, in __getattr__
-    if '_parameters' in self.__dict__:
+  File "/usr/local/anaconda3/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/Users/shengduoliu/RateAndStateWithPotential/FrictionNNModels.py", line 187, in forward
+    res *= self.getPolyVal(x[:, idx], self.coefs[idx, :])
 KeyboardInterrupt
-[W 2024-03-12 11:27:22,545] Trial 1 failed with value None.
+[W 2024-03-13 08:31:41,829] Trial 8 failed with value None.
 Memory status after this epoch: 
 Memory allocated:  0.0
 Memory cached:  0.0
@@ -68,14 +260,16 @@ Traceback (most recent call last):
     value_or_values = func(trial)
   File "TuneDimXi_logV_WDsep_deltaTSqed_combinedSet_PN.py", line 211, in objective
     avg_training_loss = train1Epoch(trainDataLoader, Loss, myWD, params['training_p'], 0.)
-  File "/Users/shengduoliu/RateAndStateWithPotential/FrictionNNModels.py", line 505, in train1Epoch
+  File "/Users/shengduoliu/RateAndStateWithPotential/FrictionNNModels.py", line 506, in train1Epoch
     myPot.calf(Xs, XDots, ts)
-  File "/Users/shengduoliu/RateAndStateWithPotential/FrictionNNModels.py", line 263, in calf
-    W = torch.sum(self.W(X_W))
+  File "/Users/shengduoliu/RateAndStateWithPotential/FrictionNNModels.py", line 272, in calf
+    D = torch.sum(self.D(this_input))
   File "/usr/local/anaconda3/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
     return forward_call(*input, **kwargs)
   File "/usr/local/anaconda3/lib/python3.8/site-packages/torch/nn/parallel/data_parallel.py", line 150, in forward
     return self.module(*inputs, **kwargs)
-  File "/usr/local/anaconda3/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1195, in __getattr__
-    if '_parameters' in self.__dict__:
+  File "/usr/local/anaconda3/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/Users/shengduoliu/RateAndStateWithPotential/FrictionNNModels.py", line 187, in forward
+    res *= self.getPolyVal(x[:, idx], self.coefs[idx, :])
 KeyboardInterrupt

@@ -182,10 +182,11 @@ class PN(nn.Module):
         return (curVal + coeffs[-1])
     
     def forward(self, x):
-        res = torch.ones(x.shape, device=x.device)
+        res = torch.ones(x.shape[0], device=x.device)
         for idx in range(len(self.coefs)):
-            res *= self.getPolyVal(x, self.coefs[idx, :])
+            res *= self.getPolyVal(x[:, idx], self.coefs[idx, :])
         return res
+
 
 class PotentialsPolyCorrection:
     # Initialization of W and D
@@ -623,5 +624,5 @@ def load_model(modelPrefix, mapDevice=torch.device("cpu"), dim_xi=1, dict_flag=F
         myModel.D_dagger = myModel.D_dagger.module.to(mapDevice)
     else:
         myModel = torch.load("./model/" + modelPrefix + "_dimXi_" + str(dim_xi) + ".pth", map_location = mapDevice)
-
+        myModel.device = mapDevice
     return myModel
