@@ -170,9 +170,13 @@ class PotentialsFricCorrection:
 
 # Class for Polynomial functions
 class PN(nn.Module):
-    def __init__(self, ProdOrder):
+    def __init__(self, ProdOrder, logVFlag = False):
         super().__init__()
         self.ProdOrder = ProdOrder
+        self.logVFlag = logVFlag
+
+        if self.logVFlag:
+            self.ProdOrder[0] += 1
         self.coefs = nn.Parameter(torch.rand(self.ProdOrder))
     
     def getPolyVal(self, x, coeffs):
@@ -183,8 +187,13 @@ class PN(nn.Module):
     
     def forward(self, x):
         res = torch.ones(x.shape[0], device=x.device)
-        for idx in range(len(self.coefs)):
-            res *= self.getPolyVal(x[:, idx], self.coefs[idx, :])
+        if self.logVFlag:
+            xin = torch.concat([x, torch.log(x[:, 0:1])], dim = 1)
+            for idx in range(len(self.coefs)):
+                res *= self.getPolyVal(xin[:, idx], self.coefs[idx, :])
+        else:
+            for idx in range(len(self.coefs)):
+                res *= self.getPolyVal(x[:, idx], self.coefs[idx, :])
         return res
 
 
@@ -194,23 +203,29 @@ class PotentialsPolyCorrection:
         # self.dim_xi = kwgsPot["dim_xi"]
         self.dim_xi = 1 # Now only support 1 hidden variable
 
-        print()
+        self.logVFlag = False
+        if "logVFlag" in kwgsPolyPot:
+            self.logVFlag = kwgsPolyPot["logVFlag"]
+
         # Set up polynomial learning functions
         if "p_order_W" in kwgsPolyPot:
             self.p_order_W = kwgsPolyPot['p_order_W']
             self.W = PN([1, self.p_order_W])
             
             self.p_order_D = kwgsPolyPot['p_order_D']
-            self.D = PN([self.dim_xi, self.p_order_W])
+            self.D = PN([self.dim_xi, self.p_order_D])
 
             self.p_order_D_dagger = kwgsPolyPot['p_order_D_dagger']
-            self.D_dagger = PN([1 + self.dim_xi, self.p_order_D_dagger])
+            self.D_dagger = PN([1 + self.dim_xi, self.p_order_D_dagger], self.logVFlag)
         else:
             self.p_order = kwgsPolyPot['p_order']
             self.W = PN([1, self.p_order])
             self.D = PN([self.dim_xi, self.p_order])
-            self.D_dagger = PN([1 + self.dim_xi, self.p_order])
+            self.D_dagger = PN([1 + self.dim_xi, self.p_order], self.logVFlag)
 
+        ## DEBUG 
+        print("PotentialsPolyCorrection self.logVFlag: ", self.logVFlag)
+        print("PotentialsPolyCorrection self.D_dagger.coefs.shape[0]: ", self.D_dagger.coefs.shape[0])
         self.optim_W = optim.Adam(self.W.parameters(), lr=kwgsPolyPot["learning_rate"])
         self.optim_D = optim.Adam(self.D.parameters(), lr=kwgsPolyPot["learning_rate_D"])
         self.optim_D_dagger = optim.Adam(self.D_dagger.parameters(), lr=kwgsPolyPot["learning_rate_D_dagger"])
@@ -593,6 +608,10 @@ def load_model(modelPrefix, mapDevice=torch.device("cpu"), dim_xi=1, dict_flag=F
         myModel = torch.load(PATH + "/model.pth", map_location = mapDevice)
         myModel.device = mapDevice
 
+        p_order_W = myModel.W.module.ProdOrder[1]
+        p_order_D = myModel.D.module.ProdOrder[1]
+        p_order_D_dagger = myModel.D_dagger.module.ProdOrder[1]
+
         del myModel.W, myModel.D, myModel.D_dagger
         
         if hasattr(myModel, "NNs_W"):
@@ -600,14 +619,13 @@ def load_model(modelPrefix, mapDevice=torch.device("cpu"), dim_xi=1, dict_flag=F
             myModel.D = PP(myModel.NNs_D, input_dim = myModel.dim_xi, output_dim = 1)
             myModel.D_dagger = PP(myModel.NNs_D_dagger, input_dim = 1 + myModel.dim_xi, output_dim = 1)
         else:
-            if hasattr(myModel, "p_order_W"):
-                myModel.W = PN([1, myModel.p_order_W])
-                myModel.D = PN([myModel.dim_xi, myModel.p_order_D])
-                myModel.D_dagger = PN([1 + myModel.dim_xi, myModel.p_order_D_dagger])
+            myModel.W = PN([1, p_order_W])
+            myModel.D = PN([myModel.dim_xi, p_order_D])
+            if hasattr(myModel, "logVFlag") and myModel.logVFlag:
+                myModel.D_dagger = PN([1 + myModel.dim_xi, p_order_D_dagger], myModel.logVFlag)
             else:
-                myModel.W = PN([1, myModel.p_order])
-                myModel.D = PN([myModel.dim_xi, myModel.p_order])
-                myModel.D_dagger = PN([1 + myModel.dim_xi, myModel.p_order])
+                myModel.D_dagger = PN([1 + myModel.dim_xi, p_order_D_dagger])
+                
 
         # Multi-GPU data parallel
         myModel.W = nn.DataParallel(myModel.W)

@@ -100,6 +100,7 @@ class OptunaObj:
         self.device = kwgs['device']
         self.modelSavePrefix = kwgs['modelSavePrefix']
         self.bestValue = 10000000.
+        self.logVFlag = kwgs['logVFlag']
 
         if 'bestValue' in kwgs.keys():
             self.bestValue = kwgs['bestValue']
@@ -156,9 +157,9 @@ class OptunaObj:
         training_epochs = 100
 
         # let p_order be learnable
-        p_order_W = trial.suggest_int('p_order_W', 2, 5)
-        p_order_D = trial.suggest_int('p_order_D', 2, 5)
-        p_order_D_dagger = trial.suggest_int('p_order_D_dagger', 2, 5)
+        p_order_W = trial.suggest_int('p_order_W', 2, 4)
+        p_order_D = trial.suggest_int('p_order_D', 2, 4)
+        p_order_D_dagger = trial.suggest_int('p_order_D_dagger', 2, 4)
 
         params = {
             'dim_xi' : dim_xi, 
@@ -172,6 +173,7 @@ class OptunaObj:
             'training_p' : training_p, 
             'training_epochs' : training_epochs, 
             'device' : self.device,
+            'logVFlag' : self.logVFlag, 
         }
         
         
@@ -248,6 +250,7 @@ class OptunaObj:
 # Do a parametric study over number of hidden parameters
 dim_xis = [1]
 studys = []
+logVFlag = True
 
 # Tune parameters for dim_xi = 4
 OptKwgs = {
@@ -257,17 +260,18 @@ OptKwgs = {
     'device' : device, 
     # 'training_dataset' : trainDataset, 
     # 'test_dataset' : testDataset, 
-    'modelSavePrefix' : kwgs['prefix'] + "_PN_separate_p",
+    'modelSavePrefix' : kwgs['prefix'] + "_PN_separate_p_logVFlag_{0}".format(logVFlag),
     'fOffSet' : 0.5109, 
     'scaling_factor' : 50., 
     'AllData' : AllData, 
+    'logVFlag' : logVFlag, 
 }
 
 # Loop through all dim_xis
 for dim_xi in dim_xis:
     # sqlite:///example.db
     this_study = optuna.create_study(direction='minimize', 
-                                     storage="sqlite:///./jobs/{0}_{1}_PN_separate_p".format(kwgs['prefix'], dim_xi) + ".db", 
+                                     storage="sqlite:///./jobs/{0}_{1}_PN_separate_p_logVFlag_{2}".format(kwgs['prefix'], dim_xi, logVFlag) + ".db", 
                                      study_name="my_study1", 
                                      load_if_exists=True)
 
