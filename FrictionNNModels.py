@@ -608,17 +608,16 @@ def load_model(modelPrefix, mapDevice=torch.device("cpu"), dim_xi=1, dict_flag=F
         myModel = torch.load(PATH + "/model.pth", map_location = mapDevice)
         myModel.device = mapDevice
 
-        p_order_W = myModel.W.module.ProdOrder[1]
-        p_order_D = myModel.D.module.ProdOrder[1]
-        p_order_D_dagger = myModel.D_dagger.module.ProdOrder[1]
-
         del myModel.W, myModel.D, myModel.D_dagger
         
-        if hasattr(myModel, "NNs_W"):
+        if NN_Flag == True:
             myModel.W = PP(myModel.NNs_W, input_dim = 1, output_dim = 1)
             myModel.D = PP(myModel.NNs_D, input_dim = myModel.dim_xi, output_dim = 1)
             myModel.D_dagger = PP(myModel.NNs_D_dagger, input_dim = 1 + myModel.dim_xi, output_dim = 1)
         else:
+            p_order_W = myModel.W.module.ProdOrder[1]
+            p_order_D = myModel.D.module.ProdOrder[1]
+            p_order_D_dagger = myModel.D_dagger.module.ProdOrder[1]
             myModel.W = PN([1, p_order_W])
             myModel.D = PN([myModel.dim_xi, p_order_D])
             if hasattr(myModel, "logVFlag") and myModel.logVFlag:
