@@ -340,6 +340,10 @@ class PotentialsGivenPolyCorrection:
         # Device
         self.device = kwgsGivenPoly["device"]
         
+        self.optim_W = optim.Adam(self.W.parameters(), lr=kwgsGivenPoly["learning_rate"])
+        self.optim_D = optim.Adam(self.D.parameters(), lr=kwgsGivenPoly["learning_rate_D"])
+        self.optim_D_dagger = optim.Adam(self.D_dagger.parameters(), lr=kwgsGivenPoly["learning_rate_D_dagger"])
+
         # Multi-GPU data parallel
         self.W = nn.DataParallel(self.W)
         self.D = nn.DataParallel(self.D)
@@ -765,7 +769,8 @@ class W_poly(nn.Module):
         self.coef = nn.Parameter(coef.reshape([-1, 1]))
     
     def forward(self, x):
-        Xin = torch.concat([x, x ** 2, x ** 3], dim = 1)
+        xin = torch.abs(x)
+        Xin = torch.concat([xin, xin ** 2, xin ** 3], dim = 1)
         res = torch.matmul(Xin, self.coef) + self.intercept
         return res
 
@@ -777,7 +782,7 @@ class D_dagger_poly(nn.Module):
         self.coef = nn.Parameter(coef.reshape([-1, 1]))
     
     def forward(self, x):
-        Vs = x[:, :1]
+        Vs = torch.abs(x[:, :1])
         xis = x[:, 1:]
         Xin = torch.concat([Vs, 
                     Vs ** 2, 
