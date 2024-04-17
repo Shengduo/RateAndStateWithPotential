@@ -1,0 +1,58 @@
+/home/shengduo/anaconda3/lib/python3.9/site-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.16.5 and <1.23.0 is required for this version of SciPy (detected version 1.24.1
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+[I 2024-04-01 10:54:14,859] A new study created in RDB with name: my_study1
+Cuda is available:  True
+Device is:  cuda
+Memory allocated:  0.0
+Memory cached:  0.0
+Data file:  ./data/Trial0216_combined_800.pt
+Vs.shape:  torch.Size([800, 100])
+thetas.shape:  torch.Size([800, 100])
+fs.shape:  torch.Size([800, 100])
+ts.shape:  torch.Size([800, 100])
+Xs.shape:  torch.Size([800, 100])
+No pruned database has been founded.
+--------------------  Trial  0   --------------------
+Start timing: 
+Parameters: 
+{'training_batch_size': 9}
+	 epoch  0 training error:  tensor(0.2157, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.61767578125
+Memory cached:  8.0
+	 epoch  10 training error:  tensor(0.2030, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.61767578125
+Memory cached:  10.0
+	 epoch  20 training error:  tensor(0.1164, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.61767578125
+Memory cached:  10.0
+	 epoch  30 training error:  tensor(0.1215, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.61767578125
+Memory cached:  10.0
+[W 2024-04-01 10:55:41,549] Trial 0 failed with parameters: {'training_batch_size': 9} because of the following error: KeyboardInterrupt().
+Traceback (most recent call last):
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "/home/shengduo/RateAndStateWithPotential/TuneDimXi_logV_WDsep_deltaTSqed_combinedSet_GivenPoly_continue.py", line 225, in objective
+    if torch.isnan(avg_training_loss):
+KeyboardInterrupt
+[W 2024-04-01 10:55:41,561] Trial 0 failed with value None.
+Traceback (most recent call last):
+  File "/home/shengduo/RateAndStateWithPotential/TuneDimXi_logV_WDsep_deltaTSqed_combinedSet_GivenPoly_continue.py", line 301, in <module>
+    this_study.optimize(myOpt.objective, n_trials=1)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/study.py", line 442, in optimize
+    _optimize(
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/_optimize.py", line 66, in _optimize
+    _optimize_sequential(
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/_optimize.py", line 163, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/_optimize.py", line 251, in _run_trial
+    raise func_err
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "/home/shengduo/RateAndStateWithPotential/TuneDimXi_logV_WDsep_deltaTSqed_combinedSet_GivenPoly_continue.py", line 225, in objective
+    if torch.isnan(avg_training_loss):
+KeyboardInterrupt

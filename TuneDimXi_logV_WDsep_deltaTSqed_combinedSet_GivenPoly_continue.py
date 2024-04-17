@@ -138,19 +138,19 @@ class OptunaObj:
         dim_xi = self.dim_xi
 
         # Suggest learning rate
-        learning_rate = 0.001 # 10 ** trial.suggest_float('log_learning_rate', -5., -1.)
+        learning_rate = 0.0005 # 10 ** trial.suggest_float('log_learning_rate', -5., -1.)
         
         # Suggest learning rate for D
-        learning_rate_D = 0.001 # 10 ** trial.suggest_float('log_learning_rate_D', -5., -1.)
+        learning_rate_D = 0.0005 # 10 ** trial.suggest_float('log_learning_rate_D', -5., -1.)
 
         # Suggest learning rate for D
-        learning_rate_D_dagger = 0.01# 10 ** trial.suggest_float('log_learning_rate_D_dagger', -5., -1.)
+        learning_rate_D_dagger = 0.005 # 10 ** trial.suggest_float('log_learning_rate_D_dagger', -5., -1.)
 
         # Suggest batchsize
         training_batch_size = 2 ** trial.suggest_int('training_batch_size', 6, 12)
 
         # Suggest training p
-        training_p = 2 # trial.suggest_int('training_p', 2, 8)
+        training_p = 3 # trial.suggest_int('training_p', 2, 8)
 
         # Suggest training epochs
         # training_epochs = 2 ** trial.suggest_int('training_epoch_exponents', 5, 9)
@@ -161,7 +161,7 @@ class OptunaObj:
         # p_order_D = trial.suggest_int('p_order_D', 2, 4)
         # p_order_D_dagger = trial.suggest_int('p_order_D_dagger', 2, 4)
         # Training
-        myWD1 = load_model(modelPrefix=self.modelSavePrefix, 
+        myWD1 = load_model(modelPrefix=self.modelSavePrefix + "_trained_training_2000", 
                            mapDevice=self.device, 
                            dim_xi=self.dim_xi, 
                            dict_flag=True, 
@@ -240,7 +240,7 @@ class OptunaObj:
             print("self.bestValue: ", self.bestValue)
             print("Save this model!")
 
-            saveDir = './model/' + self.modelSavePrefix + '_trained_training_1000_dimXi_{0}_dict'.format(self.dim_xi)
+            saveDir = './model/' + self.modelSavePrefix + '_trained_training_3000_p3_dimXi_{0}_dict'.format(self.dim_xi)
             myWD.save(saveDir)
             self.bestValue = res
 
@@ -281,7 +281,7 @@ OptKwgs = {
 for dim_xi in dim_xis:
     # sqlite:///example.db
     this_study = optuna.create_study(direction='minimize', 
-                                     storage="sqlite:///./jobs/{0}_training_1000_LogCross_dim_{1}".format(OptKwgs['modelSavePrefix'], dim_xi) + ".db", 
+                                     storage="sqlite:///./jobs/{0}_training_3000_p3_LogCross_dim_{1}".format(OptKwgs['modelSavePrefix'], dim_xi) + ".db", 
                                      study_name="my_study1", 
                                      load_if_exists=True)
 

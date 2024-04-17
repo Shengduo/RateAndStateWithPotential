@@ -1,0 +1,2031 @@
+/home/shengduo/anaconda3/lib/python3.9/site-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.16.5 and <1.23.0 is required for this version of SciPy (detected version 1.24.1
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+[I 2024-03-31 14:31:53,779] A new study created in RDB with name: my_study1
+Cuda is available:  True
+Device is:  cuda
+Memory allocated:  0.0
+Memory cached:  0.0
+Data file:  ./data/Trial0216_combined_800.pt
+Vs.shape:  torch.Size([800, 100])
+thetas.shape:  torch.Size([800, 100])
+fs.shape:  torch.Size([800, 100])
+ts.shape:  torch.Size([800, 100])
+Xs.shape:  torch.Size([800, 100])
+No pruned database has been founded.
+--------------------  Trial  0   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -3.471361718856473, 'log_learning_rate_D': -2.629585168767501, 'log_learning_rate_D_dagger': -2.0890157426637477, 'training_batch_size': 10, 'training_p': 2}
+	 epoch  0 training error:  tensor(4.1612, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.74755859375
+Memory cached:  12.0
+	 epoch  10 training error:  tensor(1.4364, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.74755859375
+Memory cached:  12.0
+	 epoch  20 training error:  tensor(0.7934, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.74755859375
+Memory cached:  12.0
+	 epoch  30 training error:  tensor(0.6061, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.74755859375
+Memory cached:  12.0
+	 epoch  40 training error:  tensor(0.4903, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.74755859375
+Memory cached:  12.0
+	 epoch  50 training error:  tensor(0.4350, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.74755859375
+Memory cached:  12.0
+	 epoch  60 training error:  tensor(0.4063, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.74755859375
+Memory cached:  12.0
+	 epoch  70 training error:  tensor(0.3799, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.74755859375
+Memory cached:  12.0
+	 epoch  80 training error:  tensor(0.3593, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.74755859375
+Memory cached:  12.0
+	 epoch  90 training error:  tensor(0.3399, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.74755859375
+Memory cached:  12.0
+	 epoch  100 training error:  tensor(0.3215, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.74755859375
+Memory cached:  12.0
+	 epoch  110 training error:  tensor(0.3035, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.74755859375
+Memory cached:  12.0
+	 epoch  120 training error:  tensor(0.2863, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.74755859375
+Memory cached:  14.0
+	 epoch  130 training error:  tensor(0.2701, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.74755859375
+Memory cached:  12.0
+	 epoch  140 training error:  tensor(0.2549, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.74755859375
+Memory cached:  12.0
+	 epoch  150 training error:  tensor(0.2407, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.74755859375
+Memory cached:  12.0
+	 epoch  160 training error:  tensor(0.2277, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.74755859375
+Memory cached:  12.0
+	 epoch  170 training error:  tensor(0.2159, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.74755859375
+Memory cached:  12.0
+	 epoch  180 training error:  tensor(0.2051, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.74755859375
+Memory cached:  12.0
+	 epoch  190 training error:  tensor(0.1955, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.74755859375
+Memory cached:  12.0
+[I 2024-03-31 14:36:19,904] Trial 0 finished with value: 0.194216787815094 and parameters: {'log_learning_rate': -3.471361718856473, 'log_learning_rate_D': -2.629585168767501, 'log_learning_rate_D_dagger': -2.0890157426637477, 'training_batch_size': 10, 'training_p': 2}. Best is trial 0 with value: 0.194216787815094.
+res:  tensor(0.1942, grad_fn=<ToCopyBackward0>)
+self.bestValue:  10000000.0
+Save this model!
+Time for this trial:  264.00698709487915
+Memory status after this trial: 
+Memory allocated:  4.9384765625
+Memory cached:  10.0
+--------------------  Trial  1   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -1.5287523586360097, 'log_learning_rate_D': -2.9165501534381786, 'log_learning_rate_D_dagger': -4.462087789330882, 'training_batch_size': 11, 'training_p': 3}
+	 epoch  0 training error:  tensor(4.6287, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  16.0
+	 epoch  10 training error:  tensor(4.5614, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  18.0
+	 epoch  20 training error:  tensor(4.4961, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  30 training error:  tensor(4.4328, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  40 training error:  tensor(4.3712, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  50 training error:  tensor(4.3109, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  18.0
+	 epoch  60 training error:  tensor(4.2516, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  70 training error:  tensor(4.1933, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  80 training error:  tensor(4.1360, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  90 training error:  tensor(4.0798, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  100 training error:  tensor(4.0246, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  18.0
+	 epoch  110 training error:  tensor(3.9703, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  120 training error:  tensor(3.9170, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  16.0
+	 epoch  130 training error:  tensor(3.8646, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  140 training error:  tensor(3.8132, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  150 training error:  tensor(3.7628, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  160 training error:  tensor(3.7132, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  16.0
+	 epoch  170 training error:  tensor(3.6646, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  16.0
+	 epoch  180 training error:  tensor(3.6168, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  16.0
+	 epoch  190 training error:  tensor(3.5700, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  18.0
+[I 2024-03-31 14:40:48,321] Trial 1 finished with value: 3.034146785736084 and parameters: {'log_learning_rate': -1.5287523586360097, 'log_learning_rate_D': -2.9165501534381786, 'log_learning_rate_D_dagger': -4.462087789330882, 'training_batch_size': 11, 'training_p': 3}. Best is trial 0 with value: 0.194216787815094.
+Time for this trial:  268.2289979457855
+Memory status after this trial: 
+Memory allocated:  9.37939453125
+Memory cached:  14.0
+--------------------  Trial  2   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.332472299261841, 'log_learning_rate_D': -4.8213477523841215, 'log_learning_rate_D_dagger': -4.813879566390566, 'training_batch_size': 9, 'training_p': 8}
+	 epoch  0 training error:  tensor(5.2814, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  12.0
+	 epoch  10 training error:  tensor(5.2413, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  14.0
+	 epoch  20 training error:  tensor(5.2023, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  14.0
+	 epoch  30 training error:  tensor(5.1637, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  14.0
+	 epoch  40 training error:  tensor(5.1255, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  14.0
+	 epoch  50 training error:  tensor(5.0876, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  14.0
+	 epoch  60 training error:  tensor(5.0500, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  14.0
+	 epoch  70 training error:  tensor(5.0126, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  12.0
+	 epoch  80 training error:  tensor(4.9758, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  14.0
+	 epoch  90 training error:  tensor(4.9391, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  14.0
+	 epoch  100 training error:  tensor(4.9029, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  14.0
+	 epoch  110 training error:  tensor(4.8670, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  14.0
+	 epoch  120 training error:  tensor(4.8313, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  12.0
+	 epoch  130 training error:  tensor(4.7961, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  14.0
+	 epoch  140 training error:  tensor(4.7611, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  14.0
+	 epoch  150 training error:  tensor(4.7266, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  12.0
+	 epoch  160 training error:  tensor(4.6923, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  12.0
+	 epoch  170 training error:  tensor(4.6584, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  14.0
+	 epoch  180 training error:  tensor(4.6250, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  14.0
+	 epoch  190 training error:  tensor(4.5916, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  14.0
+[I 2024-03-31 14:49:08,437] Trial 2 finished with value: 3.426189422607422 and parameters: {'log_learning_rate': -4.332472299261841, 'log_learning_rate_D': -4.8213477523841215, 'log_learning_rate_D_dagger': -4.813879566390566, 'training_batch_size': 9, 'training_p': 8}. Best is trial 0 with value: 0.194216787815094.
+Time for this trial:  499.89869260787964
+Memory status after this trial: 
+Memory allocated:  9.37939453125
+Memory cached:  14.0
+--------------------  Trial  3   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -2.820609911449078, 'log_learning_rate_D': -1.8840984103582765, 'log_learning_rate_D_dagger': -1.4152096324207002, 'training_batch_size': 12, 'training_p': 5}
+	 epoch  0 training error:  tensor(5.0520, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  16.0
+	 epoch  10 training error:  tensor(1.4427, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  18.0
+	 epoch  20 training error:  tensor(0.7195, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  30 training error:  tensor(0.5813, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  40 training error:  tensor(0.4520, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  50 training error:  tensor(0.3812, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  18.0
+	 epoch  60 training error:  tensor(0.3280, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  70 training error:  tensor(0.2788, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  80 training error:  tensor(0.3180, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  90 training error:  tensor(0.2949, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  100 training error:  tensor(0.3100, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  18.0
+	 epoch  110 training error:  tensor(0.2878, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  120 training error:  tensor(0.3055, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  16.0
+	 epoch  130 training error:  tensor(0.2842, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  140 training error:  tensor(0.2989, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  150 training error:  tensor(0.2816, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  160 training error:  tensor(0.2928, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  16.0
+	 epoch  170 training error:  tensor(0.2773, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  16.0
+	 epoch  180 training error:  tensor(0.2874, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  16.0
+	 epoch  190 training error:  tensor(0.2757, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  18.0
+[W 2024-03-31 14:53:41,598] Trial 3 failed with parameters: {'log_learning_rate': -2.820609911449078, 'log_learning_rate_D': -1.8840984103582765, 'log_learning_rate_D_dagger': -1.4152096324207002, 'training_batch_size': 12, 'training_p': 5} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 14:53:41,599] Trial 3 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  272.96516132354736
+Memory status after this trial: 
+Memory allocated:  9.37939453125
+Memory cached:  14.0
+--------------------  Trial  4   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.563670935282329, 'log_learning_rate_D': -1.0962320530690324, 'log_learning_rate_D_dagger': -3.202511361433662, 'training_batch_size': 12, 'training_p': 2}
+	 epoch  0 training error:  tensor(4.1612, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  16.0
+[W 2024-03-31 14:53:50,647] Trial 4 failed with parameters: {'log_learning_rate': -4.563670935282329, 'log_learning_rate_D': -1.0962320530690324, 'log_learning_rate_D_dagger': -3.202511361433662, 'training_batch_size': 12, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 14:53:50,647] Trial 4 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  8.84040117263794
+Memory status after this trial: 
+Memory allocated:  9.37939453125
+Memory cached:  16.0
+--------------------  Trial  5   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -2.6526934587642907, 'log_learning_rate_D': -4.749716523877364, 'log_learning_rate_D_dagger': -3.9359517519936067, 'training_batch_size': 12, 'training_p': 5}
+	 epoch  0 training error:  tensor(5.0520, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  16.0
+	 epoch  10 training error:  tensor(4.8837, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  18.0
+	 epoch  20 training error:  tensor(4.7221, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  30 training error:  tensor(4.5657, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  40 training error:  tensor(4.4148, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  50 training error:  tensor(4.2696, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  18.0
+	 epoch  60 training error:  tensor(4.1300, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  70 training error:  tensor(3.9963, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  80 training error:  tensor(3.8682, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  90 training error:  tensor(3.7459, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  100 training error:  tensor(3.6292, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  18.0
+	 epoch  110 training error:  tensor(3.5180, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  120 training error:  tensor(3.4120, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  16.0
+	 epoch  130 training error:  tensor(3.3111, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  140 training error:  tensor(3.2152, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  150 training error:  tensor(3.1239, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  160 training error:  tensor(3.0373, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  16.0
+	 epoch  170 training error:  tensor(2.9550, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  16.0
+	 epoch  180 training error:  tensor(2.8769, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  16.0
+	 epoch  190 training error:  tensor(2.8028, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  18.0
+[I 2024-03-31 14:58:17,376] Trial 5 finished with value: 2.0315728187561035 and parameters: {'log_learning_rate': -2.6526934587642907, 'log_learning_rate_D': -4.749716523877364, 'log_learning_rate_D_dagger': -3.9359517519936067, 'training_batch_size': 12, 'training_p': 5}. Best is trial 0 with value: 0.194216787815094.
+Time for this trial:  266.52034306526184
+Memory status after this trial: 
+Memory allocated:  9.37939453125
+Memory cached:  14.0
+--------------------  Trial  6   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.226564313471486, 'log_learning_rate_D': -3.588455552431692, 'log_learning_rate_D_dagger': -1.4083577257464297, 'training_batch_size': 7, 'training_p': 7}
+	 epoch  0 training error:  tensor(3.7488, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  10.0
+	 epoch  10 training error:  tensor(0.4963, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  10.0
+	 epoch  20 training error:  tensor(0.4229, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  10.0
+	 epoch  30 training error:  tensor(0.4563, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  10.0
+	 epoch  40 training error:  tensor(0.2968, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  10.0
+	 epoch  50 training error:  tensor(0.3075, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  10.0
+	 epoch  60 training error:  tensor(0.4106, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  10.0
+	 epoch  70 training error:  tensor(0.3303, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  10.0
+	 epoch  80 training error:  tensor(0.2811, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  10.0
+	 epoch  90 training error:  tensor(0.2729, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  10.0
+	 epoch  100 training error:  tensor(0.3431, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  10.0
+	 epoch  110 training error:  tensor(0.2771, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  10.0
+	 epoch  120 training error:  tensor(0.2541, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  10.0
+	 epoch  130 training error:  tensor(0.4132, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  10.0
+	 epoch  140 training error:  tensor(0.2744, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  10.0
+	 epoch  150 training error:  tensor(0.3364, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  10.0
+	 epoch  160 training error:  tensor(0.4110, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  10.0
+	 epoch  170 training error:  tensor(0.2933, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  10.0
+	 epoch  180 training error:  tensor(0.3382, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  10.0
+	 epoch  190 training error:  tensor(0.3524, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  10.0
+[I 2024-03-31 15:18:12,089] Trial 6 finished with value: 0.22755733132362366 and parameters: {'log_learning_rate': -4.226564313471486, 'log_learning_rate_D': -3.588455552431692, 'log_learning_rate_D_dagger': -1.4083577257464297, 'training_batch_size': 7, 'training_p': 7}. Best is trial 0 with value: 0.194216787815094.
+Time for this trial:  1194.4460980892181
+Memory status after this trial: 
+Memory allocated:  9.37939453125
+Memory cached:  10.0
+--------------------  Trial  7   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -2.606217002588241, 'log_learning_rate_D': -2.684197079098986, 'log_learning_rate_D_dagger': -2.6152878341531727, 'training_batch_size': 11, 'training_p': 5}
+	 epoch  0 training error:  tensor(5.0520, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  16.0
+	 epoch  10 training error:  tensor(2.5003, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  18.0
+	 epoch  20 training error:  tensor(1.7993, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  30 training error:  tensor(1.6733, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  40 training error:  tensor(1.4626, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  50 training error:  tensor(1.2816, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  18.0
+	 epoch  60 training error:  tensor(1.1427, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  70 training error:  tensor(1.0148, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  80 training error:  tensor(0.9053, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  90 training error:  tensor(0.8199, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  100 training error:  tensor(0.7570, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  18.0
+	 epoch  110 training error:  tensor(0.7103, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  120 training error:  tensor(0.6741, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  16.0
+	 epoch  130 training error:  tensor(0.6442, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  140 training error:  tensor(0.6183, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  150 training error:  tensor(0.5951, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  160 training error:  tensor(0.5736, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  16.0
+	 epoch  170 training error:  tensor(0.5534, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  16.0
+	 epoch  180 training error:  tensor(0.5341, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  16.0
+	 epoch  190 training error:  tensor(0.5154, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  18.0
+[I 2024-03-31 15:22:41,088] Trial 7 finished with value: 0.3303599953651428 and parameters: {'log_learning_rate': -2.606217002588241, 'log_learning_rate_D': -2.684197079098986, 'log_learning_rate_D_dagger': -2.6152878341531727, 'training_batch_size': 11, 'training_p': 5}. Best is trial 0 with value: 0.194216787815094.
+Time for this trial:  268.7915380001068
+Memory status after this trial: 
+Memory allocated:  9.37939453125
+Memory cached:  14.0
+--------------------  Trial  8   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -3.6399026920624533, 'log_learning_rate_D': -1.612182132847046, 'log_learning_rate_D_dagger': -3.5751115652124597, 'training_batch_size': 8, 'training_p': 6}
+	 epoch  0 training error:  tensor(5.1006, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  10.0
+[W 2024-03-31 15:23:11,659] Trial 8 failed with parameters: {'log_learning_rate': -3.6399026920624533, 'log_learning_rate_D': -1.612182132847046, 'log_learning_rate_D_dagger': -3.5751115652124597, 'training_batch_size': 8, 'training_p': 6} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 15:23:11,659] Trial 8 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  30.360743522644043
+Memory status after this trial: 
+Memory allocated:  9.37939453125
+Memory cached:  12.0
+--------------------  Trial  9   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -1.4261486329749302, 'log_learning_rate_D': -1.607735469940514, 'log_learning_rate_D_dagger': -4.859453403452191, 'training_batch_size': 7, 'training_p': 2}
+	 epoch  0 training error:  tensor(4.0896, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  10.0
+	 epoch  10 training error:  tensor(3.0885, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  10.0
+	 epoch  20 training error:  tensor(2.5894, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  10.0
+[W 2024-03-31 15:25:24,437] Trial 9 failed with parameters: {'log_learning_rate': -1.4261486329749302, 'log_learning_rate_D': -1.607735469940514, 'log_learning_rate_D_dagger': -4.859453403452191, 'training_batch_size': 7, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 15:25:24,437] Trial 9 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  132.55169677734375
+Memory status after this trial: 
+Memory allocated:  9.37939453125
+Memory cached:  10.0
+--------------------  Trial  10   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -3.1874831344717958, 'log_learning_rate_D': -3.0163952803315794, 'log_learning_rate_D_dagger': -4.241613465477993, 'training_batch_size': 12, 'training_p': 3}
+	 epoch  0 training error:  tensor(4.6287, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  16.0
+	 epoch  10 training error:  tensor(4.5331, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  18.0
+	 epoch  20 training error:  tensor(4.4418, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  30 training error:  tensor(4.3538, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  40 training error:  tensor(4.2673, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  50 training error:  tensor(4.1826, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  18.0
+	 epoch  60 training error:  tensor(4.0998, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  70 training error:  tensor(4.0188, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  80 training error:  tensor(3.9396, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  90 training error:  tensor(3.8622, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  100 training error:  tensor(3.7866, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  18.0
+	 epoch  110 training error:  tensor(3.7128, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  120 training error:  tensor(3.6407, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  16.0
+	 epoch  130 training error:  tensor(3.5704, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  140 training error:  tensor(3.5018, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  150 training error:  tensor(3.4349, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  160 training error:  tensor(3.3697, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  16.0
+	 epoch  170 training error:  tensor(3.3061, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  16.0
+	 epoch  180 training error:  tensor(3.2441, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  16.0
+	 epoch  190 training error:  tensor(3.1836, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  18.0
+[I 2024-03-31 15:29:52,505] Trial 10 finished with value: 2.6759185791015625 and parameters: {'log_learning_rate': -3.1874831344717958, 'log_learning_rate_D': -3.0163952803315794, 'log_learning_rate_D_dagger': -4.241613465477993, 'training_batch_size': 12, 'training_p': 3}. Best is trial 0 with value: 0.194216787815094.
+Time for this trial:  267.82866287231445
+Memory status after this trial: 
+Memory allocated:  9.37939453125
+Memory cached:  14.0
+--------------------  Trial  11   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -1.7337074405943778, 'log_learning_rate_D': -2.533243540616678, 'log_learning_rate_D_dagger': -4.09787972866994, 'training_batch_size': 10, 'training_p': 2}
+	 epoch  0 training error:  tensor(4.1612, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  16.0
+	 epoch  10 training error:  tensor(4.0170, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  18.0
+	 epoch  20 training error:  tensor(3.8840, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  30 training error:  tensor(3.7571, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  40 training error:  tensor(3.6346, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  50 training error:  tensor(3.5174, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  18.0
+	 epoch  60 training error:  tensor(3.4047, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  70 training error:  tensor(3.2967, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  80 training error:  tensor(3.1930, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  90 training error:  tensor(3.0934, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  100 training error:  tensor(2.9978, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  18.0
+	 epoch  110 training error:  tensor(2.9059, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  120 training error:  tensor(2.8177, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  16.0
+	 epoch  130 training error:  tensor(2.7330, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  140 training error:  tensor(2.6515, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  150 training error:  tensor(2.5733, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  160 training error:  tensor(2.4981, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  16.0
+[W 2024-03-31 15:33:49,469] Trial 11 failed with parameters: {'log_learning_rate': -1.7337074405943778, 'log_learning_rate_D': -2.533243540616678, 'log_learning_rate_D_dagger': -4.09787972866994, 'training_batch_size': 10, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 15:33:49,469] Trial 11 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  236.7472915649414
+Memory status after this trial: 
+Memory allocated:  9.37939453125
+Memory cached:  14.0
+--------------------  Trial  12   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.614546281890927, 'log_learning_rate_D': -2.427513578545631, 'log_learning_rate_D_dagger': -2.231466387615396, 'training_batch_size': 6, 'training_p': 6}
+	 epoch  0 training error:  tensor(2.9688, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+	 epoch  10 training error:  tensor(0.5024, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+	 epoch  20 training error:  tensor(0.2912, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+	 epoch  30 training error:  tensor(0.2534, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+	 epoch  40 training error:  tensor(0.2495, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+	 epoch  50 training error:  tensor(0.2434, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+	 epoch  60 training error:  tensor(0.2423, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+[W 2024-03-31 15:46:36,284] Trial 12 failed with parameters: {'log_learning_rate': -4.614546281890927, 'log_learning_rate_D': -2.427513578545631, 'log_learning_rate_D_dagger': -2.231466387615396, 'training_batch_size': 6, 'training_p': 6} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 15:46:36,284] Trial 12 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  766.4252254962921
+Memory status after this trial: 
+Memory allocated:  9.62841796875
+Memory cached:  12.0
+--------------------  Trial  13   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -2.2109476793603347, 'log_learning_rate_D': -1.0052984886802494, 'log_learning_rate_D_dagger': -3.6330560790944784, 'training_batch_size': 12, 'training_p': 8}
+	 epoch  0 training error:  tensor(5.2819, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  16.0
+[W 2024-03-31 15:46:45,099] Trial 13 failed with parameters: {'log_learning_rate': -2.2109476793603347, 'log_learning_rate_D': -1.0052984886802494, 'log_learning_rate_D_dagger': -3.6330560790944784, 'training_batch_size': 12, 'training_p': 8} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 15:46:45,100] Trial 13 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  8.610852718353271
+Memory status after this trial: 
+Memory allocated:  9.37939453125
+Memory cached:  16.0
+--------------------  Trial  14   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -2.9568004885049257, 'log_learning_rate_D': -3.1499969086058055, 'log_learning_rate_D_dagger': -4.11386255190845, 'training_batch_size': 10, 'training_p': 5}
+	 epoch  0 training error:  tensor(5.0520, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  16.0
+	 epoch  10 training error:  tensor(4.9285, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  18.0
+	 epoch  20 training error:  tensor(4.8096, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  30 training error:  tensor(4.6934, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  40 training error:  tensor(4.5802, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  18.0
+	 epoch  50 training error:  tensor(4.4702, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  60 training error:  tensor(4.3633, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  70 training error:  tensor(4.2596, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  80 training error:  tensor(4.1590, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  90 training error:  tensor(4.0615, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  18.0
+	 epoch  100 training error:  tensor(3.9672, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  110 training error:  tensor(3.8759, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  120 training error:  tensor(3.7878, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  130 training error:  tensor(3.7027, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  16.0
+	 epoch  140 training error:  tensor(3.6206, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  150 training error:  tensor(3.5413, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  18.0
+	 epoch  160 training error:  tensor(3.4647, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  18.0
+	 epoch  170 training error:  tensor(3.3909, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  180 training error:  tensor(3.3198, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  18.0
+	 epoch  190 training error:  tensor(3.2512, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  18.0
+[I 2024-03-31 15:52:10,440] Trial 14 finished with value: 2.425241231918335 and parameters: {'log_learning_rate': -2.9568004885049257, 'log_learning_rate_D': -3.1499969086058055, 'log_learning_rate_D_dagger': -4.11386255190845, 'training_batch_size': 10, 'training_p': 5}. Best is trial 0 with value: 0.194216787815094.
+Time for this trial:  325.1249666213989
+Memory status after this trial: 
+Memory allocated:  9.37939453125
+Memory cached:  14.0
+--------------------  Trial  15   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -3.863122239651049, 'log_learning_rate_D': -3.0652165385071943, 'log_learning_rate_D_dagger': -2.768697382511786, 'training_batch_size': 8, 'training_p': 8}
+	 epoch  0 training error:  tensor(5.0710, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  10.0
+	 epoch  10 training error:  tensor(2.1561, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  12.0
+	 epoch  20 training error:  tensor(1.6673, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  12.0
+	 epoch  30 training error:  tensor(1.2647, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  12.0
+	 epoch  40 training error:  tensor(0.9847, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  12.0
+	 epoch  50 training error:  tensor(0.8243, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  12.0
+	 epoch  60 training error:  tensor(0.7266, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  12.0
+	 epoch  70 training error:  tensor(0.6574, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  12.0
+	 epoch  80 training error:  tensor(0.6041, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  12.0
+	 epoch  90 training error:  tensor(0.5571, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  12.0
+	 epoch  100 training error:  tensor(0.5169, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  12.0
+	 epoch  110 training error:  tensor(0.4763, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  12.0
+	 epoch  120 training error:  tensor(0.4407, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  12.0
+	 epoch  130 training error:  tensor(0.4122, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  12.0
+	 epoch  140 training error:  tensor(0.3823, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  12.0
+	 epoch  150 training error:  tensor(0.3595, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  12.0
+	 epoch  160 training error:  tensor(0.3422, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  12.0
+	 epoch  170 training error:  tensor(0.3228, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  12.0
+	 epoch  180 training error:  tensor(0.3110, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  12.0
+	 epoch  190 training error:  tensor(0.3030, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  12.0
+[I 2024-03-31 16:04:27,780] Trial 15 finished with value: 0.1954323798418045 and parameters: {'log_learning_rate': -3.863122239651049, 'log_learning_rate_D': -3.0652165385071943, 'log_learning_rate_D_dagger': -2.768697382511786, 'training_batch_size': 8, 'training_p': 8}. Best is trial 0 with value: 0.194216787815094.
+Time for this trial:  737.0922327041626
+Memory status after this trial: 
+Memory allocated:  9.37939453125
+Memory cached:  12.0
+--------------------  Trial  16   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -1.7595385891093076, 'log_learning_rate_D': -1.0247237923339823, 'log_learning_rate_D_dagger': -3.626686402629438, 'training_batch_size': 12, 'training_p': 3}
+	 epoch  0 training error:  tensor(4.6287, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  16.0
+[W 2024-03-31 16:04:35,767] Trial 16 failed with parameters: {'log_learning_rate': -1.7595385891093076, 'log_learning_rate_D': -1.0247237923339823, 'log_learning_rate_D_dagger': -3.626686402629438, 'training_batch_size': 12, 'training_p': 3} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 16:04:35,767] Trial 16 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  7.780063629150391
+Memory status after this trial: 
+Memory allocated:  9.37939453125
+Memory cached:  16.0
+--------------------  Trial  17   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -1.4095357525642251, 'log_learning_rate_D': -2.9213894334779575, 'log_learning_rate_D_dagger': -3.021163500788028, 'training_batch_size': 12, 'training_p': 2}
+	 epoch  0 training error:  tensor(4.1612, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  16.0
+	 epoch  10 training error:  tensor(3.0795, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  18.0
+	 epoch  20 training error:  tensor(2.2476, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  30 training error:  tensor(1.6627, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  40 training error:  tensor(1.3097, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  18.0
+	 epoch  50 training error:  tensor(1.1347, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  60 training error:  tensor(1.0626, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  70 training error:  tensor(1.0242, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  80 training error:  tensor(0.9868, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  90 training error:  tensor(0.9479, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  18.0
+	 epoch  100 training error:  tensor(0.9107, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  110 training error:  tensor(0.8752, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  120 training error:  tensor(0.8410, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  130 training error:  tensor(0.8079, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  16.0
+	 epoch  140 training error:  tensor(0.7761, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  150 training error:  tensor(0.7458, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  18.0
+	 epoch  160 training error:  tensor(0.7170, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  18.0
+	 epoch  170 training error:  tensor(0.6897, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  20.0
+	 epoch  180 training error:  tensor(0.6640, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  18.0
+	 epoch  190 training error:  tensor(0.6399, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.1884765625
+Memory cached:  18.0
+[I 2024-03-31 16:09:36,305] Trial 17 finished with value: 0.6256734728813171 and parameters: {'log_learning_rate': -1.4095357525642251, 'log_learning_rate_D': -2.9213894334779575, 'log_learning_rate_D_dagger': -3.021163500788028, 'training_batch_size': 12, 'training_p': 2}. Best is trial 0 with value: 0.194216787815094.
+Time for this trial:  300.3369257450104
+Memory status after this trial: 
+Memory allocated:  9.37939453125
+Memory cached:  14.0
+--------------------  Trial  18   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.988451400809704, 'log_learning_rate_D': -1.3499710454662166, 'log_learning_rate_D_dagger': -1.0252978218848225, 'training_batch_size': 6, 'training_p': 2}
+	 epoch  0 training error:  tensor(3.4665, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+[W 2024-03-31 16:10:47,621] Trial 18 failed with parameters: {'log_learning_rate': -4.988451400809704, 'log_learning_rate_D': -1.3499710454662166, 'log_learning_rate_D_dagger': -1.0252978218848225, 'training_batch_size': 6, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 16:10:47,621] Trial 18 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  70.70623326301575
+Memory status after this trial: 
+Memory allocated:  9.62841796875
+Memory cached:  12.0
+--------------------  Trial  19   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.589489420253564, 'log_learning_rate_D': -1.641058317908254, 'log_learning_rate_D_dagger': -1.1785308671407722, 'training_batch_size': 6, 'training_p': 2}
+	 epoch  0 training error:  tensor(2.9366, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+	 epoch  10 training error:  tensor(0.2451, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+[W 2024-03-31 16:13:32,611] Trial 19 failed with parameters: {'log_learning_rate': -4.589489420253564, 'log_learning_rate_D': -1.641058317908254, 'log_learning_rate_D_dagger': -1.1785308671407722, 'training_batch_size': 6, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 16:13:32,611] Trial 19 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  164.66041040420532
+Memory status after this trial: 
+Memory allocated:  9.62841796875
+Memory cached:  12.0
+--------------------  Trial  20   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.541314813174891, 'log_learning_rate_D': -1.372356362523103, 'log_learning_rate_D_dagger': -1.1869984000531475, 'training_batch_size': 6, 'training_p': 2}
+	 epoch  0 training error:  tensor(1.9768, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+	 epoch  10 training error:  tensor(0.5515, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+[W 2024-03-31 16:16:17,215] Trial 20 failed with parameters: {'log_learning_rate': -4.541314813174891, 'log_learning_rate_D': -1.372356362523103, 'log_learning_rate_D_dagger': -1.1869984000531475, 'training_batch_size': 6, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 16:16:17,215] Trial 20 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  164.1879801750183
+Memory status after this trial: 
+Memory allocated:  9.62841796875
+Memory cached:  12.0
+--------------------  Trial  21   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.953892306771969, 'log_learning_rate_D': -1.3293098884253474, 'log_learning_rate_D_dagger': -1.0175251647930743, 'training_batch_size': 6, 'training_p': 2}
+	 epoch  0 training error:  tensor(3.7883, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+[W 2024-03-31 16:17:51,613] Trial 21 failed with parameters: {'log_learning_rate': -4.953892306771969, 'log_learning_rate_D': -1.3293098884253474, 'log_learning_rate_D_dagger': -1.0175251647930743, 'training_batch_size': 6, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 16:17:51,614] Trial 21 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  94.01818513870239
+Memory status after this trial: 
+Memory allocated:  9.62841796875
+Memory cached:  12.0
+--------------------  Trial  22   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.917510266343259, 'log_learning_rate_D': -1.363728156874406, 'log_learning_rate_D_dagger': -1.0622059829069057, 'training_batch_size': 6, 'training_p': 2}
+	 epoch  0 training error:  tensor(3.0297, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+[W 2024-03-31 16:19:25,852] Trial 22 failed with parameters: {'log_learning_rate': -4.917510266343259, 'log_learning_rate_D': -1.363728156874406, 'log_learning_rate_D_dagger': -1.0622059829069057, 'training_batch_size': 6, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 16:19:25,853] Trial 22 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  93.87148785591125
+Memory status after this trial: 
+Memory allocated:  9.62841796875
+Memory cached:  12.0
+--------------------  Trial  23   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.860188818415981, 'log_learning_rate_D': -1.3531126510224154, 'log_learning_rate_D_dagger': -1.0968119554419788, 'training_batch_size': 6, 'training_p': 2}
+	 epoch  0 training error:  tensor(3.0940, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+[W 2024-03-31 16:21:23,924] Trial 23 failed with parameters: {'log_learning_rate': -4.860188818415981, 'log_learning_rate_D': -1.3531126510224154, 'log_learning_rate_D_dagger': -1.0968119554419788, 'training_batch_size': 6, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 16:21:23,924] Trial 23 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  117.70263695716858
+Memory status after this trial: 
+Memory allocated:  9.62841796875
+Memory cached:  12.0
+--------------------  Trial  24   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.800193183986855, 'log_learning_rate_D': -1.3721333152471828, 'log_learning_rate_D_dagger': -1.172054627287486, 'training_batch_size': 9, 'training_p': 2}
+	 epoch  0 training error:  tensor(4.0979, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  12.0
+	 epoch  10 training error:  tensor(1.9021, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  14.0
+	 epoch  20 training error:  tensor(0.5668, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  14.0
+	 epoch  30 training error:  tensor(0.3139, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  14.0
+	 epoch  40 training error:  tensor(0.4410, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  14.0
+	 epoch  50 training error:  tensor(0.3025, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  14.0
+	 epoch  60 training error:  tensor(0.2756, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  14.0
+[W 2024-03-31 16:24:10,580] Trial 24 failed with parameters: {'log_learning_rate': -4.800193183986855, 'log_learning_rate_D': -1.3721333152471828, 'log_learning_rate_D_dagger': -1.172054627287486, 'training_batch_size': 9, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 16:24:10,580] Trial 24 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  166.38824200630188
+Memory status after this trial: 
+Memory allocated:  9.37939453125
+Memory cached:  12.0
+--------------------  Trial  25   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.869692131249673, 'log_learning_rate_D': -1.4205277590950467, 'log_learning_rate_D_dagger': -1.0585950262095527, 'training_batch_size': 6, 'training_p': 2}
+	 epoch  0 training error:  tensor(3.6058, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+[W 2024-03-31 16:26:08,325] Trial 25 failed with parameters: {'log_learning_rate': -4.869692131249673, 'log_learning_rate_D': -1.4205277590950467, 'log_learning_rate_D_dagger': -1.0585950262095527, 'training_batch_size': 6, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 16:26:08,325] Trial 25 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  117.42467141151428
+Memory status after this trial: 
+Memory allocated:  9.62841796875
+Memory cached:  12.0
+--------------------  Trial  26   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.672999736687222, 'log_learning_rate_D': -1.359107057827881, 'log_learning_rate_D_dagger': -1.3951131523334426, 'training_batch_size': 6, 'training_p': 2}
+	 epoch  0 training error:  tensor(2.1324, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+	 epoch  10 training error:  tensor(0.4072, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+[W 2024-03-31 16:29:05,085] Trial 26 failed with parameters: {'log_learning_rate': -4.672999736687222, 'log_learning_rate_D': -1.359107057827881, 'log_learning_rate_D_dagger': -1.3951131523334426, 'training_batch_size': 6, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 16:29:05,086] Trial 26 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  176.4406771659851
+Memory status after this trial: 
+Memory allocated:  9.62841796875
+Memory cached:  12.0
+--------------------  Trial  27   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.768946618435107, 'log_learning_rate_D': -1.1846472131009902, 'log_learning_rate_D_dagger': -1.2170522748037613, 'training_batch_size': 6, 'training_p': 2}
+	 epoch  0 training error:  tensor(2.6756, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+	 epoch  10 training error:  tensor(0.3050, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+[W 2024-03-31 16:31:27,036] Trial 27 failed with parameters: {'log_learning_rate': -4.768946618435107, 'log_learning_rate_D': -1.1846472131009902, 'log_learning_rate_D_dagger': -1.2170522748037613, 'training_batch_size': 6, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 16:31:27,036] Trial 27 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  141.51478552818298
+Memory status after this trial: 
+Memory allocated:  9.62841796875
+Memory cached:  12.0
+--------------------  Trial  28   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.918034516953758, 'log_learning_rate_D': -1.3589603366614882, 'log_learning_rate_D_dagger': -1.0554232171578397, 'training_batch_size': 6, 'training_p': 3}
+	 epoch  0 training error:  tensor(3.3517, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+[W 2024-03-31 16:33:24,686] Trial 28 failed with parameters: {'log_learning_rate': -4.918034516953758, 'log_learning_rate_D': -1.3589603366614882, 'log_learning_rate_D_dagger': -1.0554232171578397, 'training_batch_size': 6, 'training_p': 3} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 16:33:24,687] Trial 28 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  117.30451393127441
+Memory status after this trial: 
+Memory allocated:  9.62841796875
+Memory cached:  12.0
+--------------------  Trial  29   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.902702306996094, 'log_learning_rate_D': -1.4039978836736249, 'log_learning_rate_D_dagger': -1.100996987368946, 'training_batch_size': 6, 'training_p': 2}
+	 epoch  0 training error:  tensor(3.1317, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+[W 2024-03-31 16:35:22,737] Trial 29 failed with parameters: {'log_learning_rate': -4.902702306996094, 'log_learning_rate_D': -1.4039978836736249, 'log_learning_rate_D_dagger': -1.100996987368946, 'training_batch_size': 6, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 16:35:22,737] Trial 29 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  117.70887279510498
+Memory status after this trial: 
+Memory allocated:  9.62841796875
+Memory cached:  12.0
+--------------------  Trial  30   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.943385494124129, 'log_learning_rate_D': -1.3947701174489193, 'log_learning_rate_D_dagger': -1.246065431130778, 'training_batch_size': 6, 'training_p': 2}
+	 epoch  0 training error:  tensor(2.1773, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+	 epoch  10 training error:  tensor(0.3722, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+[W 2024-03-31 16:38:19,153] Trial 30 failed with parameters: {'log_learning_rate': -4.943385494124129, 'log_learning_rate_D': -1.3947701174489193, 'log_learning_rate_D_dagger': -1.246065431130778, 'training_batch_size': 6, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 16:38:19,154] Trial 30 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  176.0577108860016
+Memory status after this trial: 
+Memory allocated:  9.62841796875
+Memory cached:  12.0
+--------------------  Trial  31   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.725571260697376, 'log_learning_rate_D': -1.3591604461065985, 'log_learning_rate_D_dagger': -1.4245297888045934, 'training_batch_size': 6, 'training_p': 2}
+	 epoch  0 training error:  tensor(2.2379, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+	 epoch  10 training error:  tensor(0.2809, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+[W 2024-03-31 16:41:03,953] Trial 31 failed with parameters: {'log_learning_rate': -4.725571260697376, 'log_learning_rate_D': -1.3591604461065985, 'log_learning_rate_D_dagger': -1.4245297888045934, 'training_batch_size': 6, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 16:41:03,953] Trial 31 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  164.45124697685242
+Memory status after this trial: 
+Memory allocated:  9.62841796875
+Memory cached:  12.0
+--------------------  Trial  32   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.834400445283469, 'log_learning_rate_D': -1.430843543514345, 'log_learning_rate_D_dagger': -1.0403097951124232, 'training_batch_size': 9, 'training_p': 2}
+	 epoch  0 training error:  tensor(4.4237, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  12.0
+	 epoch  10 training error:  tensor(2.0041, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  14.0
+	 epoch  20 training error:  tensor(0.8582, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  14.0
+	 epoch  30 training error:  tensor(1.5805, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  14.0
+	 epoch  40 training error:  tensor(1.5057, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  14.0
+[W 2024-03-31 16:43:12,104] Trial 32 failed with parameters: {'log_learning_rate': -4.834400445283469, 'log_learning_rate_D': -1.430843543514345, 'log_learning_rate_D_dagger': -1.0403097951124232, 'training_batch_size': 9, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 16:43:12,104] Trial 32 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  127.92960739135742
+Memory status after this trial: 
+Memory allocated:  9.37939453125
+Memory cached:  14.0
+--------------------  Trial  33   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.915573993482708, 'log_learning_rate_D': -1.1460240728620943, 'log_learning_rate_D_dagger': -1.1804419529550967, 'training_batch_size': 6, 'training_p': 2}
+	 epoch  0 training error:  tensor(2.4807, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+[W 2024-03-31 16:45:09,776] Trial 33 failed with parameters: {'log_learning_rate': -4.915573993482708, 'log_learning_rate_D': -1.1460240728620943, 'log_learning_rate_D_dagger': -1.1804419529550967, 'training_batch_size': 6, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 16:45:09,776] Trial 33 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  117.35078120231628
+Memory status after this trial: 
+Memory allocated:  9.62841796875
+Memory cached:  12.0
+--------------------  Trial  34   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.683306650543437, 'log_learning_rate_D': -1.55851949301932, 'log_learning_rate_D_dagger': -1.0222371526635383, 'training_batch_size': 6, 'training_p': 2}
+	 epoch  0 training error:  tensor(3.9991, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+	 epoch  10 training error:  tensor(0.4564, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+[W 2024-03-31 16:47:42,732] Trial 34 failed with parameters: {'log_learning_rate': -4.683306650543437, 'log_learning_rate_D': -1.55851949301932, 'log_learning_rate_D_dagger': -1.0222371526635383, 'training_batch_size': 6, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 16:47:42,732] Trial 34 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  152.6015830039978
+Memory status after this trial: 
+Memory allocated:  9.62841796875
+Memory cached:  12.0
+--------------------  Trial  35   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.855881283860598, 'log_learning_rate_D': -1.469466269254751, 'log_learning_rate_D_dagger': -1.1453211730979858, 'training_batch_size': 6, 'training_p': 2}
+	 epoch  0 training error:  tensor(2.8199, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+[W 2024-03-31 16:49:41,107] Trial 35 failed with parameters: {'log_learning_rate': -4.855881283860598, 'log_learning_rate_D': -1.469466269254751, 'log_learning_rate_D_dagger': -1.1453211730979858, 'training_batch_size': 6, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 16:49:41,107] Trial 35 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  118.03644037246704
+Memory status after this trial: 
+Memory allocated:  9.62841796875
+Memory cached:  12.0
+--------------------  Trial  36   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.751935201590087, 'log_learning_rate_D': -1.3669335132512763, 'log_learning_rate_D_dagger': -1.0216643945623638, 'training_batch_size': 6, 'training_p': 2}
+	 epoch  0 training error:  tensor(3.9283, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+[W 2024-03-31 16:50:17,790] Trial 36 failed with parameters: {'log_learning_rate': -4.751935201590087, 'log_learning_rate_D': -1.3669335132512763, 'log_learning_rate_D_dagger': -1.0216643945623638, 'training_batch_size': 6, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 16:50:17,791] Trial 36 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  36.25894093513489
+Memory status after this trial: 
+Memory allocated:  9.62841796875
+Memory cached:  12.0
+--------------------  Trial  37   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.946716931980941, 'log_learning_rate_D': -1.3526347203366145, 'log_learning_rate_D_dagger': -1.039982515989107, 'training_batch_size': 6, 'training_p': 2}
+	 epoch  0 training error:  tensor(3.2817, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+[W 2024-03-31 16:52:16,487] Trial 37 failed with parameters: {'log_learning_rate': -4.946716931980941, 'log_learning_rate_D': -1.3526347203366145, 'log_learning_rate_D_dagger': -1.039982515989107, 'training_batch_size': 6, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 16:52:16,487] Trial 37 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  118.34759044647217
+Memory status after this trial: 
+Memory allocated:  9.62841796875
+Memory cached:  12.0
+--------------------  Trial  38   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.924691315345427, 'log_learning_rate_D': -1.5380892365431826, 'log_learning_rate_D_dagger': -1.1671108646618467, 'training_batch_size': 6, 'training_p': 2}
+	 epoch  0 training error:  tensor(2.5518, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+	 epoch  10 training error:  tensor(0.5585, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+[W 2024-03-31 16:55:00,616] Trial 38 failed with parameters: {'log_learning_rate': -4.924691315345427, 'log_learning_rate_D': -1.5380892365431826, 'log_learning_rate_D_dagger': -1.1671108646618467, 'training_batch_size': 6, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 16:55:00,617] Trial 38 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  163.76342010498047
+Memory status after this trial: 
+Memory allocated:  9.62841796875
+Memory cached:  12.0
+--------------------  Trial  39   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.918777491783999, 'log_learning_rate_D': -1.4447856740917584, 'log_learning_rate_D_dagger': -1.1067403802445739, 'training_batch_size': 9, 'training_p': 2}
+	 epoch  0 training error:  tensor(4.3300, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  12.0
+	 epoch  10 training error:  tensor(1.2538, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  14.0
+	 epoch  20 training error:  tensor(0.7774, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  14.0
+	 epoch  30 training error:  tensor(0.9201, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  14.0
+	 epoch  40 training error:  tensor(0.7642, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  14.0
+[W 2024-03-31 16:57:09,442] Trial 39 failed with parameters: {'log_learning_rate': -4.918777491783999, 'log_learning_rate_D': -1.4447856740917584, 'log_learning_rate_D_dagger': -1.1067403802445739, 'training_batch_size': 9, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 16:57:09,442] Trial 39 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  128.5853669643402
+Memory status after this trial: 
+Memory allocated:  9.37939453125
+Memory cached:  14.0
+--------------------  Trial  40   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.925930443029487, 'log_learning_rate_D': -1.4427887767394458, 'log_learning_rate_D_dagger': -1.0373203558840638, 'training_batch_size': 6, 'training_p': 2}
+	 epoch  0 training error:  tensor(3.7489, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+[W 2024-03-31 16:58:55,427] Trial 40 failed with parameters: {'log_learning_rate': -4.925930443029487, 'log_learning_rate_D': -1.4427887767394458, 'log_learning_rate_D_dagger': -1.0373203558840638, 'training_batch_size': 6, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 16:58:55,427] Trial 40 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  105.66489005088806
+Memory status after this trial: 
+Memory allocated:  9.62841796875
+Memory cached:  12.0
+--------------------  Trial  41   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.610469862274206, 'log_learning_rate_D': -1.4650028390160905, 'log_learning_rate_D_dagger': -1.2091230581452321, 'training_batch_size': 9, 'training_p': 2}
+	 epoch  0 training error:  tensor(3.8513, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  12.0
+	 epoch  10 training error:  tensor(1.9465, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  14.0
+	 epoch  20 training error:  tensor(0.4821, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  14.0
+	 epoch  30 training error:  tensor(0.3384, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  14.0
+	 epoch  40 training error:  tensor(0.3352, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  14.0
+	 epoch  50 training error:  tensor(0.3115, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  14.0
+	 epoch  60 training error:  tensor(0.3067, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  14.0
+	 epoch  70 training error:  tensor(0.2564, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  12.0
+[W 2024-03-31 17:02:04,101] Trial 41 failed with parameters: {'log_learning_rate': -4.610469862274206, 'log_learning_rate_D': -1.4650028390160905, 'log_learning_rate_D_dagger': -1.2091230581452321, 'training_batch_size': 9, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 17:02:04,102] Trial 41 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  188.4436948299408
+Memory status after this trial: 
+Memory allocated:  9.37939453125
+Memory cached:  12.0
+--------------------  Trial  42   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.985174982025788, 'log_learning_rate_D': -1.3988028184644756, 'log_learning_rate_D_dagger': -1.0978334610381468, 'training_batch_size': 6, 'training_p': 2}
+	 epoch  0 training error:  tensor(3.1663, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+[W 2024-03-31 17:03:26,675] Trial 42 failed with parameters: {'log_learning_rate': -4.985174982025788, 'log_learning_rate_D': -1.3988028184644756, 'log_learning_rate_D_dagger': -1.0978334610381468, 'training_batch_size': 6, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 17:03:26,676] Trial 42 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  82.2209792137146
+Memory status after this trial: 
+Memory allocated:  9.62841796875
+Memory cached:  12.0
+--------------------  Trial  43   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.739156441230048, 'log_learning_rate_D': -1.3357426063421989, 'log_learning_rate_D_dagger': -1.1341947009462219, 'training_batch_size': 6, 'training_p': 2}
+	 epoch  0 training error:  tensor(2.5748, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+[W 2024-03-31 17:03:51,011] Trial 43 failed with parameters: {'log_learning_rate': -4.739156441230048, 'log_learning_rate_D': -1.3357426063421989, 'log_learning_rate_D_dagger': -1.1341947009462219, 'training_batch_size': 6, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 17:03:51,012] Trial 43 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  24.062498331069946
+Memory status after this trial: 
+Memory allocated:  9.62841796875
+Memory cached:  12.0
+--------------------  Trial  44   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.778729412781008, 'log_learning_rate_D': -1.32779278167523, 'log_learning_rate_D_dagger': -1.181103762834319, 'training_batch_size': 6, 'training_p': 2}
+	 epoch  0 training error:  tensor(3.0189, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+	 epoch  10 training error:  tensor(0.2204, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+[W 2024-03-31 17:06:13,068] Trial 44 failed with parameters: {'log_learning_rate': -4.778729412781008, 'log_learning_rate_D': -1.32779278167523, 'log_learning_rate_D_dagger': -1.181103762834319, 'training_batch_size': 6, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 17:06:13,068] Trial 44 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  141.65731525421143
+Memory status after this trial: 
+Memory allocated:  9.62841796875
+Memory cached:  12.0
+--------------------  Trial  45   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.9995714523222325, 'log_learning_rate_D': -1.4270503014920175, 'log_learning_rate_D_dagger': -1.6287839367402412, 'training_batch_size': 6, 'training_p': 2}
+	 epoch  0 training error:  tensor(2.2987, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+	 epoch  10 training error:  tensor(0.2372, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+[W 2024-03-31 17:10:07,844] Trial 45 failed with parameters: {'log_learning_rate': -4.9995714523222325, 'log_learning_rate_D': -1.4270503014920175, 'log_learning_rate_D_dagger': -1.6287839367402412, 'training_batch_size': 6, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 17:10:07,844] Trial 45 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  234.41780257225037
+Memory status after this trial: 
+Memory allocated:  9.62841796875
+Memory cached:  12.0
+--------------------  Trial  46   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.903405664899715, 'log_learning_rate_D': -1.46294802846189, 'log_learning_rate_D_dagger': -1.064853863017036, 'training_batch_size': 6, 'training_p': 2}
+	 epoch  0 training error:  tensor(3.2202, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+[W 2024-03-31 17:11:42,198] Trial 46 failed with parameters: {'log_learning_rate': -4.903405664899715, 'log_learning_rate_D': -1.46294802846189, 'log_learning_rate_D_dagger': -1.064853863017036, 'training_batch_size': 6, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 17:11:42,198] Trial 46 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  93.99110198020935
+Memory status after this trial: 
+Memory allocated:  9.62841796875
+Memory cached:  12.0
+--------------------  Trial  47   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.9306647486120525, 'log_learning_rate_D': -1.2701209245431908, 'log_learning_rate_D_dagger': -1.0602649256802996, 'training_batch_size': 6, 'training_p': 2}
+	 epoch  0 training error:  tensor(3.5315, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+[W 2024-03-31 17:13:51,566] Trial 47 failed with parameters: {'log_learning_rate': -4.9306647486120525, 'log_learning_rate_D': -1.2701209245431908, 'log_learning_rate_D_dagger': -1.0602649256802996, 'training_batch_size': 6, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 17:13:51,566] Trial 47 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  129.01779532432556
+Memory status after this trial: 
+Memory allocated:  9.62841796875
+Memory cached:  12.0
+--------------------  Trial  48   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.826464402626291, 'log_learning_rate_D': -1.2989322200440436, 'log_learning_rate_D_dagger': -1.0610359421291329, 'training_batch_size': 6, 'training_p': 2}
+	 epoch  0 training error:  tensor(2.8003, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+[W 2024-03-31 17:15:25,935] Trial 48 failed with parameters: {'log_learning_rate': -4.826464402626291, 'log_learning_rate_D': -1.2989322200440436, 'log_learning_rate_D_dagger': -1.0610359421291329, 'training_batch_size': 6, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 17:15:25,936] Trial 48 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  94.02596259117126
+Memory status after this trial: 
+Memory allocated:  9.62841796875
+Memory cached:  12.0
+--------------------  Trial  49   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.981261083896173, 'log_learning_rate_D': -1.3777635784811924, 'log_learning_rate_D_dagger': -1.040818389742849, 'training_batch_size': 6, 'training_p': 2}
+	 epoch  0 training error:  tensor(3.5424, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+	 epoch  10 training error:  tensor(0.3127, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+[W 2024-03-31 17:19:22,045] Trial 49 failed with parameters: {'log_learning_rate': -4.981261083896173, 'log_learning_rate_D': -1.3777635784811924, 'log_learning_rate_D_dagger': -1.040818389742849, 'training_batch_size': 6, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 17:19:22,046] Trial 49 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  235.73104047775269
+Memory status after this trial: 
+Memory allocated:  9.62841796875
+Memory cached:  12.0
+--------------------  Trial  50   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.9656600260389965, 'log_learning_rate_D': -1.3641595375375228, 'log_learning_rate_D_dagger': -1.152984256819917, 'training_batch_size': 6, 'training_p': 2}
+	 epoch  0 training error:  tensor(2.2918, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+	 epoch  10 training error:  tensor(0.2573, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+[W 2024-03-31 17:21:55,628] Trial 50 failed with parameters: {'log_learning_rate': -4.9656600260389965, 'log_learning_rate_D': -1.3641595375375228, 'log_learning_rate_D_dagger': -1.152984256819917, 'training_batch_size': 6, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 17:21:55,629] Trial 50 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  153.2230761051178
+Memory status after this trial: 
+Memory allocated:  9.62841796875
+Memory cached:  12.0
+--------------------  Trial  51   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.820739642016695, 'log_learning_rate_D': -1.4134739764974673, 'log_learning_rate_D_dagger': -1.1018036657577002, 'training_batch_size': 6, 'training_p': 2}
+	 epoch  0 training error:  tensor(2.4964, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+[W 2024-03-31 17:23:41,689] Trial 51 failed with parameters: {'log_learning_rate': -4.820739642016695, 'log_learning_rate_D': -1.4134739764974673, 'log_learning_rate_D_dagger': -1.1018036657577002, 'training_batch_size': 6, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 17:23:41,689] Trial 51 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  105.70947623252869
+Memory status after this trial: 
+Memory allocated:  9.62841796875
+Memory cached:  12.0
+--------------------  Trial  52   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.822264126286328, 'log_learning_rate_D': -1.5185771333366085, 'log_learning_rate_D_dagger': -1.2416504552946546, 'training_batch_size': 6, 'training_p': 2}
+	 epoch  0 training error:  tensor(2.3852, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+	 epoch  10 training error:  tensor(0.5844, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+[W 2024-03-31 17:26:26,680] Trial 52 failed with parameters: {'log_learning_rate': -4.822264126286328, 'log_learning_rate_D': -1.5185771333366085, 'log_learning_rate_D_dagger': -1.2416504552946546, 'training_batch_size': 6, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 17:26:26,680] Trial 52 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  164.6410927772522
+Memory status after this trial: 
+Memory allocated:  9.62841796875
+Memory cached:  12.0
+--------------------  Trial  53   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.927426977769336, 'log_learning_rate_D': -1.407844071225482, 'log_learning_rate_D_dagger': -1.0173171984500622, 'training_batch_size': 6, 'training_p': 2}
+	 epoch  0 training error:  tensor(3.6835, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+[W 2024-03-31 17:28:01,613] Trial 53 failed with parameters: {'log_learning_rate': -4.927426977769336, 'log_learning_rate_D': -1.407844071225482, 'log_learning_rate_D_dagger': -1.0173171984500622, 'training_batch_size': 6, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 17:28:01,614] Trial 53 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  94.61041259765625
+Memory status after this trial: 
+Memory allocated:  9.62841796875
+Memory cached:  12.0
+--------------------  Trial  54   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.667361821301532, 'log_learning_rate_D': -1.3100445269427388, 'log_learning_rate_D_dagger': -1.1534843453291241, 'training_batch_size': 6, 'training_p': 2}
+	 epoch  0 training error:  tensor(2.7194, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+	 epoch  10 training error:  tensor(0.4534, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+[W 2024-03-31 17:31:21,177] Trial 54 failed with parameters: {'log_learning_rate': -4.667361821301532, 'log_learning_rate_D': -1.3100445269427388, 'log_learning_rate_D_dagger': -1.1534843453291241, 'training_batch_size': 6, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 17:31:21,178] Trial 54 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  199.19967079162598
+Memory status after this trial: 
+Memory allocated:  9.62841796875
+Memory cached:  12.0
+--------------------  Trial  55   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.54711080544406, 'log_learning_rate_D': -1.366605333970624, 'log_learning_rate_D_dagger': -1.0165084467226286, 'training_batch_size': 6, 'training_p': 2}
+	 epoch  0 training error:  tensor(4.3533, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+[W 2024-03-31 17:31:45,500] Trial 55 failed with parameters: {'log_learning_rate': -4.54711080544406, 'log_learning_rate_D': -1.366605333970624, 'log_learning_rate_D_dagger': -1.0165084467226286, 'training_batch_size': 6, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 17:31:45,501] Trial 55 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  24.023371696472168
+Memory status after this trial: 
+Memory allocated:  9.62841796875
+Memory cached:  12.0
+--------------------  Trial  56   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.8936482558583005, 'log_learning_rate_D': -1.444134098879228, 'log_learning_rate_D_dagger': -1.235948422315083, 'training_batch_size': 9, 'training_p': 2}
+	 epoch  0 training error:  tensor(4.2097, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  12.0
+	 epoch  10 training error:  tensor(1.4553, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  14.0
+	 epoch  20 training error:  tensor(0.4113, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  14.0
+	 epoch  30 training error:  tensor(0.2919, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  14.0
+	 epoch  40 training error:  tensor(0.2713, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  14.0
+	 epoch  50 training error:  tensor(0.2989, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  14.0
+	 epoch  60 training error:  tensor(0.2696, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  4.9931640625
+Memory cached:  14.0
+[W 2024-03-31 17:34:34,505] Trial 56 failed with parameters: {'log_learning_rate': -4.8936482558583005, 'log_learning_rate_D': -1.444134098879228, 'log_learning_rate_D_dagger': -1.235948422315083, 'training_batch_size': 9, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 17:34:34,506] Trial 56 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  168.78072500228882
+Memory status after this trial: 
+Memory allocated:  9.37939453125
+Memory cached:  12.0
+--------------------  Trial  57   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -3.608319015717557, 'log_learning_rate_D': -1.4024085566684192, 'log_learning_rate_D_dagger': -1.075363279238501, 'training_batch_size': 6, 'training_p': 2}
+	 epoch  0 training error:  tensor(2.8636, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+[W 2024-03-31 17:36:20,472] Trial 57 failed with parameters: {'log_learning_rate': -3.608319015717557, 'log_learning_rate_D': -1.4024085566684192, 'log_learning_rate_D_dagger': -1.075363279238501, 'training_batch_size': 6, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 17:36:20,473] Trial 57 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  105.60683274269104
+Memory status after this trial: 
+Memory allocated:  9.62841796875
+Memory cached:  12.0
+--------------------  Trial  58   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.971471114620593, 'log_learning_rate_D': -1.5352099683276312, 'log_learning_rate_D_dagger': -1.2514531633156807, 'training_batch_size': 6, 'training_p': 3}
+	 epoch  0 training error:  tensor(2.1529, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+	 epoch  10 training error:  tensor(0.3794, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+[W 2024-03-31 17:39:15,275] Trial 58 failed with parameters: {'log_learning_rate': -4.971471114620593, 'log_learning_rate_D': -1.5352099683276312, 'log_learning_rate_D_dagger': -1.2514531633156807, 'training_batch_size': 6, 'training_p': 3} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 17:39:15,275] Trial 58 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  174.44495296478271
+Memory status after this trial: 
+Memory allocated:  9.62841796875
+Memory cached:  12.0
+--------------------  Trial  59   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.9259709152173565, 'log_learning_rate_D': -1.6089503622382306, 'log_learning_rate_D_dagger': -1.0845744954375487, 'training_batch_size': 6, 'training_p': 2}
+	 epoch  0 training error:  tensor(2.7870, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+	 epoch  10 training error:  tensor(0.4640, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+[W 2024-03-31 17:41:59,270] Trial 59 failed with parameters: {'log_learning_rate': -4.9259709152173565, 'log_learning_rate_D': -1.6089503622382306, 'log_learning_rate_D_dagger': -1.0845744954375487, 'training_batch_size': 6, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 17:41:59,270] Trial 59 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  163.62186741828918
+Memory status after this trial: 
+Memory allocated:  9.62841796875
+Memory cached:  12.0
+--------------------  Trial  60   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.94639733868296, 'log_learning_rate_D': -1.3725506494536712, 'log_learning_rate_D_dagger': -1.058512346297245, 'training_batch_size': 6, 'training_p': 2}
+	 epoch  0 training error:  tensor(3.6495, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+	 epoch  10 training error:  tensor(0.4234, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+[W 2024-03-31 17:44:32,203] Trial 60 failed with parameters: {'log_learning_rate': -4.94639733868296, 'log_learning_rate_D': -1.3725506494536712, 'log_learning_rate_D_dagger': -1.058512346297245, 'training_batch_size': 6, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 17:44:32,203] Trial 60 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  152.56965470314026
+Memory status after this trial: 
+Memory allocated:  9.62841796875
+Memory cached:  12.0
+--------------------  Trial  61   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.901634239919762, 'log_learning_rate_D': -1.3814833108873177, 'log_learning_rate_D_dagger': -1.2151947745875487, 'training_batch_size': 6, 'training_p': 2}
+	 epoch  0 training error:  tensor(2.5998, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+	 epoch  10 training error:  tensor(0.5056, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.2177734375
+Memory cached:  10.0
+[W 2024-03-31 17:47:17,153] Trial 61 failed with parameters: {'log_learning_rate': -4.901634239919762, 'log_learning_rate_D': -1.3814833108873177, 'log_learning_rate_D_dagger': -1.2151947745875487, 'training_batch_size': 6, 'training_p': 2} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 17:47:17,154] Trial 61 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  164.6012463569641
+Memory status after this trial: 
+Memory allocated:  9.62841796875
+Memory cached:  12.0
+--------------------  Trial  62   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.929883583606314, 'log_learning_rate_D': -1.2646019545562206, 'log_learning_rate_D_dagger': -1.040331886058324, 'training_batch_size': 6, 'training_p': 2}
+[W 2024-03-31 17:47:22,481] Trial 62 failed with parameters: {'log_learning_rate': -4.929883583606314, 'log_learning_rate_D': -1.2646019545562206, 'log_learning_rate_D_dagger': -1.040331886058324, 'training_batch_size': 6, 'training_p': 2} because of the following error: KeyboardInterrupt().
+Traceback (most recent call last):
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "/home/shengduo/RateAndStateWithPotential/TuneDimXi_logV_WDsep_deltaTSqed_combinedSet_GivenPoly.py", line 223, in objective
+    avg_training_loss = train1Epoch(trainDataLoader, Loss, myWD, params['training_p'], 0.)
+  File "/home/shengduo/RateAndStateWithPotential/FrictionNNModels.py", line 632, in train1Epoch
+    myPot.calf(Xs, XDots, ts)
+  File "/home/shengduo/RateAndStateWithPotential/FrictionNNModels.py", line 390, in calf
+    W = torch.sum(self.W(X_W))
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/torch/nn/parallel/data_parallel.py", line 148, in forward
+    with torch.autograd.profiler.record_function("DataParallel.forward"):
+KeyboardInterrupt
+[W 2024-03-31 17:47:22,483] Trial 62 failed with value None.
+Traceback (most recent call last):
+  File "/home/shengduo/RateAndStateWithPotential/TuneDimXi_logV_WDsep_deltaTSqed_combinedSet_GivenPoly.py", line 301, in <module>
+    this_study.optimize(myOpt.objective, n_trials=200)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/study.py", line 442, in optimize
+    _optimize(
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/_optimize.py", line 66, in _optimize
+    _optimize_sequential(
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/_optimize.py", line 163, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/_optimize.py", line 251, in _run_trial
+    raise func_err
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "/home/shengduo/RateAndStateWithPotential/TuneDimXi_logV_WDsep_deltaTSqed_combinedSet_GivenPoly.py", line 223, in objective
+    avg_training_loss = train1Epoch(trainDataLoader, Loss, myWD, params['training_p'], 0.)
+  File "/home/shengduo/RateAndStateWithPotential/FrictionNNModels.py", line 632, in train1Epoch
+    myPot.calf(Xs, XDots, ts)
+  File "/home/shengduo/RateAndStateWithPotential/FrictionNNModels.py", line 390, in calf
+    W = torch.sum(self.W(X_W))
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/torch/nn/parallel/data_parallel.py", line 148, in forward
+    with torch.autograd.profiler.record_function("DataParallel.forward"):
+KeyboardInterrupt

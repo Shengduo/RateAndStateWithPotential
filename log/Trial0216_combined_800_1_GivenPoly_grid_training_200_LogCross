@@ -1,0 +1,212 @@
+/home/shengduo/anaconda3/lib/python3.9/site-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.16.5 and <1.23.0 is required for this version of SciPy (detected version 1.24.1
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+[I 2024-03-31 21:27:47,774] A new study created in RDB with name: my_study1
+Cuda is available:  True
+Device is:  cuda
+Memory allocated:  0.0
+Memory cached:  0.0
+Data file:  ./data/Trial0216_combined_800.pt
+Vs.shape:  torch.Size([800, 100])
+thetas.shape:  torch.Size([800, 100])
+fs.shape:  torch.Size([800, 100])
+ts.shape:  torch.Size([800, 100])
+Xs.shape:  torch.Size([800, 100])
+No pruned database has been founded.
+--------------------  Trial  0   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.175872838340687, 'log_learning_rate_D': -3.004894841885543, 'log_learning_rate_D_dagger': -1.3791408503133278, 'training_batch_size': 11, 'training_p': 8}
+	 epoch  0 training error:  tensor(0.9138, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.74755859375
+Memory cached:  12.0
+	 epoch  10 training error:  tensor(1.1722, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.74755859375
+Memory cached:  16.0
+	 epoch  20 training error:  tensor(0.5924, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.74755859375
+Memory cached:  14.0
+	 epoch  30 training error:  tensor(0.3178, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.74755859375
+Memory cached:  14.0
+	 epoch  40 training error:  tensor(0.2329, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.74755859375
+Memory cached:  14.0
+	 epoch  50 training error:  tensor(0.2485, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.74755859375
+Memory cached:  16.0
+	 epoch  60 training error:  tensor(0.2446, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.74755859375
+Memory cached:  14.0
+	 epoch  70 training error:  tensor(0.2184, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.74755859375
+Memory cached:  16.0
+	 epoch  80 training error:  tensor(0.2230, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.74755859375
+Memory cached:  16.0
+	 epoch  90 training error:  tensor(0.2305, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.74755859375
+Memory cached:  16.0
+	 epoch  100 training error:  tensor(0.2585, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.74755859375
+Memory cached:  14.0
+	 epoch  110 training error:  tensor(0.2298, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.74755859375
+Memory cached:  14.0
+	 epoch  120 training error:  tensor(0.3367, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.74755859375
+Memory cached:  16.0
+	 epoch  130 training error:  tensor(0.3927, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.74755859375
+Memory cached:  16.0
+	 epoch  140 training error:  tensor(0.2189, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.74755859375
+Memory cached:  14.0
+	 epoch  150 training error:  tensor(0.3058, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.74755859375
+Memory cached:  16.0
+	 epoch  160 training error:  tensor(0.4071, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.74755859375
+Memory cached:  14.0
+	 epoch  170 training error:  tensor(0.2586, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.74755859375
+Memory cached:  14.0
+	 epoch  180 training error:  tensor(0.3296, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.74755859375
+Memory cached:  14.0
+	 epoch  190 training error:  tensor(0.3664, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  0.74755859375
+Memory cached:  14.0
+[I 2024-03-31 21:32:24,500] Trial 0 finished with value: 0.22028949856758118 and parameters: {'log_learning_rate': -4.175872838340687, 'log_learning_rate_D': -3.004894841885543, 'log_learning_rate_D_dagger': -1.3791408503133278, 'training_batch_size': 11, 'training_p': 8}. Best is trial 0 with value: 0.22028949856758118.
+res:  tensor(0.2203, grad_fn=<ToCopyBackward0>)
+self.bestValue:  10000000.0
+Save this model!
+Time for this trial:  274.5014772415161
+Memory status after this trial: 
+Memory allocated:  5.3779296875
+Memory cached:  14.0
+--------------------  Trial  1   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -3.452282566754801, 'log_learning_rate_D': -1.084610986712895, 'log_learning_rate_D_dagger': -2.917121359956091, 'training_batch_size': 8, 'training_p': 5}
+	 epoch  0 training error:  tensor(0.7504, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.4326171875
+Memory cached:  14.0
+[W 2024-03-31 21:32:36,598] Trial 1 failed with parameters: {'log_learning_rate': -3.452282566754801, 'log_learning_rate_D': -1.084610986712895, 'log_learning_rate_D_dagger': -2.917121359956091, 'training_batch_size': 8, 'training_p': 5} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 21:32:36,599] Trial 1 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  11.877092123031616
+Memory status after this trial: 
+Memory allocated:  10.25830078125
+Memory cached:  14.0
+--------------------  Trial  2   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -2.949759864237698, 'log_learning_rate_D': -3.712443845340445, 'log_learning_rate_D_dagger': -1.1760808675680043, 'training_batch_size': 10, 'training_p': 6}
+	 epoch  0 training error:  tensor(0.8546, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.6279296875
+Memory cached:  16.0
+	 epoch  10 training error:  tensor(1.7327, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.6279296875
+Memory cached:  18.0
+	 epoch  20 training error:  tensor(0.8616, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.6279296875
+Memory cached:  20.0
+	 epoch  30 training error:  tensor(0.9631, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.6279296875
+Memory cached:  18.0
+	 epoch  40 training error:  tensor(0.4896, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.6279296875
+Memory cached:  16.0
+	 epoch  50 training error:  tensor(0.3479, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.6279296875
+Memory cached:  18.0
+	 epoch  60 training error:  tensor(0.3179, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.6279296875
+Memory cached:  18.0
+	 epoch  70 training error:  tensor(0.3077, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.6279296875
+Memory cached:  18.0
+	 epoch  80 training error:  tensor(0.2451, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.6279296875
+Memory cached:  18.0
+	 epoch  90 training error:  tensor(0.2106, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.6279296875
+Memory cached:  18.0
+	 epoch  100 training error:  tensor(0.3025, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.6279296875
+Memory cached:  18.0
+	 epoch  110 training error:  tensor(0.3219, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.6279296875
+Memory cached:  20.0
+	 epoch  120 training error:  tensor(0.5096, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  5.6279296875
+Memory cached:  18.0
+[W 2024-03-31 21:35:25,213] Trial 2 failed with parameters: {'log_learning_rate': -2.949759864237698, 'log_learning_rate_D': -3.712443845340445, 'log_learning_rate_D_dagger': -1.1760808675680043, 'training_batch_size': 10, 'training_p': 6} because of the following error: KeyboardInterrupt().
+Traceback (most recent call last):
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "/home/shengduo/RateAndStateWithPotential/TuneDimXi_logV_WDsep_deltaTSqed_combinedSet_GivenPoly.py", line 223, in objective
+    avg_training_loss = train1Epoch(trainDataLoader, Loss, myWD, params['training_p'], 0.)
+  File "/home/shengduo/RateAndStateWithPotential/FrictionNNModels.py", line 632, in train1Epoch
+    myPot.calf(Xs, XDots, ts)
+  File "/home/shengduo/RateAndStateWithPotential/FrictionNNModels.py", line 383, in calf
+    this_piece = torch.autograd.grad(outputs=D_dagger, inputs=X_D_dagger, create_graph=True)[0]
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/torch/autograd/__init__.py", line 276, in grad
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt
+[W 2024-03-31 21:35:25,215] Trial 2 failed with value None.
+Traceback (most recent call last):
+  File "/home/shengduo/RateAndStateWithPotential/TuneDimXi_logV_WDsep_deltaTSqed_combinedSet_GivenPoly.py", line 301, in <module>
+    this_study.optimize(myOpt.objective, n_trials=200)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/study.py", line 442, in optimize
+    _optimize(
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/_optimize.py", line 66, in _optimize
+    _optimize_sequential(
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/_optimize.py", line 163, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/_optimize.py", line 251, in _run_trial
+    raise func_err
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "/home/shengduo/RateAndStateWithPotential/TuneDimXi_logV_WDsep_deltaTSqed_combinedSet_GivenPoly.py", line 223, in objective
+    avg_training_loss = train1Epoch(trainDataLoader, Loss, myWD, params['training_p'], 0.)
+  File "/home/shengduo/RateAndStateWithPotential/FrictionNNModels.py", line 632, in train1Epoch
+    myPot.calf(Xs, XDots, ts)
+  File "/home/shengduo/RateAndStateWithPotential/FrictionNNModels.py", line 383, in calf
+    this_piece = torch.autograd.grad(outputs=D_dagger, inputs=X_D_dagger, create_graph=True)[0]
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/torch/autograd/__init__.py", line 276, in grad
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt

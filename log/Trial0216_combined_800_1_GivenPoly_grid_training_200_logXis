@@ -1,0 +1,94 @@
+/home/shengduo/anaconda3/lib/python3.9/site-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.16.5 and <1.23.0 is required for this version of SciPy (detected version 1.24.1
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+[I 2024-03-31 21:19:48,281] A new study created in RDB with name: my_study1
+Cuda is available:  True
+Device is:  cuda
+Memory allocated:  0.0
+Memory cached:  0.0
+Data file:  ./data/Trial0216_combined_800.pt
+Vs.shape:  torch.Size([800, 100])
+thetas.shape:  torch.Size([800, 100])
+fs.shape:  torch.Size([800, 100])
+ts.shape:  torch.Size([800, 100])
+Xs.shape:  torch.Size([800, 100])
+No pruned database has been founded.
+--------------------  Trial  0   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -1.7444624223819596, 'log_learning_rate_D': -3.1340723615699337, 'log_learning_rate_D_dagger': -3.44963228151807, 'training_batch_size': 12, 'training_p': 4}
+[W 2024-03-31 21:19:53,398] Trial 0 failed with parameters: {'log_learning_rate': -1.7444624223819596, 'log_learning_rate_D': -3.1340723615699337, 'log_learning_rate_D_dagger': -3.44963228151807, 'training_batch_size': 12, 'training_p': 4} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 21:19:53,399] Trial 0 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  2.885713577270508
+Memory status after this trial: 
+Memory allocated:  8.7958984375
+Memory cached:  14.0
+--------------------  Trial  1   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -3.305267231008216, 'log_learning_rate_D': -2.3836415590567506, 'log_learning_rate_D_dagger': -2.904706779357858, 'training_batch_size': 9, 'training_p': 3}
+[W 2024-03-31 21:19:57,750] Trial 1 failed with parameters: {'log_learning_rate': -3.305267231008216, 'log_learning_rate_D': -2.3836415590567506, 'log_learning_rate_D_dagger': -2.904706779357858, 'training_batch_size': 9, 'training_p': 3} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 21:19:57,751] Trial 1 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  4.113743305206299
+Memory status after this trial: 
+Memory allocated:  8.7958984375
+Memory cached:  12.0
+--------------------  Trial  2   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -4.826979874450369, 'log_learning_rate_D': -2.465274777214783, 'log_learning_rate_D_dagger': -2.714803279626906, 'training_batch_size': 7, 'training_p': 4}
+[W 2024-03-31 21:20:06,566] Trial 2 failed with parameters: {'log_learning_rate': -4.826979874450369, 'log_learning_rate_D': -2.465274777214783, 'log_learning_rate_D_dagger': -2.714803279626906, 'training_batch_size': 7, 'training_p': 4} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 21:20:06,567] Trial 2 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  8.560872554779053
+Memory status after this trial: 
+Memory allocated:  8.7958984375
+Memory cached:  10.0
+--------------------  Trial  3   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -3.424480945997961, 'log_learning_rate_D': -2.7138341440006584, 'log_learning_rate_D_dagger': -4.395474538698322, 'training_batch_size': 10, 'training_p': 7}
+[W 2024-03-31 21:20:09,451] Trial 3 failed with parameters: {'log_learning_rate': -3.424480945997961, 'log_learning_rate_D': -2.7138341440006584, 'log_learning_rate_D_dagger': -4.395474538698322, 'training_batch_size': 10, 'training_p': 7} because of the following error: The value nan is not acceptable.
+[W 2024-03-31 21:20:09,451] Trial 3 failed with value tensor(nan, grad_fn=<ToCopyBackward0>).
+Time for this trial:  2.6533830165863037
+Memory status after this trial: 
+Memory allocated:  8.7958984375
+Memory cached:  14.0
+--------------------  Trial  4   --------------------
+Start timing: 
+Parameters: 
+{'log_learning_rate': -1.0580598724278043, 'log_learning_rate_D': -3.5046571107004962, 'log_learning_rate_D_dagger': -2.533938527409047, 'training_batch_size': 8, 'training_p': 5}
+[W 2024-03-31 21:20:10,570] Trial 4 failed with parameters: {'log_learning_rate': -1.0580598724278043, 'log_learning_rate_D': -3.5046571107004962, 'log_learning_rate_D_dagger': -2.533938527409047, 'training_batch_size': 8, 'training_p': 5} because of the following error: KeyboardInterrupt().
+Traceback (most recent call last):
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "/home/shengduo/RateAndStateWithPotential/TuneDimXi_logV_WDsep_deltaTSqed_combinedSet_GivenPoly.py", line 223, in objective
+    avg_training_loss = train1Epoch(trainDataLoader, Loss, myWD, params['training_p'], 0.)
+  File "/home/shengduo/RateAndStateWithPotential/FrictionNNModels.py", line 632, in train1Epoch
+    myPot.calf(Xs, XDots, ts)
+  File "/home/shengduo/RateAndStateWithPotential/FrictionNNModels.py", line 399, in calf
+    xiNext = xiCurr + torch.autograd.grad(outputs=D, inputs=this_input, create_graph=True)[0] * (t[:, idx + 1:idx + 2] - t[:, idx:idx + 1])
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/torch/autograd/__init__.py", line 276, in grad
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt
+[W 2024-03-31 21:20:10,571] Trial 4 failed with value None.
+Traceback (most recent call last):
+  File "/home/shengduo/RateAndStateWithPotential/TuneDimXi_logV_WDsep_deltaTSqed_combinedSet_GivenPoly.py", line 301, in <module>
+    this_study.optimize(myOpt.objective, n_trials=200)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/study.py", line 442, in optimize
+    _optimize(
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/_optimize.py", line 66, in _optimize
+    _optimize_sequential(
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/_optimize.py", line 163, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/_optimize.py", line 251, in _run_trial
+    raise func_err
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "/home/shengduo/RateAndStateWithPotential/TuneDimXi_logV_WDsep_deltaTSqed_combinedSet_GivenPoly.py", line 223, in objective
+    avg_training_loss = train1Epoch(trainDataLoader, Loss, myWD, params['training_p'], 0.)
+  File "/home/shengduo/RateAndStateWithPotential/FrictionNNModels.py", line 632, in train1Epoch
+    myPot.calf(Xs, XDots, ts)
+  File "/home/shengduo/RateAndStateWithPotential/FrictionNNModels.py", line 399, in calf
+    xiNext = xiCurr + torch.autograd.grad(outputs=D, inputs=this_input, create_graph=True)[0] * (t[:, idx + 1:idx + 2] - t[:, idx:idx + 1])
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/torch/autograd/__init__.py", line 276, in grad
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt

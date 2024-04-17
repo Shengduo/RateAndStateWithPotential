@@ -776,7 +776,7 @@ class W_poly(nn.Module):
 
 
 class D_dagger_poly(nn.Module):
-    def __init__(self, intercept = torch.tensor(0.), coef = torch.zeros(10)):
+    def __init__(self, intercept = torch.tensor(0.), coef = torch.zeros(11)):
         super().__init__()
         self.intercept = nn.Parameter(intercept)
         self.coef = nn.Parameter(coef.reshape([-1, 1]))
@@ -794,6 +794,7 @@ class D_dagger_poly(nn.Module):
                     torch.log(Vs) * Vs, 
                     torch.log(Vs) * xis, 
                     torch.log(Vs) * (Vs ** 2), 
+                    Vs * torch.log(Vs) * xis, 
                     # (torch.log(Vs) ** 2) * Vs, 
                     torch.log(Vs) * (xis ** 2), 
                     # (torch.log(Vs) ** 2) * xis, 
