@@ -785,20 +785,20 @@ class D_dagger_poly(nn.Module):
         Vs = torch.abs(x[:, :1])
         xis = x[:, 1:]
         Xin = torch.concat([Vs, 
-                    Vs ** 2, 
-                    xis, 
-                    xis ** 2, 
-                    torch.log(Vs), 
-                    # torch.log(Vs) ** 2, 
-                    Vs * xis, 
-                    torch.log(Vs) * Vs, 
-                    torch.log(Vs) * xis, 
-                    torch.log(Vs) * (Vs ** 2), 
-                    Vs * torch.log(Vs) * xis, 
-                    # (torch.log(Vs) ** 2) * Vs, 
-                    torch.log(Vs) * (xis ** 2), 
-                    # (torch.log(Vs) ** 2) * xis, 
-                    ], dim = 1)
+                            Vs ** 2, 
+                            xis, 
+                            xis ** 2, 
+                            torch.log(Vs), 
+                            # torch.log(Vs) ** 2, 
+                            Vs * xis, 
+                            torch.log(Vs) * Vs, 
+                            torch.log(Vs) * xis, 
+                            torch.log(Vs) * (Vs ** 2), 
+                            Vs * torch.log(Vs) * xis, 
+                            # (torch.log(Vs) ** 2) * Vs, 
+                            torch.log(Vs) * (xis ** 2), 
+                            # (torch.log(Vs) ** 2) * xis, 
+                            ], dim = 1)
         # print("Xin.shape: ", Xin.shape)
         # print("self.coef: ", self.coef.shape)
         # print("self.intercept: ", self.intercept.shape)
