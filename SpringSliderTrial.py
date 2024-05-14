@@ -10,6 +10,7 @@ from matplotlib import pyplot as plt
 from matplotlib import rc
 from FrictionNNModels import plotGenVXFric
 import time
+from pathlib import Path
 
 # Generating a VT sequence for the spring slider
 VTkwgs = {
@@ -20,6 +21,10 @@ VTkwgs = {
         'flag' : 'simple', 
         'nOfTerms' : 3, 
 }
+
+# Set Path
+PATH = "./data/RSvsNNSpringSliderAcc0514"
+Path(PATH).mkdir(parents=True, exist_ok=True)
 
 # myVT = GenerateVT(VTkwgs)
 res = torch.load('./data/testSpringSlider0306_200.pth')
@@ -83,8 +88,13 @@ if len(Vs) > 0:
     res = {
         'VT' : myVT, 
         't' : myTimeSeq.t, 
-
+        'Vs' : Vs, 
+        'xs' : xs, 
+        'Frics' : Frics, 
+        'step_sizes', step_sizes, 
     }
+    torch.save(res, PATH + "/res_RS.pth")
+
 
 # Try loading the model
 # Load the learnt model from storage
