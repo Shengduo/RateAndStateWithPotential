@@ -27,7 +27,7 @@ Class TimeSequenceGen, container for a Generated time sequence containing
 """
 class TimeSequenceGen_NN:
     # Constructor
-    def __init__(self, T, NofTPts, MFParams, NNModel, rtol = 1.e-6, atol = 1.e-8, solver = 'dopri5', 
+    def __init__(self, T, NofTPts, MFParams, NNModel, rtol = 1.e-6, atol = 1.e-8, solver = 'dopri5', solver_options = dict(), 
                  fOffSet = 0.5109, scaling_factor = 50.):
         # Load the parameters
         self.T = T
@@ -36,6 +36,7 @@ class TimeSequenceGen_NN:
         self.rtol = rtol
         self.atol = atol
         self.solver = solver
+        self.solver_options = solver_options
         self.NNModel = NNModel 
         self.fOffSet = fOffSet
         self.scaling_factor = scaling_factor
@@ -54,7 +55,7 @@ class TimeSequenceGen_NN:
         # Initialize DyDt
         DyDt = torch.zeros(2 + self.NNModel.dim_xi)
         DyDt[0] = y[1]
-        DyDt[1] = self.MFParams.k / self.MFParams.m * (self.MFParams.SatT_interp(t) - y[0]) - \
+        DyDt[1] = self.MFParams.k / self.MFParams.m * (self.MFParams.SatT_interp(t.detach()) - y[0]) - \
                   self.MFParams.g * Fric 
         DyDt[2:] = xiDot 
         return DyDt
@@ -64,6 +65,10 @@ class TimeSequenceGen_NN:
         # First compute friction force
         W_in = y[0].clone().reshape([1]).requires_grad_()
         D_dagger_in = y[1:].clone().requires_grad_()
+        
+        # Send to GPU
+        W_in = W_in.to(self.NNModel.device)
+        D_dagger_in = D_dagger_in.to(self.NNModel.device)
 
         W = self.NNModel.W(W_in)
         D_dagger = self.NNModel.D_dagger(D_dagger_in)
@@ -79,6 +84,13 @@ class TimeSequenceGen_NN:
         # Re-scale friction
         Fric = (Fric - self.fOffSet) / self.scaling_factor + self.fOffSet
         
+        # Send back Fric and xiDot. 
+        Fric = Fric.to(torch.device("cpu"))
+        xiDot = xiDot.to(torch.device("cpu"))
+
+        # Delete gpu variables
+        del W_in, D_dagger_in, W, D_dagger, dDaggerDDDaggerIn, dWDWIn, D_in, D 
+        
         # Return friction and time derivative of xi
         return Fric, xiDot
     
@@ -87,7 +99,7 @@ class TimeSequenceGen_NN:
         y0In = torch.zeros(2 + self.NNModel.dim_xi)
         y0In[0:2] = self.MFParams.y0[0:2]
         y = odeint(self.DyDt, y0In, t, 
-                   rtol = self.rtol, atol = self.atol, method = self.solver)
+                   rtol = self.rtol, atol = self.atol, method = self.solver, options = self.solver_options)
         y = torch.transpose(y, 0, 1)
 
         # Calculate friction force

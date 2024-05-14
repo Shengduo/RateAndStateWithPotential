@@ -668,13 +668,13 @@ def train1Epoch(data_loader, loss_fn, myPot, p, fOffSet, update_weights=True):
 
 ## Spring slider
 # Function to plot a sequence compared between R & S and NN models
-def plotGenVXFric(VV, tt, t, Vs, xs, Frics):
+def plotGenVXFric(VV, tt, t, Vs, xs, Frics, legends):
     # Plot Sequence of V(t) and N(t) given sample-index
     f, axs = plt.subplots(2, 2, figsize = (15, 15))
 
     ## data
-    legends = ["R \& S", "NN"]
-    lws = [4.0, 2.0]
+    # legends = ["R \& S", "NN"]
+    lws = np.linspace(4., 2., len(legends))
 
     # Plot genVVtt
     axs[0][0].tick_params(axis='both', which='major', labelsize=20)
@@ -797,7 +797,7 @@ class D_dagger_poly(nn.Module):
                             Vs * torch.log(Vs) * xis, 
                             # (torch.log(Vs) ** 2) * Vs, 
                             torch.log(Vs) * (xis ** 2), 
-                            # (torch.log(Vs) ** 2) * xis, 
+                            # (torch.log(Vs) ** 3) * (xis ** 2), 
                             ], dim = 1)
         # print("Xin.shape: ", Xin.shape)
         # print("self.coef: ", self.coef.shape)

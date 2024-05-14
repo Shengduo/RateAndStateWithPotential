@@ -154,7 +154,7 @@ class OptunaObj:
 
         # Suggest training epochs
         # training_epochs = 2 ** trial.suggest_int('training_epoch_exponents', 5, 9)
-        training_epochs = 1000
+        training_epochs = 2000
 
         # # let p_order be learnable
         # p_order_W = trial.suggest_int('p_order_W', 2, 4)
@@ -240,7 +240,7 @@ class OptunaObj:
             print("self.bestValue: ", self.bestValue)
             print("Save this model!")
 
-            saveDir = './model/' + self.modelSavePrefix + '_trained_training_1000_dimXi_{0}_dict'.format(self.dim_xi)
+            saveDir = './model/' + self.modelSavePrefix + '_trained_training_2000_dimXi_{0}_dict'.format(self.dim_xi)
             myWD.save(saveDir)
             self.bestValue = res
 
@@ -270,7 +270,7 @@ OptKwgs = {
     'device' : device, 
     # 'training_dataset' : trainDataset, 
     # 'test_dataset' : testDataset, 
-    'modelSavePrefix' : kwgs['prefix'] + "_GivenPoly_grid_LogCross",
+    'modelSavePrefix' : kwgs['prefix'] + "_GivenPoly_grid_LogCross_12args",
     'fOffSet' : 0.5109, 
     'scaling_factor' : 50., 
     'AllData' : AllData, 
@@ -281,7 +281,7 @@ OptKwgs = {
 for dim_xi in dim_xis:
     # sqlite:///example.db
     this_study = optuna.create_study(direction='minimize', 
-                                     storage="sqlite:///./jobs/{0}_training_1000_LogCross_dim_{1}".format(OptKwgs['modelSavePrefix'], dim_xi) + ".db", 
+                                     storage="sqlite:///./jobs/{0}_training_2000_dim_{1}".format(OptKwgs['modelSavePrefix'], dim_xi) + ".db", 
                                      study_name="my_study1", 
                                      load_if_exists=True)
 

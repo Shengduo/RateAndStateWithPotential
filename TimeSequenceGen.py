@@ -27,7 +27,8 @@ Class TimeSequenceGen, container for a Generated time sequence containing
 """
 class TimeSequenceGen:
     # Constructor
-    def __init__(self, T, NofTPts, MFParams, rtol = 1.e-6, atol = 1.e-8, regularizedFlag = True, solver = 'dopri5'):
+    def __init__(self, T, NofTPts, MFParams, rtol = 1.e-6, atol = 1.e-8, regularizedFlag = True, solver = 'dopri5', solver_options = dict()):
+        # print("shit.")
         # Load the parameters
         self.T = T
         self.t = torch.linspace(0., T, NofTPts * len(MFParams.T))
@@ -36,6 +37,7 @@ class TimeSequenceGen:
         self.atol = atol
         self.regularizedFlag = regularizedFlag
         self.solver = solver
+        self.solver_options = solver_options
 
         # Generate the sequence
         st = time.time()
@@ -106,7 +108,7 @@ class TimeSequenceGen:
     # Generate the sequence of y(t) = [x_1(t), v_1(t), theta(t)]
     def calculateYAtT(self, t):
         y = odeint(self.DyDt, self.MFParams.y0, t, 
-                   rtol = self.rtol, atol = self.atol, method = self.solver)
+                   rtol = self.rtol, atol = self.atol, method = self.solver, options = self.solver_options)
         
         y = torch.transpose(y, 0, 1)
 
