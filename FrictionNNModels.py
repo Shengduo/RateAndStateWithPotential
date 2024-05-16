@@ -690,6 +690,7 @@ def plotGenVXFric(VV, tt, t, Vs, xs, Frics, legends):
         axs[0][1].semilogy(t, Vs[i], linewidth=lws[i], label=legends[i])
     axs[0][1].set_xlabel('Time [s]', fontsize=20)
     axs[0][1].set_ylabel('Slip rate $V(t)\ \mathrm{[m/s]}$', fontsize=20)
+    axs[0][1].legend(fontsize=20, loc='best')
     axs[0][1].grid()
 
     # Plot x(t)
@@ -707,7 +708,7 @@ def plotGenVXFric(VV, tt, t, Vs, xs, Frics, legends):
         axs[1][1].plot(t, Frics[i], linewidth=lws[i], label=legends[i])
     axs[1][1].set_xlabel('Time [s]', fontsize=20)
     axs[1][1].set_ylabel('Fric Coeff.', fontsize=20)
-    axs[1][1].legend(fontsize=20, loc='best')
+    # axs[1][1].legend(fontsize=20, loc='best')
     axs[1][1].grid()
 
     return f, axs

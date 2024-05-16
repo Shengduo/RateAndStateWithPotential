@@ -81,16 +81,17 @@ class TimeSequenceGen_NN:
         D = self.NNModel.D(D_in)
         xiDot = torch.autograd.grad(outputs=D, inputs=D_in, create_graph=True)[0]
 
-        # Re-scale friction
-        Fric = (Fric - self.fOffSet) / self.scaling_factor + self.fOffSet
         
         # Send back Fric and xiDot. 
         Fric = Fric.to(torch.device("cpu"))
         xiDot = xiDot.to(torch.device("cpu"))
-
+        
+        # Re-scale friction
+        Fric = (Fric - self.fOffSet) / self.scaling_factor + self.fOffSet
+        
         # Delete gpu variables
         del W_in, D_dagger_in, W, D_dagger, dDaggerDDDaggerIn, dWDWIn, D_in, D 
-        
+
         # Return friction and time derivative of xi
         return Fric, xiDot
     
