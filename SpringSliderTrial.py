@@ -67,7 +67,7 @@ for i in range(len(data['myVTs'])):
 
     # Solver-specific settings
     # solver = 'dopri5'
-    solver = 'rk4'
+    solver = 'implicit_adams'
     max_iters = 20
     step_sizes = [pow(2., i) for i in np.linspace(-12, -5, num = 8)]
     # step_sizes = []
@@ -121,7 +121,7 @@ for i in range(len(data['myVTs'])):
             'Frics' : Frics, 
             'step_sizes' : step_sizes, 
         }
-        torch.save(res, PATH + "/res_RS_ex_reg_seq_{0}.pth".format(i))
+        torch.save(res, PATH + "/res_RS_im_reg_seq_{0}.pth".format(i))
 
 
     # Solver-specific settings

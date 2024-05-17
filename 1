@@ -1,20 +1,22 @@
-[I 2024-03-03 18:21:51,691] Using an existing study with name 'my_study1' instead of creating a new one.
-Cuda is available:  True
-Device is:  cuda
-Memory allocated:  0.0
-Memory cached:  0.0
-Data file:  ./data/Trial0216_combined_800.pt
-Vs.shape:  torch.Size([800, 100])
-thetas.shape:  torch.Size([800, 100])
-fs.shape:  torch.Size([800, 100])
-ts.shape:  torch.Size([800, 100])
-Xs.shape:  torch.Size([800, 100])
-Pruned database has best value 0.019390789791941643.
---------------------  Trial  73   --------------------
-Start timing: 
-Parameters: 
-{'W_layers': 6, 'W_layer_units_exponent_0': 4, 'W_layer_units_exponent_1': 7, 'W_layer_units_exponent_2': 8, 'W_layer_units_exponent_3': 9, 'W_layer_units_exponent_4': 10, 'W_layer_units_exponent_5': 7, 'D_layers': 6, 'D_layer_units_exponent_0': 9, 'D_layer_units_exponent_1': 10, 'D_layer_units_exponent_2': 9, 'D_layer_units_exponent_3': 10, 'D_layer_units_exponent_4': 10, 'D_layer_units_exponent_5': 8, 'D_dagger_layers': 6, 'D_dagger_layer_units_exponent_0': 9, 'D_dagger_layer_units_exponent_1': 10, 'D_dagger_layer_units_exponent_2': 7, 'D_dagger_layer_units_exponent_3': 9, 'D_dagger_layer_units_exponent_4': 4, 'D_dagger_layer_units_exponent_5': 9, 'log_learning_rate': -1.9948225658509955, 'log_learning_rate_D': -4.46781184878342, 'log_learning_rate_D_dagger': -3.583225011714764, 'training_batch_size': 6, 'training_p': 8}
-	 epoch  0 training error:  tensor(9.7688, grad_fn=<ToCopyBackward0>)
-Memory status after this epoch: 
-Memory allocated:  101.97265625
-Memory cached:  660.0
+Traceback (most recent call last):
+  File "/home/shengduo/RateAndStateWithPotential/SpringSliderTrial.py", line 5, in <module>
+    from GenerateVT import GenerateVT
+  File "/home/shengduo/RateAndStateWithPotential/GenerateVT.py", line 14, in <module>
+    from matplotlib import pyplot as plt
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/matplotlib/pyplot.py", line 49, in <module>
+    import matplotlib.colorbar
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/matplotlib/colorbar.py", line 21, in <module>
+    from matplotlib import _api, collections, cm, colors, contour, ticker
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/matplotlib/collections.py", line 1372, in <module>
+    class LineCollection(Collection):
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/matplotlib/artist.py", line 119, in __init_subclass__
+    cls._update_set_signature_and_docstring()
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/matplotlib/artist.py", line 140, in _update_set_signature_and_docstring
+    for prop in ArtistInspector(cls).get_setters()
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/matplotlib/artist.py", line 1345, in __init__
+    self.aliasd = self.get_aliases()
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/matplotlib/artist.py", line 1358, in get_aliases
+    names = [name for name in dir(self.o)
+  File "/home/shengduo/anaconda3/lib/python3.9/site-packages/matplotlib/artist.py", line 1359, in <listcomp>
+    if name.startswith(('set_', 'get_'))
+KeyboardInterrupt

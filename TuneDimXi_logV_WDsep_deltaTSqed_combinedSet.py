@@ -45,7 +45,8 @@ kwgs = {
     # "prefix" : "Trial1116_smallDRS_largeA", 
     # "prefix" : "Trial1215_smallDRS_smallA", 
     # "prefix" : "Trial1215_smallDRS_Burigede", 
-    "prefix" : "Trial0216_combined_800", 
+    # "prefix" : "Trial0216_combined_800", 
+    "prefix" : "Trial0517_combined_800", 
     "NofVVSteps" : 10, 
 }
 
@@ -267,7 +268,7 @@ class OptunaObj:
         return res
 
 # Do a parametric study over number of hidden parameters
-dim_xis = [2]
+dim_xis = [1]
 studys = []
 
 # Tune parameters for dim_xi = 4
