@@ -817,3 +817,12 @@ class Dstar_poly(nn.Module):
         Xin = torch.concat([x, x ** 2, x ** 3, x ** 4], dim = 1)
         res = torch.matmul(Xin, self.coef) + self.intercept
         return res
+    
+
+# Relative L2 error
+def relativeL2(y, y_true, t):
+    ans = torch.pow(
+        torch.trapz(torch.pow(y - y_true, 2), t) / torch.trapz(torch.pow(y_true, 2), t), 
+        0.5
+    )
+    return ans
