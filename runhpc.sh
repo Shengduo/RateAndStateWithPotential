@@ -5,6 +5,7 @@
 
 # Number of processor cores / tasks
 #SBATCH --mem-per-cpu=8G   # memory per CPU core
+#SBATCH --ntasks=1   # number of processor cores (i.e. tasks)
 #SBATCH --nodes=1
 
 # Number of GPUs
