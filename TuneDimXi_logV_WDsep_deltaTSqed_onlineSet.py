@@ -43,9 +43,10 @@ kwgs = {
     # "prefix" : "Trial1116_smallDRS_largeA", 
     # "prefix" : "Trial1215_smallDRS_smallA", 
     # "prefix" : "Trial1215_smallDRS_Burigede", 
-    "prefixs" : ["Trial0112_smallDRS_Burigede"], 
-    "saveName" : "Trial0112_smallA_Burigede", 
-    "pre_model" : "Trial0112_smallDRS_smallA", 
+    "prefixs" : ["SpringSlider_0517_400"], 
+    "saveName" : "Trial_0112_0517SS_400", 
+    # "pre_model" : "Trial0112_smallDRS_smallA", 
+    "pre_model" : "Trial0112_combined_800"
     "NofVVSteps" : 10, 
 }
 
@@ -54,7 +55,7 @@ kwgs = {
 import torch.optim as optim
 ## Calculate f
 # Different Potentials with D correction
-from FrictionNNModels import PotentialsFricCorrection, Loss, train1Epoch, PP, ReLUSquare
+from FrictionNNModels import PotentialsFricCorrection, Loss, train1Epoch, PP, ReLUSquare, load_model
 
 class TrainObj:
     # Initialize
@@ -64,6 +65,7 @@ class TrainObj:
         self.device = kwgs['device']
         self.fOffSet = kwgs['fOffSet']
         self.scaling_factor = kwgs['scaling_factor']
+        self.saveName = kwgs["saveName"]
 
         # Load pre-model
         self.best_params = kwgs['best_params']
@@ -157,11 +159,25 @@ class TrainObj:
         ## Print memory status
         print("Memory status after this trial: ")
         memory_stats()
+
+        saveDir = './model/' + self.saveName + '_dimXi_{0}_dict'.format(self.dim_xi)
+        self.pre_model.save(saveDir)
+        
         return res
 
 # Load the pre_model
 dim_xi = 1
-pre_model = torch.load("./model/" + kwgs["pre_model"] + "_dimXi_" + str(dim_xi) + ".pth")
+
+# Get correct device
+if torch.cuda.is_available():
+    device = torch.device("cuda:0")
+else:
+    device = torch.device("cpu")
+
+# Dict flag, NN flag
+dict_flag = True
+NN_flag = 1
+pre_model = load_model(kwgs["pre_model"], device, dim_xi, dict_flag, NN_Flag=NN_flag)
 
 # Load best parameters for the pre_model
 best_params = optuna.load_study(study_name="my_study", 
@@ -219,5 +235,5 @@ for idx, prefix in enumerate(kwgs["prefixs"]):
     # Triain myOpt
     myOpt.objective()
 
-# Save the newly trained model
-torch.save(pre_model, './model/' + kwgs["saveName"] + '_dimXi_{0}.pth'.format(dim_xi))
+# # Save the newly trained model
+# torch.save(pre_model, './model/' + kwgs["saveName"] + '_dimXi_{0}.pth'.format(dim_xi))

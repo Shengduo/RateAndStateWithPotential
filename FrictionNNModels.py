@@ -726,6 +726,10 @@ def load_model(modelPrefix, mapDevice=torch.device("cpu"), dim_xi=1, dict_flag=F
             myModel.W = PP(myModel.NNs_W, input_dim = 1, output_dim = 1)
             myModel.D = PP(myModel.NNs_D, input_dim = myModel.dim_xi, output_dim = 1)
             myModel.D_dagger = PP(myModel.NNs_D_dagger, input_dim = 1 + myModel.dim_xi, output_dim = 1)
+            lr_W, lr_D, lr_D_dagger = myModel.optim_W.param_groups[0]['lr'], myModel.optim_D.param_groups[0]['lr'], myModel.optim_D_dagger.param_groups[0]['lr']
+            myModel.optim_W = optim.Adam(myModel.W.parameters(), lr=lr_W)
+            myModel.optim_D = optim.Adam(myModel.D.parameters(), lr=lr_D)
+            myModel.optim_D_dagger = optim.Adam(myModel.D_dagger.parameters(), lr=lr_D_dagger)
         elif NN_Flag == 0:
             p_order_W = myModel.W.module.ProdOrder[1]
             p_order_D = myModel.D.module.ProdOrder[1]
