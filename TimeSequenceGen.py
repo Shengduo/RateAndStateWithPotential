@@ -41,9 +41,17 @@ class TimeSequenceGen:
 
         # Generate the sequence
         st = time.time()
+        
+        # Adjust the initial x so that the sequence starts with steady state
+        self.DyDt0 = self.DyDt(torch.tensor(0.), self.MFParams.y0);
+        self.y0 = self.MFParams.y0
+        self.y0[0] += self.MFParams.m / self.MFParams.k * self.DyDt0[1]
+
         self.default_y = self.calculateYAtT(self.t)
         self.time_cost = time.time() - st
         # print("Time cost to generate the sequence: ", self.time_cost)
+
+        
         
     # Function DyDt, DyDt = f(t, y)
     def DyDt(self, t, y):
@@ -107,7 +115,7 @@ class TimeSequenceGen:
     
     # Generate the sequence of y(t) = [x_1(t), v_1(t), theta(t)]
     def calculateYAtT(self, t):
-        y = odeint(self.DyDt, self.MFParams.y0, t, 
+        y = odeint(self.DyDt, self.y0, t, 
                    rtol = self.rtol, atol = self.atol, method = self.solver, options = self.solver_options)
         
         y = torch.transpose(y, 0, 1)
