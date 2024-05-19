@@ -3445,3 +3445,138 @@ Memory cached:  2588.0
 Memory status after this epoch: 
 Memory allocated:  2240.68896484375
 Memory cached:  2588.0
+	 epoch  80 training error:  tensor(0.1461, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2240.68896484375
+Memory cached:  2588.0
+	 epoch  90 training error:  tensor(0.1432, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2240.68896484375
+Memory cached:  2588.0
+[I 2024-05-18 15:59:18,755] Trial 69 finished with value: 0.10094260424375534 and parameters: {'W_layers': 4, 'W_layer_units_exponent_0': 4, 'W_layer_units_exponent_1': 10, 'W_layer_units_exponent_2': 6, 'W_layer_units_exponent_3': 6, 'D_layers': 5, 'D_layer_units_exponent_0': 7, 'D_layer_units_exponent_1': 8, 'D_layer_units_exponent_2': 5, 'D_layer_units_exponent_3': 5, 'D_layer_units_exponent_4': 8, 'D_dagger_layers': 2, 'D_dagger_layer_units_exponent_0': 10, 'D_dagger_layer_units_exponent_1': 9, 'log_learning_rate': -1.4693489739868895, 'log_learning_rate_D': -2.9662436837520394, 'log_learning_rate_D_dagger': -2.4677113301715385, 'training_batch_size': 7, 'training_p': 6}. Best is trial 35 with value: 0.04377790540456772.
+Time for this trial:  857.4312348365784
+Memory status after this trial: 
+Memory allocated:  3638.7001953125
+Memory cached:  3670.0
+--------------------  Trial  70   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 6, 'W_layer_units_exponent_0': 6, 'W_layer_units_exponent_1': 9, 'W_layer_units_exponent_2': 6, 'W_layer_units_exponent_3': 4, 'W_layer_units_exponent_4': 7, 'W_layer_units_exponent_5': 6, 'D_layers': 6, 'D_layer_units_exponent_0': 6, 'D_layer_units_exponent_1': 9, 'D_layer_units_exponent_2': 4, 'D_layer_units_exponent_3': 5, 'D_layer_units_exponent_4': 9, 'D_layer_units_exponent_5': 7, 'D_dagger_layers': 3, 'D_dagger_layer_units_exponent_0': 7, 'D_dagger_layer_units_exponent_1': 8, 'D_dagger_layer_units_exponent_2': 6, 'log_learning_rate': -1.626215069324297, 'log_learning_rate_D': -2.64307533767652, 'log_learning_rate_D_dagger': -3.048773625448973, 'training_batch_size': 6, 'training_p': 3}
+	 epoch  0 training error:  tensor(1.4259, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2234.59521484375
+Memory cached:  2574.0
+	 epoch  10 training error:  tensor(0.2940, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2234.59521484375
+Memory cached:  2592.0
+	 epoch  20 training error:  tensor(0.2909, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2234.59521484375
+Memory cached:  2578.0
+	 epoch  30 training error:  tensor(0.2905, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2234.59521484375
+Memory cached:  2580.0
+	 epoch  40 training error:  tensor(0.2468, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2234.59521484375
+Memory cached:  2582.0
+	 epoch  50 training error:  tensor(0.1346, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2234.59521484375
+Memory cached:  2574.0
+	 epoch  60 training error:  tensor(0.1033, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2234.59521484375
+Memory cached:  2570.0
+	 epoch  70 training error:  tensor(0.1158, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2234.59521484375
+Memory cached:  2574.0
+	 epoch  80 training error:  tensor(0.0888, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2234.59521484375
+Memory cached:  2572.0
+	 epoch  90 training error:  tensor(0.1097, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2234.59521484375
+Memory cached:  2574.0
+[I 2024-05-18 16:31:30,000] Trial 70 finished with value: 0.06103929504752159 and parameters: {'W_layers': 6, 'W_layer_units_exponent_0': 6, 'W_layer_units_exponent_1': 9, 'W_layer_units_exponent_2': 6, 'W_layer_units_exponent_3': 4, 'W_layer_units_exponent_4': 7, 'W_layer_units_exponent_5': 6, 'D_layers': 6, 'D_layer_units_exponent_0': 6, 'D_layer_units_exponent_1': 9, 'D_layer_units_exponent_2': 4, 'D_layer_units_exponent_3': 5, 'D_layer_units_exponent_4': 9, 'D_layer_units_exponent_5': 7, 'D_dagger_layers': 3, 'D_dagger_layer_units_exponent_0': 7, 'D_dagger_layer_units_exponent_1': 8, 'D_dagger_layer_units_exponent_2': 6, 'log_learning_rate': -1.626215069324297, 'log_learning_rate_D': -2.64307533767652, 'log_learning_rate_D_dagger': -3.048773625448973, 'training_batch_size': 6, 'training_p': 3}. Best is trial 35 with value: 0.04377790540456772.
+Time for this trial:  1930.3682045936584
+Memory status after this trial: 
+Memory allocated:  3306.1708984375
+Memory cached:  3322.0
+--------------------  Trial  71   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 5, 'W_layer_units_exponent_0': 5, 'W_layer_units_exponent_1': 9, 'W_layer_units_exponent_2': 5, 'W_layer_units_exponent_3': 4, 'W_layer_units_exponent_4': 10, 'D_layers': 4, 'D_layer_units_exponent_0': 8, 'D_layer_units_exponent_1': 9, 'D_layer_units_exponent_2': 5, 'D_layer_units_exponent_3': 8, 'D_dagger_layers': 3, 'D_dagger_layer_units_exponent_0': 5, 'D_dagger_layer_units_exponent_1': 7, 'D_dagger_layer_units_exponent_2': 10, 'log_learning_rate': -1.8275293121763305, 'log_learning_rate_D': -2.55015041751185, 'log_learning_rate_D_dagger': -2.8937950206809777, 'training_batch_size': 6, 'training_p': 4}
+	 epoch  0 training error:  tensor(2.6188, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2236.03271484375
+Memory cached:  2614.0
+	 epoch  10 training error:  tensor(0.3349, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2236.03271484375
+Memory cached:  2706.0
+	 epoch  20 training error:  tensor(0.3332, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2236.03271484375
+Memory cached:  2700.0
+	 epoch  30 training error:  tensor(0.3384, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2236.03271484375
+Memory cached:  2700.0
+	 epoch  40 training error:  tensor(0.3323, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2236.03271484375
+Memory cached:  2698.0
+	 epoch  50 training error:  tensor(0.3311, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2236.03271484375
+Memory cached:  2700.0
+	 epoch  60 training error:  tensor(0.2691, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2236.03271484375
+Memory cached:  2702.0
+	 epoch  70 training error:  tensor(0.1961, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2236.03271484375
+Memory cached:  2700.0
+	 epoch  80 training error:  tensor(0.1430, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2236.03271484375
+Memory cached:  2694.0
+	 epoch  90 training error:  tensor(0.1357, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2236.03271484375
+Memory cached:  2702.0
+[I 2024-05-18 17:00:10,105] Trial 71 finished with value: 0.08635472506284714 and parameters: {'W_layers': 5, 'W_layer_units_exponent_0': 5, 'W_layer_units_exponent_1': 9, 'W_layer_units_exponent_2': 5, 'W_layer_units_exponent_3': 4, 'W_layer_units_exponent_4': 10, 'D_layers': 4, 'D_layer_units_exponent_0': 8, 'D_layer_units_exponent_1': 9, 'D_layer_units_exponent_2': 5, 'D_layer_units_exponent_3': 8, 'D_dagger_layers': 3, 'D_dagger_layer_units_exponent_0': 5, 'D_dagger_layer_units_exponent_1': 7, 'D_dagger_layer_units_exponent_2': 10, 'log_learning_rate': -1.8275293121763305, 'log_learning_rate_D': -2.55015041751185, 'log_learning_rate_D_dagger': -2.8937950206809777, 'training_batch_size': 6, 'training_p': 4}. Best is trial 35 with value: 0.04377790540456772.
+Time for this trial:  1719.4497215747833
+Memory status after this trial: 
+Memory allocated:  3736.5673828125
+Memory cached:  3756.0
+--------------------  Trial  72   --------------------
+Start timing: 
+Parameters: 
+{'W_layers': 5, 'W_layer_units_exponent_0': 5, 'W_layer_units_exponent_1': 10, 'W_layer_units_exponent_2': 5, 'W_layer_units_exponent_3': 4, 'W_layer_units_exponent_4': 8, 'D_layers': 4, 'D_layer_units_exponent_0': 8, 'D_layer_units_exponent_1': 9, 'D_layer_units_exponent_2': 5, 'D_layer_units_exponent_3': 5, 'D_dagger_layers': 2, 'D_dagger_layer_units_exponent_0': 6, 'D_dagger_layer_units_exponent_1': 6, 'log_learning_rate': -2.4268958841258907, 'log_learning_rate_D': -2.419653686190043, 'log_learning_rate_D_dagger': -3.4619116639711303, 'training_batch_size': 6, 'training_p': 4}
+	 epoch  0 training error:  tensor(0.8112, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2234.18701171875
+Memory cached:  2590.0
+	 epoch  10 training error:  tensor(0.3367, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2234.18701171875
+Memory cached:  2592.0
+	 epoch  20 training error:  tensor(0.3342, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2234.18701171875
+Memory cached:  2592.0
+	 epoch  30 training error:  tensor(0.3310, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2234.18701171875
+Memory cached:  2592.0
+	 epoch  40 training error:  tensor(0.2989, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  2234.18701171875
+Memory cached:  2592.0
