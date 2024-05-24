@@ -713,7 +713,7 @@ def plotGenVXFric(VV, tt, t, Vs, xs, Frics, legends):
 
     return f, axs
 
-def load_model(modelPrefix, mapDevice=torch.device("cpu"), dim_xi=1, dict_flag=False, NN_Flag = 1):
+def load_model(modelPrefix, mapDevice=torch.device("cpu"), dim_xi=1, dict_flag=False, NN_Flag = 1, lr_factors = [0.1, 0.1, 0.1]):
     if dict_flag:
         
         PATH = "./model/" + modelPrefix + "_dimXi_" + str(dim_xi) + "_dict"
@@ -727,9 +727,9 @@ def load_model(modelPrefix, mapDevice=torch.device("cpu"), dim_xi=1, dict_flag=F
             myModel.D = PP(myModel.NNs_D, input_dim = myModel.dim_xi, output_dim = 1)
             myModel.D_dagger = PP(myModel.NNs_D_dagger, input_dim = 1 + myModel.dim_xi, output_dim = 1)
             lr_W, lr_D, lr_D_dagger = myModel.optim_W.param_groups[0]['lr'], myModel.optim_D.param_groups[0]['lr'], myModel.optim_D_dagger.param_groups[0]['lr']
-            myModel.optim_W = optim.Adam(myModel.W.parameters(), lr=lr_W)
-            myModel.optim_D = optim.Adam(myModel.D.parameters(), lr=lr_D)
-            myModel.optim_D_dagger = optim.Adam(myModel.D_dagger.parameters(), lr=lr_D_dagger)
+            myModel.optim_W = optim.Adam(myModel.W.parameters(), lr=lr_W * lr_factors[0])
+            myModel.optim_D = optim.Adam(myModel.D.parameters(), lr=lr_D * lr_factors[1])
+            myModel.optim_D_dagger = optim.Adam(myModel.D_dagger.parameters(), lr=lr_D_dagger * lr_factors[2])
         elif NN_Flag == 0:
             p_order_W = myModel.W.module.ProdOrder[1]
             p_order_D = myModel.D.module.ProdOrder[1]
@@ -758,9 +758,9 @@ def load_model(modelPrefix, mapDevice=torch.device("cpu"), dim_xi=1, dict_flag=F
         # print("myModel.W.module.coef: ", myModel.W.module.coef)
 
         # Send to devices
-        myModel.W = myModel.W.module.to(mapDevice)
-        myModel.D = myModel.D.module.to(mapDevice)
-        myModel.D_dagger = myModel.D_dagger.module.to(mapDevice)
+        # myModel.W = myModel.W.module.to(mapDevice)
+        # myModel.D = myModel.D.module.to(mapDevice)
+        # myModel.D_dagger = myModel.D_dagger.module.to(mapDevice)
     else:
         myModel = torch.load("./model/" + modelPrefix + "_dimXi_" + str(dim_xi) + ".pth", map_location = mapDevice)
         myModel.device = mapDevice

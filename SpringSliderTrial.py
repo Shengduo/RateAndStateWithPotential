@@ -23,13 +23,13 @@ VTkwgs = {
 }
 
 # Set Path
-PATH = "./data/RSvsNNSpringSliderAcc0514"
+PATH = "./data/RSvsNNSpringSliderAcc0522_halves"
 Path(PATH).mkdir(parents=True, exist_ok=True)
 
 ## Load trained NN model
 from FrictionNNModels import PotentialsFricCorrection, Loss, train1Epoch, PP, ReLUSquare, FricCorrection, load_model
 
-modelPrefix = "Trial0216_combined_800"
+modelPrefix = "Trial_0216_0521SS_400"
 # modelPrefix = "Trial0216_smallDRS_smallA_400"
 dim_xi = 1
 
@@ -39,17 +39,27 @@ if torch.cuda.is_available():
 else:
     device = torch.device("cpu")
 
+def memory_stats():
+    print("Memory allocated: ", torch.cuda.memory_allocated()/1024**2)
+    print("Memory cached: ", torch.cuda.memory_reserved()/1024**2)
+
+# Release GPU memory
+import gc
+gc.collect()
+torch.cuda.empty_cache()
+memory_stats()
+
 # device = torch.device("cpu")
 # Load NN model
 myModel = load_model(modelPrefix, device, dim_xi, True, NN_Flag=1)
 
 ## Load dataset of VT sequences
 # myVT = GenerateVT(VTkwgs)
-data = torch.load('./data/testSpringSlider0515_200.pth')
-
+data = torch.load('./data/testSpringSlider0522_200.pt')
+step_sizes = [pow(2., i) for i in np.linspace(-13.5, -11.5, num = 3)]
 
 # Loop thru all sequences
-for i in range(len(data['myVTs'])):
+for i in range(0, len(data['myVTs'])):
     print("=" * 30, " Seq {0} ".format(i), "=" * 30, flush=True)
     myVT = data['myVTs'][i]
 
@@ -69,8 +79,6 @@ for i in range(len(data['myVTs'])):
     # solver = 'dopri5'
     solver = 'implicit_adams'
     max_iters = 20
-    step_sizes = [pow(2., i) for i in np.linspace(-12, -5, num = 8)]
-    # step_sizes = []
 
     # Store the results
     Frics = []
@@ -83,7 +91,7 @@ for i in range(len(data['myVTs'])):
     myMFParams = MassFricParams(kmg, myVT.VT, RSParams, y0, lawFlag = "aging", regularizedFlag = regularizedFlag)
 
     # Print out RS solve
-    print("*" * 25, " RS solve ", "*" * 25, flush=True)
+    print("*" * 25, " RS solve implicit ", "*" * 25, flush=True)
 
     ## Loop thru all step_sizes
     for step_size in step_sizes:
@@ -123,14 +131,57 @@ for i in range(len(data['myVTs'])):
         }
         torch.save(res, PATH + "/res_RS_im_reg_seq_{0}.pth".format(i))
 
+    # Print out RS solve
+    Frics = []
+    Vs = []
+    xs = []
+    print("*" * 25, " RS solve explicit ", "*" * 25, flush=True)
+    solver = 'rk4'
 
-    # Solver-specific settings
-    # solver = 'dopri5'
+    ## Loop thru all step_sizes
+    for step_size in step_sizes:
+        solver_options = {
+            'max_iters' : max_iters, 
+            'step_size' : step_size, 
+        }
+
+        # Start timer
+        st = time.time()
+
+        # Set for my sequence
+        myTimeSeq = TimeSequenceGen(myVT.Trange[1], 
+                                    10, 
+                                    myMFParams, 
+                                    rtol, 
+                                    atol, 
+                                    regularizedFlag, 
+                                    solver, 
+                                    solver_options)
+        
+        Vs.append(myTimeSeq.default_y[1, :])
+        xs.append(myTimeSeq.default_y[0, :])
+        Frics.append(myTimeSeq.Fric)
+        # print("=" * 25, " R & S friction ", "=" * 25)
+        print("-"* 25, " Dt = {0}, {1} s.".format(step_size, time.time() - st), "-"* 25)
+
+    if len(Vs) > 0:
+        res = {
+            'kmg' : kmg, 
+            'VT' : myVT, 
+            't' : myTimeSeq.t, 
+            'Vs' : Vs, 
+            'xs' : xs, 
+            'Frics' : Frics, 
+            'step_sizes' : step_sizes, 
+        }
+        torch.save(res, PATH + "/res_RS_ex_reg_seq_{0}.pth".format(i))
+
+    # NN explicit solve
     solver = 'rk4'
     max_iters = 20
 
-    # step_size_NNs = [pow(2., i) for i in np.linspace(-12, -5, num = 8)]
-    step_size_NNs = []
+    step_size_NNs = [step_size for step_size in step_sizes]
+    # step_size_NNs = []
     # step_size_NNs = [pow(2., i) for i in np.linspace(-9, -5, num = 3)]
 
     # Store the results
@@ -139,7 +190,7 @@ for i in range(len(data['myVTs'])):
     x_NNs = []
     legend_NNs = ["$\Delta t = {0}$ s".format(step_size) for step_size in step_sizes]
 
-    print("*" * 25, " NN solve ", "*" * 25, flush=True)
+    print("*" * 25, " NN explicit solve ", "*" * 25, flush=True)
     for step_size in step_size_NNs:
         solver_options = {
             'max_iters' : max_iters, 
@@ -164,6 +215,8 @@ for i in range(len(data['myVTs'])):
         V_NNs.append(myTimeSeqNN.default_y[1, :])
         x_NNs.append(myTimeSeqNN.default_y[0, :])
         Fric_NNs.append(myTimeSeqNN.Fric)
+        gc.collect()
+        torch.cuda.empty_cache()
         print("-"* 25, " Dt = {0}, {1} s.".format(step_size, time.time() - st), "-"* 25, flush=True)
 
     if len(step_size_NNs) > 0:
@@ -178,4 +231,52 @@ for i in range(len(data['myVTs'])):
             'legend_NNs' : legend_NNs, 
         }
         torch.save(res, PATH + "/res_NN_ex_seq_{0}.pth".format(i))
+    
+    # NN Implicit solve
+    print("*" * 25, " NN implicit solve ", "*" * 25, flush=True)
+    Fric_NNs = []
+    V_NNs = []
+    x_NNs = []
+    solver = 'implicit_adams'
+
+    for step_size in step_size_NNs:
+        solver_options = {
+            'max_iters' : max_iters, 
+            'step_size' : step_size, 
+        }
+
+        # Start the timer
+        st = time.time()
+        
+        # Compute slip rate for the same input sequence using NN model
+        myTimeSeqNN = TimeSequenceGen_NN(myVT.Trange[1], 
+                                        10, 
+                                        myMFParams, 
+                                        myModel, 
+                                        rtol, 
+                                        atol, 
+                                        solver, 
+                                        solver_options,  
+                                        fOffSet = 0.5109, 
+                                        scaling_factor = 50.)
+
+        V_NNs.append(myTimeSeqNN.default_y[1, :])
+        x_NNs.append(myTimeSeqNN.default_y[0, :])
+        Fric_NNs.append(myTimeSeqNN.Fric)
+        gc.collect()
+        torch.cuda.empty_cache()
+        print("-"* 25, " Dt = {0}, {1} s.".format(step_size, time.time() - st), "-"* 25, flush=True)
+
+    if len(step_size_NNs) > 0:
+        res = {
+            'kmg' : kmg, 
+            'VT' : myVT, 
+            't' : myTimeSeqNN.t, 
+            'Vs' : V_NNs, 
+            'xs' : x_NNs, 
+            'Frics' : Fric_NNs, 
+            'step_sizes' : step_size_NNs, 
+            'legend_NNs' : legend_NNs, 
+        }
+        torch.save(res, PATH + "/res_NN_im_seq_{0}.pth".format(i))
 

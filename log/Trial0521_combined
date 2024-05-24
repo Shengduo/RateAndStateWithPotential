@@ -1,0 +1,214 @@
+Cuda is available:  True
+Device is:  cuda:0
+Memory allocated:  0.0
+Memory cached:  0.0
+======================== Online dataset 0 ========================
+Data file:  ./data/SpringSlider0521_400.pt
+Vs.shape:  torch.Size([400, 100])
+thetas.shape:  torch.Size([400, 100])
+fs.shape:  torch.Size([400, 100])
+ts.shape:  torch.Size([400, 100])
+Xs.shape:  torch.Size([400, 100])
+	 epoch  0 training error:  tensor(0.0493, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  280.0
+	 epoch  10 training error:  tensor(0.0225, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  396.0
+	 epoch  20 training error:  tensor(0.0185, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  394.0
+	 epoch  30 training error:  tensor(0.0182, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  400.0
+	 epoch  40 training error:  tensor(0.0170, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  396.0
+	 epoch  50 training error:  tensor(0.0152, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  406.0
+	 epoch  60 training error:  tensor(0.0143, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  396.0
+	 epoch  70 training error:  tensor(0.0155, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  394.0
+	 epoch  80 training error:  tensor(0.0159, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  392.0
+	 epoch  90 training error:  tensor(0.0147, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  396.0
+	 epoch  100 training error:  tensor(0.0132, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  400.0
+	 epoch  110 training error:  tensor(0.0137, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  410.0
+	 epoch  120 training error:  tensor(0.0130, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  404.0
+	 epoch  130 training error:  tensor(0.0128, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  402.0
+	 epoch  140 training error:  tensor(0.0127, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  402.0
+	 epoch  150 training error:  tensor(0.0125, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  408.0
+	 epoch  160 training error:  tensor(0.0126, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  396.0
+	 epoch  170 training error:  tensor(0.0126, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  398.0
+	 epoch  180 training error:  tensor(0.0119, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  394.0
+	 epoch  190 training error:  tensor(0.0135, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  400.0
+	 epoch  200 training error:  tensor(0.0123, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  398.0
+	 epoch  210 training error:  tensor(0.0114, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  404.0
+	 epoch  220 training error:  tensor(0.0128, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  400.0
+	 epoch  230 training error:  tensor(0.0138, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  400.0
+	 epoch  240 training error:  tensor(0.0117, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  398.0
+	 epoch  250 training error:  tensor(0.0122, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  392.0
+	 epoch  260 training error:  tensor(0.0130, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  390.0
+	 epoch  270 training error:  tensor(0.0123, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  398.0
+	 epoch  280 training error:  tensor(0.0117, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  396.0
+	 epoch  290 training error:  tensor(0.0120, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  400.0
+	 epoch  300 training error:  tensor(0.0114, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  392.0
+	 epoch  310 training error:  tensor(0.0120, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  398.0
+	 epoch  320 training error:  tensor(0.0112, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  390.0
+	 epoch  330 training error:  tensor(0.0109, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  396.0
+	 epoch  340 training error:  tensor(0.0119, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  406.0
+	 epoch  350 training error:  tensor(0.0126, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  408.0
+	 epoch  360 training error:  tensor(0.0111, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  406.0
+	 epoch  370 training error:  tensor(0.0121, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  406.0
+	 epoch  380 training error:  tensor(0.0126, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  406.0
+	 epoch  390 training error:  tensor(0.0112, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  402.0
+	 epoch  400 training error:  tensor(0.0112, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  408.0
+	 epoch  410 training error:  tensor(0.0106, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  410.0
+	 epoch  420 training error:  tensor(0.0107, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  408.0
+	 epoch  430 training error:  tensor(0.0137, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  398.0
+	 epoch  440 training error:  tensor(0.0156, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  394.0
+	 epoch  450 training error:  tensor(0.0113, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  402.0
+	 epoch  460 training error:  tensor(0.0112, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  406.0
+	 epoch  470 training error:  tensor(0.0115, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  408.0
+	 epoch  480 training error:  tensor(0.0111, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  416.0
+	 epoch  490 training error:  tensor(0.0116, grad_fn=<ToCopyBackward0>)
+Memory status after this epoch: 
+Memory allocated:  34.37548828125
+Memory cached:  404.0
+Memory status after this trial: 
+Memory allocated:  1267.32666015625
+Memory cached:  1286.0

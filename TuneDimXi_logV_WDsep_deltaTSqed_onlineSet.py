@@ -43,10 +43,10 @@ kwgs = {
     # "prefix" : "Trial1116_smallDRS_largeA", 
     # "prefix" : "Trial1215_smallDRS_smallA", 
     # "prefix" : "Trial1215_smallDRS_Burigede", 
-    "prefixs" : ["SpringSlider_0517_400"], 
-    "saveName" : "Trial_0112_0517SS_400", 
+    "prefixs" : ["SpringSlider0521_400"], 
+    "saveName" : "Trial_0216_0521SS_400", 
     # "pre_model" : "Trial0112_smallDRS_smallA", 
-    "pre_model" : "Trial0112_combined_800"
+    "pre_model" : "Trial0216_combined_800", 
     "NofVVSteps" : 10, 
 }
 
@@ -102,7 +102,7 @@ class TrainObj:
 
         # Suggest training epochs
         # training_epochs = 2 ** trial.suggest_int('training_epoch_exponents', 5, 9)
-        training_epochs = 100
+        training_epochs = 500
 
         params = {
             'training_batch_size' : training_batch_size, 
@@ -177,10 +177,11 @@ else:
 # Dict flag, NN flag
 dict_flag = True
 NN_flag = 1
-pre_model = load_model(kwgs["pre_model"], device, dim_xi, dict_flag, NN_Flag=NN_flag)
+lr_factors = [0.1, 0.1, 0.1]
+pre_model = load_model(kwgs["pre_model"], device, dim_xi, dict_flag, NN_Flag=NN_flag, lr_factors=lr_factors)
 
 # Load best parameters for the pre_model
-best_params = optuna.load_study(study_name="my_study", 
+best_params = optuna.load_study(study_name="my_study1", 
                                 storage="sqlite:///./jobs/{0}_{1}.db".format(kwgs["pre_model"], dim_xi)).best_params
 
 # Set train parameters
@@ -192,7 +193,8 @@ TrainKwgs = {
     'scaling_factor' : 50., 
     'AllData' : dict(), 
     'best_params' : best_params, 
-    'pre_model' : pre_model
+    'pre_model' : pre_model, 
+    'saveName' : kwgs['saveName'], 
 }
 
 # Train on datasets specified by prefixs
