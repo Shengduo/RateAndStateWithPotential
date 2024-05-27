@@ -59,7 +59,7 @@ data = torch.load('./data/testSpringSlider0522_200.pt')
 step_sizes = [pow(2., i) for i in np.linspace(-13.5, -11.5, num = 3)]
 
 # Loop thru all sequences
-for i in range(0, len(data['myVTs'])):
+for i in range(40, len(data['myVTs'])):
     print("=" * 30, " Seq {0} ".format(i), "=" * 30, flush=True)
     myVT = data['myVTs'][i]
 
