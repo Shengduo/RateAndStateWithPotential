@@ -449,10 +449,10 @@ class PotsCalXiXiDot:
         self.D_dagger = myWD.D_dagger
         
         # Device
-        # self.device = "cpu"
-        self.W.to('cpu')
-        self.D.to('cpu')
-        self.D_dagger.to('cpu')
+        self.device = myWD.device
+        self.W.to(self.device)
+        self.D.to(self.device)
+        self.D_dagger.to(self.device)
         self.fs = []
         self.xis = []
         self.xiDots = []
@@ -462,13 +462,13 @@ class PotsCalXiXiDot:
     def calf(self, x, xDot, t):
         # Initialize Vs
         batch_size = x.shape[0]
-        x = x.to("cpu")
-        xDot = xDot.to("cpu")
-        t = t.to("cpu")
+        x = x.to(self.device)
+        xDot = xDot.to(self.device)
+        t = t.to(self.device)
 
         # Loop through time steps
         if self.dim_xi > 0:
-            xi0 = torch.zeros([batch_size, self.dim_xi], requires_grad=True, device='cpu')
+            xi0 = torch.zeros([batch_size, self.dim_xi], requires_grad=True, device=self.device)
             
             # List of fs
             list_fs = []
