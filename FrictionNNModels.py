@@ -713,6 +713,53 @@ def plotGenVXFric(VV, tt, t, Vs, xs, Frics, legends):
 
     return f, axs
 
+## Spring slider
+# Function to plot a sequence compared between R & S and NN models
+def plotGenVXFric_nondim(VV, tt, t, Vs, xs, Frics, legends):
+    # Plot Sequence of V(t) and N(t) given sample-index
+    f, axs = plt.subplots(2, 2, figsize = (15, 15))
+
+    ## data
+    # legends = ["R \& S", "NN"]
+    lws = np.linspace(4., 2., len(legends))
+
+    # Plot genVVtt
+    axs[0][0].tick_params(axis='both', which='major', labelsize=20)
+    axs[0][0].tick_params(axis='both', which='major', labelsize=20)
+    axs[0][0].plot(tt, VV, linewidth=4.0, label="Pulling V")
+    axs[0][0].set_xlabel('Time [s]', fontsize=20)
+    axs[0][0].set_ylabel('$\dot{x}_p(t) / V_*$', fontsize=20)
+    axs[0][0].grid()
+
+    # Plot v_1(t)
+    axs[0][1].tick_params(axis='both', which='major', labelsize=20)
+    for i in range(len(Vs)):
+        axs[0][1].semilogy(t, Vs[i], linewidth=lws[i], label=legends[i])
+    axs[0][1].set_xlabel('Time [s]', fontsize=20)
+    axs[0][1].set_ylabel('$\dot{x}(t) / V_*$', fontsize=20)
+    axs[0][1].legend(fontsize=20, loc='best')
+    axs[0][1].grid()
+
+    # Plot x(t)
+    axs[1][0].tick_params(axis='both', which='major', labelsize=20)
+    axs[1][0].tick_params(axis='both', which='major', labelsize=20)
+    for i in range(len(xs)):
+        axs[1][0].plot(t, xs[i], linewidth=lws[i], label=legends[i])
+    axs[1][0].set_xlabel('Time [s]', fontsize=20)
+    axs[1][0].set_ylabel('$x(t) / D_*$', fontsize=20)
+    axs[1][0].grid()
+
+    # Plot friction coefficient(t)
+    axs[1][1].tick_params(axis='both', which='major', labelsize=20)
+    for i in range(len(Frics)):
+        axs[1][1].plot(t, Frics[i], linewidth=lws[i], label=legends[i])
+    axs[1][1].set_xlabel('Time [s]', fontsize=20)
+    axs[1][1].set_ylabel('Fric Coeff.', fontsize=20)
+    # axs[1][1].legend(fontsize=20, loc='best')
+    axs[1][1].grid()
+
+    return f, axs
+
 def load_model(modelPrefix, mapDevice=torch.device("cpu"), dim_xi=1, dict_flag=False, NN_Flag = 1, lr_factors = [0.1, 0.1, 0.1]):
     if dict_flag:
         
